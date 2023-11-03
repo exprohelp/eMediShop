@@ -1,0 +1,2489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://exprohelp.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://exprohelp.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://exprohelp.com/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistrictList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State_Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistrictListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistrictListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStateList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStateListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStateListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnLineOrderInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="what" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnLineOrderInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOnLineOrderInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardRegister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardRegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthCardRegisterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCard_Queries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LabCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCard_QueriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCard_QueriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Card_Info_insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:CustomerCard" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PayType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cust_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Locality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="District" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Spouse_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Spouse_DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Child_Name_1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Child_DOB_1" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Child_Name_2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Child_DOB_2" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Child_Name_3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Child_DOB_3" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Child_Name_4" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Child_DOB_4" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Child_Name_5" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Child_DOB_5" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inst_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Card_Info_insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_Info_insertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_CustCardInfowithMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="labcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="member_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="m_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cust_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Locality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="district" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsmembers">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_CustCardInfowithMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_CustCardInfowithMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_CustCardInfowithMemberNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="labcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="member_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="m_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cust_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Locality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="district" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsmembers">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_CustCardInfowithMemberNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_CustCardInfowithMemberNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_UpdateCustCardMemebers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="labcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="member_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="m_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cust_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Locality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="district" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsmembers">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_UpdateCustCardMemebersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_UpdateCustCardMemebersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ins_UnProcessCArd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cust_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Locality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="District" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Spouse_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Spouse_dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_Name_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_DOB_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_Name_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_DOB_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_Name_3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_DOB_3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_Name_4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_DOB_4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_Name_5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_DOB_5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inst_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dist_type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="purch_amount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="FHQF_amt" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ins_UnProcessCArdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ins_UnProcessCArdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplaceCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="old_card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplaceCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplaceCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetACardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetACardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetACardInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShiftSchedule_Bulk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="old_login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sch_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bulk_by" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShiftSchedule_BulkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShiftSchedule_BulkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetACardStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetACardStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetACardStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardActivationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardActivationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthCardActivationRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateHealthCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateHealthCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivateHealthCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivationNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivateCardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCard_GetInfoForPoS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCard_GetInfoForPoSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthCard_GetInfoForPoSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Promotional_Queries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="prm_3" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Promotional_QueriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Promotional_QueriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCoupon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="i_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coupon_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patient_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCouponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCouponResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardQueries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardQueriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthCardQueriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCMCall_Report">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCMCall_ReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCMCall_ReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_CustCall_Log">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Auto_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="call_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_CustCall_LogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_CustCall_LogResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRegularOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_med" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rec_flag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRegularOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertRegularOrderResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_SmallQuerys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_SmallQuerysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCM_SmallQuerysResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCMSmallQueries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCMSmallQueriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCMSmallQueriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallingCard_queries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallingCard_queriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallingCard_queriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_ProductInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_ProductInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCM_ProductInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterPatient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_Manager_Contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pt_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_phone_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_smp_collection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time_sample_collection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Investd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterPatientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterPatientResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCCreateData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rmd_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rmd_time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastcallinfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCCreateDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCCreateDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_OnCallOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cust_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shop_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prod_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="delivery_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="delivery_time" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newmedname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_OnCallOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCM_OnCallOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_CompleteOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sh_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref_by" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="old_order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sale_inv_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="promo_flag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RCM_CompleteOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RCM_CompleteOrderResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderTrackingReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderTrackingReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderTrackingReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryExecute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryExecuteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetQueryResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryResultResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardQueries_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthCardQueries_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthCardQueries_2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineOrder_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_med" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref_by" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineOrder_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OnlineOrder_InsertResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_OrderRemark">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemarkFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_OrderRemarkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_OrderRemarkResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="file_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownLoadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPA_CardInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Card_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cust_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Locality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="District" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPA_CardInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TPA_CardInsertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPOrder_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="client_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="master_order" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="med_name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="deldate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPOrder_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TPOrder_InsertResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformToPatient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="unit_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformToPatientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InformToPatientResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Gen_SystemCouponNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cust_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Gen_SystemCouponNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Gen_SystemCouponNoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_Modify_custOrderInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="old_item_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_med" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancel_flag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_Modify_custOrderInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_Modify_custOrderInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistrictList" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistrictListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStateListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStateList" />
+  </wsdl:message>
+  <wsdl:message name="GetStateListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineOrderInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnLineOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineOrderInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnLineOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardRegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:HealthCardRegister" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardRegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:HealthCardRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCard_QueriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCard_Queries" />
+  </wsdl:message>
+  <wsdl:message name="GetCard_QueriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCard_QueriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Card_Info_insertSoapIn">
+    <wsdl:part name="parameters" element="tns:Card_Info_insert" />
+  </wsdl:message>
+  <wsdl:message name="Card_Info_insertSoapOut">
+    <wsdl:part name="parameters" element="tns:Card_Info_insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_CustCardInfowithMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_CustCardInfowithMember" />
+  </wsdl:message>
+  <wsdl:message name="Insert_CustCardInfowithMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_CustCardInfowithMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_CustCardInfowithMemberNewSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_CustCardInfowithMemberNew" />
+  </wsdl:message>
+  <wsdl:message name="Insert_CustCardInfowithMemberNewSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_CustCardInfowithMemberNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_UpdateCustCardMemebersSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_UpdateCustCardMemebers" />
+  </wsdl:message>
+  <wsdl:message name="Insert_UpdateCustCardMemebersSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_UpdateCustCardMemebersResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ins_UnProcessCArdSoapIn">
+    <wsdl:part name="parameters" element="tns:Ins_UnProcessCArd" />
+  </wsdl:message>
+  <wsdl:message name="Ins_UnProcessCArdSoapOut">
+    <wsdl:part name="parameters" element="tns:Ins_UnProcessCArdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplaceCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplaceCard" />
+  </wsdl:message>
+  <wsdl:message name="ReplaceCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplaceCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetACardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetACardInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetACardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetACardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShiftSchedule_BulkSoapIn">
+    <wsdl:part name="parameters" element="tns:ShiftSchedule_Bulk" />
+  </wsdl:message>
+  <wsdl:message name="ShiftSchedule_BulkSoapOut">
+    <wsdl:part name="parameters" element="tns:ShiftSchedule_BulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetACardStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetACardStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetACardStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetACardStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardActivationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:HealthCardActivationRequest" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardActivationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:HealthCardActivationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateHealthCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateHealthCard" />
+  </wsdl:message>
+  <wsdl:message name="ActivateHealthCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateHealthCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateCard" />
+  </wsdl:message>
+  <wsdl:message name="ActivateCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="HealthCard_GetInfoForPoSSoapIn">
+    <wsdl:part name="parameters" element="tns:HealthCard_GetInfoForPoS" />
+  </wsdl:message>
+  <wsdl:message name="HealthCard_GetInfoForPoSSoapOut">
+    <wsdl:part name="parameters" element="tns:HealthCard_GetInfoForPoSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Promotional_QueriesSoapIn">
+    <wsdl:part name="parameters" element="tns:Promotional_Queries" />
+  </wsdl:message>
+  <wsdl:message name="Promotional_QueriesSoapOut">
+    <wsdl:part name="parameters" element="tns:Promotional_QueriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCouponSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCoupon" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCouponSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCouponResponse" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardQueriesSoapIn">
+    <wsdl:part name="parameters" element="tns:HealthCardQueries" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardQueriesSoapOut">
+    <wsdl:part name="parameters" element="tns:HealthCardQueriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCMCall_ReportSoapIn">
+    <wsdl:part name="parameters" element="tns:RCMCall_Report" />
+  </wsdl:message>
+  <wsdl:message name="RCMCall_ReportSoapOut">
+    <wsdl:part name="parameters" element="tns:RCMCall_ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_CustCall_LogSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_CustCall_Log" />
+  </wsdl:message>
+  <wsdl:message name="Insert_CustCall_LogSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_CustCall_LogResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertRegularOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertRegularOrder" />
+  </wsdl:message>
+  <wsdl:message name="InsertRegularOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertRegularOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCM_SmallQuerysSoapIn">
+    <wsdl:part name="parameters" element="tns:RCM_SmallQuerys" />
+  </wsdl:message>
+  <wsdl:message name="RCM_SmallQuerysSoapOut">
+    <wsdl:part name="parameters" element="tns:RCM_SmallQuerysResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCMSmallQueriesSoapIn">
+    <wsdl:part name="parameters" element="tns:RCMSmallQueries" />
+  </wsdl:message>
+  <wsdl:message name="RCMSmallQueriesSoapOut">
+    <wsdl:part name="parameters" element="tns:RCMSmallQueriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallingCard_queriesSoapIn">
+    <wsdl:part name="parameters" element="tns:CallingCard_queries" />
+  </wsdl:message>
+  <wsdl:message name="CallingCard_queriesSoapOut">
+    <wsdl:part name="parameters" element="tns:CallingCard_queriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCM_ProductInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:RCM_ProductInfo" />
+  </wsdl:message>
+  <wsdl:message name="RCM_ProductInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:RCM_ProductInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterPatientSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterPatient" />
+  </wsdl:message>
+  <wsdl:message name="RegisterPatientSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCCreateDataSoapIn">
+    <wsdl:part name="parameters" element="tns:RCCreateData" />
+  </wsdl:message>
+  <wsdl:message name="RCCreateDataSoapOut">
+    <wsdl:part name="parameters" element="tns:RCCreateDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCM_OnCallOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:RCM_OnCallOrder" />
+  </wsdl:message>
+  <wsdl:message name="RCM_OnCallOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:RCM_OnCallOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="RCM_CompleteOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:RCM_CompleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="RCM_CompleteOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:RCM_CompleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderTrackingReportSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderTrackingReport" />
+  </wsdl:message>
+  <wsdl:message name="OrderTrackingReportSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderTrackingReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateLogin" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryExecuteSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryExecute" />
+  </wsdl:message>
+  <wsdl:message name="QueryExecuteSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryResult" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardQueries_2SoapIn">
+    <wsdl:part name="parameters" element="tns:HealthCardQueries_2" />
+  </wsdl:message>
+  <wsdl:message name="HealthCardQueries_2SoapOut">
+    <wsdl:part name="parameters" element="tns:HealthCardQueries_2Response" />
+  </wsdl:message>
+  <wsdl:message name="OnlineOrder_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:OnlineOrder_Insert" />
+  </wsdl:message>
+  <wsdl:message name="OnlineOrder_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:OnlineOrder_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_OrderRemarkSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_OrderRemark" />
+  </wsdl:message>
+  <wsdl:message name="Insert_OrderRemarkSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_OrderRemarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownLoadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownLoadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="TPA_CardInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:TPA_CardInsert" />
+  </wsdl:message>
+  <wsdl:message name="TPA_CardInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:TPA_CardInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="TPOrder_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:TPOrder_Insert" />
+  </wsdl:message>
+  <wsdl:message name="TPOrder_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:TPOrder_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformToPatientSoapIn">
+    <wsdl:part name="parameters" element="tns:InformToPatient" />
+  </wsdl:message>
+  <wsdl:message name="InformToPatientSoapOut">
+    <wsdl:part name="parameters" element="tns:InformToPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="Gen_SystemCouponNoSoapIn">
+    <wsdl:part name="parameters" element="tns:Gen_SystemCouponNo" />
+  </wsdl:message>
+  <wsdl:message name="Gen_SystemCouponNoSoapOut">
+    <wsdl:part name="parameters" element="tns:Gen_SystemCouponNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_Modify_custOrderInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_Modify_custOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="Insert_Modify_custOrderInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_Modify_custOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HealthCard_WebServicesSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get District  Depending Upon State Code &amp; Country</wsdl:documentation>
+      <wsdl:input message="tns:GetDistrictListSoapIn" />
+      <wsdl:output message="tns:GetDistrictListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get State Depending Upon Country</wsdl:documentation>
+      <wsdl:input message="tns:GetStateListSoapIn" />
+      <wsdl:output message="tns:GetStateListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineOrderInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get order Summary of On line Order</wsdl:documentation>
+      <wsdl:input message="tns:GetOnLineOrderInfoSoapIn" />
+      <wsdl:output message="tns:GetOnLineOrderInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Health Card Register</wsdl:documentation>
+      <wsdl:input message="tns:HealthCardRegisterSoapIn" />
+      <wsdl:output message="tns:HealthCardRegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCard_Queries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Card Queries</wsdl:documentation>
+      <wsdl:input message="tns:GetCard_QueriesSoapIn" />
+      <wsdl:output message="tns:GetCard_QueriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Card_Info_insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Register card which is not in database</wsdl:documentation>
+      <wsdl:input message="tns:Card_Info_insertSoapIn" />
+      <wsdl:output message="tns:Card_Info_insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCardInfowithMember">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Customer Card Info with Member</wsdl:documentation>
+      <wsdl:input message="tns:Insert_CustCardInfowithMemberSoapIn" />
+      <wsdl:output message="tns:Insert_CustCardInfowithMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCardInfowithMemberNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Customer Card Info with Member New</wsdl:documentation>
+      <wsdl:input message="tns:Insert_CustCardInfowithMemberNewSoapIn" />
+      <wsdl:output message="tns:Insert_CustCardInfowithMemberNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_UpdateCustCardMemebers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Update Cust Card Memebers</wsdl:documentation>
+      <wsdl:input message="tns:Insert_UpdateCustCardMemebersSoapIn" />
+      <wsdl:output message="tns:Insert_UpdateCustCardMemebersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ins_UnProcessCArd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Register card which is not in database and exists in unit  </wsdl:documentation>
+      <wsdl:input message="tns:Ins_UnProcessCArdSoapIn" />
+      <wsdl:output message="tns:Ins_UnProcessCArdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Replace Old Card width New</wsdl:documentation>
+      <wsdl:input message="tns:ReplaceCardSoapIn" />
+      <wsdl:output message="tns:ReplaceCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetACardInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Single Health Card Information</wsdl:documentation>
+      <wsdl:input message="tns:GetACardInfoSoapIn" />
+      <wsdl:output message="tns:GetACardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShiftSchedule_Bulk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Shift Schedule Bulk</wsdl:documentation>
+      <wsdl:input message="tns:ShiftSchedule_BulkSoapIn" />
+      <wsdl:output message="tns:ShiftSchedule_BulkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetACardStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Health Card Status</wsdl:documentation>
+      <wsdl:input message="tns:GetACardStatusSoapIn" />
+      <wsdl:output message="tns:GetACardStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardActivationRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Health Card Activation Request</wsdl:documentation>
+      <wsdl:input message="tns:HealthCardActivationRequestSoapIn" />
+      <wsdl:output message="tns:HealthCardActivationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateHealthCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Activate Healthcard</wsdl:documentation>
+      <wsdl:input message="tns:ActivateHealthCardSoapIn" />
+      <wsdl:output message="tns:ActivateHealthCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Activate a Health Card</wsdl:documentation>
+      <wsdl:input message="tns:ActivateCardSoapIn" />
+      <wsdl:output message="tns:ActivateCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCard_GetInfoForPoS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">HealthCard_GetInfoForPoS</wsdl:documentation>
+      <wsdl:input message="tns:HealthCard_GetInfoForPoSSoapIn" />
+      <wsdl:output message="tns:HealthCard_GetInfoForPoSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Promotional_Queries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Promotional Queries</wsdl:documentation>
+      <wsdl:input message="tns:Promotional_QueriesSoapIn" />
+      <wsdl:output message="tns:Promotional_QueriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCoupon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate Coupon</wsdl:documentation>
+      <wsdl:input message="tns:ValidateCouponSoapIn" />
+      <wsdl:output message="tns:ValidateCouponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardQueries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Health  Card Info Queries</wsdl:documentation>
+      <wsdl:input message="tns:HealthCardQueriesSoapIn" />
+      <wsdl:output message="tns:HealthCardQueriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCMCall_Report">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RCM Call Report</wsdl:documentation>
+      <wsdl:input message="tns:RCMCall_ReportSoapIn" />
+      <wsdl:output message="tns:RCMCall_ReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCall_Log">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Customer Calling Log</wsdl:documentation>
+      <wsdl:input message="tns:Insert_CustCall_LogSoapIn" />
+      <wsdl:output message="tns:Insert_CustCall_LogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRegularOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Regular Order</wsdl:documentation>
+      <wsdl:input message="tns:InsertRegularOrderSoapIn" />
+      <wsdl:output message="tns:InsertRegularOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCM_SmallQuerys">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RCM_SmallQuerys</wsdl:documentation>
+      <wsdl:input message="tns:RCM_SmallQuerysSoapIn" />
+      <wsdl:output message="tns:RCM_SmallQuerysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCMSmallQueries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RCM Small Queries</wsdl:documentation>
+      <wsdl:input message="tns:RCMSmallQueriesSoapIn" />
+      <wsdl:output message="tns:RCMSmallQueriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallingCard_queries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calling Card Querys</wsdl:documentation>
+      <wsdl:input message="tns:CallingCard_queriesSoapIn" />
+      <wsdl:output message="tns:CallingCard_queriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search Product</wsdl:documentation>
+      <wsdl:input message="tns:SearchProductSoapIn" />
+      <wsdl:output message="tns:SearchProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCM_ProductInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Product Information</wsdl:documentation>
+      <wsdl:input message="tns:RCM_ProductInfoSoapIn" />
+      <wsdl:output message="tns:RCM_ProductInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test Investigation Inq</wsdl:documentation>
+      <wsdl:input message="tns:RegisterPatientSoapIn" />
+      <wsdl:output message="tns:RegisterPatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCCreateData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creation of Call Date Information</wsdl:documentation>
+      <wsdl:input message="tns:RCCreateDataSoapIn" />
+      <wsdl:output message="tns:RCCreateDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCM_OnCallOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Order Generation on Call Date</wsdl:documentation>
+      <wsdl:input message="tns:RCM_OnCallOrderSoapIn" />
+      <wsdl:output message="tns:RCM_OnCallOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RCM_CompleteOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Order Completion</wsdl:documentation>
+      <wsdl:input message="tns:RCM_CompleteOrderSoapIn" />
+      <wsdl:output message="tns:RCM_CompleteOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderTrackingReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Order Tracking Report</wsdl:documentation>
+      <wsdl:input message="tns:OrderTrackingReportSoapIn" />
+      <wsdl:output message="tns:OrderTrackingReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Login Validation In Health Card Module</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateLoginSoapIn" />
+      <wsdl:output message="tns:AuthenticateLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryExecute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Querry Execute</wsdl:documentation>
+      <wsdl:input message="tns:QueryExecuteSoapIn" />
+      <wsdl:output message="tns:QueryExecuteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Querry Result</wsdl:documentation>
+      <wsdl:input message="tns:GetQueryResultSoapIn" />
+      <wsdl:output message="tns:GetQueryResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardQueries_2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Health Card Querries</wsdl:documentation>
+      <wsdl:input message="tns:HealthCardQueries_2SoapIn" />
+      <wsdl:output message="tns:HealthCardQueries_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineOrder_Insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Online Order Insert</wsdl:documentation>
+      <wsdl:input message="tns:OnlineOrder_InsertSoapIn" />
+      <wsdl:output message="tns:OnlineOrder_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_OrderRemark">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Order Remark</wsdl:documentation>
+      <wsdl:input message="tns:Insert_OrderRemarkSoapIn" />
+      <wsdl:output message="tns:Insert_OrderRemarkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DownLoad File</wsdl:documentation>
+      <wsdl:input message="tns:DownLoadFileSoapIn" />
+      <wsdl:output message="tns:DownLoadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPA_CardInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">TPA_Card Insert</wsdl:documentation>
+      <wsdl:input message="tns:TPA_CardInsertSoapIn" />
+      <wsdl:output message="tns:TPA_CardInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPOrder_Insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">TP Order Insert</wsdl:documentation>
+      <wsdl:input message="tns:TPOrder_InsertSoapIn" />
+      <wsdl:output message="tns:TPOrder_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformToPatient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Inform To Patient</wsdl:documentation>
+      <wsdl:input message="tns:InformToPatientSoapIn" />
+      <wsdl:output message="tns:InformToPatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Gen_SystemCouponNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gen System CouponNo</wsdl:documentation>
+      <wsdl:input message="tns:Gen_SystemCouponNoSoapIn" />
+      <wsdl:output message="tns:Gen_SystemCouponNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Modify_custOrderInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Modify cust Order Info</wsdl:documentation>
+      <wsdl:input message="tns:Insert_Modify_custOrderInfoSoapIn" />
+      <wsdl:output message="tns:Insert_Modify_custOrderInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HealthCard_WebServicesSoap" type="tns:HealthCard_WebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://exprohelp.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictList">
+      <soap:operation soapAction="http://exprohelp.com/GetDistrictList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateList">
+      <soap:operation soapAction="http://exprohelp.com/GetStateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineOrderInfo">
+      <soap:operation soapAction="http://exprohelp.com/GetOnLineOrderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardRegister">
+      <soap:operation soapAction="http://exprohelp.com/HealthCardRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCard_Queries">
+      <soap:operation soapAction="http://exprohelp.com/GetCard_Queries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Card_Info_insert">
+      <soap:operation soapAction="http://exprohelp.com/Card_Info_insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCardInfowithMember">
+      <soap:operation soapAction="http://exprohelp.com/Insert_CustCardInfowithMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCardInfowithMemberNew">
+      <soap:operation soapAction="http://exprohelp.com/Insert_CustCardInfowithMemberNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_UpdateCustCardMemebers">
+      <soap:operation soapAction="http://exprohelp.com/Insert_UpdateCustCardMemebers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ins_UnProcessCArd">
+      <soap:operation soapAction="http://exprohelp.com/Ins_UnProcessCArd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceCard">
+      <soap:operation soapAction="http://exprohelp.com/ReplaceCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetACardInfo">
+      <soap:operation soapAction="http://exprohelp.com/GetACardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShiftSchedule_Bulk">
+      <soap:operation soapAction="http://exprohelp.com/ShiftSchedule_Bulk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetACardStatus">
+      <soap:operation soapAction="http://exprohelp.com/GetACardStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardActivationRequest">
+      <soap:operation soapAction="http://exprohelp.com/HealthCardActivationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateHealthCard">
+      <soap:operation soapAction="http://exprohelp.com/ActivateHealthCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <soap:operation soapAction="http://exprohelp.com/ActivateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCard_GetInfoForPoS">
+      <soap:operation soapAction="http://exprohelp.com/HealthCard_GetInfoForPoS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Promotional_Queries">
+      <soap:operation soapAction="http://exprohelp.com/Promotional_Queries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCoupon">
+      <soap:operation soapAction="http://exprohelp.com/ValidateCoupon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardQueries">
+      <soap:operation soapAction="http://exprohelp.com/HealthCardQueries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCMCall_Report">
+      <soap:operation soapAction="http://exprohelp.com/RCMCall_Report" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCall_Log">
+      <soap:operation soapAction="http://exprohelp.com/Insert_CustCall_Log" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRegularOrder">
+      <soap:operation soapAction="http://exprohelp.com/InsertRegularOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_SmallQuerys">
+      <soap:operation soapAction="http://exprohelp.com/RCM_SmallQuerys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCMSmallQueries">
+      <soap:operation soapAction="http://exprohelp.com/RCMSmallQueries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallingCard_queries">
+      <soap:operation soapAction="http://exprohelp.com/CallingCard_queries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProduct">
+      <soap:operation soapAction="http://exprohelp.com/SearchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_ProductInfo">
+      <soap:operation soapAction="http://exprohelp.com/RCM_ProductInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <soap:operation soapAction="http://exprohelp.com/RegisterPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCCreateData">
+      <soap:operation soapAction="http://exprohelp.com/RCCreateData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_OnCallOrder">
+      <soap:operation soapAction="http://exprohelp.com/RCM_OnCallOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_CompleteOrder">
+      <soap:operation soapAction="http://exprohelp.com/RCM_CompleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderTrackingReport">
+      <soap:operation soapAction="http://exprohelp.com/OrderTrackingReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateLogin">
+      <soap:operation soapAction="http://exprohelp.com/AuthenticateLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryExecute">
+      <soap:operation soapAction="http://exprohelp.com/QueryExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <soap:operation soapAction="http://exprohelp.com/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardQueries_2">
+      <soap:operation soapAction="http://exprohelp.com/HealthCardQueries_2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineOrder_Insert">
+      <soap:operation soapAction="http://exprohelp.com/OnlineOrder_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_OrderRemark">
+      <soap:operation soapAction="http://exprohelp.com/Insert_OrderRemark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap:operation soapAction="http://exprohelp.com/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPA_CardInsert">
+      <soap:operation soapAction="http://exprohelp.com/TPA_CardInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPOrder_Insert">
+      <soap:operation soapAction="http://exprohelp.com/TPOrder_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformToPatient">
+      <soap:operation soapAction="http://exprohelp.com/InformToPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gen_SystemCouponNo">
+      <soap:operation soapAction="http://exprohelp.com/Gen_SystemCouponNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Modify_custOrderInfo">
+      <soap:operation soapAction="http://exprohelp.com/Insert_Modify_custOrderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HealthCard_WebServicesSoap12" type="tns:HealthCard_WebServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://exprohelp.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictList">
+      <soap12:operation soapAction="http://exprohelp.com/GetDistrictList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateList">
+      <soap12:operation soapAction="http://exprohelp.com/GetStateList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineOrderInfo">
+      <soap12:operation soapAction="http://exprohelp.com/GetOnLineOrderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardRegister">
+      <soap12:operation soapAction="http://exprohelp.com/HealthCardRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCard_Queries">
+      <soap12:operation soapAction="http://exprohelp.com/GetCard_Queries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Card_Info_insert">
+      <soap12:operation soapAction="http://exprohelp.com/Card_Info_insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCardInfowithMember">
+      <soap12:operation soapAction="http://exprohelp.com/Insert_CustCardInfowithMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCardInfowithMemberNew">
+      <soap12:operation soapAction="http://exprohelp.com/Insert_CustCardInfowithMemberNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_UpdateCustCardMemebers">
+      <soap12:operation soapAction="http://exprohelp.com/Insert_UpdateCustCardMemebers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ins_UnProcessCArd">
+      <soap12:operation soapAction="http://exprohelp.com/Ins_UnProcessCArd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceCard">
+      <soap12:operation soapAction="http://exprohelp.com/ReplaceCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetACardInfo">
+      <soap12:operation soapAction="http://exprohelp.com/GetACardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShiftSchedule_Bulk">
+      <soap12:operation soapAction="http://exprohelp.com/ShiftSchedule_Bulk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetACardStatus">
+      <soap12:operation soapAction="http://exprohelp.com/GetACardStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardActivationRequest">
+      <soap12:operation soapAction="http://exprohelp.com/HealthCardActivationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateHealthCard">
+      <soap12:operation soapAction="http://exprohelp.com/ActivateHealthCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <soap12:operation soapAction="http://exprohelp.com/ActivateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCard_GetInfoForPoS">
+      <soap12:operation soapAction="http://exprohelp.com/HealthCard_GetInfoForPoS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Promotional_Queries">
+      <soap12:operation soapAction="http://exprohelp.com/Promotional_Queries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCoupon">
+      <soap12:operation soapAction="http://exprohelp.com/ValidateCoupon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardQueries">
+      <soap12:operation soapAction="http://exprohelp.com/HealthCardQueries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCMCall_Report">
+      <soap12:operation soapAction="http://exprohelp.com/RCMCall_Report" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CustCall_Log">
+      <soap12:operation soapAction="http://exprohelp.com/Insert_CustCall_Log" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRegularOrder">
+      <soap12:operation soapAction="http://exprohelp.com/InsertRegularOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_SmallQuerys">
+      <soap12:operation soapAction="http://exprohelp.com/RCM_SmallQuerys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCMSmallQueries">
+      <soap12:operation soapAction="http://exprohelp.com/RCMSmallQueries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallingCard_queries">
+      <soap12:operation soapAction="http://exprohelp.com/CallingCard_queries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProduct">
+      <soap12:operation soapAction="http://exprohelp.com/SearchProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_ProductInfo">
+      <soap12:operation soapAction="http://exprohelp.com/RCM_ProductInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <soap12:operation soapAction="http://exprohelp.com/RegisterPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCCreateData">
+      <soap12:operation soapAction="http://exprohelp.com/RCCreateData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_OnCallOrder">
+      <soap12:operation soapAction="http://exprohelp.com/RCM_OnCallOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RCM_CompleteOrder">
+      <soap12:operation soapAction="http://exprohelp.com/RCM_CompleteOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderTrackingReport">
+      <soap12:operation soapAction="http://exprohelp.com/OrderTrackingReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateLogin">
+      <soap12:operation soapAction="http://exprohelp.com/AuthenticateLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryExecute">
+      <soap12:operation soapAction="http://exprohelp.com/QueryExecute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <soap12:operation soapAction="http://exprohelp.com/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCardQueries_2">
+      <soap12:operation soapAction="http://exprohelp.com/HealthCardQueries_2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineOrder_Insert">
+      <soap12:operation soapAction="http://exprohelp.com/OnlineOrder_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_OrderRemark">
+      <soap12:operation soapAction="http://exprohelp.com/Insert_OrderRemark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap12:operation soapAction="http://exprohelp.com/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPA_CardInsert">
+      <soap12:operation soapAction="http://exprohelp.com/TPA_CardInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPOrder_Insert">
+      <soap12:operation soapAction="http://exprohelp.com/TPOrder_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformToPatient">
+      <soap12:operation soapAction="http://exprohelp.com/InformToPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gen_SystemCouponNo">
+      <soap12:operation soapAction="http://exprohelp.com/Gen_SystemCouponNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Modify_custOrderInfo">
+      <soap12:operation soapAction="http://exprohelp.com/Insert_Modify_custOrderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HealthCard_WebServices">
+    <wsdl:port name="HealthCard_WebServicesSoap" binding="tns:HealthCard_WebServicesSoap">
+      <soap:address location="http://192.168.0.11/exprologic/HealthCard_WebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HealthCard_WebServicesSoap12" binding="tns:HealthCard_WebServicesSoap12">
+      <soap12:address location="http://192.168.0.11/exprologic/HealthCard_WebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

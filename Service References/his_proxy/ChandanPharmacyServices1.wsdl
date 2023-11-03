@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http:www.itdoseinfo.com/2012/11/17" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http:www.itdoseinfo.com/2012/11/17" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http:www.itdoseinfo.com/2012/11/17">
+      <s:element name="createUpdateItemMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mfdName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="genericName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cimsId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createUpdateItemMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createUpdateItemMasterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDcotorIndentByUHID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UHID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDcotorIndentByUHIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDcotorIndentByUHIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeOPDIndent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndentNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeOPDIndentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="closeOPDIndentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientLastAppointmentDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UHID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientLastAppointmentDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatientLastAppointmentDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UHID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatientDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMedicineAgainstOpdNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UHID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OPDNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMedicineAgainstOpdNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMedicineAgainstOpdNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientInfoByIPDNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IPDNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientInfoByIPDNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatientInfoByIPDNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActiveIPDCases">
+        <s:complexType />
+      </s:element>
+      <s:element name="getActiveIPDCasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActiveIPDCasesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doctorMedicineItemSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doctorMedicineItemSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doctorMedicineItemSearchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveIPDIssueReturn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billDetails" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveIPDIssueReturnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saveIPDIssueReturnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDoctor">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadDoctorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDoctorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientStatusByIndentNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="indentNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientStatusByIndentNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatientStatusByIndentNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientStatusByIpdNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ipdNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPatientStatusByIpdNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPatientStatusByIpdNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeCompleteIndent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="indentNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectionRemarks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeCompleteIndentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="closeCompleteIndentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="createUpdateItemMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:createUpdateItemMaster" />
+  </wsdl:message>
+  <wsdl:message name="createUpdateItemMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:createUpdateItemMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDcotorIndentByUHIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getDcotorIndentByUHID" />
+  </wsdl:message>
+  <wsdl:message name="getDcotorIndentByUHIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getDcotorIndentByUHIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeOPDIndentSoapIn">
+    <wsdl:part name="parameters" element="tns:closeOPDIndent" />
+  </wsdl:message>
+  <wsdl:message name="closeOPDIndentSoapOut">
+    <wsdl:part name="parameters" element="tns:closeOPDIndentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatientLastAppointmentDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatientLastAppointmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="getPatientLastAppointmentDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatientLastAppointmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatientDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="getPatientDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMedicineAgainstOpdNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getMedicineAgainstOpdNo" />
+  </wsdl:message>
+  <wsdl:message name="getMedicineAgainstOpdNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getMedicineAgainstOpdNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatientInfoByIPDNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatientInfoByIPDNo" />
+  </wsdl:message>
+  <wsdl:message name="getPatientInfoByIPDNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatientInfoByIPDNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActiveIPDCasesSoapIn">
+    <wsdl:part name="parameters" element="tns:getActiveIPDCases" />
+  </wsdl:message>
+  <wsdl:message name="getActiveIPDCasesSoapOut">
+    <wsdl:part name="parameters" element="tns:getActiveIPDCasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="doctorMedicineItemSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:doctorMedicineItemSearch" />
+  </wsdl:message>
+  <wsdl:message name="doctorMedicineItemSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:doctorMedicineItemSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveIPDIssueReturnSoapIn">
+    <wsdl:part name="parameters" element="tns:saveIPDIssueReturn" />
+  </wsdl:message>
+  <wsdl:message name="saveIPDIssueReturnSoapOut">
+    <wsdl:part name="parameters" element="tns:saveIPDIssueReturnResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDoctor" />
+  </wsdl:message>
+  <wsdl:message name="LoadDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIndentNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatientStatusByIndentNo" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIndentNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatientStatusByIndentNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIpdNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getPatientStatusByIpdNo" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIpdNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getPatientStatusByIpdNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeCompleteIndentSoapIn">
+    <wsdl:part name="parameters" element="tns:closeCompleteIndent" />
+  </wsdl:message>
+  <wsdl:message name="closeCompleteIndentSoapOut">
+    <wsdl:part name="parameters" element="tns:closeCompleteIndentResponse" />
+  </wsdl:message>
+  <wsdl:message name="createUpdateItemMasterHttpGetIn">
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="itemId" type="s:string" />
+    <wsdl:part name="itemName" type="s:string" />
+    <wsdl:part name="mfdName" type="s:string" />
+    <wsdl:part name="genericName" type="s:string" />
+    <wsdl:part name="cimsId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createUpdateItemMasterHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getDcotorIndentByUHIDHttpGetIn">
+    <wsdl:part name="UHID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDcotorIndentByUHIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="closeOPDIndentHttpGetIn">
+    <wsdl:part name="IndentNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="closeOPDIndentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientLastAppointmentDetailsHttpGetIn">
+    <wsdl:part name="UHID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientLastAppointmentDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientDetailsHttpGetIn">
+    <wsdl:part name="UHID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getMedicineAgainstOpdNoHttpGetIn">
+    <wsdl:part name="UHID" type="s:string" />
+    <wsdl:part name="OPDNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMedicineAgainstOpdNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientInfoByIPDNoHttpGetIn">
+    <wsdl:part name="IPDNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientInfoByIPDNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getActiveIPDCasesHttpGetIn" />
+  <wsdl:message name="getActiveIPDCasesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="doctorMedicineItemSearchHttpGetIn">
+    <wsdl:part name="searchType" type="s:string" />
+    <wsdl:part name="prefix" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="doctorMedicineItemSearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="saveIPDIssueReturnHttpGetIn">
+    <wsdl:part name="billDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveIPDIssueReturnHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadDoctorHttpGetIn" />
+  <wsdl:message name="LoadDoctorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIndentNoHttpGetIn">
+    <wsdl:part name="indentNo" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIndentNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIpdNoHttpGetIn">
+    <wsdl:part name="ipdNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIpdNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="closeCompleteIndentHttpGetIn">
+    <wsdl:part name="indentNo" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="rejectionRemarks" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="closeCompleteIndentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="createUpdateItemMasterHttpPostIn">
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="itemId" type="s:string" />
+    <wsdl:part name="itemName" type="s:string" />
+    <wsdl:part name="mfdName" type="s:string" />
+    <wsdl:part name="genericName" type="s:string" />
+    <wsdl:part name="cimsId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createUpdateItemMasterHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getDcotorIndentByUHIDHttpPostIn">
+    <wsdl:part name="UHID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDcotorIndentByUHIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="closeOPDIndentHttpPostIn">
+    <wsdl:part name="IndentNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="closeOPDIndentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientLastAppointmentDetailsHttpPostIn">
+    <wsdl:part name="UHID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientLastAppointmentDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientDetailsHttpPostIn">
+    <wsdl:part name="UHID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getMedicineAgainstOpdNoHttpPostIn">
+    <wsdl:part name="UHID" type="s:string" />
+    <wsdl:part name="OPDNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMedicineAgainstOpdNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientInfoByIPDNoHttpPostIn">
+    <wsdl:part name="IPDNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientInfoByIPDNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getActiveIPDCasesHttpPostIn" />
+  <wsdl:message name="getActiveIPDCasesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="doctorMedicineItemSearchHttpPostIn">
+    <wsdl:part name="searchType" type="s:string" />
+    <wsdl:part name="prefix" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="doctorMedicineItemSearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="saveIPDIssueReturnHttpPostIn">
+    <wsdl:part name="billDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveIPDIssueReturnHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadDoctorHttpPostIn" />
+  <wsdl:message name="LoadDoctorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIndentNoHttpPostIn">
+    <wsdl:part name="indentNo" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIndentNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIpdNoHttpPostIn">
+    <wsdl:part name="ipdNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPatientStatusByIpdNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="closeCompleteIndentHttpPostIn">
+    <wsdl:part name="indentNo" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="rejectionRemarks" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="closeCompleteIndentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ChandanPharmacyServicesSoap">
+    <wsdl:operation name="createUpdateItemMaster">
+      <wsdl:input message="tns:createUpdateItemMasterSoapIn" />
+      <wsdl:output message="tns:createUpdateItemMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <wsdl:input message="tns:getDcotorIndentByUHIDSoapIn" />
+      <wsdl:output message="tns:getDcotorIndentByUHIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <wsdl:input message="tns:closeOPDIndentSoapIn" />
+      <wsdl:output message="tns:closeOPDIndentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <wsdl:input message="tns:getPatientLastAppointmentDetailsSoapIn" />
+      <wsdl:output message="tns:getPatientLastAppointmentDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <wsdl:input message="tns:getPatientDetailsSoapIn" />
+      <wsdl:output message="tns:getPatientDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <wsdl:input message="tns:getMedicineAgainstOpdNoSoapIn" />
+      <wsdl:output message="tns:getMedicineAgainstOpdNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <wsdl:input message="tns:getPatientInfoByIPDNoSoapIn" />
+      <wsdl:output message="tns:getPatientInfoByIPDNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <wsdl:input message="tns:getActiveIPDCasesSoapIn" />
+      <wsdl:output message="tns:getActiveIPDCasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <wsdl:input message="tns:doctorMedicineItemSearchSoapIn" />
+      <wsdl:output message="tns:doctorMedicineItemSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <wsdl:input message="tns:saveIPDIssueReturnSoapIn" />
+      <wsdl:output message="tns:saveIPDIssueReturnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <wsdl:input message="tns:LoadDoctorSoapIn" />
+      <wsdl:output message="tns:LoadDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <wsdl:input message="tns:getPatientStatusByIndentNoSoapIn" />
+      <wsdl:output message="tns:getPatientStatusByIndentNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <wsdl:input message="tns:getPatientStatusByIpdNoSoapIn" />
+      <wsdl:output message="tns:getPatientStatusByIpdNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <wsdl:input message="tns:closeCompleteIndentSoapIn" />
+      <wsdl:output message="tns:closeCompleteIndentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ChandanPharmacyServicesHttpGet">
+    <wsdl:operation name="createUpdateItemMaster">
+      <wsdl:input message="tns:createUpdateItemMasterHttpGetIn" />
+      <wsdl:output message="tns:createUpdateItemMasterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <wsdl:input message="tns:getDcotorIndentByUHIDHttpGetIn" />
+      <wsdl:output message="tns:getDcotorIndentByUHIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <wsdl:input message="tns:closeOPDIndentHttpGetIn" />
+      <wsdl:output message="tns:closeOPDIndentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <wsdl:input message="tns:getPatientLastAppointmentDetailsHttpGetIn" />
+      <wsdl:output message="tns:getPatientLastAppointmentDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <wsdl:input message="tns:getPatientDetailsHttpGetIn" />
+      <wsdl:output message="tns:getPatientDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <wsdl:input message="tns:getMedicineAgainstOpdNoHttpGetIn" />
+      <wsdl:output message="tns:getMedicineAgainstOpdNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <wsdl:input message="tns:getPatientInfoByIPDNoHttpGetIn" />
+      <wsdl:output message="tns:getPatientInfoByIPDNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <wsdl:input message="tns:getActiveIPDCasesHttpGetIn" />
+      <wsdl:output message="tns:getActiveIPDCasesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <wsdl:input message="tns:doctorMedicineItemSearchHttpGetIn" />
+      <wsdl:output message="tns:doctorMedicineItemSearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <wsdl:input message="tns:saveIPDIssueReturnHttpGetIn" />
+      <wsdl:output message="tns:saveIPDIssueReturnHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <wsdl:input message="tns:LoadDoctorHttpGetIn" />
+      <wsdl:output message="tns:LoadDoctorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <wsdl:input message="tns:getPatientStatusByIndentNoHttpGetIn" />
+      <wsdl:output message="tns:getPatientStatusByIndentNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <wsdl:input message="tns:getPatientStatusByIpdNoHttpGetIn" />
+      <wsdl:output message="tns:getPatientStatusByIpdNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <wsdl:input message="tns:closeCompleteIndentHttpGetIn" />
+      <wsdl:output message="tns:closeCompleteIndentHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ChandanPharmacyServicesHttpPost">
+    <wsdl:operation name="createUpdateItemMaster">
+      <wsdl:input message="tns:createUpdateItemMasterHttpPostIn" />
+      <wsdl:output message="tns:createUpdateItemMasterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <wsdl:input message="tns:getDcotorIndentByUHIDHttpPostIn" />
+      <wsdl:output message="tns:getDcotorIndentByUHIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <wsdl:input message="tns:closeOPDIndentHttpPostIn" />
+      <wsdl:output message="tns:closeOPDIndentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <wsdl:input message="tns:getPatientLastAppointmentDetailsHttpPostIn" />
+      <wsdl:output message="tns:getPatientLastAppointmentDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <wsdl:input message="tns:getPatientDetailsHttpPostIn" />
+      <wsdl:output message="tns:getPatientDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <wsdl:input message="tns:getMedicineAgainstOpdNoHttpPostIn" />
+      <wsdl:output message="tns:getMedicineAgainstOpdNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <wsdl:input message="tns:getPatientInfoByIPDNoHttpPostIn" />
+      <wsdl:output message="tns:getPatientInfoByIPDNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <wsdl:input message="tns:getActiveIPDCasesHttpPostIn" />
+      <wsdl:output message="tns:getActiveIPDCasesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <wsdl:input message="tns:doctorMedicineItemSearchHttpPostIn" />
+      <wsdl:output message="tns:doctorMedicineItemSearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <wsdl:input message="tns:saveIPDIssueReturnHttpPostIn" />
+      <wsdl:output message="tns:saveIPDIssueReturnHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <wsdl:input message="tns:LoadDoctorHttpPostIn" />
+      <wsdl:output message="tns:LoadDoctorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <wsdl:input message="tns:getPatientStatusByIndentNoHttpPostIn" />
+      <wsdl:output message="tns:getPatientStatusByIndentNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <wsdl:input message="tns:getPatientStatusByIpdNoHttpPostIn" />
+      <wsdl:output message="tns:getPatientStatusByIpdNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <wsdl:input message="tns:closeCompleteIndentHttpPostIn" />
+      <wsdl:output message="tns:closeCompleteIndentHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChandanPharmacyServicesSoap" type="tns:ChandanPharmacyServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createUpdateItemMaster">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/createUpdateItemMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getDcotorIndentByUHID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/closeOPDIndent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientLastAppointmentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getMedicineAgainstOpdNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientInfoByIPDNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getActiveIPDCases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/doctorMedicineItemSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/saveIPDIssueReturn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/LoadDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientStatusByIndentNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientStatusByIpdNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <soap:operation soapAction="http:www.itdoseinfo.com/2012/11/17/closeCompleteIndent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ChandanPharmacyServicesSoap12" type="tns:ChandanPharmacyServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createUpdateItemMaster">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/createUpdateItemMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getDcotorIndentByUHID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/closeOPDIndent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientLastAppointmentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getMedicineAgainstOpdNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientInfoByIPDNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getActiveIPDCases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/doctorMedicineItemSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/saveIPDIssueReturn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/LoadDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientStatusByIndentNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/getPatientStatusByIpdNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <soap12:operation soapAction="http:www.itdoseinfo.com/2012/11/17/closeCompleteIndent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ChandanPharmacyServicesHttpGet" type="tns:ChandanPharmacyServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="createUpdateItemMaster">
+      <http:operation location="/createUpdateItemMaster" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <http:operation location="/getDcotorIndentByUHID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <http:operation location="/closeOPDIndent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <http:operation location="/getPatientLastAppointmentDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <http:operation location="/getPatientDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <http:operation location="/getMedicineAgainstOpdNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <http:operation location="/getPatientInfoByIPDNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <http:operation location="/getActiveIPDCases" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <http:operation location="/doctorMedicineItemSearch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <http:operation location="/saveIPDIssueReturn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <http:operation location="/LoadDoctor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <http:operation location="/getPatientStatusByIndentNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <http:operation location="/getPatientStatusByIpdNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <http:operation location="/closeCompleteIndent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ChandanPharmacyServicesHttpPost" type="tns:ChandanPharmacyServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="createUpdateItemMaster">
+      <http:operation location="/createUpdateItemMaster" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDcotorIndentByUHID">
+      <http:operation location="/getDcotorIndentByUHID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeOPDIndent">
+      <http:operation location="/closeOPDIndent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientLastAppointmentDetails">
+      <http:operation location="/getPatientLastAppointmentDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientDetails">
+      <http:operation location="/getPatientDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMedicineAgainstOpdNo">
+      <http:operation location="/getMedicineAgainstOpdNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientInfoByIPDNo">
+      <http:operation location="/getPatientInfoByIPDNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveIPDCases">
+      <http:operation location="/getActiveIPDCases" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doctorMedicineItemSearch">
+      <http:operation location="/doctorMedicineItemSearch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveIPDIssueReturn">
+      <http:operation location="/saveIPDIssueReturn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDoctor">
+      <http:operation location="/LoadDoctor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIndentNo">
+      <http:operation location="/getPatientStatusByIndentNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientStatusByIpdNo">
+      <http:operation location="/getPatientStatusByIpdNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeCompleteIndent">
+      <http:operation location="/closeCompleteIndent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChandanPharmacyServices">
+    <wsdl:port name="ChandanPharmacyServicesSoap" binding="tns:ChandanPharmacyServicesSoap">
+      <soap:address location="http://192.168.4.10/his/Design/common/ChandanPharmacyServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ChandanPharmacyServicesSoap12" binding="tns:ChandanPharmacyServicesSoap12">
+      <soap12:address location="http://192.168.4.10/his/Design/common/ChandanPharmacyServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ChandanPharmacyServicesHttpGet" binding="tns:ChandanPharmacyServicesHttpGet">
+      <http:address location="http://192.168.4.10/his/Design/common/ChandanPharmacyServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ChandanPharmacyServicesHttpPost" binding="tns:ChandanPharmacyServicesHttpPost">
+      <http:address location="http://192.168.4.10/his/Design/common/ChandanPharmacyServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

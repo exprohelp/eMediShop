@@ -1,0 +1,3008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DF2C020-A09C-476C-BD8E-1D55290EB383}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eMediShop</RootNamespace>
+    <AssemblyName>eMediShop</AssemblyName>
+    <ApplicationIcon>eMediOnline.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>FDF999C76200E30946201327EA69F7345DC2B30B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>eMediShop_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <StartupObject>eMediShop.Program</StartupObject>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>D:\eMediShopPublish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <UpdateUrl>http://chandan.co.in/eMediShop.Net/</UpdateUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>eMediShop.Net</ProductName>
+    <PublisherName>Chandan Healthcare Ltd.</PublisherName>
+    <MinimumRequiredVersion>1.0.1.2</MinimumRequiredVersion>
+    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>packages\CrystalReports.ReportAppServer.ObjectFactory.13.0.3500\lib\net20\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>packages\CrystalReports.ReportAppServer.Prompting.13.0.3500\lib\net20\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EQATEC.Analytics.Monitor, Version=3.2.61.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\EQATEC.Analytics.Monitor.dll</HintPath>
+    </Reference>
+    <Reference Include="ExPro.Client">
+      <HintPath>..\..\eAccounts\bin\Debug\ExPro.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ExPro.Server">
+      <HintPath>..\..\eAccounts\bin\Debug\ExPro.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="ImageResizer">
+      <HintPath>..\..\eMIS\bin\Debug\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>..\..\eChandanCanteen\eChandanCanteen\bin\Debug\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RadControlSpy, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\RadControlSpy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.WinControls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Analytics, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Analytics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.ChartView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.PdfViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.PivotGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.RadChart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.RadDiagram.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.RadDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.RichTextBox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.RichTextEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Scheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.SpellChecker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Desert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.UI.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Maths, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Maths.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.Windows.Zip.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikData, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\TelerikData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\TelerikExport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.8\lib\net45\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.8\lib\net45\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="asset\ucAssetList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucAssetList.designer.cs">
+      <DependentUpon>ucAssetList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asset\ucAttachSubAsset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucAttachSubAsset.designer.cs">
+      <DependentUpon>ucAttachSubAsset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asset\ucComplaintStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucComplaintStatus.Designer.cs">
+      <DependentUpon>ucComplaintStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asset\ucLodgeComplaint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucLodgeComplaint.designer.cs">
+      <DependentUpon>ucLodgeComplaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asset\ucNotClosedComplaint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucNotClosedComplaint.designer.cs">
+      <DependentUpon>ucNotClosedComplaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asset\ucPrintTransferForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucPrintTransferForm.designer.cs">
+      <DependentUpon>ucPrintTransferForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="asset\ucTransferAsset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="asset\ucTransferAsset.designer.cs">
+      <DependentUpon>ucTransferAsset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsynchronousFtpUpLoader.cs" />
+    <Compile Include="barcode\QRCodeGenerator.cs" />
+    <Compile Include="barcode\ucBarcodePrinting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="barcode\ucBarcodePrinting.Designer.cs">
+      <DependentUpon>ucBarcodePrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashCounter\CashCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashCounter\CashCounter.Designer.cs">
+      <DependentUpon>CashCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="challan\Challan_Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="challan\Challan_Entry.designer.cs">
+      <DependentUpon>Challan_Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="challan\uc_ChallanRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="challan\uc_ChallanRegister.Designer.cs">
+      <DependentUpon>uc_ChallanRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="challan\uc_ChallanSettlement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="challan\uc_ChallanSettlement.Designer.cs">
+      <DependentUpon>uc_ChallanSettlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckInternet.cs" />
+    <Compile Include="ConfigWebAPI.cs" />
+    <Compile Include="creditNote\ucCreditNoteRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="creditNote\ucCreditNoteRegister.Designer.cs">
+      <DependentUpon>ucCreditNoteRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataObjects.cs" />
+    <Compile Include="creditNote\CreditNote_Entries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creditNote\CreditNote_Entries.Designer.cs">
+      <DependentUpon>CreditNote_Entries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsCollection\DC_Note_Report.cs">
+      <DependentUpon>DC_Note_Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCollection\dsOptical.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOptical.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCollection\DsRptPharmacyBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsRptPharmacyBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCollection\eMediShop.cs">
+      <DependentUpon>eMediShop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCollection\eMediShop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eMediShop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCollection\DC_Note_Report.Designer.cs">
+      <DependentUpon>DC_Note_Report.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dsCollection\WholeSale1.Designer.cs">
+      <DependentUpon>WholeSale.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ExtraData.cs" />
+    <Compile Include="forms\Audit\AuditMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\AuditMaster.designer.cs">
+      <DependentUpon>AuditMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Audit\AuditOpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\AuditOpen.Designer.cs">
+      <DependentUpon>AuditOpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Audit\ImportXtraByPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\ImportXtraByPurchase.Designer.cs">
+      <DependentUpon>ImportXtraByPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDropListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\AuditQuestAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\AuditQuestAnswer.designer.cs">
+      <DependentUpon>AuditQuestAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Audit\ucBulkChecking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\ucBulkChecking.Designer.cs">
+      <DependentUpon>ucBulkChecking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Audit\ucCheckAuditRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\ucCheckAuditRecords.Designer.cs">
+      <DependentUpon>ucCheckAuditRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Audit\ucHSP_ManualAudit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Audit\ucHSP_ManualAudit.Designer.cs">
+      <DependentUpon>ucHSP_ManualAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Approval\ucApprovalReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Approval\ucApprovalReport.Designer.cs">
+      <DependentUpon>ucApprovalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Approval\ucImportApprovals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Approval\ucImportApprovals.Designer.cs">
+      <DependentUpon>ucImportApprovals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Approval\uc_ApprovedCashPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Approval\uc_ApprovedCashPayment.Designer.cs">
+      <DependentUpon>uc_ApprovedCashPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashMemeoNoUpdatedEventArgs.cs" />
+    <Compile Include="forms\CentralAccess\Product\allunitSalesAverage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\allunitSalesAverage.Designer.cs">
+      <DependentUpon>allunitSalesAverage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\PrintSaltExistensce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\PrintSaltExistensce.designer.cs">
+      <DependentUpon>PrintSaltExistensce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\SingleProductAnalysisFromServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\SingleProductAnalysisFromServer.designer.cs">
+      <DependentUpon>SingleProductAnalysisFromServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucCheckCardStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucCheckCardStatus.designer.cs">
+      <DependentUpon>ucCheckCardStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucDistributionReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucDistributionReport.Designer.cs">
+      <DependentUpon>ucDistributionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucNewCardEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucNewCardEntry.designer.cs">
+      <DependentUpon>ucNewCardEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucUpdateCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\HealthCards\ucUpdateCard.designer.cs">
+      <DependentUpon>ucUpdateCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\uc_ExpensiveItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\uc_ExpensiveItems.designer.cs">
+      <DependentUpon>uc_ExpensiveItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\adjustDebitNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\adjustDebitNote.designer.cs">
+      <DependentUpon>adjustDebitNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\BillPostingPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\BillPostingPopup.designer.cs">
+      <DependentUpon>BillPostingPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\DebitNote_Entries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\DebitNote_Entries.designer.cs">
+      <DependentUpon>DebitNote_Entries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\Gen_UnitOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\Gen_UnitOrder.designer.cs">
+      <DependentUpon>Gen_UnitOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\packTypeSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\packTypeSelection.designer.cs">
+      <DependentUpon>packTypeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucBulkOrderChecking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucBulkOrderChecking.designer.cs">
+      <DependentUpon>ucBulkOrderChecking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucMergePurchaseId.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucMergePurchaseId.Designer.cs">
+      <DependentUpon>ucMergePurchaseId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucPurchaseOrder_Analysis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucPurchaseOrder_Analysis.designer.cs">
+      <DependentUpon>ucPurchaseOrder_Analysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucZeroStockProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucZeroStockProduct.Designer.cs">
+      <DependentUpon>ucZeroStockProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\uc_ImportPurchaseid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\uc_ImportPurchaseid.Designer.cs">
+      <DependentUpon>uc_ImportPurchaseid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\uc_PurchaseRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\uc_PurchaseRegister.Designer.cs">
+      <DependentUpon>uc_PurchaseRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\UnPostedBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\UnPostedBill.Designer.cs">
+      <DependentUpon>UnPostedBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\BulkPOReceiving.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\BulkPOReceiving.Designer.cs">
+      <DependentUpon>BulkPOReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\VerifyOPO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\VerifyOPO.Designer.cs">
+      <DependentUpon>VerifyOPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\Zero_Stock_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\Zero_Stock_Order.designer.cs">
+      <DependentUpon>Zero_Stock_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\add_regularorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\add_regularorder.designer.cs">
+      <DependentUpon>add_regularorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\IPDOPDProcessInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\IPDOPDProcessInfo.designer.cs">
+      <DependentUpon>IPDOPDProcessInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\order_remarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\order_remarks.designer.cs">
+      <DependentUpon>order_remarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ProcessOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ProcessOrder.Designer.cs">
+      <DependentUpon>ProcessOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucCompleteOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucCompleteOrder.Designer.cs">
+      <DependentUpon>ucCompleteOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucIncomingOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucIncomingOrder.Designer.cs">
+      <DependentUpon>ucIncomingOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucProcessOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucProcessOrder.designer.cs">
+      <DependentUpon>ucProcessOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucTakeOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\ucTakeOrder.Designer.cs">
+      <DependentUpon>ucTakeOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\uc_GenOnlineOrderPO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\RCM\uc_GenOnlineOrderPO.designer.cs">
+      <DependentUpon>uc_GenOnlineOrderPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\ucGR_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\ucGR_Report.designer.cs">
+      <DependentUpon>ucGR_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\uc_PrintICIS_Bills.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\uc_PrintICIS_Bills.designer.cs">
+      <DependentUpon>uc_PrintICIS_Bills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\uc_ProcessExtra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\uc_ProcessExtra.Designer.cs">
+      <DependentUpon>uc_ProcessExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\uc_TransferRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\uc_TransferRegister.Designer.cs">
+      <DependentUpon>uc_TransferRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\usStockTransferToConsumption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\usStockTransferToConsumption.Designer.cs">
+      <DependentUpon>usStockTransferToConsumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Utility\AutoUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Utility\AutoUpdater.designer.cs">
+      <DependentUpon>AutoUpdater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HealthCards\ucHealthCardNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\HealthCards\ucHealthCardNew.designer.cs">
+      <DependentUpon>ucHealthCardNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HealthCards\ucHealthCardStockRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\HealthCards\ucHealthCardStockRegister.designer.cs">
+      <DependentUpon>ucHealthCardStockRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HealthCards\UpdateHealthCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\HealthCards\UpdateHealthCard.designer.cs">
+      <DependentUpon>UpdateHealthCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\BlockedProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Product\BlockedProducts.Designer.cs">
+      <DependentUpon>BlockedProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ReplaceProductPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ReplaceProductPopUp.designer.cs">
+      <DependentUpon>ReplaceProductPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucCheckSubstitute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucCheckSubstitute.Designer.cs">
+      <DependentUpon>ucCheckSubstitute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucProductByCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucProductByCompany.Designer.cs">
+      <DependentUpon>ucProductByCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucBatchExpMrpCorrection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucBatchExpMrpCorrection.designer.cs">
+      <DependentUpon>ucBatchExpMrpCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucRefDataProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucRefDataProcess.designer.cs">
+      <DependentUpon>ucRefDataProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\adjustGR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\adjustGR.designer.cs">
+      <DependentUpon>adjustGR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucSendScanBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ucSendScanBill.designer.cs">
+      <DependentUpon>ucSendScanBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\ucPurchaseReturnSlip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\ucPurchaseReturnSlip.Designer.cs">
+      <DependentUpon>ucPurchaseReturnSlip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\ucStockTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\ucStockTransfer.Designer.cs">
+      <DependentUpon>ucStockTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Utility\ucUploadScanedDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Utility\ucUploadScanedDoc.designer.cs">
+      <DependentUpon>ucUploadScanedDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucMarkLocal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucMarkLocal.Designer.cs">
+      <DependentUpon>ucMarkLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucNewMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucNewMedicine.Designer.cs">
+      <DependentUpon>ucNewMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucChangeLocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucChangeLocation.Designer.cs">
+      <DependentUpon>ucChangeLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucMkeyCorrection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucMkeyCorrection.designer.cs">
+      <DependentUpon>ucMkeyCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\ucTrfNewMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucTrfNewMedicine.Designer.cs">
+      <DependentUpon>ucTrfNewMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\UploadSubstitute_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\UploadSubstitute_Control.designer.cs">
+      <DependentUpon>UploadSubstitute_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Product\UploadSubstitute_Doc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Product\UploadSubstitute_Doc.designer.cs">
+      <DependentUpon>UploadSubstitute_Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Promo\ucPromoProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Promo\ucPromoProducts.designer.cs">
+      <DependentUpon>ucPromoProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Promo\uc_GenericPromo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Promo\uc_GenericPromo.Designer.cs">
+      <DependentUpon>uc_GenericPromo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\add_regularorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\add_regularorder.designer.cs">
+      <DependentUpon>add_regularorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\QuestionAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\QuestionAnswer.designer.cs">
+      <DependentUpon>QuestionAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\RCMarkCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\RCMarkCustomer.designer.cs">
+      <DependentUpon>RCMarkCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\remarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\remarks.designer.cs">
+      <DependentUpon>remarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\SwapProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\SwapProduct.designer.cs">
+      <DependentUpon>SwapProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\ucCustomerCall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\ucCustomerCall.designer.cs">
+      <DependentUpon>ucCustomerCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RCM\ucNextSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\RCM\ucNextSchedule.designer.cs">
+      <DependentUpon>ucNextSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Reconcilation\HoldIdManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Reconcilation\HoldIdManagement.designer.cs">
+      <DependentUpon>HoldIdManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Reconcilation\KeyTracing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Reconcilation\KeyTracing.Designer.cs">
+      <DependentUpon>KeyTracing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Reconcilation\ReconcileProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Reconcilation\ReconcileProduct.designer.cs">
+      <DependentUpon>ReconcileProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Reconcilation\StockReconcilation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Reconcilation\StockReconcilation.Designer.cs">
+      <DependentUpon>StockReconcilation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\ProvisionalReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\ProvisionalReceipt.Designer.cs">
+      <DependentUpon>ProvisionalReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\SaleBill_Posting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\SaleBill_Posting.Designer.cs">
+      <DependentUpon>SaleBill_Posting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\SaleMaster_Hospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\SaleMaster_Hospital.designer.cs">
+      <DependentUpon>SaleMaster_Hospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\uc_NewPurchases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\uc_NewPurchases.designer.cs">
+      <DependentUpon>uc_NewPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\uc_SoldProductsInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\uc_SoldProductsInfo.Designer.cs">
+      <DependentUpon>uc_SoldProductsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GR\StockInByPurRetNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GR\StockInByPurRetNo.Designer.cs">
+      <DependentUpon>StockInByPurRetNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\frmCartReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital\frmCartReport.Designer.cs">
+      <DependentUpon>frmCartReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\ucEstimateDelivery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hospital\ucEstimateDelivery.Designer.cs">
+      <DependentUpon>ucEstimateDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\ucIndentChecking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hospital\ucIndentChecking.Designer.cs">
+      <DependentUpon>ucIndentChecking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\Wh_IndentProcessInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital\Wh_IndentProcessInfo.designer.cs">
+      <DependentUpon>Wh_IndentProcessInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\IPD_BulkSalesReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital\IPD_BulkSalesReturn.Designer.cs">
+      <DependentUpon>IPD_BulkSalesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\SalesRefByDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital\SalesRefByDoctor.Designer.cs">
+      <DependentUpon>SalesRefByDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\ucIPD_Indent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hospital\ucIPD_Indent.Designer.cs">
+      <DependentUpon>ucIPD_Indent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\ucSearchInHospitalCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hospital\ucSearchInHospitalCart.Designer.cs">
+      <DependentUpon>ucSearchInHospitalCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\uc_ConsumptionReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hospital\uc_ConsumptionReport.Designer.cs">
+      <DependentUpon>uc_ConsumptionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\usBillFinalization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hospital\usBillFinalization.Designer.cs">
+      <DependentUpon>usBillFinalization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ucImportCompanyOrderXL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Imports\ucImportCompanyOrderXL.Designer.cs">
+      <DependentUpon>ucImportCompanyOrderXL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indents\IndentToUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indents\IndentToUnit.Designer.cs">
+      <DependentUpon>IndentToUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indents\ucIndentProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Indents\ucIndentProcess.Designer.cs">
+      <DependentUpon>ucIndentProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITSystem\manager_signature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSystem\manager_signature.designer.cs">
+      <DependentUpon>manager_signature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITSystem\ucUnitAllotment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ITSystem\ucUnitAllotment.Designer.cs">
+      <DependentUpon>ucUnitAllotment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models.cs" />
+    <Compile Include="Optical\Optical_Booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Optical\Optical_Booking.Designer.cs">
+      <DependentUpon>Optical_Booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacyDeligates.cs" />
+    <Compile Include="PrintMaster\rdlcViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintMaster\rdlcViewer.Designer.cs">
+      <DependentUpon>rdlcViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintMaster\uc_SalesInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintMaster\uc_SalesInvoice.Designer.cs">
+      <DependentUpon>uc_SalesInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintMaster\uc_idPrintig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintMaster\uc_idPrintig.Designer.cs">
+      <DependentUpon>uc_idPrintig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintReport.cs" />
+    <Compile Include="Products\frmNewMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\frmNewMedicine.designer.cs">
+      <DependentUpon>frmNewMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ucReplaceTempNewMed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Products\ucReplaceTempNewMed.designer.cs">
+      <DependentUpon>ucReplaceTempNewMed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Promo\PromoProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Promo\PromoProducts.designer.cs">
+      <DependentUpon>PromoProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Promo\uc_PromoRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Promo\uc_PromoRegister.designer.cs">
+      <DependentUpon>uc_PromoRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchase\debitNote\DebitNoteFeedingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="purchase\debitNote\DebitNoteFeedingForm.Designer.cs">
+      <DependentUpon>DebitNoteFeedingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchase\debitNote\ucDebitNoteRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="purchase\debitNote\ucDebitNoteRegister.Designer.cs">
+      <DependentUpon>ucDebitNoteRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchase\debitNote\ucMapByCreditNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="purchase\debitNote\ucMapByCreditNote.Designer.cs">
+      <DependentUpon>ucMapByCreditNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="purchase\debitNote\ucInterCompany_DebitNoteImport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="purchase\debitNote\ucInterCompany_DebitNoteImport.Designer.cs">
+      <DependentUpon>ucInterCompany_DebitNoteImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\his_proxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SetUp\manager_signature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetUp\manager_signature.designer.cs">
+      <DependentUpon>manager_signature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetUp\ucManagerSignature.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SetUp\ucManagerSignature.Designer.cs">
+      <DependentUpon>ucManagerSignature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Stock\ExtraStockProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\ExtraStockProcess.Designer.cs">
+      <DependentUpon>ExtraStockProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\GR_TakenBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\GR_TakenBack.designer.cs">
+      <DependentUpon>GR_TakenBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockRcvdInfoByDateAndIds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\StockRcvdInfoByDateAndIds.Designer.cs">
+      <DependentUpon>StockRcvdInfoByDateAndIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ucCheckWholeStockAudit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stock\ucCheckWholeStockAudit.Designer.cs">
+      <DependentUpon>ucCheckWholeStockAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ucDailyDispatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stock\ucDailyDispatch.Designer.cs">
+      <DependentUpon>ucDailyDispatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ucExpiryProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stock\ucExpiryProcess.designer.cs">
+      <DependentUpon>ucExpiryProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ucStockTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stock\ucStockTransfer.Designer.cs">
+      <DependentUpon>ucStockTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\uc_StocksAsOn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stock\uc_StocksAsOn.designer.cs">
+      <DependentUpon>uc_StocksAsOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Training\TrainingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Training\TrainingInfo.designer.cs">
+      <DependentUpon>TrainingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Training\ucRating.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Training\ucRating.designer.cs">
+      <DependentUpon>ucRating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\CashMemoSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\CashMemoSearch.designer.cs">
+      <DependentUpon>CashMemoSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Login\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Login\ChangePassword.designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\uc_ShortExpiryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stock\uc_ShortExpiryList.designer.cs">
+      <DependentUpon>uc_ShortExpiryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\TransferIds\ucSearchInTransit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\TransferIds\ucSearchInTransit.Designer.cs">
+      <DependentUpon>ucSearchInTransit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\TransferIds\uc_ImportTransferId.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\TransferIds\uc_ImportTransferId.Designer.cs">
+      <DependentUpon>uc_ImportTransferId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\CheckMedicineAtStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\CheckMedicineAtStores.Designer.cs">
+      <DependentUpon>CheckMedicineAtStores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="ConnectRemoteServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConnectRemoteServer.Designer.cs">
+      <DependentUpon>ConnectRemoteServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbConnection.cs" />
+    <Compile Include="forms\CentralAccess\Purchase\ExtraPurchaseForUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\ExtraPurchaseForUnit.designer.cs">
+      <DependentUpon>ExtraPurchaseForUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Utility\Download_App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Utility\Download_App.designer.cs">
+      <DependentUpon>Download_App.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\GetPurchaseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\GetPurchaseInfo.designer.cs">
+      <DependentUpon>GetPurchaseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Utility\SwapProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Utility\SwapProduct.designer.cs">
+      <DependentUpon>SwapProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Utility\CheckInternet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="forms\Utility\menuRights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Utility\menuRights.designer.cs">
+      <DependentUpon>menuRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Utility\SendScanCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Utility\SendScanCopy.Designer.cs">
+      <DependentUpon>SendScanCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GC\GC_UpdReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GC\GC_UpdReport.designer.cs">
+      <DependentUpon>GC_UpdReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GC\markScheduleH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GC\markScheduleH.Designer.cs">
+      <DependentUpon>markScheduleH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GC\ucGCUpdReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GC\ucGCUpdReport.designer.cs">
+      <DependentUpon>ucGCUpdReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GC\ucGC_Legallogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GC\ucGC_Legallogin.designer.cs">
+      <DependentUpon>ucGC_Legallogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GC\UCSaveDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GC\UCSaveDoc.designer.cs">
+      <DependentUpon>UCSaveDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GC\uc_Miscellenious.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GC\uc_Miscellenious.designer.cs">
+      <DependentUpon>uc_Miscellenious.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GR\ucAnalisedPurchaseReturn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GR\ucAnalisedPurchaseReturn.Designer.cs">
+      <DependentUpon>ucAnalisedPurchaseReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthCardUpdatedEventArgs.cs" />
+    <Compile Include="forms\TransferIds\ImportProductInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\TransferIds\ImportProductInfo.Designer.cs">
+      <DependentUpon>ImportProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\HelpManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\HelpManual.designer.cs">
+      <DependentUpon>HelpManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\IsCorrectPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\IsCorrectPurchase.Designer.cs">
+      <DependentUpon>IsCorrectPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\uploadexcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\uploadexcel.designer.cs">
+      <DependentUpon>uploadexcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITSystem\menuRights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITSystem\menuRights.designer.cs">
+      <DependentUpon>menuRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JoinExtensions.cs" />
+    <Compile Include="ListViewItemComparer.cs" />
+    <Compile Include="LPrinter.cs" />
+    <Compile Include="mainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainMenu.Designer.cs">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterContainer.Designer.cs">
+      <DependentUpon>masterContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifierMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotifierMsg.designer.cs">
+      <DependentUpon>NotifierMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NTPClient.cs" />
+    <Compile Include="Printing.cs" />
+    <Compile Include="forms\Product\ucProductNotSold.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Product\ucProductNotSold.designer.cs">
+      <DependentUpon>ucProductNotSold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\ProductOnSaleInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\ProductOnSaleInvoice.designer.cs">
+      <DependentUpon>ProductOnSaleInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\PurchaseHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\PurchaseHelp.Designer.cs">
+      <DependentUpon>PurchaseHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\PurchCheckListReconsile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\PurchCheckListReconsile.Designer.cs">
+      <DependentUpon>PurchCheckListReconsile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\NewMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\NewMedicine.Designer.cs">
+      <DependentUpon>NewMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\PurchaseSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\PurchaseSearch.designer.cs">
+      <DependentUpon>PurchaseSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\Purchase_Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Purchase\Purchase_Entry.designer.cs">
+      <DependentUpon>Purchase_Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistryLogic.cs" />
+    <Compile Include="RepeatingJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepeatingJob.designer.cs">
+      <DependentUpon>RepeatingJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NetStatus.Designer.cs">
+      <DependentUpon>NetStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\SaleMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\SaleMaster.designer.cs">
+      <DependentUpon>SaleMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Sales\SaleRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\SaleRegister.designer.cs">
+      <DependentUpon>SaleRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\SearchStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\SearchStaff.Designer.cs">
+      <DependentUpon>SearchStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\SingleProductAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Product\SingleProductAnalysis.designer.cs">
+      <DependentUpon>SingleProductAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPackTypeEventArgs.cs" />
+    <Compile Include="Service References\HealthCard\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Pharmacy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\rmAccounts\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="StartOnLineSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartOnLineSale.designer.cs">
+      <DependentUpon>StartOnLineSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\transfer_IdInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CentralAccess\Stock\transfer_IdInfo.designer.cs">
+      <DependentUpon>transfer_IdInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\addSaltToProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="substitute\addSaltToProduct.designer.cs">
+      <DependentUpon>addSaltToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\ImagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\ImagePanel.designer.cs">
+      <DependentUpon>ImagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\PrintSaltExistensce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="substitute\PrintSaltExistensce.designer.cs">
+      <DependentUpon>PrintSaltExistensce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UCSaltInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\UCSaltInfo.designer.cs">
+      <DependentUpon>UCSaltInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UCStrength.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\UCStrength.designer.cs">
+      <DependentUpon>UCStrength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UCSubstitute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\UCSubstitute.designer.cs">
+      <DependentUpon>UCSubstitute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UCSubstituteReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\UCSubstituteReport.designer.cs">
+      <DependentUpon>UCSubstituteReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UCView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\UCView.designer.cs">
+      <DependentUpon>UCView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\uc_SearchBySaltName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\uc_SearchBySaltName.designer.cs">
+      <DependentUpon>uc_SearchBySaltName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UploadSubstitute_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="substitute\UploadSubstitute_Control.designer.cs">
+      <DependentUpon>UploadSubstitute_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="substitute\UploadSubstitute_Doc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="substitute\UploadSubstitute_Doc.designer.cs">
+      <DependentUpon>UploadSubstitute_Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="token\DisplayToken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="token\DisplayToken.Designer.cs">
+      <DependentUpon>DisplayToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\BlockUnBlock_ForSaleAvg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\BlockUnBlock_ForSaleAvg.designer.cs">
+      <DependentUpon>BlockUnBlock_ForSaleAvg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ProductDelevery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ProductDelevery.Designer.cs">
+      <DependentUpon>ProductDelevery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\toolsPharmacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\toolsPharmacy.designer.cs">
+      <DependentUpon>toolsPharmacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalUsage.cs" />
+    <Compile Include="NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RawPrinterHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="asset\ucAssetList.resx">
+      <DependentUpon>ucAssetList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asset\ucAttachSubAsset.resx">
+      <DependentUpon>ucAttachSubAsset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asset\ucComplaintStatus.resx">
+      <DependentUpon>ucComplaintStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asset\ucLodgeComplaint.resx">
+      <DependentUpon>ucLodgeComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asset\ucNotClosedComplaint.resx">
+      <DependentUpon>ucNotClosedComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asset\ucPrintTransferForm.resx">
+      <DependentUpon>ucPrintTransferForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asset\ucTransferAsset.resx">
+      <DependentUpon>ucTransferAsset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="barcode\ucBarcodePrinting.resx">
+      <DependentUpon>ucBarcodePrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rdlc\CreditNote.rdlc" />
+    <EmbeddedResource Include="bin\Debug\rdlc\estimateForFeeding.rdlc" />
+    <EmbeddedResource Include="bin\Debug\rdlc\internalSheet_Trf.rdlc" />
+    <EmbeddedResource Include="bin\Debug\rdlc\RptPharmacyBill.rdlc" />
+    <EmbeddedResource Include="bin\Debug\rdlc\TransferSheetWithInState.rdlc" />
+    <EmbeddedResource Include="CashCounter\CashCounter.resx">
+      <DependentUpon>CashCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="challan\Challan_Entry.resx">
+      <DependentUpon>Challan_Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="challan\uc_ChallanRegister.resx">
+      <DependentUpon>uc_ChallanRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="challan\uc_ChallanSettlement.resx">
+      <DependentUpon>uc_ChallanSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creditNote\CreditNote_Entries.resx">
+      <DependentUpon>CreditNote_Entries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creditNote\ucCreditNoteRegister.resx">
+      <DependentUpon>ucCreditNoteRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\AuditMaster.resx">
+      <DependentUpon>AuditMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\AuditOpen.resx">
+      <DependentUpon>AuditOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\ImportXtraByPurchase.resx">
+      <DependentUpon>ImportXtraByPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DragAndDropListView.resx">
+      <DependentUpon>DragAndDropListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\AuditQuestAnswer.resx">
+      <DependentUpon>AuditQuestAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\ucBulkChecking.resx">
+      <DependentUpon>ucBulkChecking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\ucCheckAuditRecords.resx">
+      <DependentUpon>ucCheckAuditRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Audit\ucHSP_ManualAudit.resx">
+      <DependentUpon>ucHSP_ManualAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Approval\ucApprovalReport.resx">
+      <DependentUpon>ucApprovalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Approval\ucImportApprovals.resx">
+      <DependentUpon>ucImportApprovals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Approval\uc_ApprovedCashPayment.resx">
+      <DependentUpon>uc_ApprovedCashPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Product\allunitSalesAverage.resx">
+      <DependentUpon>allunitSalesAverage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Product\PrintSaltExistensce.resx">
+      <DependentUpon>PrintSaltExistensce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Product\SingleProductAnalysisFromServer.resx">
+      <DependentUpon>SingleProductAnalysisFromServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\HealthCards\ucCheckCardStatus.resx">
+      <DependentUpon>ucCheckCardStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\HealthCards\ucDistributionReport.resx">
+      <DependentUpon>ucDistributionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\HealthCards\ucNewCardEntry.resx">
+      <DependentUpon>ucNewCardEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\HealthCards\ucUpdateCard.resx">
+      <DependentUpon>ucUpdateCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Product\uc_ExpensiveItems.resx">
+      <DependentUpon>uc_ExpensiveItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\adjustDebitNote.resx">
+      <DependentUpon>adjustDebitNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\BillPostingPopup.resx">
+      <DependentUpon>BillPostingPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\DebitNote_Entries.resx">
+      <DependentUpon>DebitNote_Entries.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\Gen_UnitOrder.resx">
+      <DependentUpon>Gen_UnitOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\packTypeSelection.resx">
+      <DependentUpon>packTypeSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\ucBulkOrderChecking.resx">
+      <DependentUpon>ucBulkOrderChecking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\ucMergePurchaseId.resx">
+      <DependentUpon>ucMergePurchaseId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\ucPurchaseOrder_Analysis.resx">
+      <DependentUpon>ucPurchaseOrder_Analysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\ucZeroStockProduct.resx">
+      <DependentUpon>ucZeroStockProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\uc_ImportPurchaseid.resx">
+      <DependentUpon>uc_ImportPurchaseid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\uc_PurchaseRegister.resx">
+      <DependentUpon>uc_PurchaseRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\UnPostedBill.resx">
+      <DependentUpon>UnPostedBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\BulkPOReceiving.resx">
+      <DependentUpon>BulkPOReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\VerifyOPO.resx">
+      <DependentUpon>VerifyOPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\Zero_Stock_Order.resx">
+      <DependentUpon>Zero_Stock_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\add_regularorder.resx">
+      <DependentUpon>add_regularorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\IPDOPDProcessInfo.resx">
+      <DependentUpon>IPDOPDProcessInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\order_remarks.resx">
+      <DependentUpon>order_remarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\ProcessOrder.resx">
+      <DependentUpon>ProcessOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\ucCompleteOrder.resx">
+      <DependentUpon>ucCompleteOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\ucIncomingOrder.resx">
+      <DependentUpon>ucIncomingOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\ucProcessOrder.resx">
+      <DependentUpon>ucProcessOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\ucTakeOrder.resx">
+      <DependentUpon>ucTakeOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\RCM\uc_GenOnlineOrderPO.resx">
+      <DependentUpon>uc_GenOnlineOrderPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\ucGR_Report.resx">
+      <DependentUpon>ucGR_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\uc_PrintICIS_Bills.resx">
+      <DependentUpon>uc_PrintICIS_Bills.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\uc_ProcessExtra.resx">
+      <DependentUpon>uc_ProcessExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\uc_TransferRegister.resx">
+      <DependentUpon>uc_TransferRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\usStockTransferToConsumption.resx">
+      <DependentUpon>usStockTransferToConsumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Utility\AutoUpdater.resx">
+      <DependentUpon>AutoUpdater.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HealthCards\ucHealthCardNew.resx">
+      <DependentUpon>ucHealthCardNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HealthCards\ucHealthCardStockRegister.resx">
+      <DependentUpon>ucHealthCardStockRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HealthCards\UpdateHealthCard.resx">
+      <DependentUpon>UpdateHealthCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\BlockedProducts.resx">
+      <DependentUpon>BlockedProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ReplaceProductPopUp.resx">
+      <DependentUpon>ReplaceProductPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucCheckSubstitute.resx">
+      <DependentUpon>ucCheckSubstitute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucProductByCompany.resx">
+      <DependentUpon>ucProductByCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucBatchExpMrpCorrection.resx">
+      <DependentUpon>ucBatchExpMrpCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucRefDataProcess.resx">
+      <DependentUpon>ucRefDataProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\adjustGR.resx">
+      <DependentUpon>adjustGR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\ucSendScanBill.resx">
+      <DependentUpon>ucSendScanBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\ucPurchaseReturnSlip.resx">
+      <DependentUpon>ucPurchaseReturnSlip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\ucStockTransfer.resx">
+      <DependentUpon>ucStockTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Utility\ucUploadScanedDoc.resx">
+      <DependentUpon>ucUploadScanedDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucMarkLocal.resx">
+      <DependentUpon>ucMarkLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucNewMedicine.resx">
+      <DependentUpon>ucNewMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucChangeLocation.resx">
+      <DependentUpon>ucChangeLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucMkeyCorrection.resx">
+      <DependentUpon>ucMkeyCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucTrfNewMedicine.resx">
+      <DependentUpon>ucTrfNewMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\UploadSubstitute_Control.resx">
+      <DependentUpon>UploadSubstitute_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\UploadSubstitute_Doc.resx">
+      <DependentUpon>UploadSubstitute_Doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Promo\ucPromoProducts.resx">
+      <DependentUpon>ucPromoProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Promo\uc_GenericPromo.resx">
+      <DependentUpon>uc_GenericPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\add_regularorder.resx">
+      <DependentUpon>add_regularorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\QuestionAnswer.resx">
+      <DependentUpon>QuestionAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\RCMarkCustomer.resx">
+      <DependentUpon>RCMarkCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\remarks.resx">
+      <DependentUpon>remarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\SwapProduct.resx">
+      <DependentUpon>SwapProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\ucCustomerCall.resx">
+      <DependentUpon>ucCustomerCall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RCM\ucNextSchedule.resx">
+      <DependentUpon>ucNextSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Reconcilation\HoldIdManagement.resx">
+      <DependentUpon>HoldIdManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Reconcilation\KeyTracing.resx">
+      <DependentUpon>KeyTracing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Reconcilation\ReconcileProduct.resx">
+      <DependentUpon>ReconcileProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Reconcilation\StockReconcilation.resx">
+      <DependentUpon>StockReconcilation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\ProvisionalReceipt.resx">
+      <DependentUpon>ProvisionalReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\SaleBill_Posting.resx">
+      <DependentUpon>SaleBill_Posting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\SaleMaster_Hospital.resx">
+      <DependentUpon>SaleMaster_Hospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\uc_NewPurchases.resx">
+      <DependentUpon>uc_NewPurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\uc_SoldProductsInfo.resx">
+      <DependentUpon>uc_SoldProductsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GR\StockInByPurRetNo.resx">
+      <DependentUpon>StockInByPurRetNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\frmCartReport.resx">
+      <DependentUpon>frmCartReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\ucEstimateDelivery.resx">
+      <DependentUpon>ucEstimateDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\ucIndentChecking.resx">
+      <DependentUpon>ucIndentChecking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\Wh_IndentProcessInfo.resx">
+      <DependentUpon>Wh_IndentProcessInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\IPD_BulkSalesReturn.resx">
+      <DependentUpon>IPD_BulkSalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\SalesRefByDoctor.resx">
+      <DependentUpon>SalesRefByDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\ucIPD_Indent.resx">
+      <DependentUpon>ucIPD_Indent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\ucSearchInHospitalCart.resx">
+      <DependentUpon>ucSearchInHospitalCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\usBillFinalization.resx">
+      <DependentUpon>usBillFinalization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\ucImportCompanyOrderXL.resx">
+      <DependentUpon>ucImportCompanyOrderXL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indents\IndentToUnit.resx">
+      <DependentUpon>IndentToUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indents\ucIndentProcess.resx">
+      <DependentUpon>ucIndentProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSystem\manager_signature.resx">
+      <DependentUpon>manager_signature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSystem\ucUnitAllotment.resx">
+      <DependentUpon>ucUnitAllotment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Optical\Optical_Booking.resx">
+      <DependentUpon>Optical_Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintMaster\rdlcViewer.resx">
+      <DependentUpon>rdlcViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintMaster\uc_SalesInvoice.resx">
+      <DependentUpon>uc_SalesInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintMaster\uc_idPrintig.resx">
+      <DependentUpon>uc_idPrintig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\frmNewMedicine.resx">
+      <DependentUpon>frmNewMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\ucReplaceTempNewMed.resx">
+      <DependentUpon>ucReplaceTempNewMed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Promo\PromoProducts.resx">
+      <DependentUpon>PromoProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Promo\uc_PromoRegister.resx">
+      <DependentUpon>uc_PromoRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchase\debitNote\DebitNoteFeedingForm.resx">
+      <DependentUpon>DebitNoteFeedingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchase\debitNote\ucDebitNoteRegister.resx">
+      <DependentUpon>ucDebitNoteRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchase\debitNote\ucMapByCreditNote.resx">
+      <DependentUpon>ucMapByCreditNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchase\debitNote\ucInterCompany_DebitNoteImport.resx">
+      <DependentUpon>ucInterCompany_DebitNoteImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rdlc\CreditNote.rdlc" />
+    <EmbeddedResource Include="rdlc\estimateForFeeding.rdlc" />
+    <EmbeddedResource Include="rdlc\OpticalAdvanceSlip.rdlc" />
+    <EmbeddedResource Include="rdlc\TransferSheetWithInState.rdlc" />
+    <EmbeddedResource Include="rdlc\internalSheet_Trf.rdlc" />
+    <EmbeddedResource Include="rdlc\RptPharmacyBill.rdlc" />
+    <EmbeddedResource Include="SetUp\manager_signature.resx">
+      <DependentUpon>manager_signature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetUp\ucManagerSignature.resx">
+      <DependentUpon>ucManagerSignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\ExtraStockProcess.resx">
+      <DependentUpon>ExtraStockProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\GR_TakenBack.resx">
+      <DependentUpon>GR_TakenBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\StockRcvdInfoByDateAndIds.resx">
+      <DependentUpon>StockRcvdInfoByDateAndIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\ucCheckWholeStockAudit.resx">
+      <DependentUpon>ucCheckWholeStockAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\ucDailyDispatch.resx">
+      <DependentUpon>ucDailyDispatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\ucExpiryProcess.resx">
+      <DependentUpon>ucExpiryProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\ucStockTransfer.resx">
+      <DependentUpon>ucStockTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\uc_StocksAsOn.resx">
+      <DependentUpon>uc_StocksAsOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Training\TrainingInfo.resx">
+      <DependentUpon>TrainingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Training\ucRating.resx">
+      <DependentUpon>ucRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\CashMemoSearch.resx">
+      <DependentUpon>CashMemoSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Login\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Product\CheckMedicineAtStores.resx">
+      <DependentUpon>CheckMedicineAtStores.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectRemoteServer.resx">
+      <DependentUpon>ConnectRemoteServer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\ExtraPurchaseForUnit.resx">
+      <DependentUpon>ExtraPurchaseForUnit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Utility\Download_App.resx">
+      <DependentUpon>Download_App.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\GetPurchaseInfo.resx">
+      <DependentUpon>GetPurchaseInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\TransferIds\ImportProductInfo.resx">
+      <DependentUpon>ImportProductInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\uc_ShortExpiryList.resx">
+      <DependentUpon>uc_ShortExpiryList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\TransferIds\ucSearchInTransit.resx">
+      <DependentUpon>ucSearchInTransit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\TransferIds\uc_ImportTransferId.resx">
+      <DependentUpon>uc_ImportTransferId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Utility\SwapProduct.resx">
+      <DependentUpon>SwapProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Utility\menuRights.resx">
+      <DependentUpon>menuRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Utility\SendScanCopy.resx">
+      <DependentUpon>SendScanCopy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GC\GC_UpdReport.resx">
+      <DependentUpon>GC_UpdReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GC\markScheduleH.resx">
+      <DependentUpon>markScheduleH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GC\ucGCUpdReport.resx">
+      <DependentUpon>ucGCUpdReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GC\ucGC_Legallogin.resx">
+      <DependentUpon>ucGC_Legallogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GC\UCSaveDoc.resx">
+      <DependentUpon>UCSaveDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GC\uc_Miscellenious.resx">
+      <DependentUpon>uc_Miscellenious.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GR\ucAnalisedPurchaseReturn.resx">
+      <DependentUpon>ucAnalisedPurchaseReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\HelpManual.resx">
+      <DependentUpon>HelpManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\IsCorrectPurchase.resx">
+      <DependentUpon>IsCorrectPurchase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Product\ucProductNotSold.resx">
+      <DependentUpon>ucProductNotSold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\ProductOnSaleInvoice.resx">
+      <DependentUpon>ProductOnSaleInvoice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\PurchaseHelp.resx">
+      <DependentUpon>PurchaseHelp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\PurchCheckListReconsile.resx">
+      <DependentUpon>PurchCheckListReconsile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\NewMedicine.resx">
+      <DependentUpon>NewMedicine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\PurchaseSearch.resx">
+      <DependentUpon>PurchaseSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Purchase\Purchase_Entry.resx">
+      <DependentUpon>Purchase_Entry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\uploadexcel.resx">
+      <DependentUpon>uploadexcel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITSystem\menuRights.resx">
+      <DependentUpon>menuRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainMenu.cs.resx">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainMenu.resx">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterContainer.resx">
+      <DependentUpon>masterContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifierMsg.resx">
+      <DependentUpon>NotifierMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="RepeatingJob.resx">
+      <DependentUpon>RepeatingJob.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetStatus.resx">
+      <DependentUpon>NetStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\SaleMaster.resx">
+      <DependentUpon>SaleMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\SaleRegister.resx">
+      <DependentUpon>SaleRegister.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\SearchStaff.resx">
+      <DependentUpon>SearchStaff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Product\SingleProductAnalysis.resx">
+      <DependentUpon>SingleProductAnalysis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartOnLineSale.resx">
+      <DependentUpon>StartOnLineSale.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CentralAccess\Stock\transfer_IdInfo.resx">
+      <DependentUpon>transfer_IdInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\addSaltToProduct.resx">
+      <DependentUpon>addSaltToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\ImagePanel.resx">
+      <DependentUpon>ImagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\PrintSaltExistensce.resx">
+      <DependentUpon>PrintSaltExistensce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UCSaltInfo.resx">
+      <DependentUpon>UCSaltInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UCStrength.resx">
+      <DependentUpon>UCStrength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UCSubstitute.resx">
+      <DependentUpon>UCSubstitute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UCSubstituteReport.resx">
+      <DependentUpon>UCSubstituteReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UCView.resx">
+      <DependentUpon>UCView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\uc_SearchBySaltName.resx">
+      <DependentUpon>uc_SearchBySaltName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UploadSubstitute_Control.resx">
+      <DependentUpon>UploadSubstitute_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="substitute\UploadSubstitute_Doc.resx">
+      <DependentUpon>UploadSubstitute_Doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="token\DisplayToken.resx">
+      <DependentUpon>DisplayToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BlockUnBlock_ForSaleAvg.resx">
+      <DependentUpon>BlockUnBlock_ForSaleAvg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ProductDelevery.resx">
+      <DependentUpon>ProductDelevery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\toolsPharmacy.resx">
+      <DependentUpon>toolsPharmacy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Sales\SearchProduct.resx">
+      <DependentUpon>SearchProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shift_Connection.resx">
+      <DependentUpon>shift_Connection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskbarNotifier.resx">
+      <DependentUpon>TaskbarNotifier.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Vendor\vendorAckRpt.resx">
+      <DependentUpon>vendorAckRpt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Vendor\VendorApp.resx">
+      <DependentUpon>VendorApp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\Bulk_TrfSalesBysaleAvg.resx">
+      <DependentUpon>Bulk_TrfSalesBysaleAvg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\Bulk_PO_Distribution.resx">
+      <DependentUpon>Bulk_PO_Distribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\newProductOrderProcess.resx">
+      <DependentUpon>newProductOrderProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\NewProductProcess.resx">
+      <DependentUpon>NewProductProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\ucReplaceTempNewMed.resx">
+      <DependentUpon>ucReplaceTempNewMed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\uc_ExpiryReceiving.resx">
+      <DependentUpon>uc_ExpiryReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\uc_ProcessedExpiry.resx">
+      <DependentUpon>uc_ProcessedExpiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warehouse\uc_SettingofVendorAgainstKeys.resx">
+      <DependentUpon>uc_SettingofVendorAgainstKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WholeSales\WholeSale_Window.resx">
+      <DependentUpon>WholeSale_Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="dsCollection\dsOptical.xsc">
+      <DependentUpon>dsOptical.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\dsOptical.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOptical.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCollection\dsOptical.xss">
+      <DependentUpon>dsOptical.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\DsRptPharmacyBill.xsc">
+      <DependentUpon>DsRptPharmacyBill.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\DsRptPharmacyBill.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsRptPharmacyBill.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCollection\DsRptPharmacyBill.xss">
+      <DependentUpon>DsRptPharmacyBill.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\eMediShop.xsc">
+      <DependentUpon>eMediShop.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\eMediShop.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eMediShop.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCollection\eMediShop.xss">
+      <DependentUpon>eMediShop.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\DC_Note_Report.xsc">
+      <DependentUpon>DC_Note_Report.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\DC_Note_Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DC_Note_Report.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCollection\DC_Note_Report.xss">
+      <DependentUpon>DC_Note_Report.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\WholeSale.xsc">
+      <DependentUpon>WholeSale.xsd</DependentUpon>
+    </None>
+    <None Include="dsCollection\WholeSale.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WholeSale1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCollection\WholeSale.xss">
+      <DependentUpon>WholeSale.xsd</DependentUpon>
+    </None>
+    <None Include="eMediShop_1_TemporaryKey.pfx" />
+    <None Include="eMediShop_TemporaryKey.pfx" />
+    <None Include="exprohelp-203510-165ed44c3d80.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="forms\Sales\SearchProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\Sales\SearchProduct.Designer.cs">
+      <DependentUpon>SearchProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchUpdatedEventArgs.cs" />
+    <Compile Include="shift_Connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shift_Connection.Designer.cs">
+      <DependentUpon>shift_Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEvents.cs" />
+    <Compile Include="ValueDescriptionPair.cs" />
+    <Compile Include="forms\Vendor\vendorAckRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Vendor\vendorAckRpt.designer.cs">
+      <DependentUpon>vendorAckRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Vendor\VendorApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Vendor\VendorApp.designer.cs">
+      <DependentUpon>VendorApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\Bulk_TrfSalesBysaleAvg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="warehouse\Bulk_TrfSalesBysaleAvg.Designer.cs">
+      <DependentUpon>Bulk_TrfSalesBysaleAvg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\Bulk_PO_Distribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="warehouse\Bulk_PO_Distribution.Designer.cs">
+      <DependentUpon>Bulk_PO_Distribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\newProductOrderProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="warehouse\newProductOrderProcess.designer.cs">
+      <DependentUpon>newProductOrderProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\NewProductProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="warehouse\NewProductProcess.designer.cs">
+      <DependentUpon>NewProductProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\ucReplaceTempNewMed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="warehouse\ucReplaceTempNewMed.designer.cs">
+      <DependentUpon>ucReplaceTempNewMed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\uc_ExpiryReceiving.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="warehouse\uc_ExpiryReceiving.designer.cs">
+      <DependentUpon>uc_ExpiryReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\uc_ProcessedExpiry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="warehouse\uc_ProcessedExpiry.designer.cs">
+      <DependentUpon>uc_ProcessedExpiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse\uc_SettingofVendorAgainstKeys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="warehouse\uc_SettingofVendorAgainstKeys.designer.cs">
+      <DependentUpon>uc_SettingofVendorAgainstKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WholeSales\WholeSale_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WholeSales\WholeSale_Window.Designer.cs">
+      <DependentUpon>WholeSale_Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinApi.cs" />
+    <None Include="Service References\HealthCard\HealthCard_WebServices1.wsdl" />
+    <None Include="Service References\his_proxy\ChandanPharmacyServices1.wsdl" />
+    <None Include="Service References\Pharmacy\Pharmacy_webservices1.wsdl" />
+    <None Include="Service References\rmAccounts\Accounts_WebService1.wsdl" />
+    <None Include="VersionInfo\eMediShop Manual.docx" />
+    <None Include="VersionInfo\eMediShopVersion Update.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contract.xml" />
+    <Content Include="eMediOnline.ico" />
+    <Content Include="eMediShop.ico" />
+    <Content Include="ExPro.ICO" />
+    <Content Include="Important.txt" />
+    <None Include="Resources\open-16.png" />
+    <None Include="Resources\plus-minus-16.png" />
+    <None Include="Resources\extract-16.png" />
+    <None Include="Resources\expired-16.png" />
+    <None Include="Resources\stocks-up-16.png" />
+    <None Include="Resources\extra-16.png" />
+    <None Include="Service References\his_proxy\ChandanPharmacyServices1.disco" />
+    <None Include="Resources\Audit-32.png" />
+    <None Include="Resources\in-32.png" />
+    <None Include="Resources\out-32.png" />
+    <None Include="Resources\in-321.png" />
+    <None Include="Resources\out-321.png" />
+    <None Include="Resources\order-32.png" />
+    <None Include="Resources\cheque-48.png" />
+    <None Include="Resources\cards-48.png" />
+    <None Include="Resources\bank-64.png" />
+    <None Include="Resources\product-16.png" />
+    <None Include="Resources\pending-16.png" />
+    <None Include="Resources\challan-16.png" />
+    <None Include="Resources\pen_Signature-16.png" />
+    <None Include="Resources\ipd-16.png" />
+    <None Include="Resources\Hospital-16.png" />
+    <None Include="Resources\square-16.png" />
+    <None Include="Resources\cash-48.png" />
+    <None Include="Resources\Receipt-32.png" />
+    <None Include="Resources\ledger-321.png" />
+    <None Include="Resources\attachment-32.png" />
+    <None Include="Resources\support_3-32.png" />
+    <None Include="Resources\Hold-32.png" />
+    <None Include="Resources\request-32.png" />
+    <None Include="Resources\cloud_update-32.png" />
+    <None Include="Resources\bill-32.png" />
+    <None Include="Resources\retail-32.png" />
+    <None Include="Resources\retail-48.png" />
+    <None Include="Resources\register-48.png" />
+    <None Include="Resources\products-48.png" />
+    <None Include="Resources\stocks-48.png" />
+    <None Include="Resources\transit-48.png" />
+    <None Include="Resources\opd-48.png" />
+    <None Include="Resources\ipd-48.png" />
+    <None Include="Resources\Token-48.png" />
+    <None Include="Resources\distribution-48.png" />
+    <None Include="Resources\redcross-16.png" />
+    <None Include="Resources\asset-16.png" />
+    <None Include="Resources\support-16.png" />
+    <None Include="Resources\inventory-16.png" />
+    <None Include="Resources\purchase-16.png" />
+    <None Include="Resources\sales-16.png" />
+    <None Include="Resources\system-16.png" />
+    <None Include="Resources\warehouse-16.png" />
+    <None Include="Resources\master-16.png" />
+    <None Include="Resources\products-16.png" />
+    <None Include="Resources\update_software_16.png" />
+    <None Include="Resources\link5-16.png" />
+    <None Include="Resources\split16.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\HealthCard\HealthCard_WebServices1.disco" />
+    <None Include="Service References\Pharmacy\Pharmacy_webservices1.disco" />
+    <None Include="Resources\vendor32.png" />
+    <None Include="Service References\his_proxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\his_proxy\configuration.svcinfo" />
+    <None Include="Service References\his_proxy\configuration91.svcinfo" />
+    <None Include="Resources\update-data-161.png" />
+    <None Include="Service References\HealthCard\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HealthCard\configuration.svcinfo" />
+    <None Include="Service References\HealthCard\configuration91.svcinfo" />
+    <None Include="Service References\Pharmacy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Pharmacy\configuration.svcinfo" />
+    <None Include="Service References\Pharmacy\configuration91.svcinfo" />
+    <None Include="Resources\tag-blue.png" />
+    <None Include="Resources\yes.gif" />
+    <None Include="Resources\Training-32.png" />
+    <None Include="Resources\upload-Doc-161.png" />
+    <None Include="Resources\View_Ledger.png" />
+    <None Include="Resources\Summary-32.png" />
+    <None Include="Resources\Sync-16.png" />
+    <None Include="Resources\transfer-H-32.png" />
+    <None Include="Resources\upload-Doc-16.png" />
+    <None Include="Resources\transfert_16.png" />
+    <None Include="Resources\update-data-16.png" />
+    <None Include="Service References\rmAccounts\Accounts_WebService1.disco" />
+    <None Include="Resources\user-16.png" />
+    <None Include="Resources\tick_32.png" />
+    <None Include="Resources\vendor-32.png" />
+    <None Include="Resources\Transfer-32.png" />
+    <None Include="Resources\Zero-32.png" />
+    <None Include="Resources\UploadScan-32.png" />
+    <None Include="Resources\upload_32.png" />
+    <None Include="Resources\update_32.png" />
+    <None Include="Resources\trf_Rec_48.png" />
+    <None Include="Resources\check.gif" />
+    <None Include="Resources\BioTech.gif" />
+    <None Include="Resources\Blue hills.jpg" />
+    <None Include="Resources\conicon3.jpg" />
+    <None Include="Resources\conicon.jpg" />
+    <None Include="Resources\close.bmp" />
+    <None Include="Resources\Globe.jpg" />
+    <None Include="Resources\24hours-32.png" />
+    <Content Include="Resources\animated_globe.gif" />
+    <None Include="Resources\animated_globe1.gif" />
+    <None Include="Resources\click16.png" />
+    <None Include="Resources\CheckList-32.png" />
+    <None Include="Resources\average.png" />
+    <None Include="Resources\contra_c.png" />
+    <None Include="Resources\check-32.png" />
+    <None Include="Resources\bullet-green_16.png" />
+    <None Include="Resources\backup_data_database-16.png" />
+    <None Include="Resources\average-32.png" />
+    <None Include="Resources\approve-16.png" />
+    <None Include="Resources\auditSearch-16.png" />
+    <None Include="Resources\Broken-32.png" />
+    <Content Include="Resources\calculator-16.png" />
+    <None Include="Resources\cash_receiving-32.png" />
+    <None Include="Resources\CheckList-321.png" />
+    <None Include="Resources\Close-32.png" />
+    <None Include="Resources\calling-32.png" />
+    <None Include="Resources\complete-32.png" />
+    <None Include="Resources\ChangePassword-16.png" />
+    <None Include="Resources\delete-16.png" />
+    <None Include="Resources\click-32.png" />
+    <None Include="Resources\card-16.png" />
+    <None Include="Resources\cloud-sync-32.png" />
+    <None Include="Resources\cloud.download.data-32.png" />
+    <None Include="Resources\Cross_Check-32.png" />
+    <None Include="Resources\dilink-32.png" />
+    <None Include="Resources\custom-reports32.png" />
+    <Content Include="Resources\dispatch50.png" />
+    <None Include="Resources\document-upload-32.png" />
+    <None Include="Resources\distribution-16.png" />
+    <None Include="Resources\Doctor-32.png" />
+    <Content Include="Resources\download50.png" />
+    <None Include="Resources\EXCEL.bmp" />
+    <None Include="Resources\do_not_disturb.png" />
+    <None Include="Resources\export_excel.png" />
+    <None Include="Resources\extra-Returns-32.png" />
+    <None Include="Resources\drug-32.png" />
+    <None Include="Resources\edit-add.png" />
+    <None Include="Resources\DownLoadProject-32.png" />
+    <None Include="Resources\edit-add_16.png" />
+    <None Include="Resources\edit-16.png" />
+    <Content Include="Resources\eMediShop.ico" />
+    <None Include="Resources\expired-32.png" />
+    <None Include="Resources\file_search.png" />
+    <None Include="Resources\Eye-16.png" />
+    <None Include="Resources\Form2-32.png" />
+    <None Include="Resources\export_excel1.png" />
+    <None Include="Resources\generic-32.png" />
+    <Content Include="Resources\GlowLine.gif" />
+    <Content Include="Resources\go_button.gif" />
+    <None Include="Resources\go_button1.gif" />
+    <None Include="Resources\green.gif" />
+    <None Include="Resources\Internet.jpg" />
+    <None Include="Resources\gPrinter1.gif" />
+    <None Include="Resources\import-48.png" />
+    <None Include="Resources\import_mkey.png" />
+    <None Include="Resources\Hospital.png" />
+    <None Include="Resources\industry-32.png" />
+    <None Include="Resources\HighSelling-32.png" />
+    <None Include="Resources\invoices32.png" />
+    <None Include="Resources\import-16.png" />
+    <None Include="Resources\Journal_j.png" />
+    <None Include="Resources\Import_Export_32.png" />
+    <None Include="Resources\HealtCard-32.png" />
+    <None Include="Resources\icq_dnd.png" />
+    <None Include="Resources\import-32.png" />
+    <None Include="Resources\healthcard-16.png" />
+    <None Include="Resources\hand-package-32.png" />
+    <Content Include="Resources\Issue-32.png" />
+    <None Include="Resources\ledger-32.png" />
+    <None Include="Resources\latest-16.png" />
+    <None Include="Resources\It-Info.png" />
+    <None Include="Resources\kcall.png" />
+    <None Include="Resources\link-32.png" />
+    <Content Include="Resources\loading_s.gif" />
+    <None Include="Resources\mMiddle.gif" />
+    <None Include="Resources\new-32.png" />
+    <None Include="Resources\mark-32.png" />
+    <None Include="Resources\location_32.png" />
+    <None Include="Resources\Loose-32.png" />
+    <None Include="Resources\match-32.png" />
+    <None Include="Resources\MasterKey-16.png" />
+    <None Include="Resources\medicine-16.png" />
+    <None Include="Resources\logo2014.gif" />
+    <None Include="Resources\match-321.png" />
+    <None Include="Resources\Manual.png" />
+    <None Include="Resources\missed_call-32.png" />
+    <None Include="Resources\mobile-phone.png" />
+    <None Include="Resources\mob_sound.png" />
+    <Content Include="Resources\newprinter.gif" />
+    <None Include="Resources\Next.gif" />
+    <None Include="Resources\Refresh.gif" />
+    <None Include="Resources\pharmacy.gif" />
+    <None Include="Resources\Reconcile.gif" />
+    <None Include="Resources\process.gif" />
+    <None Include="Resources\red.gif" />
+    <None Include="Resources\skin.bmp" />
+    <None Include="Resources\pharmacy_icon-32.png" />
+    <None Include="Resources\pending-32.png" />
+    <None Include="Resources\Payment_p.png" />
+    <None Include="Resources\payment-32.png" />
+    <None Include="Resources\Order_tracking.png" />
+    <None Include="Resources\open-32.png" />
+    <None Include="Resources\Payment.png" />
+    <None Include="Resources\PaperClip4_Black-32.png" />
+    <None Include="Resources\pdf_32.png" />
+    <None Include="Resources\pending2-16.png" />
+    <None Include="Resources\package-16.png" />
+    <None Include="Resources\old-go-next.png" />
+    <None Include="Resources\Pedistrain-32.png" />
+    <None Include="Resources\No.png" />
+    <None Include="Resources\not-32.png" />
+    <None Include="Resources\new_add-16.png" />
+    <None Include="Resources\Pen_Signature-32.png" />
+    <Content Include="Resources\pharmacy-32.png" />
+    <None Include="Resources\phone.png" />
+    <Content Include="Resources\photo.jpg" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\Register-32.png" />
+    <None Include="Resources\products-32.png" />
+    <None Include="Resources\Search-32.png" />
+    <None Include="Resources\promotion-32.png" />
+    <None Include="Resources\process_32.png" />
+    <None Include="Resources\received-32.png" />
+    <None Include="Resources\slip-32.png" />
+    <None Include="Resources\Refresh-16.png" />
+    <None Include="Resources\SearchInNet-32.png" />
+    <None Include="Resources\SearchInTransit_32.png" />
+    <None Include="Resources\register-16.png" />
+    <None Include="Resources\reports-32.png" />
+    <None Include="Resources\recordsTransfer-32.png" />
+    <None Include="Resources\process2-32.png" />
+    <None Include="Resources\printer-32.png" />
+    <None Include="Resources\purchaseOrder-16.png" />
+    <None Include="Resources\Replace-32.png" />
+    <None Include="Resources\replace-16.png" />
+    <None Include="Resources\Prescription-32.png" />
+    <None Include="Resources\Refresh-32.png" />
+    <None Include="Resources\plus-16.png" />
+    <None Include="Resources\Post-32.png" />
+    <None Include="Resources\plus-161.png" />
+    <Content Include="Resources\Requirement-32.png" />
+    <None Include="Resources\Retrive-32.png" />
+    <Content Include="Resources\RituSign.bmp" />
+    <Content Include="Resources\Sales-32.png" />
+    <None Include="Resources\Stocks-32.png" />
+    <None Include="Resources\Short_Extra_32.png" />
+    <None Include="Resources\Staff_list.png" />
+    <None Include="Resources\Sorting_A-Z.png" />
+    <None Include="Resources\security_lock-16.png" />
+    <None Include="Resources\Status-16.png" />
+    <None Include="Resources\Status-32.png" />
+    <None Include="Resources\Shopping_Cart_Question_Button-32.png" />
+    <None Include="Resources\shelf-32.png" />
+    <None Include="Resources\scanner-16.png" />
+    <None Include="Resources\scanner-32.png" />
+    <None Include="Resources\Save-32.png" />
+    <None Include="Resources\Save-16.png" />
+    <None Include="Resources\search-16.png" />
+    <Content Include="Resources\Stocks50.png" />
+    <None Include="Resources\stock_update-16.png" />
+    <Content Include="Resources\submit.gif" />
+    <None Include="Service References\rmAccounts\configuration91.svcinfo" />
+    <None Include="Service References\rmAccounts\configuration.svcinfo" />
+    <None Include="Service References\rmAccounts\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\top.jpg" />
+    <None Include="Resources\submit2.gif" />
+    <None Include="Resources\yahoo_loading.gif" />
+    <None Include="Resources\Transfer.gif" />
+    <None Include="Resources\view.gif" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\submit1.gif" />
+    <None Include="Resources\loading_2.gif" />
+    <None Include="Resources\HealthCard.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.11.0.x64">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2012 %28x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\cs\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="database\" />
+    <Folder Include="forms\CentralAccess\Export\" />
+    <Folder Include="forms\CentralAccess\Product\Extra\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Accounts_Library\accounts_library\accounts_library.csproj">
+      <Name>accounts_library</Name>
+      <Project>{0754023f-3196-4f53-b9c6-71d9b30fc9cf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Accounts_Library\accounts_library\accounts_library.csproj">
+      <Project>{0754023f-3196-4f53-b9c6-71d9b30fc9cf}</Project>
+      <Name>accounts_library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrystalReportsPharmacy\CrystalReportsPharmacy.csproj">
+      <Project>{0bfd40cf-354e-48fd-a11d-d73e8b706925}</Project>
+      <Name>CrystalReportsPharmacy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HealthCard\" />
+    <WCFMetadataStorage Include="Service References\his_proxy\" />
+    <WCFMetadataStorage Include="Service References\Pharmacy\" />
+    <WCFMetadataStorage Include="Service References\rmAccounts\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

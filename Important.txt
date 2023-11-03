@@ -1,0 +1,140 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using ExPro.Client;
+using ExPro.Server;
+using System.Threading;
+namespace eMediShop
+{
+    public partial class TransferSales : Form
+    {
+         public TransferSales()
+        {
+            InitializeComponent();
+        }
+
+        private void stk_btn_1_Click(object sender, EventArgs e)
+        {
+            lblNetCheck.Visible = true;
+            lblNetCheck.Text = "Checking Internet Connectivity..";
+            bool check = CheckInternetConnection.isConnectionAvailable();
+            //bool check=CheckInternetConnection.IsConnected();
+            if (check) { lblNetCheck.Text = "Connection is active."; } else { lblNetCheck.Text = "Connection Failed."; return; }
+            string Qry = "";
+            Qry = "select  master_key_id,quantity from stocks where quantity!=0 and warehouse='"+GlobalUsage.Unit_id+"'";
+            Qry += " AND NOT EXISTS(SELECT * FROM SALE_MASTER WHERE TRANSFER!='Y') order by master_key_id";
+            SqlConnection con = DBConnection.GetConnection(true, "eMediShop");
+            SqlCommand cmd = new SqlCommand(Qry, con);
+            cmd.CommandTimeout = 2500;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            ds.Dispose();
+            
+            ExProLogic.Pharmacy_WebServices epw = new eMediShop.ExProLogic.Pharmacy_WebServices();
+            ds = epw.MatchMyStock(ds, GlobalUsage.Unit_id);
+             decimal d = ds.Tables[0].Rows.Count;
+             if (d > 0) {
+                 foreach (DataRow dr in ds.Tables[0].Rows) {
+                     lv_misMatch.Items.Add(dr["master_key_id"].ToString());
+                     lv_misMatch.Items[lv_misMatch.Items.Count-1].SubItems.Add(dr["item_name"].ToString());
+                     lv_misMatch.Items[lv_misMatch.Items.Count - 1].SubItems.Add(dr["batch_no"].ToString());
+                     lv_misMatch.Items[lv_misMatch.Items.Count - 1].SubItems.Add(dr["exp_date"].ToString());
+                     lv_misMatch.Items[lv_misMatch.Items.Count - 1].SubItems.Add(dr["u_qty"].ToString()); 
+                     lv_misMatch.Items[lv_misMatch.Items.Count - 1].SubItems.Add(dr["w_qty"].ToString());
+                 }
+             }
+        }
+        
+        private void btn_trf_to_ho_Click(object sender, EventArgs e)
+        {
+            Thread backgroundThread = new Thread(new ThreadStart(UpdateCentralServer));
+            backgroundThread.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (lblTrfProcess.ForeColor == System.Drawing.Color.Red)
+            {
+                long bt = FtpConnection.BytesSend;
+                //if (bt > 0) 
+                lblTrfProcess.Text = GlobalUsage.Message.ToString();
+                lblTrfProcess.ForeColor = System.Drawing.Color.Green;
+            }
+            else {
+                lblTrfProcess.ForeColor = System.Drawing.Color.Red;
+            }
+            lblTrfProcess.Refresh();
+        }
+
+        protected void UpdateCentralServerByDataset() {
+            GlobalUsage.Message = "Checking Internet Connection...";
+            bool InetOk = CheckInternetConnection.IsConnected();
+            GlobalUsage.Message = "Internet Connection ok";
+            if (InetOk)
+            {
+                GlobalUsage.Message = "Updating Sold Product Information..";
+                DataSet ds = new DataSet();
+                ds = Config.GetQueryResult("select  top 10 *  from sale_items  where  transfer='N' order by  sale_date","eMediShop");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ExProLogic.Pharmacy_WebServices epw = new eMediShop.ExProLogic.Pharmacy_WebServices();
+                    string result=epw.Insert_Sold_Items(ds);
+                }
+                else
+                {
+                    MessageBox.Show("Nothing To Transfer.", "Help Message");
+                }
+                GlobalUsage.Message = "Sold Product Information Updated";
+            }
+            else
+            {
+                MessageBox.Show("Internet Connecgtion Not Available. Connect and Try Again.", "Help Message");
+            }
+        
+        }
+        protected  void UpdateCentralServer(){
+            //long  TotalBytes = 0;
+            bool InetOk = CheckInternetConnection.IsConnected();
+            if (InetOk)
+            {
+                //lblTrfProcess.Text = "Checking Sold Product..";
+                //lblTrfProcess.Refresh();
+                //Transfer Sales Items
+                DataSet ds = new DataSet();
+                ds = Config.GetQueryResult("select  * from sale_items  where  transfer='Y' order by  sale_date","eMediShop");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    string fileName=Application.StartupPath + "\\"+GlobalUsage.Unit_id.Replace('-','_').ToString()+"_"+DateTime.Now.ToString("dd_MM_yyyy")+".xml";
+                    ds.WriteXml(fileName);
+                    FtpConnection ftp = new FtpConnection();
+                    ftp.Host = "ftp://115.108.228.98";
+                    ftp.UserName = "ExPro";
+                    ftp.Password = "Ex67Pro";
+                    ftp.RemoteDirectory = @"unitscripts";
+                    //Local Sysytem Path
+                   // TotalBytes = System.IO. ftp.GetFileSize(fileName);
+                    ftp.Upload(fileName);
+                }
+                else {
+                    MessageBox.Show("Nothing To Transfer.", "Help Message");
+                }
+               
+            }
+            else {
+                //lblTrfProcess.Text = "No Internet Connectivity.";
+                //lblTrfProcess.Refresh();
+                btn_trf_to_ho.Enabled = false;
+                MessageBox.Show("Internet Connecgtion Not Available. Connect and Try Again.", "Help Message");
+            }
+  
+}
+}
+    
+} //Last Brace test
+

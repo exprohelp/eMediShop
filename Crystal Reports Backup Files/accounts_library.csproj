@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0754023F-3196-4F53-B9C6-71D9B30FC9CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>accounts_library</RootNamespace>
+    <AssemblyName>accounts_library</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/accounts_library/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalReportsPharmacy">
+      <HintPath>..\..\eMediShop_Online\CrystalReportsPharmacy\bin\Debug\CrystalReportsPharmacy.dll</HintPath>
+    </Reference>
+    <Reference Include="ExPro.Client">
+      <HintPath>..\..\..\Web_Projects\ExPro.UI\ExPro.Server\bin\Debug\ExPro.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ExPro.Server, Version=2.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Web_Projects\ExPro.UI\ExPro.Server\bin\Debug\ExPro.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q3 2015\Bin40\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="comp_wiseacbook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comp_wiseacbook.designer.cs">
+      <DependentUpon>comp_wiseacbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigAC.cs" />
+    <Compile Include="Contra_Voucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contra_Voucher.Designer.cs">
+      <DependentUpon>Contra_Voucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CashBook.Designer.cs">
+      <DependentUpon>CashBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create_Account.Designer.cs">
+      <DependentUpon>Create_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\AccountDayBook1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountDayBook.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\AccountsReport.cs">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\AccountsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\Diag_Contracts.cs">
+      <DependentUpon>Diag_Contracts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\Diag_Contracts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Diag_Contracts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\dsEmployee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\DSFinanceInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSFinanceInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\DSReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\DSSalesReport.cs">
+      <DependentUpon>DSSalesReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\DSSalesReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSalesReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\Receipt_Info.cs">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="dataset\Receipt_Info.Designer.cs">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="dataset\Shares.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shares.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="inventory\ucIssueProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inventory\ucIssueProduct.designer.cs">
+      <DependentUpon>ucIssueProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventory\ucStockAtUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inventory\ucStockAtUnit.designer.cs">
+      <DependentUpon>ucStockAtUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventory\ucStockReceiving.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inventory\ucStockReceiving.designer.cs">
+      <DependentUpon>ucStockReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal_Voucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Journal_Voucher.Designer.cs">
+      <DependentUpon>Journal_Voucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printing.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt_Voucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Receipt_Voucher.Designer.cs">
+      <DependentUpon>Receipt_Voucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Voucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment_Voucher.Designer.cs">
+      <DependentUpon>Payment_Voucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AssetTrfReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssetTrfReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CashMemo_21.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashMemo_2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrEmployeeServiceRule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrEmployeeServiceRule.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrProfessionalSlip.cs">
+      <DependentUpon>CrProfessionalSlip.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\CrSalarySlip_New.cs">
+      <DependentUpon>CrSalarySlip_New.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\CrProfessionalSalarySlip.cs">
+      <DependentUpon>CrProfessionalSalarySlip.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\CrCheckPrinting.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCheckPrinting.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrChequeEnvelope.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrChequeEnvelope.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrDayBookAcc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrDayBookAcc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrGroupReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrGroupReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrSalarySlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSalarySlip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrSalesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSalesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrVoucher.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrVoucher.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\cr_StipendSlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cr_StipendSlip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryIssuedReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryIssuedReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RateContract.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RateContract.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RebateContract.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RebateContract.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ShareCertificate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShareCertificate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ViewLedgerInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewLedgerInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="Service References\rmAccounts\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\rmInventory\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceConnectLayer.cs" />
+    <Compile Include="ucCheckPrinting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCheckPrinting.Designer.cs">
+      <DependentUpon>ucCheckPrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucImportSingleLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucImportSingleLedger.Designer.cs">
+      <DependentUpon>ucImportSingleLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucModifyVoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucModifyVoucher.designer.cs">
+      <DependentUpon>ucModifyVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucNewCashOutApproval.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNewCashOutApproval.designer.cs">
+      <DependentUpon>ucNewCashOutApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPrintSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPrintSalary.designer.cs">
+      <DependentUpon>ucPrintSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSalarySlip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSalarySlip.Designer.cs">
+      <DependentUpon>ucSalarySlip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucUnitDayBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucUnitDayBook.Designer.cs">
+      <DependentUpon>ucUnitDayBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_ImportLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_ImportLedger.Designer.cs">
+      <DependentUpon>uc_ImportLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UniqueMachineId.cs" />
+    <Compile Include="View_Accounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View_Accounts.Designer.cs">
+      <DependentUpon>View_Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="comp_wiseacbook.resx">
+      <DependentUpon>comp_wiseacbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contra_Voucher.resx">
+      <DependentUpon>Contra_Voucher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashBook.resx">
+      <DependentUpon>CashBook.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create_Account.resx">
+      <DependentUpon>Create_Account.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventory\ucIssueProduct.resx">
+      <DependentUpon>ucIssueProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventory\ucStockAtUnit.resx">
+      <DependentUpon>ucStockAtUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventory\ucStockReceiving.resx">
+      <DependentUpon>ucStockReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal_Voucher.resx">
+      <DependentUpon>Journal_Voucher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt_Voucher.resx">
+      <DependentUpon>Receipt_Voucher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment_Voucher.resx">
+      <DependentUpon>Payment_Voucher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssetTrfReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AssetTrfReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CashMemo_2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemo_21.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrEmployeeServiceRule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrEmployeeServiceRule.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrProfessionalSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrProfessionalSlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrSalarySlip_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSalarySlip_New.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrProfessionalSalarySlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrProfessionalSalarySlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrCheckPrinting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCheckPrinting.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrChequeEnvelope.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrChequeEnvelope.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrDayBookAcc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDayBookAcc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrGroupReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrGroupReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrSalarySlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSalarySlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrSalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrVoucher.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrVoucher.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\cr_StipendSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cr_StipendSlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InventoryIssuedReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventoryIssuedReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RateContract.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RateContract.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RebateContract.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RebateContract.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShareCertificate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShareCertificate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ViewLedgerInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ViewLedgerInfo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCheckPrinting.resx">
+      <DependentUpon>ucCheckPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucImportSingleLedger.resx">
+      <DependentUpon>ucImportSingleLedger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucModifyVoucher.resx">
+      <DependentUpon>ucModifyVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNewCashOutApproval.resx">
+      <DependentUpon>ucNewCashOutApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPrintSalary.resx">
+      <DependentUpon>ucPrintSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSalarySlip.resx">
+      <DependentUpon>ucSalarySlip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucUnitDayBook.resx">
+      <DependentUpon>ucUnitDayBook.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_ImportLedger.resx">
+      <DependentUpon>uc_ImportLedger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Accounts.resx">
+      <DependentUpon>View_Accounts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataset\AccountDayBook.xsc">
+      <DependentUpon>AccountDayBook.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\AccountDayBook.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountDayBook1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataset\AccountDayBook.xss">
+      <DependentUpon>AccountDayBook.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\Diag_Contracts.xsc">
+      <DependentUpon>Diag_Contracts.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\Diag_Contracts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Diag_Contracts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\Diag_Contracts.xss">
+      <DependentUpon>Diag_Contracts.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\dsEmployee.xsc">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\dsEmployee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataset\dsEmployee.xss">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DSReports.xsc">
+      <DependentUpon>DSReports.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DSReports.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReports.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataset\DSReports.xss">
+      <DependentUpon>DSReports.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\Receipt_Info.xsc">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\Receipt_Info.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Receipt_Info.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\Receipt_Info.xss">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\rmInventory\Inventory_WebServices.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dataset\Shares.xsc">
+      <DependentUpon>Shares.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\Shares.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Shares.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\Shares.xss">
+      <DependentUpon>Shares.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dataset\AccountsReport.xsc">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\AccountsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\AccountsReport.xss">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dataset\DSFinanceInfo.xsc">
+      <DependentUpon>DSFinanceInfo.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DSFinanceInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSFinanceInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataset\DSFinanceInfo.xss">
+      <DependentUpon>DSFinanceInfo.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dataset\DSSalesReport.xsc">
+      <DependentUpon>DSSalesReport.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DSSalesReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSalesReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\DSSalesReport.xss">
+      <DependentUpon>DSSalesReport.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icq_dnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\rmAccounts\" />
+    <WCFMetadataStorage Include="Service References\rmInventory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmAccounts\Accounts_WebService1.wsdl" />
+    <None Include="Service References\rmAccounts\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmAccounts\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmAccounts\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmAccounts\Accounts_WebService1.disco" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Service References\rmInventory\Inventory_WebServices.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmInventory\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmInventory\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\rmInventory\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+﻿            try
+            {
+                DialogResult res = RadMessageBox.Show("Do You want to Print", "ExPro Help", MessageBoxButtons.YesNo);
+            }
+            catch (Exception ex)
+            {
+                GlobalUsage.us.SaveErrorLog(GlobalUsage.gUnit_id, "eMediShop", ErrorTracker.ErrorHistory(ex));
+                RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+						finally{Cursor.Current = Cursors.Default;}
+
+			try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    _ds = GlobalUsage.cws.ReconcileMasterKeyId(out _result, GlobalUsage.gUnit_id, e.Item.Text);
+
+
+                }
+             catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
+				finally{Cursor.Current = Cursors.Default;}
+
+   _jsonString = GlobalUsage.pwcf.Purchase_Queries_JSON(out _result, GlobalUsage.Unit_id, "-", "VendorSearch", txtStockistName.Text, "-");
+                    var table = JsonConvert.DeserializeObject<DataTable>(_jsonString);
+                    DataRow[] drary = table.Select();
+                    foreach (DataRow dr in drary)
+
+				EXEC sp_resetstatus 'yourDBname';
+ALTER DATABASE yourDBname SET EMERGENCY
+DBCC checkdb('yourDBname')
+ALTER DATABASE yourDBname SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+DBCC CheckDB ('yourDBname', REPAIR_ALLOW_DATA_LOSS)
+ALTER DATABASE yourDBname SET MULTI_USER
+
+Report Common Error Installation
+Install-Package Microsoft.ReportViewer.Runtime.Commo
+Install-Package Microsoft.SqlServer.Types
+
+Barcode
+Install-Package BarCode -Version 2022.7.7345

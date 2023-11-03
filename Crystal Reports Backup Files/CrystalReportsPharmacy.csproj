@@ -1,0 +1,1217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BFD40CF-354E-48FD-A11D-D73E8B706925}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrystalReportsPharmacy</RootNamespace>
+    <AssemblyName>CrystalReportsPharmacy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=9.2.15.930, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\Reporting Q3 2015\Bin\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadChart, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikData, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cghs\dataset\Distribution.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Distribution.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cghs\dataset\NewMed.cs">
+      <DependentUpon>NewMed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cghs\dataset\NewMed.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewMed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cghs\dataset\purchasedInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purchasedInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cghs\dataset\purchaseOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purchaseOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cghs\reports\DistributionSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistributionSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cghs\reports\NightClosingSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NightClosingSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cghs\reports\PurchasedInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchasedInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cghs\reports\purchaseOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purchaseOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\AssetTrfReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssetTrfReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\Billrpt1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Billrpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CashMemoGST_opthalmic.cs">
+      <DependentUpon>CashMemoGST_opthalmic.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="eMediShop\CashMemoGST_IPD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashMemoGST_IPD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CorporateBills.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorporateBills.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\estimateForFeeding.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>estimateForFeeding.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\HP_MedicineSearchSheet.cs">
+      <DependentUpon>HP_MedicineSearchSheet.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="eMediShop\HP_CashMemo.cs">
+      <DependentUpon>HP_CashMemo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CashMemo_withoutDiscount.cs">
+      <DependentUpon>CashMemo_withoutDiscount.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CashMemoGST.cs">
+      <DependentUpon>CashMemoGST.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CashMemo_2.cs">
+      <DependentUpon>CashMemo_2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CashMemo_UK.cs">
+      <DependentUpon>CashMemo_UK.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CGHS_CrItemSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CGHS_CrItemSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CGHS_DistributionList.cs">
+      <DependentUpon>CGHS_DistributionList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CashMemo_withoutDiscount_old.cs">
+      <DependentUpon>CashMemo_withoutDiscount_old.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\crHoldOrderPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crHoldOrderPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\MinimumPurchaseOrderWithLocalVendor.cs">
+      <DependentUpon>MinimumPurchaseOrderWithLocalVendor.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\HomeDeliverySlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeDeliverySlip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CR_GRReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_GRReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\HighSellingProducts.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HighSellingProducts.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\NewItemList.cs">
+      <DependentUpon>NewItemList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CorpNewIndRep.cs">
+      <DependentUpon>CorpNewIndRep.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\CorpNewMedicineRpt.cs">
+      <DependentUpon>CorpNewMedicineRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\ExtraPurchase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExtraPurchase.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\MinimumPurchaseOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MinimumPurchaseOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\InterState_TransferForm.cs">
+      <DependentUpon>InterState_TransferForm.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\WithinStateTransfer_Form.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WithinStateTransfer_Form.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LocalDataSet\AccountsReport.cs">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\AccountsReport.designer.cs">
+      <DependentUpon>AccountsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\AccountsReport1.Designer.cs">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\CDRI_DATA.Designer.cs">
+      <DependentUpon>CDRI_DATA.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\CorpNewIndDS.Designer.cs">
+      <DependentUpon>CorpNewIndDS.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\CorporateBills.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorporateBills.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\DSExtraProduct.cs">
+      <DependentUpon>DSExtraProduct.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\DSExtraProduct.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSExtraProduct.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\DS_Expiry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Expiry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\goodsReturn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>goodsReturn.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\GR_DATA.cs">
+      <DependentUpon>GR_DATA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\GR_DATA.designer.cs">
+      <DependentUpon>GR_DATA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\GR_DATA1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GR_DATA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\Gr_ReportForVendor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gr_ReportForVendor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\OnLineOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnLineOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\ProductReport_DS.cs">
+      <DependentUpon>ProductReport_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\ProductReport_DS.Designer.cs">
+      <DependentUpon>ProductReport_DS.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\Product_DS.cs">
+      <DependentUpon>Product_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\Product_DS.Designer.cs">
+      <DependentUpon>Product_DS.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\purchasedBill_Info.Designer.cs">
+      <DependentUpon>purchasedBill_Info.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\PurchaseOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\rcm_info.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rcm_info.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\Receipt_Info.cs">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\Receipt_Info.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\reportLedegerDisplay.cs">
+      <DependentUpon>reportLedegerDisplay.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\reportLedegerDisplay.designer.cs">
+      <DependentUpon>reportLedegerDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\reportLedegerDisplay1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportLedegerDisplay.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\Reports.cs">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\stocks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stocks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\TransferInfoDS.Designer.cs">
+      <DependentUpon>TransferInfoDS.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalDataSet\UnitStaff.cs">
+      <DependentUpon>UnitStaff.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\UnitStaff.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitStaff.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDataSet\WholeSale1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WholeSale.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\CrMrpFeeding.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrMrpFeeding.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crOrderIntPaper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crOrderIntPaper.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrPromotionalProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrPromotionalProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrSaltExistence.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSaltExistence.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrSaltInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSaltInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\gr_slip3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gr_slip3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\gr_slip_2.cs">
+      <DependentUpon>gr_slip_2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrExtraProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrExtraProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrMismatchExpiry.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrMismatchExpiry.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrSalarySlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSalarySlip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrVoucher.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrVoucher.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\gr_slip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gr_slip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\gr_unit_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gr_unit_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LocalExpirySheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalExpirySheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LedgerRep.cs">
+      <DependentUpon>LedgerRep.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\OnLineOrderSlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnLineOrderSlip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProductReport_Crt.cs">
+      <DependentUpon>ProductReport_Crt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchasedBill_Info.cs">
+      <DependentUpon>PurchasedBill_Info.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RCM_CallDataSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RCM_CallDataSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Staff_List.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Staff_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Stocks_ByShelf.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stocks_ByShelf.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\vendorAckRept.cs">
+      <DependentUpon>vendorAckRept.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ViewLedgerInfo1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewLedgerInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\WS_Bill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WS_Bill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="cghs\reports\DistributionSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DistributionSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cghs\reports\NightClosingSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NightClosingSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cghs\reports\PurchasedInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchasedInfo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cghs\reports\purchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>purchaseOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\AssetTrfReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AssetTrfReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\Billrpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Billrpt1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemoGST_opthalmic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemoGST_opthalmic.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemoGST_IPD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemoGST_IPD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CorporateBills.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CorporateBills.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\estimateForFeeding.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>estimateForFeeding.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\HP_MedicineSearchSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HP_MedicineSearchSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\HP_CashMemo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HP_CashMemo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemo_withoutDiscount.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemo_withoutDiscount.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemoGST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemoGST.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemo_2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemo_2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemo_UK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemo_UK.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CGHS_CrItemSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CGHS_CrItemSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CGHS_DistributionList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CGHS_DistributionList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemo_withoutDiscount_old.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemo_withoutDiscount_old.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\crHoldOrderPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crHoldOrderPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\MinimumPurchaseOrderWithLocalVendor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MinimumPurchaseOrderWithLocalVendor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\HomeDeliverySlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HomeDeliverySlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CR_GRReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_GRReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\HighSellingProducts.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HighSellingProducts.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\NewItemList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewItemList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CorpNewIndRep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CorpNewIndRep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CorpNewMedicineRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CorpNewMedicineRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\ExtraPurchase.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExtraPurchase.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\MinimumPurchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MinimumPurchaseOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\InterState_TransferForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InterState_TransferForm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\WithinStateTransfer_Form.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WithinStateTransfer_Form.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\CashMemo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashMemo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\InternalSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InternalSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMediShop\ZeroStockOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ZeroStockOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rdlc\estimateForFeeding.rdlc" />
+    <EmbeddedResource Include="Reports\CrMrpFeeding.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrMrpFeeding.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crOrderIntPaper.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crOrderIntPaper.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrPromotionalProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrPromotionalProduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrSaltExistence.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSaltExistence.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrSaltInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSaltInfo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gr_slip3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>gr_slip3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gr_slip_2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>gr_slip_2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrExtraProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrExtraProduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrMismatchExpiry.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrMismatchExpiry.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrSalarySlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSalarySlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrShelfReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrShelfReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrVoucher.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrVoucher.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gr_slip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>gr_slip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gr_unit_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>gr_unit_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LocalExpirySheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LocalExpirySheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LedgerRep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LedgerRep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OnLineOrderSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OnLineOrderSlip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProductReport_Crt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductReport_Crt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchasedBill_Info.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchasedBill_Info.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RCM_CallDataSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RCM_CallDataSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Staff_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Staff_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\Stocks_ByShelf.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Stocks_ByShelf.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\vendorAckRept.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>vendorAckRept.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ViewLedgerInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ViewLedgerInfo1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\WS_Bill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WS_Bill.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="cghs\dataset\Distribution.xsc">
+      <DependentUpon>Distribution.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\Distribution.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Distribution.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="cghs\dataset\Distribution.xss">
+      <DependentUpon>Distribution.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\NewMed.xsc">
+      <DependentUpon>NewMed.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\NewMed.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewMed.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="cghs\dataset\NewMed.xss">
+      <DependentUpon>NewMed.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\purchasedInfo.xsc">
+      <DependentUpon>purchasedInfo.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\purchasedInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>purchasedInfo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="cghs\dataset\purchasedInfo.xss">
+      <DependentUpon>purchasedInfo.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\purchaseOrder.xsc">
+      <DependentUpon>purchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="cghs\dataset\purchaseOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>purchaseOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="cghs\dataset\purchaseOrder.xss">
+      <DependentUpon>purchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\AccountsReport.xsc">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\AccountsReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountsReport1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\AccountsReport.xss">
+      <DependentUpon>AccountsReport.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\CDRI_DATA.xsc">
+      <DependentUpon>CDRI_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\CDRI_DATA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDRI_DATA.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\CDRI_DATA.xss">
+      <DependentUpon>CDRI_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\CorpNewIndDS.xsc">
+      <DependentUpon>CorpNewIndDS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\CorpNewIndDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CorpNewIndDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\CorpNewIndDS.xss">
+      <DependentUpon>CorpNewIndDS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\CorporateBills.xsc">
+      <DependentUpon>CorporateBills.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\CorporateBills.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CorporateBills.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\CorporateBills.xss">
+      <DependentUpon>CorporateBills.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\DSExtraProduct.xsc">
+      <DependentUpon>DSExtraProduct.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\DSExtraProduct.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSExtraProduct.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\DSExtraProduct.xss">
+      <DependentUpon>DSExtraProduct.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\DS_Expiry.xsc">
+      <DependentUpon>DS_Expiry.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\DS_Expiry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Expiry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\DS_Expiry.xss">
+      <DependentUpon>DS_Expiry.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\goodsReturn.xsc">
+      <DependentUpon>goodsReturn.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\goodsReturn.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>goodsReturn.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\goodsReturn.xss">
+      <DependentUpon>goodsReturn.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\GR_DATA.xsc">
+      <DependentUpon>GR_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\GR_DATA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GR_DATA1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\GR_DATA.xss">
+      <DependentUpon>GR_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Gr_ReportForVendor.xsc">
+      <DependentUpon>Gr_ReportForVendor.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Gr_ReportForVendor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Gr_ReportForVendor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\Gr_ReportForVendor.xss">
+      <DependentUpon>Gr_ReportForVendor.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\OnLineOrder.xsc">
+      <DependentUpon>OnLineOrder.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\OnLineOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OnLineOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\OnLineOrder.xss">
+      <DependentUpon>OnLineOrder.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\ProductReport_DS.xsc">
+      <DependentUpon>ProductReport_DS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\ProductReport_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductReport_DS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\ProductReport_DS.xss">
+      <DependentUpon>ProductReport_DS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Product_DS.xsc">
+      <DependentUpon>Product_DS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Product_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Product_DS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\Product_DS.xss">
+      <DependentUpon>Product_DS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\purchasedBill_Info.xsc">
+      <DependentUpon>purchasedBill_Info.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\purchasedBill_Info.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>purchasedBill_Info.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\purchasedBill_Info.xss">
+      <DependentUpon>purchasedBill_Info.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\PurchaseOrder.xsc">
+      <DependentUpon>PurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\PurchaseOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PurchaseOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\PurchaseOrder.xss">
+      <DependentUpon>PurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\rcm_info.xsc">
+      <DependentUpon>rcm_info.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\rcm_info.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rcm_info.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\rcm_info.xss">
+      <DependentUpon>rcm_info.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Receipt_Info.xsc">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Receipt_Info.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Receipt_Info.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\Receipt_Info.xss">
+      <DependentUpon>Receipt_Info.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\reportLedegerDisplay.xsc">
+      <DependentUpon>reportLedegerDisplay.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\reportLedegerDisplay.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>reportLedegerDisplay1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\reportLedegerDisplay.xss">
+      <DependentUpon>reportLedegerDisplay.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Reports.xsc">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\Reports.xss">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\stocks.xsc">
+      <DependentUpon>stocks.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\stocks.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stocks.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\stocks.xss">
+      <DependentUpon>stocks.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\TransferInfoDS.xsc">
+      <DependentUpon>TransferInfoDS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\TransferInfoDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransferInfoDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\TransferInfoDS.xss">
+      <DependentUpon>TransferInfoDS.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\UnitStaff.xsc">
+      <DependentUpon>UnitStaff.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\UnitStaff.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UnitStaff.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LocalDataSet\UnitStaff.xss">
+      <DependentUpon>UnitStaff.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\WholeSale.xsc">
+      <DependentUpon>WholeSale.xsd</DependentUpon>
+    </None>
+    <None Include="LocalDataSet\WholeSale.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WholeSale1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LocalDataSet\WholeSale.xss">
+      <DependentUpon>WholeSale.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="eMediShop\CashMemo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashMemo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\InternalSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eMediShop\ZeroStockOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZeroStockOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrShelfReport.cs">
+      <DependentUpon>CrShelfReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
