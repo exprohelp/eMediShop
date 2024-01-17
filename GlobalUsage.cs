@@ -82,6 +82,7 @@ namespace eMediShop
         public static string SoftRight = "N/A";
         public static string SmsAPI = "N/A";
         public static string SmsID = "N/A";
+        public static string smsProvider = "N/A";
         public static CrystalReportsPharmacy.eMediShop.CashMemoGST PharmacyCashMemo;
         public static CrystalReportsPharmacy.eMediShop.ManualDeliveryNote ManualBill;
         public static CrystalReportsPharmacy.eMediShop.HP_CashMemo HospitalCashMemo;

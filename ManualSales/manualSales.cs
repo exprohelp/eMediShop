@@ -409,14 +409,39 @@ namespace eMediShop.ManualSales
             {
                 _unitMRPRate = Convert.ToDecimal(txtmrp.Text) / Convert.ToInt16(txtpackqty.Text);
                 if (_discountFlag == "Y")
+                {
+                    //_discountPercntage = getDiscount(_SelectedItem_Id);
                     _unitSaleRate = Convert.ToDecimal(txtmrp.Text) * ((100 - _discountPercntage) / 100) / Convert.ToInt16(txtpackqty.Text);
+
+                }
                 else
                     _unitSaleRate = Convert.ToDecimal(txtmrp.Text) / Convert.ToInt16(txtpackqty.Text);
 
                 txtUnitMrp.Text = _unitMRPRate.ToString("####.00");
             }
         }
+        private decimal getDiscount(string itemId)
+        {
+            decimal DiscountPer = 0;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
 
+                GetProductDiscountByItemID p = new GetProductDiscountByItemID();
+                p.unit_id = GlobalUsage.Unit_id; p.Itemid = _SelectedItem_Id; p.cardLevel = "Silver";
+                p.ipdNo = txtIPOPNo.Text;p.orderNo = "-";p.sold_qty = Convert.ToInt16(txtQty.Text);
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/GetProductDiscountByItemID", p);
+                string[] dl = dwr.message.Split('|');
+                DiscountPer = Convert.ToDecimal(dl[0]) ;
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "ExPro", MessageBoxButtons.OK, MessageBoxIcon.Information); DiscountPer = 0; }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+            return DiscountPer;
+        }
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
             if (Config.isNumeric(txtQty.Text, System.Globalization.NumberStyles.Integer))

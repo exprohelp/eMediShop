@@ -4,6 +4,43 @@ using System.Data;
 
 namespace eMediShop
 {
+    public class HALContractHeader
+    {
+        public string unitID { get; set; }
+        public string orderNo { get; set; }
+        public string ptname { get; set; }
+        public string prescribedBy { get; set; }
+        public int SrNo { get; set; }
+        public string PBNO { get; set; }
+        public string orderDate { get; set; }
+        public string createdBy { get; set; }
+        public string Logic { get; set; }
+        public string prm_1 { get; set; }
+        public string prm_2 { get; set; }
+    }
+    public class HALContractLineItem
+    {
+        public string unitID { get; set; }
+        public string orderNo { get; set; }
+        public string itemid { get; set; }
+        public int qty { get; set; }
+        public int itemname { get; set; }
+        public string createdBy { get; set; }
+        public string Logic { get; set; }
+        public string prm_1 { get; set; }
+        public string prm_2 { get; set; }
+        public string loginID { get; set; }
+    }
+    public class GetProductDiscountByItemID
+    {
+        public string unit_id { get; set; }
+        public string cardLevel { get; set; }
+        public string Itemid { get; set; }
+        public int sold_qty { get; set; }
+        public string ipdNo { get; set; }
+        public string result { get; set; }
+        public string orderNo { get; set; }
+    }
     public class WalletMoney
     {
         public string unitID { get; set; }
@@ -374,6 +411,8 @@ namespace eMediShop
     }
     public class sms
     {
+        public string smsProvider { get; set; }
+        public string templateID { get; set; }
         public string smsAPI { get; set; }
         public string smsID { get; set; }
         public string MobileNo { get; set; }
@@ -525,6 +564,8 @@ namespace eMediShop
         public string dtfrom { get; set; }
         public string dtTo { get; set; }
         public string login_id { get; set; }
+        public string SeltdUnits { get; set; }
+      
     }
     public class pm_DailyDispatch
     {

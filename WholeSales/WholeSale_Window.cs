@@ -362,7 +362,7 @@ namespace eMediShop.WholeSales
                     }
                     else
                     {
-                        RadMessageBox.Show(_result, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                        RadMessageBox.Show(dwr.message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
                     }
                 }
             }

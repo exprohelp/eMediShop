@@ -1245,6 +1245,7 @@ namespace eMediShop
                 GlobalUsage.State = dt.Rows[0]["state_name"].ToString();
                 GlobalUsage.SmsAPI= dt.Rows[0]["smsAPI"].ToString();
                 GlobalUsage.SmsID = dt.Rows[0]["SMS_ID"].ToString();
+                GlobalUsage.smsProvider = dt.Rows[0]["sms_provider"].ToString();
 
                 this.rrb_menu.Text = GlobalUsage.UnitName + " [" + GlobalUsage.Unit_id + "], " + GlobalUsage.UnitAddress;
                 GlobalUsage.PrinterType = "LASER";
@@ -1896,6 +1897,26 @@ namespace eMediShop
         private void rbeCancelManualSales_Click(object sender, EventArgs e)
         {
             openControl(new ManualSales.ucCancelSales(), "Cancel Manual Bill");
+        }
+
+        private void rbeHAlOrderEntry_Click(object sender, EventArgs e)
+        {
+            openForm(new contract.HAL_Orders());
+        }
+
+        private void rbeHAL_OrderProcess_Click(object sender, EventArgs e)
+        {
+            openForm(new contract.ProcessOrder());
+        }
+
+        private void rbeHAL_RawData_Click(object sender, EventArgs e)
+        {
+            openControl(new contract.ucOrderData(), "Order Data");
+        }
+
+        private void rbeHAlEditOrders_Click(object sender, EventArgs e)
+        {
+            openControl(new contract.ucManageOrders(), "Item/Order Cancellation");
         }
 
         private void rb_assign_menu_Click(object sender, EventArgs e)

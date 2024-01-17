@@ -827,7 +827,7 @@ namespace eMediShop.Hospital.Sales
                 _old_sale_inv_no = "-";// dgIndentInfo.CurrentRow.Cells["old_sale_inv_no"].Value.ToString();
                 prescription_from = dgIndentInfo.CurrentRow.Cells["prescribed_from"].Value.ToString();
                 txtCorpName.Text = dgIndentInfo.CurrentRow.Cells["panel_name"].Value.ToString();
-                _result = GlobalUsage.his_proxy.getPatientStatusByIpdNo(_ipopno);
+                _result = "IN";// GlobalUsage.his_proxy.getPatientStatusByIpdNo(_ipopno);
                 if (_result == "IN")
                 {
                     Cursor.Current = Cursors.WaitCursor;

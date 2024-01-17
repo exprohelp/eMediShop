@@ -22,7 +22,7 @@ namespace eMediShop.sales
         string _MasterKeyId = string.Empty;
         string _SelectedItem_Id = string.Empty; string _ProductName = string.Empty; string _creditFlag = string.Empty;
         string _BatchNo = string.Empty; string _SaleType = string.Empty;
-        decimal _Mrp = 0;
+        decimal _Mrp = 0;string _cardNo = string.Empty;
         decimal _UnitSaleRate = 0; decimal _discountPercntage = 0;
         string _ExpDate = string.Empty; string _mobileNo = string.Empty;
         string _PayMode = "Cash"; string _CardType = "Health";
@@ -441,7 +441,7 @@ namespace eMediShop.sales
                                     p.counter_id = GlobalUsage.CounterID; p.computer_id = GlobalUsage.computerName; p.Sale_Type = "Walk-In";
                                     p.cust_name = txtPatientName.Text; p.prescribedBy = txtPrescribedBy.Text; p.refCode = _refCode;
                                     p.item_id = _SelectedItem_Id; p.master_key_id = _MasterKeyId; p.panelName = "Cash"; p.accountID = "16040001";
-                                    p.card_no = txtCardNo.Text; p.card_level = txtCardStatus.Text; p.sold_qty = Convert.ToDouble(txtQty.Text);
+                                    p.card_no = _cardNo; p.card_level = txtCardStatus.Text; p.sold_qty = Convert.ToDouble(txtQty.Text);
                                     p.old_sale_inv_no = GlobalUsage.Old_Sale_Inv_No; p.gstn_no = txtGSTN_No.Text; p.hosp_cr_no = "-"; p.hosp_ipop_no = "-";
                                     p.Cur_sale_inv_no = txtInvNo.Text; p.order_no = "N/A"; p.login_id = GlobalUsage.Login_id;
                                     p.stateName = GlobalUsage.State; p.couponCode = GlobalUsage.couponCode; p.ContactNo = _mobileNo;
@@ -919,6 +919,8 @@ namespace eMediShop.sales
                     {
                         txtPatientName.Text = dwr.result.Tables[0].Rows[0]["pt_name"].ToString();
                         txtCardNo.Text = dwr.result.Tables[0].Rows[0]["card_no"].ToString().ToUpper();
+                        _cardNo = txtCardNo.Text;
+                        _mobileNo = dwr.result.Tables[0].Rows[0]["contactNo"].ToString().ToUpper();
                     }
                     this.txtPrescribedBy.TextChanged -= new System.EventHandler(this.txtPrescribedBy_TextChanged);
                     txtPrescribedBy.Text = dwr.result.Tables[0].Rows[0]["ref_name"].ToString().ToUpper();
@@ -1180,7 +1182,13 @@ namespace eMediShop.sales
             _CardChangeFlag = "Y";
             txtPatientName.Text = e.NewCardName;
             txtPatientName.Enabled = false;
-            txtCardNo.Text = e.NewCardNo;
+            if(rb_ByMobile.Checked)
+            { 
+            txtCardNo.Text = e.MobileNo;//e.NewCardNo;
+                _cardNo = e.NewCardNo;
+            }
+            else
+                txtCardNo.Text = e.NewCardNo;
 
             txtCardStatus.Text = e.CardType;
             _discountPercntage = e.Discountpercentage;
@@ -1330,6 +1338,8 @@ namespace eMediShop.sales
                 sms p = new sms();
                 p.msg = _otp + " is Your Chandan Member Verification Code.";// + DateTime.Now.ToString();
                 p.MobileNo = txtVMobile.Text;
+                p.templateID = "1007368458238551885";
+                p.smsProvider = GlobalUsage.smsProvider;
                 p.smsAPI = GlobalUsage.SmsAPI;
                 p.smsID = GlobalUsage.SmsID;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/common/sendsms", p);
@@ -1373,6 +1383,8 @@ namespace eMediShop.sales
                 sms p = new sms();
                 p.msg = "To encash Rs. " + txtRedeemAmt.Text + " from your Chandan Pharmacy wallet, OTP is " + _otp + ". Team Chandan.";// + DateTime.Now.ToString();
                 p.MobileNo = txtWalletId.Text;
+                p.templateID = "1007387720749582210";
+                p.smsProvider = GlobalUsage.smsProvider;
                 p.smsAPI = GlobalUsage.SmsAPI;
                 p.smsID = GlobalUsage.SmsID;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/common/sendsms", p);
@@ -1436,9 +1448,9 @@ namespace eMediShop.sales
         {
             BillPosting b = new BillPosting();
             b.sale_inv_no = txtInvNo.Text;
-            b.card_no = txtCardNo.Text; b.customer_name = txtPatientName.Text; b.ipopNo = "-"; b.panelName = "Retail Sales";
+            b.card_no = _cardNo; b.customer_name = txtPatientName.Text; b.ipopNo = "-"; b.panelName = "Retail Sales";
             b.panelType = "Cash"; b.prescribedBy = txtPrescribedBy.Text; b.uhidNo = "-";
-            b.amount = Convert.ToInt32(txtNetValue.Text);
+            b.amount = Convert.ToInt32(txtNetValue.Text);b.mobileNo = _mobileNo;
             b.Oldsale_inv_no = txtOldCashMemoNo.Text;
 
             if (rb_ByMobile.Checked && txtCardNo.Text.Length == 10)

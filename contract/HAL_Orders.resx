@@ -117,20 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="roundRectShape1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gridViewCommandColumn3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAWdJREFUOE+NU8tKw0AUNYqLCm7ElQv9gsS8M2QTAiGrYnGRXem2K8E/SKOriOJW
-        VPCr/JSCi0I9J80M0zjUHjik995z7tx59MCEIAjm4HrAeV/+HxAvfN9vhRCj8Xh8EobhM3JNX/4LFCfg
-        D6hWhElRz/ekdgKrJRtwxTf+rqrqqCiKizzPr/hl3Ik0QP8ONpxQJroG+5gJz/M+MFnL7XUJBDeO46yi
-        KFxHUQQax1Z03etVkiRTNQFgsSOSr7tWZj6O4xfqyrI8Q2pzBuyElZ9YpAgjTocMAnfG5jRTV9f1YWcm
-        +qtqwQfGGHOhk3maeDb8Sp0CJ4CwoZixySy3x1jqdFjSwMBk5pfb03Vb0Asmsxx7zwbuDId6B+M9v4x5
-        kEMdsLkFgkk8pkeOuesxUUMtb0F/B2zA/8M3RnayLDvnPW9dFYD6JTWY6pZ19RIJFI7BL+x1GYbmF2jb
-        9hITfKZpekqzEGL0C3+FyKXljOuXAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="gridViewCommandColumn4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="gridViewCommandColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAg1JREFUOE+FUktrFEEQnjU+iHoygmyy4Gt2uqcfM7szs5mJiVk3uywIgwdhDppT
@@ -143,6 +134,18 @@
         ykrSnpVMkL5/C9vJLa0iFGKrLeWPqKVvQ6gxnUxAh9cwhzuWTlC+eXW1I9ta7yBoH+3eDYLgBPntlu7h
         7is2ok1SCVoN7Zc+CVni9BRUu4nzCU+7ivNNCbHZ7/cXzE88gBr9B7q0P6wyWKoKkYdxvW7847hs/i9/
         Jovo35r9uQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="gridViewCommandColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAWdJREFUOE+NU8tKw0AUNYqLCm7ElQv9gsS8M2QTAiGrYnGRXem2K8E/SKOriOJW
+        VPCr/JSCi0I9J80M0zjUHjik995z7tx59MCEIAjm4HrAeV/+HxAvfN9vhRCj8Xh8EobhM3JNX/4LFCfg
+        D6hWhElRz/ekdgKrJRtwxTf+rqrqqCiKizzPr/hl3Ik0QP8ONpxQJroG+5gJz/M+MFnL7XUJBDeO46yi
+        KFxHUQQax1Z03etVkiRTNQFgsSOSr7tWZj6O4xfqyrI8Q2pzBuyElZ9YpAgjTocMAnfG5jRTV9f1YWcm
+        +qtqwQfGGHOhk3maeDb8Sp0CJ4CwoZixySy3x1jqdFjSwMBk5pfb03Vb0Asmsxx7zwbuDId6B+M9v4x5
+        kEMdsLkFgkk8pkeOuesxUUMtb0F/B2zA/8M3RnayLDvnPW9dFYD6JTWY6pZ19RIJFI7BL+x1GYbmF2jb
+        9hITfKZpekqzEGL0C3+FyKXljOuXAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

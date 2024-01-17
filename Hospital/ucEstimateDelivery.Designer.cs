@@ -46,23 +46,25 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgEstimateInfo = new Telerik.WinControls.UI.RadGroupBox();
+            this.cmbPanelName = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chkOPD = new System.Windows.Forms.CheckBox();
             this.chkHospitalAdvance = new System.Windows.Forms.CheckBox();
             this.txtPanelName = new Telerik.WinControls.UI.RadTextBox();
+            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
             this.label30 = new System.Windows.Forms.Label();
             this.btnDelivered = new Telerik.WinControls.UI.RadButton();
             this.txtEstRemarks = new Telerik.WinControls.UI.RadTextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtEstIpd = new Telerik.WinControls.UI.RadTextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.txtestUHID = new Telerik.WinControls.UI.RadTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnGetEstimate = new Telerik.WinControls.UI.RadButton();
             this.rgvEstimateInfo = new Telerik.WinControls.UI.RadGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.chkOPD = new System.Windows.Forms.CheckBox();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
-            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbPanelName = new System.Windows.Forms.ComboBox();
+            this.rbItDose = new System.Windows.Forms.RadioButton();
+            this.rbChandanHIS = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimateInfo)).BeginInit();
             this.rgEstimateInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPanelName)).BeginInit();
@@ -78,6 +80,8 @@
             // rgEstimateInfo
             // 
             this.rgEstimateInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.rgEstimateInfo.Controls.Add(this.rbChandanHIS);
+            this.rgEstimateInfo.Controls.Add(this.rbItDose);
             this.rgEstimateInfo.Controls.Add(this.cmbPanelName);
             this.rgEstimateInfo.Controls.Add(this.label1);
             this.rgEstimateInfo.Controls.Add(this.chkOPD);
@@ -95,14 +99,46 @@
             this.rgEstimateInfo.HeaderText = "XXXXXXXXXXXXXXXXXXXXXXXXX";
             this.rgEstimateInfo.Location = new System.Drawing.Point(3, 362);
             this.rgEstimateInfo.Name = "rgEstimateInfo";
-            this.rgEstimateInfo.Size = new System.Drawing.Size(1224, 115);
+            this.rgEstimateInfo.Size = new System.Drawing.Size(1224, 144);
             this.rgEstimateInfo.TabIndex = 3;
             this.rgEstimateInfo.Text = "XXXXXXXXXXXXXXXXXXXXXXXXX";
+            // 
+            // cmbPanelName
+            // 
+            this.cmbPanelName.Enabled = false;
+            this.cmbPanelName.FormattingEnabled = true;
+            this.cmbPanelName.Location = new System.Drawing.Point(228, 109);
+            this.cmbPanelName.Name = "cmbPanelName";
+            this.cmbPanelName.Size = new System.Drawing.Size(297, 28);
+            this.cmbPanelName.TabIndex = 147;
+            this.cmbPanelName.SelectedIndexChanged += new System.EventHandler(this.cmbPanelName_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(134, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 146;
+            this.label1.Text = "Select Panel";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkOPD
+            // 
+            this.chkOPD.AutoSize = true;
+            this.chkOPD.Location = new System.Drawing.Point(24, 113);
+            this.chkOPD.Name = "chkOPD";
+            this.chkOPD.Size = new System.Drawing.Size(83, 24);
+            this.chkOPD.TabIndex = 145;
+            this.chkOPD.Text = "OPD Bill";
+            this.chkOPD.UseVisualStyleBackColor = true;
+            this.chkOPD.CheckedChanged += new System.EventHandler(this.chkOPD_CheckedChanged);
             // 
             // chkHospitalAdvance
             // 
             this.chkHospitalAdvance.AutoSize = true;
-            this.chkHospitalAdvance.Location = new System.Drawing.Point(549, 86);
+            this.chkHospitalAdvance.Location = new System.Drawing.Point(549, 113);
             this.chkHospitalAdvance.Name = "chkHospitalAdvance";
             this.chkHospitalAdvance.Size = new System.Drawing.Size(145, 24);
             this.chkHospitalAdvance.TabIndex = 144;
@@ -115,7 +151,7 @@
             this.txtPanelName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPanelName.Enabled = false;
             this.txtPanelName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPanelName.Location = new System.Drawing.Point(361, 53);
+            this.txtPanelName.Location = new System.Drawing.Point(361, 80);
             this.txtPanelName.Name = "txtPanelName";
             this.txtPanelName.ReadOnly = true;
             // 
@@ -130,7 +166,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(361, 30);
+            this.label30.Location = new System.Drawing.Point(361, 57);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(88, 20);
             this.label30.TabIndex = 142;
@@ -139,7 +175,7 @@
             // 
             // btnDelivered
             // 
-            this.btnDelivered.Location = new System.Drawing.Point(1110, 47);
+            this.btnDelivered.Location = new System.Drawing.Point(1110, 74);
             this.btnDelivered.Name = "btnDelivered";
             this.btnDelivered.Size = new System.Drawing.Size(73, 56);
             this.btnDelivered.TabIndex = 141;
@@ -151,7 +187,7 @@
             this.txtEstRemarks.AutoSize = false;
             this.txtEstRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstRemarks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstRemarks.Location = new System.Drawing.Point(700, 53);
+            this.txtEstRemarks.Location = new System.Drawing.Point(700, 80);
             this.txtEstRemarks.MaxLength = 100;
             this.txtEstRemarks.Multiline = true;
             this.txtEstRemarks.Name = "txtEstRemarks";
@@ -167,7 +203,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(679, 30);
+            this.label29.Location = new System.Drawing.Point(679, 57);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(65, 20);
             this.label29.TabIndex = 139;
@@ -178,7 +214,7 @@
             // 
             this.txtEstIpd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstIpd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstIpd.Location = new System.Drawing.Point(205, 53);
+            this.txtEstIpd.Location = new System.Drawing.Point(205, 80);
             this.txtEstIpd.Name = "txtEstIpd";
             this.txtEstIpd.NullText = "Type and Press Enter";
             // 
@@ -192,12 +228,23 @@
             this.txtEstIpd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEstIpd_KeyDown);
             ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtEstIpd.GetChildAt(0))).Text = "";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(202, 57);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(58, 20);
+            this.label18.TabIndex = 137;
+            this.label18.Text = "IPD No.";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtestUHID
             // 
             this.txtestUHID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtestUHID.Enabled = false;
             this.txtestUHID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtestUHID.Location = new System.Drawing.Point(22, 53);
+            this.txtestUHID.Location = new System.Drawing.Point(22, 80);
             this.txtestUHID.Name = "txtestUHID";
             this.txtestUHID.NullText = "Type and Press Enter";
             // 
@@ -214,7 +261,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(22, 30);
+            this.label11.Location = new System.Drawing.Point(22, 57);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 20);
             this.label11.TabIndex = 135;
@@ -344,48 +391,26 @@
             this.rgvEstimateInfo.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.rgvEstimateInfo_RowFormatting);
             this.rgvEstimateInfo.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgvEstimateInfo_CommandCellClick);
             // 
-            // label18
+            // rbItDose
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(202, 30);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 20);
-            this.label18.TabIndex = 137;
-            this.label18.Text = "IPD No.";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbItDose.AutoSize = true;
+            this.rbItDose.Checked = true;
+            this.rbItDose.Location = new System.Drawing.Point(34, 29);
+            this.rbItDose.Name = "rbItDose";
+            this.rbItDose.Size = new System.Drawing.Size(78, 24);
+            this.rbItDose.TabIndex = 148;
+            this.rbItDose.Text = "Old HIS";
+            this.rbItDose.UseVisualStyleBackColor = true;
             // 
-            // chkOPD
+            // rbChandanHIS
             // 
-            this.chkOPD.AutoSize = true;
-            this.chkOPD.Location = new System.Drawing.Point(24, 86);
-            this.chkOPD.Name = "chkOPD";
-            this.chkOPD.Size = new System.Drawing.Size(83, 24);
-            this.chkOPD.TabIndex = 145;
-            this.chkOPD.Text = "OPD Bill";
-            this.chkOPD.UseVisualStyleBackColor = true;
-            this.chkOPD.CheckedChanged += new System.EventHandler(this.chkOPD_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
-            this.label1.TabIndex = 146;
-            this.label1.Text = "Select Panel";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbPanelName
-            // 
-            this.cmbPanelName.Enabled = false;
-            this.cmbPanelName.FormattingEnabled = true;
-            this.cmbPanelName.Location = new System.Drawing.Point(228, 82);
-            this.cmbPanelName.Name = "cmbPanelName";
-            this.cmbPanelName.Size = new System.Drawing.Size(297, 28);
-            this.cmbPanelName.TabIndex = 147;
-            this.cmbPanelName.SelectedIndexChanged += new System.EventHandler(this.cmbPanelName_SelectedIndexChanged);
+            this.rbChandanHIS.AutoSize = true;
+            this.rbChandanHIS.Location = new System.Drawing.Point(143, 29);
+            this.rbChandanHIS.Name = "rbChandanHIS";
+            this.rbChandanHIS.Size = new System.Drawing.Size(112, 24);
+            this.rbChandanHIS.TabIndex = 149;
+            this.rbChandanHIS.Text = "Chandan HIS";
+            this.rbChandanHIS.UseVisualStyleBackColor = true;
             // 
             // ucEstimateDelivery
             // 
@@ -397,7 +422,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ucEstimateDelivery";
-            this.Size = new System.Drawing.Size(1230, 495);
+            this.Size = new System.Drawing.Size(1230, 509);
             this.Load += new System.EventHandler(this.ucEstimateDelivery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimateInfo)).EndInit();
             this.rgEstimateInfo.ResumeLayout(false);
@@ -433,5 +458,7 @@
         private Telerik.WinControls.RadThemeManager radThemeManager1;
         private System.Windows.Forms.ComboBox cmbPanelName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rbItDose;
+        private System.Windows.Forms.RadioButton rbChandanHIS;
     }
 }

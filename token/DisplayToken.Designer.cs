@@ -77,7 +77,7 @@
             // 
             this.lblTokenNo.AutoSize = true;
             this.lblTokenNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTokenNo.Font = new System.Drawing.Font("Engravers MT", 200F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTokenNo.Font = new System.Drawing.Font("Engravers MT", 170F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTokenNo.ForeColor = System.Drawing.Color.Red;
             this.lblTokenNo.Location = new System.Drawing.Point(6, 139);
             this.lblTokenNo.Name = "lblTokenNo";

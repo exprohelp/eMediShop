@@ -65,7 +65,6 @@ namespace eMediShop.sales
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUnitMrp = new System.Windows.Forms.TextBox();
-            this.txtMedName = new System.Windows.Forms.TextBox();
             this.txtbatchno = new System.Windows.Forms.TextBox();
             this.txtExpDate = new System.Windows.Forms.TextBox();
             this.txtmrp = new System.Windows.Forms.TextBox();
@@ -161,6 +160,7 @@ namespace eMediShop.sales
             this.txtVMobile = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
+            this.txtMedName = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -533,24 +533,6 @@ namespace eMediShop.sales
             this.txtUnitMrp.Size = new System.Drawing.Size(74, 25);
             this.txtUnitMrp.TabIndex = 93;
             this.txtUnitMrp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtMedName
-            // 
-            this.txtMedName.AcceptsReturn = true;
-            this.txtMedName.BackColor = System.Drawing.Color.White;
-            this.txtMedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMedName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMedName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMedName.Location = new System.Drawing.Point(2, 117);
-            this.txtMedName.MaxLength = 0;
-            this.txtMedName.Name = "txtMedName";
-            this.txtMedName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMedName.Size = new System.Drawing.Size(285, 25);
-            this.txtMedName.TabIndex = 0;
-            this.txtMedName.TextChanged += new System.EventHandler(this.txtMedName_TextChanged);
-            this.txtMedName.Enter += new System.EventHandler(this.txtMedName_Enter);
-            this.txtMedName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMedName_KeyDown);
             // 
             // txtbatchno
             // 
@@ -1730,6 +1712,24 @@ namespace eMediShop.sales
             this.label18.Text = "Mobile No.";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtMedName
+            // 
+            this.txtMedName.AcceptsReturn = true;
+            this.txtMedName.BackColor = System.Drawing.Color.White;
+            this.txtMedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMedName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMedName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMedName.Location = new System.Drawing.Point(2, 117);
+            this.txtMedName.MaxLength = 0;
+            this.txtMedName.Name = "txtMedName";
+            this.txtMedName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMedName.Size = new System.Drawing.Size(285, 25);
+            this.txtMedName.TabIndex = 0;
+            this.txtMedName.TextChanged += new System.EventHandler(this.txtMedName_TextChanged);
+            this.txtMedName.Enter += new System.EventHandler(this.txtMedName_Enter);
+            this.txtMedName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMedName_KeyDown);
+            // 
             // SaleMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1822,7 +1822,6 @@ namespace eMediShop.sales
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtUnitMrp;
-        public System.Windows.Forms.TextBox txtMedName;
         public System.Windows.Forms.TextBox txtbatchno;
         public System.Windows.Forms.TextBox txtExpDate;
         public System.Windows.Forms.TextBox txtmrp;
@@ -1934,5 +1933,6 @@ namespace eMediShop.sales
         private System.Windows.Forms.Label lblWalletVerifyresult;
         private System.Windows.Forms.Button btnBillPosting;
         private Telerik.WinControls.RoundRectShape roundRectShape1;
+        public System.Windows.Forms.TextBox txtMedName;
     }
 }

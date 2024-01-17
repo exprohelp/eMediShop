@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace eMediShop.purchase.orders
 {
@@ -13,7 +14,7 @@ namespace eMediShop.purchase.orders
     {
         DataSet _ds = new DataSet();
         Int32 i = new Int32();
-        Int32 j = new Int32();
+        Int32 j = new Int32();string _selUnits = string.Empty;
         string _ORDERNO = string.Empty;
         string _result = string.Empty; string filePath = string.Empty;
 
@@ -58,13 +59,22 @@ namespace eMediShop.purchase.orders
         }
         private void btnPreserve_Click(object sender, EventArgs e)
         {
+            _selUnits = string.Empty;
+            foreach(GridViewRowInfo d in rgv_unit.Rows)
+            {
+               if( d.Cells["chk"]!=null && d.Cells["chk"].Value.ToString()=="1")
+                {
+                    _selUnits += d.Cells["unit_id"].Value.ToString() + "|";
+                }
+            }
+
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
                 pm_PurchaseOrders p = new pm_PurchaseOrders();
                 p.unit_id = GlobalUsage.Unit_id;p.logic = "VALIDATE_PRESERVE";
-                p.nProduct = 0;p.order_no = "N/A";p.login_id = GlobalUsage.Login_id;
-                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
+                p.nProduct = 0;p.order_no = "N/A";p.login_id = GlobalUsage.Login_id; p.SeltdUnits = _selUnits;
+                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
 
                 DataSet ds = dwr.result;
                 btnView.Enabled = false;
@@ -217,6 +227,12 @@ namespace eMediShop.purchase.orders
             }
         }
 
-
+        private void btngetList_Click(object sender, EventArgs e)
+        {
+            pm_PurchaseQueries p = new pm_PurchaseQueries();
+            p.unit_id = GlobalUsage.Unit_id; p.Purchase_id = "-"; p.logic = "unitlist"; p.prm_1 = "="; p.prm_2 = "-";
+            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/PurchaseQueries", p);
+            rgv_unit.DataSource = dwr.result.Tables[0];
+        }
     }
 }

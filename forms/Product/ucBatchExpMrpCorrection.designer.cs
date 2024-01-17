@@ -184,11 +184,13 @@
             gridViewTextBoxColumn1.HeaderText = "Master Key Id";
             gridViewTextBoxColumn1.Name = "master_key_id";
             gridViewTextBoxColumn1.Width = 133;
+            gridViewTextBoxColumn2.AllowFiltering = false;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "batch_no";
             gridViewTextBoxColumn2.HeaderText = "Batch No";
             gridViewTextBoxColumn2.Name = "batch_no";
             gridViewTextBoxColumn2.Width = 105;
+            gridViewDateTimeColumn1.AllowFiltering = false;
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
             gridViewDateTimeColumn1.FieldName = "exp_date";
             gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -196,22 +198,26 @@
             gridViewDateTimeColumn1.HeaderText = "Expiry";
             gridViewDateTimeColumn1.Name = "exp_date";
             gridViewDateTimeColumn1.Width = 75;
+            gridViewTextBoxColumn3.AllowFiltering = false;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "pack_type";
             gridViewTextBoxColumn3.HeaderText = "P. Type";
             gridViewTextBoxColumn3.Name = "pack_type";
             gridViewTextBoxColumn3.Width = 70;
+            gridViewDecimalColumn1.AllowFiltering = false;
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "pack_qty";
             gridViewDecimalColumn1.FormatString = "{0:N0}";
             gridViewDecimalColumn1.HeaderText = "P. Qty";
             gridViewDecimalColumn1.Name = "pack_qty";
             gridViewDecimalColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewDecimalColumn2.AllowFiltering = false;
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "mrp";
             gridViewDecimalColumn2.FormatString = "{0:N2}";
             gridViewDecimalColumn2.HeaderText = "MRP";
             gridViewDecimalColumn2.Name = "MRP";
+            gridViewDecimalColumn3.AllowFiltering = false;
             gridViewDecimalColumn3.EnableExpressionEditor = false;
             gridViewDecimalColumn3.FieldName = "npr";
             gridViewDecimalColumn3.FormatString = "{0:N2}";
@@ -223,6 +229,7 @@
             gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
             gridViewCommandColumn1.Name = "column1";
             gridViewCommandColumn1.Width = 25;
+            gridViewTextBoxColumn4.AllowFiltering = false;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "sold_flag";
             gridViewTextBoxColumn4.HeaderText = "Sold Flag";
@@ -238,6 +245,7 @@
             gridViewDecimalColumn3,
             gridViewCommandColumn1,
             gridViewTextBoxColumn4});
+            this.rgv_info.MasterTemplate.EnableFiltering = true;
             sortDescriptor1.PropertyName = "pack_qty";
             this.rgv_info.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ExPro.Client;
 using Newtonsoft.Json;
-using ExPro.Client;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 using Telerik.WinControls;
 
 namespace eMediShop.Hospital
 {
     public partial class ucEstimateDelivery : UserControl
     {
-        string _selectedEstimateNo = string.Empty; string _ipdVerified = string.Empty;string _patientName = string.Empty;
+        string _selectedEstimateNo = string.Empty; string _ipdVerified = string.Empty; string _patientName = string.Empty;
         public ucEstimateDelivery()
         {
             InitializeComponent();
@@ -61,7 +56,7 @@ namespace eMediShop.Hospital
 
         private void btnDelivered_Click(object sender, EventArgs e)
         {
-            if(_selectedEstimateNo.Length<7)
+            if (_selectedEstimateNo.Length < 7)
             {
                 MessageBox.Show("Select The Patient Row.");
                 return;
@@ -88,7 +83,7 @@ namespace eMediShop.Hospital
                 Cursor.Current = Cursors.WaitCursor;
 
                 SaleInvoiceFinalization p = new SaleInvoiceFinalization();
-                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;p.pt_name = _patientName;
+                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id; p.pt_name = _patientName;
                 p.estimateNo = _selectedEstimateNo; p.Hosp_Cr_No = txtestUHID.Text; p.Hosp_IPOP_No = txtEstIpd.Text;
                 p.panelName = txtPanelName.Text; p.remarks = txtEstRemarks.Text; p.loginName = GlobalUsage.Login_id;
 
@@ -129,18 +124,34 @@ namespace eMediShop.Hospital
 
         private void GetPatientInfoByIPD()
         {
+            DataTable table = new DataTable();
             if (!chkOPD.Checked)
             {
-                if (Conversion.IsNumeric(txtEstIpd.Text) == true)
+                if (txtEstIpd.Text.Length>4)
                 {
                     try
                     {
-                        string response = GlobalUsage.his_proxy.getPatientInfoByIPDNo(txtEstIpd.Text);
-                        var table = JsonConvert.DeserializeObject<DataTable>(response);
-                        txtPanelName.Text = table.Rows[0]["Company_Name"].ToString();
-                        txtestUHID.Text = table.Rows[0]["patient_id"].ToString();
+                        if (rbItDose.Checked)
+                        {
+                            string response = GlobalUsage.his_proxy.getPatientInfoByIPDNo(txtEstIpd.Text);
+                            table = JsonConvert.DeserializeObject<DataTable>(response);
+                        }
+                        else
+                        {
+                            pm_HospitalQueries p = new pm_HospitalQueries();
+                            p.unit_id = GlobalUsage.Unit_id; p.logic = "BYIPDNO"; p.prm_1 = txtEstIpd.Text; p.prm_2 = "";
+                            p.login_id = GlobalUsage.Login_id;
+                            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                            table = dwr.result.Tables[0];
+                        }
+                            
+                            
+                       
+
                         if (table.Rows.Count > 0)
                         {
+                            txtPanelName.Text = table.Rows[0]["Company_Name"].ToString();
+                            txtestUHID.Text = table.Rows[0]["patient_id"].ToString();
                             _ipdVerified = "Y";
                         }
 
@@ -194,13 +205,26 @@ namespace eMediShop.Hospital
             {
                 try
                 {
-                    string response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtestUHID.Text);
-                    var table = JsonConvert.DeserializeObject<DataTable>(response);
-                    txtPanelName.Text = table.Rows[0]["PanelName"].ToString();
-                    txtEstIpd.Text = table.Rows[0]["ipop_no"].ToString();
+                    DataTable table = new DataTable();
+                    if (rbItDose.Checked)
+                    {
+                        string response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtestUHID.Text);
+                        table = JsonConvert.DeserializeObject<DataTable>(response);
+
+                    }
+                    else
+                    {
+                        pm_HospitalQueries p = new pm_HospitalQueries();
+                        p.unit_id = GlobalUsage.Unit_id; p.logic = "BYUHIDNO"; p.prm_1 = txtestUHID.Text; p.prm_2 = "";
+                        p.login_id = GlobalUsage.Login_id;
+                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                        table = dwr.result.Tables[0];
+                    }
                     if (table.Rows.Count > 0)
-                    { 
-                    _ipdVerified = "Y";
+                    {
+                        txtPanelName.Text = table.Rows[0]["PanelName"].ToString();
+                        txtEstIpd.Text = table.Rows[0]["ipop_no"].ToString();
+                        _ipdVerified = "Y";
                     }
 
                 }
@@ -214,13 +238,13 @@ namespace eMediShop.Hospital
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-         
+
                 pm_HospitalQueries p = new pm_HospitalQueries();
                 p.unit_id = GlobalUsage.Unit_id; p.logic = "panelName"; p.prm_1 = ""; p.prm_2 = "";
                 p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
                 cmbPanelName.Items.AddRange(Config.FillCombo(dwr.result.Tables[0]));
-                
+
             }
             catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
             finally { Cursor.Current = Cursors.Default; }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyPurchaseOrderForUnits));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.lstZeroStockOrder = new System.Windows.Forms.ListView();
             this.Srno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mfdname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,6 +48,8 @@
             this.Vendor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.wh_stk = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtOrder = new System.Windows.Forms.TextBox();
+            this.lblOrder = new System.Windows.Forms.Label();
             this.lblOrderNo = new System.Windows.Forms.Label();
             this.btnView = new System.Windows.Forms.Button();
             this.btnPreserve = new System.Windows.Forms.Button();
@@ -51,9 +57,11 @@
             this.btn_laserPrint = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.lblOrder = new System.Windows.Forms.Label();
-            this.txtOrder = new System.Windows.Forms.TextBox();
+            this.rgv_unit = new Telerik.WinControls.UI.RadGridView();
+            this.btngetList = new System.Windows.Forms.Button();
             this.GroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rgv_unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgv_unit.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,9 +86,9 @@
             this.lstZeroStockOrder.FullRowSelect = true;
             this.lstZeroStockOrder.GridLines = true;
             this.lstZeroStockOrder.HideSelection = false;
-            this.lstZeroStockOrder.Location = new System.Drawing.Point(4, 55);
+            this.lstZeroStockOrder.Location = new System.Drawing.Point(237, 55);
             this.lstZeroStockOrder.Name = "lstZeroStockOrder";
-            this.lstZeroStockOrder.Size = new System.Drawing.Size(1060, 396);
+            this.lstZeroStockOrder.Size = new System.Drawing.Size(827, 396);
             this.lstZeroStockOrder.TabIndex = 47;
             this.lstZeroStockOrder.UseCompatibleStateImageBehavior = false;
             this.lstZeroStockOrder.View = System.Windows.Forms.View.Details;
@@ -162,12 +170,33 @@
             this.GroupBox3.Controls.Add(this.btnView);
             this.GroupBox3.Controls.Add(this.btnPreserve);
             this.GroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox3.Location = new System.Drawing.Point(3, 2);
+            this.GroupBox3.Location = new System.Drawing.Point(237, 0);
             this.GroupBox3.Name = "GroupBox3";
-            this.GroupBox3.Size = new System.Drawing.Size(1061, 49);
+            this.GroupBox3.Size = new System.Drawing.Size(827, 49);
             this.GroupBox3.TabIndex = 46;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "{Minimum Stock Purchase Order}";
+            // 
+            // txtOrder
+            // 
+            this.txtOrder.Location = new System.Drawing.Point(294, 21);
+            this.txtOrder.MaxLength = 6;
+            this.txtOrder.Name = "txtOrder";
+            this.txtOrder.Size = new System.Drawing.Size(48, 20);
+            this.txtOrder.TabIndex = 57;
+            this.txtOrder.Text = "2";
+            this.txtOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOrder.Visible = false;
+            // 
+            // lblOrder
+            // 
+            this.lblOrder.AutoSize = true;
+            this.lblOrder.Location = new System.Drawing.Point(184, 28);
+            this.lblOrder.Name = "lblOrder";
+            this.lblOrder.Size = new System.Drawing.Size(103, 13);
+            this.lblOrder.TabIndex = 56;
+            this.lblOrder.Text = "Order For Month ";
+            this.lblOrder.Visible = false;
             // 
             // lblOrderNo
             // 
@@ -185,7 +214,7 @@
             // 
             this.btnView.Enabled = false;
             this.btnView.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(936, 16);
+            this.btnView.Location = new System.Drawing.Point(720, 12);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(101, 27);
             this.btnView.TabIndex = 54;
@@ -208,7 +237,7 @@
             // 
             this.btnClose.Enabled = false;
             this.btnClose.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(9, 454);
+            this.btnClose.Location = new System.Drawing.Point(237, 456);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 27);
             this.btnClose.TabIndex = 56;
@@ -221,7 +250,7 @@
             this.btn_laserPrint.Enabled = false;
             this.btn_laserPrint.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_laserPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_laserPrint.Location = new System.Drawing.Point(559, 453);
+            this.btn_laserPrint.Location = new System.Drawing.Point(881, 454);
             this.btn_laserPrint.Name = "btn_laserPrint";
             this.btn_laserPrint.Size = new System.Drawing.Size(96, 28);
             this.btn_laserPrint.TabIndex = 51;
@@ -241,7 +270,7 @@
             this.btnExcel.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(663, 453);
+            this.btnExcel.Location = new System.Drawing.Point(985, 454);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(78, 28);
             this.btnExcel.TabIndex = 57;
@@ -250,26 +279,57 @@
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
-            // lblOrder
+            // rgv_unit
             // 
-            this.lblOrder.AutoSize = true;
-            this.lblOrder.Location = new System.Drawing.Point(184, 28);
-            this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(103, 13);
-            this.lblOrder.TabIndex = 56;
-            this.lblOrder.Text = "Order For Month ";
-            this.lblOrder.Visible = false;
+            this.rgv_unit.BackColor = System.Drawing.Color.White;
+            this.rgv_unit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rgv_unit.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.rgv_unit.ForeColor = System.Drawing.Color.Black;
+            this.rgv_unit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rgv_unit.Location = new System.Drawing.Point(0, 55);
             // 
-            // txtOrder
             // 
-            this.txtOrder.Location = new System.Drawing.Point(294, 21);
-            this.txtOrder.MaxLength = 6;
-            this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(48, 20);
-            this.txtOrder.TabIndex = 57;
-            this.txtOrder.Text = "2";
-            this.txtOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtOrder.Visible = false;
+            // 
+            this.rgv_unit.MasterTemplate.AllowAddNewRow = false;
+            this.rgv_unit.MasterTemplate.AllowColumnReorder = false;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "unit_id";
+            gridViewTextBoxColumn5.HeaderText = "Unit ID";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "unit_id";
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "sh_name";
+            gridViewTextBoxColumn6.HeaderText = "Unit Name";
+            gridViewTextBoxColumn6.Name = "sh_name";
+            gridViewTextBoxColumn6.Width = 173;
+            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn3.FieldName = "chk";
+            gridViewCheckBoxColumn3.HeaderText = "-";
+            gridViewCheckBoxColumn3.MinWidth = 20;
+            gridViewCheckBoxColumn3.Name = "chk";
+            gridViewCheckBoxColumn3.Width = 25;
+            this.rgv_unit.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewCheckBoxColumn3});
+            this.rgv_unit.MasterTemplate.EnableGrouping = false;
+            this.rgv_unit.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.rgv_unit.Name = "rgv_unit";
+            this.rgv_unit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rgv_unit.Size = new System.Drawing.Size(231, 427);
+            this.rgv_unit.TabIndex = 58;
+            this.rgv_unit.Text = "radGridView1";
+            // 
+            // btngetList
+            // 
+            this.btngetList.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngetList.Location = new System.Drawing.Point(0, 14);
+            this.btngetList.Name = "btngetList";
+            this.btngetList.Size = new System.Drawing.Size(231, 27);
+            this.btngetList.TabIndex = 59;
+            this.btngetList.Text = "Get Unit List";
+            this.btngetList.UseVisualStyleBackColor = true;
+            this.btngetList.Click += new System.EventHandler(this.btngetList_Click);
             // 
             // MonthlyPurchaseOrderForUnits
             // 
@@ -277,6 +337,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1088, 485);
+            this.Controls.Add(this.btngetList);
+            this.Controls.Add(this.rgv_unit);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.lstZeroStockOrder);
@@ -295,6 +357,8 @@
             this.Load += new System.EventHandler(this.Zero_Stock_Order_Load);
             this.GroupBox3.ResumeLayout(false);
             this.GroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rgv_unit.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgv_unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -326,5 +390,7 @@
         private System.Windows.Forms.ColumnHeader wh_stk;
         private System.Windows.Forms.TextBox txtOrder;
         private System.Windows.Forms.Label lblOrder;
+        private Telerik.WinControls.UI.RadGridView rgv_unit;
+        private System.Windows.Forms.Button btngetList;
     }
 }

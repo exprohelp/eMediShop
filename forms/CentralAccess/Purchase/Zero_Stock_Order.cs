@@ -130,7 +130,6 @@ namespace eMediShop
             {
                 Cursor.Current = Cursors.WaitCursor;
                 lstZeroStockOrder.Items.Clear();
-
                 pm_PurchaseOrders p = new pm_PurchaseOrders();
                 p.unit_id = GlobalUsage.Unit_id; p.logic = "GET_ORDERINFO";
                 p.nProduct = 0; p.order_no = _ORDERNO; p.login_id = GlobalUsage.Login_id;

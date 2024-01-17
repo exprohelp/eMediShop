@@ -49,8 +49,8 @@ namespace eMediShop.sales
                     if (dt.Rows.Count > 0)
                     {
                         DataRow dr = dt.Rows[0];
-
-                        if(Convert.ToInt32(dr["dlvChgs"])!=0 && Convert.ToInt32(dr["net"])==_amount)
+                        txtMobileNo.Text = dr["contactNo"].ToString();
+                        if (Convert.ToInt32(dr["dlvChgs"])!=0 && Convert.ToInt32(dr["net"])==_amount)
                         {
                             chkHomeDelivery.Checked = true;
                             pnlPayments.Enabled = false;
@@ -64,6 +64,12 @@ namespace eMediShop.sales
                             txtCash.ReadOnly = true;
                             txtSwipeCard.ReadOnly = true;
                             txtNEFT_RTGS.ReadOnly = true;
+                        }
+                        if(dr["pay_mode"].ToString() == "Credit")
+                        {
+                            _panelType = dr["pay_mode"].ToString();
+                            txtPanelType.Text = _panelType;
+                            _partyAccountNo = dr["account_id"].ToString(); ;
                         }
                     }
                 }
@@ -412,7 +418,7 @@ namespace eMediShop.sales
                             p.unit_id = GlobalUsage.Unit_id; p.computerName = GlobalUsage.computerName;
                             p.counter_id = GlobalUsage.CounterID; p.Sale_Inv_No = txtEstimateNo.Text; p.pt_name = txtCustomerName.Text;
                             p.gstn_no = "-"; p.HealthCardNo = _card_no; p.Hosp_Cr_No = txtUHID.Text; p.Hosp_IPOP_No = txtIPOPNo.Text;
-                            p.OrderNo = _orderNo;
+                            p.OrderNo = _orderNo;p.ContactNo = _mobileNo;
                             p.hd_flag = _homeDelivery;
                             p.refBy = "New";
                             p.ref_name = txtPrescribedBy.Text;
@@ -521,12 +527,12 @@ namespace eMediShop.sales
             p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id; p1.prm_3 = GlobalUsage.Login_id;
             p1.Logic = "VerifyOTP"; p1.prm_1 = txtWalletOTP.Text; p1.tran_id = txtEstimateNo.Text;
             datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
-            if (dwr1.message == "Fail To Update")
+            if(dwr1.message==null)
             {
                 lblWalletVerifyresult.ForeColor = Color.Red;
                 lblWalletVerifyresult.Text = "Fail to Verify";
             }
-            else
+            else if (dwr1.message.Contains("Success"))
             {
                 lblWalletVerifyresult.ForeColor = Color.Green; lblWalletVerifyresult.Text = "Verified";
                 txtWalletRedeem.Text = txtRedeemAmount.Text;
@@ -534,6 +540,12 @@ namespace eMediShop.sales
                 isDistribution(txtWalletRedeem.Text);
                 btnOTPVerify.Enabled = false;
             }
+            else 
+            {
+                lblWalletVerifyresult.ForeColor = Color.Red;
+                lblWalletVerifyresult.Text = "Fail to Verify";
+            }
+            
         }
 
         private void btnSendWalletOTP_Click(object sender, EventArgs e)
@@ -548,6 +560,8 @@ namespace eMediShop.sales
                 p.msg = "To encash Rs. " + txtRedeemAmount.Text + " from your Chandan Pharmacy wallet, OTP is " + _otp + ". Team Chandan.";// + DateTime.Now.ToString();
                 _msgToCustomer = p.msg;
                 p.MobileNo = txtMobileNo.Text;
+                p.templateID = "1007387720749582210";
+                p.smsProvider = GlobalUsage.smsProvider;
                 p.smsAPI = GlobalUsage.SmsAPI;
                 p.smsID = GlobalUsage.SmsID;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/common/sendsms", p);

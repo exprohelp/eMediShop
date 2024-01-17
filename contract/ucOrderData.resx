@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gridViewCommandColumn3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAWdJREFUOE+NU8tKw0AUNYqLCm7ElQv9gsS8M2QTAiGrYnGRXem2K8E/SKOriOJW
-        VPCr/JSCi0I9J80M0zjUHjik995z7tx59MCEIAjm4HrAeV/+HxAvfN9vhRCj8Xh8EobhM3JNX/4LFCfg
-        D6hWhElRz/ekdgKrJRtwxTf+rqrqqCiKizzPr/hl3Ik0QP8ONpxQJroG+5gJz/M+MFnL7XUJBDeO46yi
-        KFxHUQQax1Z03etVkiRTNQFgsSOSr7tWZj6O4xfqyrI8Q2pzBuyElZ9YpAgjTocMAnfG5jRTV9f1YWcm
-        +qtqwQfGGHOhk3maeDb8Sp0CJ4CwoZixySy3x1jqdFjSwMBk5pfb03Vb0Asmsxx7zwbuDId6B+M9v4x5
-        kEMdsLkFgkk8pkeOuesxUUMtb0F/B2zA/8M3RnayLDvnPW9dFYD6JTWY6pZ19RIJFI7BL+x1GYbmF2jb
-        9hITfKZpekqzEGL0C3+FyKXljOuXAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="gridViewCommandColumn4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAg1JREFUOE+FUktrFEEQnjU+iHoygmyy4Gt2uqcfM7szs5mJiVk3uywIgwdhDppT
-        UG8evHiJwhLQiwhePHjIRQ++wXgQfEDQkyf/k1/19rCZdcEPmuLrqvqquqqdWdCMPeCcL1j6f8RxfCTw
-        vA1LHc35CwjUsyybz7JwSWvNcF0be2egcJw5xdhLnE3isM+TJGFpmjZDwX5FWscm8F9MREmEKqdKnRkM
-        Bou9Xu9sqNSblpQdG1LBaDQ6RB1aOkZRFHNlMtlut3vYuiqguOFweCrP8+OO5Pw6zp7i/HMninIkuaj8
-        Ac94pV23AfuM/OjufZlsxU8f7KBGilR5LW0H2MJuyNg5iH60foNCiKPLUbRBcRSPq/EMSGktSS60lHpL
-        G0G1d9jKeQg8hth98KewX0Ipf2Ogu4GUezQDk0y4HEV17fv7GNgl4kIIV3nea9iTEHlEg1xfT/1yNojd
-        hugNk0yIpLwYNpvLlhog8Ylk7Mr0YIm7rntMe97PrNGYzMBaAwxui1qWnvdnOtmGUIER4hJLq4D6d1rh
-        ykrSnpVMkL5/C9vJLa0iFGKrLeWPqKVvQ6gxnUxAh9cwhzuWTlC+eXW1I9ta7yBoH+3eDYLgBPntlu7h
-        7is2ok1SCVoN7Zc+CVni9BRUu4nzCU+7ivNNCbHZ7/cXzE88gBr9B7q0P6wyWKoKkYdxvW7847hs/i9/
-        Jovo35r9uQAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.33026.149
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMediShop", "eMediShop.csproj", "{2DF2C020-A09C-476C-BD8E-1D55290EB383}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmacyAPI", "..\..\PharmacyAPI\PharmacyAPI\PharmacyAPI.csproj", "{F72F144A-ED8E-40BC-AC47-E89E8C96C3D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReportsPharmacy", "..\CrystalReportsPharmacy\CrystalReportsPharmacy.csproj", "{0BFD40CF-354E-48FD-A11D-D73E8B706925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2DF2C020-A09C-476C-BD8E-1D55290EB383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DF2C020-A09C-476C-BD8E-1D55290EB383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DF2C020-A09C-476C-BD8E-1D55290EB383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72F144A-ED8E-40BC-AC47-E89E8C96C3D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72F144A-ED8E-40BC-AC47-E89E8C96C3D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72F144A-ED8E-40BC-AC47-E89E8C96C3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72F144A-ED8E-40BC-AC47-E89E8C96C3D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -585,6 +585,36 @@
     </Compile>
     <Compile Include="CheckInternet.cs" />
     <Compile Include="ConfigWebAPI.cs" />
+    <Compile Include="contract\HAL_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contract\HAL_Orders.Designer.cs">
+      <DependentUpon>HAL_Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contract\ProcessOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contract\ProcessOrder.Designer.cs">
+      <DependentUpon>ProcessOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contract\ucManageOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="contract\ucManageOrders.Designer.cs">
+      <DependentUpon>ucManageOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contract\ucMasterBilling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="contract\ucMasterBilling.Designer.cs">
+      <DependentUpon>ucMasterBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contract\ucOrderData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="contract\ucOrderData.Designer.cs">
+      <DependentUpon>ucOrderData.cs</DependentUpon>
+    </Compile>
     <Compile Include="creditNote\ucCreditNoteRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1940,6 +1970,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="challan\uc_ChallanSettlement.resx">
       <DependentUpon>uc_ChallanSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\HAL_Orders.resx">
+      <DependentUpon>HAL_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\ProcessOrder.resx">
+      <DependentUpon>ProcessOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\ucManageOrders.resx">
+      <DependentUpon>ucManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\ucMasterBilling.resx">
+      <DependentUpon>ucMasterBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\ucOrderData.resx">
+      <DependentUpon>ucOrderData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="creditNote\CreditNote_Entries.resx">
       <DependentUpon>CreditNote_Entries.cs</DependentUpon>
