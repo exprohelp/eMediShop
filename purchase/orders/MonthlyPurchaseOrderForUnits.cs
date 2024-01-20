@@ -124,6 +124,7 @@ namespace eMediShop.purchase.orders
                 lstZeroStockOrder.Items.Clear();
                 Cursor.Current = Cursors.WaitCursor;
                 pm_PurchaseOrders p = new pm_PurchaseOrders();
+                p.SeltdUnits = _selUnits;
                 p.unit_id = GlobalUsage.Unit_id;p.logic = "preserve";p.orderFormonth = Convert.ToDecimal(txtOrder.Text); p.prm_1 = "X";p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
                 _ds = dwr.result;

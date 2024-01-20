@@ -17,7 +17,7 @@ namespace eMediShop.sales
         string _ipopNo = string.Empty; string _panelName = string.Empty; string _partyAccountNo = string.Empty;
         string _orderNo = string.Empty; string _machineAccountNo = string.Empty; string _homeDelivery = string.Empty;
         Int32 _amount = 0; string _msgToCustomer = string.Empty; string _callFrom = string.Empty;
-        string _oldInvNo = string.Empty;
+        string _oldInvNo = string.Empty;string _gstNo = string.Empty;
         public SaleBill_Posting(BillPosting billInfo)
         {
             _saleInvNo = billInfo.sale_inv_no; _customername = billInfo.customer_name; _card_no = billInfo.card_no;
@@ -25,7 +25,7 @@ namespace eMediShop.sales
             _uhidNo = billInfo.uhidNo; _panelName = billInfo.panelName; _panelType = billInfo.panelType;
             _amount = billInfo.amount; _partyAccountNo = billInfo.AccountID; _mobileNo = billInfo.mobileNo;
             _homeDelivery = "N"; _callFrom = billInfo.CallFrom; _oldInvNo = billInfo.Oldsale_inv_no;
-            _orderNo = billInfo.orderNo;
+            _orderNo = billInfo.orderNo;_gstNo = billInfo.gstNo;
             InitializeComponent();
         }
 
@@ -420,7 +420,7 @@ namespace eMediShop.sales
                             p.gstn_no = "-"; p.HealthCardNo = _card_no; p.Hosp_Cr_No = txtUHID.Text; p.Hosp_IPOP_No = txtIPOPNo.Text;
                             p.OrderNo = _orderNo;p.ContactNo = _mobileNo;
                             p.hd_flag = _homeDelivery;
-                            p.refBy = "New";
+                            p.refBy = "New";p.gstn_no = _gstNo;
                             p.ref_name = txtPrescribedBy.Text;
                             p.BillPaymentDetail = bpiList;
                             p.login_id = GlobalUsage.Login_id;

@@ -72,6 +72,7 @@ namespace eMediShop
         public Int32 amount { get; set; }
         public string orderNo { get; set; }
         public string saleType { get; set; }
+        public string gstNo { get; set; }
     }
     public class UpdatePayMode
     {

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyPurchaseOrderForUnits));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.lstZeroStockOrder = new System.Windows.Forms.ListView();
             this.Srno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mfdname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -292,28 +292,28 @@
             // 
             this.rgv_unit.MasterTemplate.AllowAddNewRow = false;
             this.rgv_unit.MasterTemplate.AllowColumnReorder = false;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "unit_id";
-            gridViewTextBoxColumn5.HeaderText = "Unit ID";
-            gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "unit_id";
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "sh_name";
-            gridViewTextBoxColumn6.HeaderText = "Unit Name";
-            gridViewTextBoxColumn6.Name = "sh_name";
-            gridViewTextBoxColumn6.Width = 173;
-            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn3.FieldName = "chk";
-            gridViewCheckBoxColumn3.HeaderText = "-";
-            gridViewCheckBoxColumn3.MinWidth = 20;
-            gridViewCheckBoxColumn3.Name = "chk";
-            gridViewCheckBoxColumn3.Width = 25;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "unit_id";
+            gridViewTextBoxColumn1.HeaderText = "Unit ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "unit_id";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "sh_name";
+            gridViewTextBoxColumn2.HeaderText = "Unit Name";
+            gridViewTextBoxColumn2.Name = "sh_name";
+            gridViewTextBoxColumn2.Width = 173;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.FieldName = "chk";
+            gridViewCheckBoxColumn1.HeaderText = "-";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "chk";
+            gridViewCheckBoxColumn1.Width = 25;
             this.rgv_unit.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewCheckBoxColumn3});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewCheckBoxColumn1});
             this.rgv_unit.MasterTemplate.EnableGrouping = false;
-            this.rgv_unit.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.rgv_unit.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_unit.Name = "rgv_unit";
             this.rgv_unit.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rgv_unit.Size = new System.Drawing.Size(231, 427);

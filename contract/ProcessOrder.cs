@@ -398,7 +398,7 @@ namespace eMediShop.contract
                         b.sale_inv_no = txtInvNo.Text;
                         b.card_no = _cardNo; b.customer_name = cbxPtName.Text; b.ipopNo = "-"; b.panelName = "Retail Sales";
                         b.panelType = "Credit"; b.prescribedBy = txtRefBy.Text; b.uhidNo = "-";
-                        b.AccountID = "13020298";
+                        b.AccountID = "13020298";b.gstNo = "09AAACH3641R1Z5";
                         b.amount = Convert.ToInt32(txtPayable.Text);
                         if ((string)rtBtn.Tag == "HD")
                             b.HomeDelivery = "Y";

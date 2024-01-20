@@ -1919,6 +1919,11 @@ namespace eMediShop
             openControl(new contract.ucManageOrders(), "Item/Order Cancellation");
         }
 
+        private void rbeHAlBilling_Click(object sender, EventArgs e)
+        {
+            openControl(new contract.ucMasterBilling(), "HAL Billing");
+        }
+
         private void rb_assign_menu_Click(object sender, EventArgs e)
         {
             openForm(new ITSystem.menuRights("eMediShop"));
