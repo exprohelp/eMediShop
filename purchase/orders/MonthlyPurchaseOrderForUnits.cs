@@ -125,13 +125,14 @@ namespace eMediShop.purchase.orders
                 Cursor.Current = Cursors.WaitCursor;
                 pm_PurchaseOrders p = new pm_PurchaseOrders();
                 p.SeltdUnits = _selUnits;
-                p.unit_id = GlobalUsage.Unit_id;p.logic = "preserve";p.orderFormonth = Convert.ToDecimal(txtOrder.Text); p.prm_1 = "X";p.login_id = GlobalUsage.Login_id;
+                p.unit_id = GlobalUsage.Unit_id;p.logic = "preserve";p.orderFormonth = Convert.ToDecimal(txtOrder.Text);
+                p.prm_1 = "X";p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
                 _ds = dwr.result;
                 if (_ds.Tables.Count > 0 && _ds.Tables[0].Rows.Count > 0)
                 {
                     _ORDERNO = _ds.Tables[0].Rows[0]["order_no"].ToString();
-                    lblOrderNo.Text = "GENERATED ORDER NO : " + _ds.Tables[0].Rows[0]["order_no"].ToString();
+                    lblOrderNo.Text = "GENERATED ORDER NO : " + _ORDERNO;
                     btnView.Text = "VIEW";
                 }
                 Cursor.Current = Cursors.Default;
@@ -157,7 +158,7 @@ namespace eMediShop.purchase.orders
                 {
                     btnClose.Enabled = true;
                     btnExcel.Enabled = true;
-                 foreach (DataRow dr in dwr.result.Tables[0].Rows)
+                 foreach (DataRow dr in _ds.Tables[0].Rows)
                     {
                         if (_result != dr["mfd_name"].ToString())
                         {
