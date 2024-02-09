@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
+using System.Drawing;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
@@ -14,7 +11,7 @@ namespace eMediShop.purchase.orders
     {
         DataSet _ds = new DataSet();
         Int32 i = new Int32();
-        Int32 j = new Int32();string _selUnits = string.Empty;
+        Int32 j = new Int32(); string _selUnits = string.Empty;
         string _ORDERNO = string.Empty;
         string _result = string.Empty; string filePath = string.Empty;
 
@@ -60,9 +57,9 @@ namespace eMediShop.purchase.orders
         private void btnPreserve_Click(object sender, EventArgs e)
         {
             _selUnits = string.Empty;
-            foreach(GridViewRowInfo d in rgv_unit.Rows)
+            foreach (GridViewRowInfo d in rgv_unit.Rows)
             {
-               if( d.Cells["chk"]!=null && d.Cells["chk"].Value.ToString()=="1")
+                if (d.Cells["chk"] != null && d.Cells["chk"].Value.ToString() == "1")
                 {
                     _selUnits += d.Cells["unit_id"].Value.ToString() + "|";
                 }
@@ -72,9 +69,9 @@ namespace eMediShop.purchase.orders
             {
                 Cursor.Current = Cursors.WaitCursor;
                 pm_PurchaseOrders p = new pm_PurchaseOrders();
-                p.unit_id = GlobalUsage.Unit_id;p.logic = "VALIDATE_PRESERVE";
-                p.nProduct = 0;p.order_no = "N/A";p.login_id = GlobalUsage.Login_id; p.SeltdUnits = _selUnits;
-                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
+                p.unit_id = GlobalUsage.Unit_id; p.logic = "VALIDATE_PRESERVE";
+                p.nProduct = 0; p.order_no = "N/A"; p.login_id = GlobalUsage.Login_id; p.SeltdUnits = _selUnits;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
 
                 DataSet ds = dwr.result;
                 btnView.Enabled = false;
@@ -113,32 +110,43 @@ namespace eMediShop.purchase.orders
             }
             else if (btnView.Text == "GENERATE")
             {
-                Preserve();
+                _result=Preserve();
+                if(_result=="Success")
                 FillOrder();
             }
         }
-        private void Preserve()
+        private string Preserve()
         {
+            string result = "Fail";
             try
             {
                 lstZeroStockOrder.Items.Clear();
                 Cursor.Current = Cursors.WaitCursor;
                 pm_PurchaseOrders p = new pm_PurchaseOrders();
                 p.SeltdUnits = _selUnits;
-                p.unit_id = GlobalUsage.Unit_id;p.logic = "preserve";p.orderFormonth = Convert.ToDecimal(txtOrder.Text);
-                p.prm_1 = "X";p.login_id = GlobalUsage.Login_id;
+                p.unit_id = GlobalUsage.Unit_id; p.logic = "preserve"; p.orderFormonth = Convert.ToDecimal(txtOrder.Text);
+                p.prm_1 = "X"; p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/BulkMonthlyOrderForRetail", p);
-                _ds = dwr.result;
-                if (_ds.Tables.Count > 0 && _ds.Tables[0].Rows.Count > 0)
+                if (dwr.result != null)
                 {
-                    _ORDERNO = _ds.Tables[0].Rows[0]["order_no"].ToString();
-                    lblOrderNo.Text = "GENERATED ORDER NO : " + _ORDERNO;
-                    btnView.Text = "VIEW";
+                    _ds = dwr.result;
+                    if (_ds.Tables.Count > 0 && _ds.Tables[0].Rows.Count > 0)
+                    {
+                        _ORDERNO = _ds.Tables[0].Rows[0]["order_no"].ToString();
+                        lblOrderNo.Text = "GENERATED ORDER NO : " + _ORDERNO;
+                        btnView.Text = "VIEW";
+                        result = "Success";
+                    }
                 }
+                else
+                {
+                    result = "Fail";
+                    MessageBox.Show("Process Time Out. Regenerate of Inform To IT.", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            return result;
         }
         private void FillOrder()
         {
@@ -158,7 +166,7 @@ namespace eMediShop.purchase.orders
                 {
                     btnClose.Enabled = true;
                     btnExcel.Enabled = true;
-                 foreach (DataRow dr in _ds.Tables[0].Rows)
+                    foreach (DataRow dr in _ds.Tables[0].Rows)
                     {
                         if (_result != dr["mfd_name"].ToString())
                         {
