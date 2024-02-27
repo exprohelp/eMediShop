@@ -39,11 +39,11 @@ namespace eMediShop
                 try
                 {
                     ReportDocument rpt;
-                    rpt = new CrystalReportsPharmacy.Reports.HAl_Bill_Summary();
+                    rpt = new CrystalReportsPharmacy.Reports.HAl_Bill_SummaryByTax();
 
                     rpt.Database.Tables["headerInfo"].SetDataSource(ds.Tables[0]);
                     rpt.Database.Tables["itemInfo"].SetDataSource(ds.Tables[1]);
-                    rpt.SetParameterValue("billno",    "Bill No.   : "+billNo);
+                    rpt.SetParameterValue("billno",    "Order No.  : "+billNo);
                     rpt.SetParameterValue("orderdate", "Order Date : "+orderdate);
                     //rpt.PrintToPrinter(1, false, 1, 0);
                     string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");

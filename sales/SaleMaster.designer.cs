@@ -123,6 +123,7 @@ namespace eMediShop.sales
             this.chkSubstitute = new System.Windows.Forms.CheckBox();
             this.txtGSTN_No = new Telerik.WinControls.UI.RadTextBox();
             this.chkGSTN = new System.Windows.Forms.CheckBox();
+            this.txtMedName = new System.Windows.Forms.TextBox();
             this.rpvp_healthcard = new Telerik.WinControls.UI.RadPageViewPage();
             this.rp_CardStock = new Telerik.WinControls.UI.RadPanel();
             this.View_Healthcard = new Telerik.WinControls.UI.RadPanel();
@@ -160,7 +161,8 @@ namespace eMediShop.sales
             this.txtVMobile = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
-            this.txtMedName = new System.Windows.Forms.TextBox();
+            this.txtWallet = new Telerik.WinControls.UI.RadTextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -199,6 +201,7 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -941,6 +944,8 @@ namespace eMediShop.sales
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.radGroupBox1.Controls.Add(this.txtWallet);
+            this.radGroupBox1.Controls.Add(this.label25);
             this.radGroupBox1.Controls.Add(this.btnBillPosting);
             this.radGroupBox1.Controls.Add(this.btnEstiMate);
             this.radGroupBox1.Controls.Add(this.txtIGST);
@@ -1138,7 +1143,7 @@ namespace eMediShop.sales
             this.radGroupBox2.Controls.Add(this.label4);
             this.radGroupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGroupBox2.HeaderText = "";
-            this.radGroupBox2.Location = new System.Drawing.Point(917, 177);
+            this.radGroupBox2.Location = new System.Drawing.Point(917, 205);
             this.radGroupBox2.Name = "radGroupBox2";
             this.radGroupBox2.Size = new System.Drawing.Size(268, 45);
             this.radGroupBox2.TabIndex = 121;
@@ -1316,6 +1321,24 @@ namespace eMediShop.sales
             this.chkGSTN.Text = "GSTN Holder";
             this.chkGSTN.UseVisualStyleBackColor = true;
             this.chkGSTN.CheckedChanged += new System.EventHandler(this.chkGSTN_CheckedChanged);
+            // 
+            // txtMedName
+            // 
+            this.txtMedName.AcceptsReturn = true;
+            this.txtMedName.BackColor = System.Drawing.Color.White;
+            this.txtMedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMedName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMedName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMedName.Location = new System.Drawing.Point(2, 117);
+            this.txtMedName.MaxLength = 0;
+            this.txtMedName.Name = "txtMedName";
+            this.txtMedName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMedName.Size = new System.Drawing.Size(285, 25);
+            this.txtMedName.TabIndex = 0;
+            this.txtMedName.TextChanged += new System.EventHandler(this.txtMedName_TextChanged);
+            this.txtMedName.Enter += new System.EventHandler(this.txtMedName_Enter);
+            this.txtMedName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMedName_KeyDown);
             // 
             // rpvp_healthcard
             // 
@@ -1712,23 +1735,29 @@ namespace eMediShop.sales
             this.label18.Text = "Mobile No.";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtMedName
+            // txtWallet
             // 
-            this.txtMedName.AcceptsReturn = true;
-            this.txtMedName.BackColor = System.Drawing.Color.White;
-            this.txtMedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMedName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMedName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMedName.Location = new System.Drawing.Point(2, 117);
-            this.txtMedName.MaxLength = 0;
-            this.txtMedName.Name = "txtMedName";
-            this.txtMedName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMedName.Size = new System.Drawing.Size(285, 25);
-            this.txtMedName.TabIndex = 0;
-            this.txtMedName.TextChanged += new System.EventHandler(this.txtMedName_TextChanged);
-            this.txtMedName.Enter += new System.EventHandler(this.txtMedName_Enter);
-            this.txtMedName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMedName_KeyDown);
+            this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtWallet.Enabled = false;
+            this.txtWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWallet.Location = new System.Drawing.Point(199, 177);
+            this.txtWallet.Name = "txtWallet";
+            this.txtWallet.ReadOnly = true;
+            this.txtWallet.Size = new System.Drawing.Size(65, 23);
+            this.txtWallet.TabIndex = 147;
+            this.txtWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtWallet.GetChildAt(0))).Text = "";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(5, 180);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(195, 20);
+            this.label25.TabIndex = 146;
+            this.label25.Text = "Discount Transfer in Wallet Rs.";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // SaleMaster
             // 
@@ -1796,6 +1825,7 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1934,5 +1964,7 @@ namespace eMediShop.sales
         private System.Windows.Forms.Button btnBillPosting;
         private Telerik.WinControls.RoundRectShape roundRectShape1;
         public System.Windows.Forms.TextBox txtMedName;
+        private Telerik.WinControls.UI.RadTextBox txtWallet;
+        private System.Windows.Forms.Label label25;
     }
 }

@@ -52,6 +52,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn11 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.Data.GroupDescriptor groupDescriptor1 = new Telerik.WinControls.Data.GroupDescriptor();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
@@ -262,6 +263,12 @@
             gridViewTextBoxColumn12.HeaderText = "IPD/OPD No";
             gridViewTextBoxColumn12.Name = "ipdopdno";
             gridViewTextBoxColumn12.Width = 107;
+            gridViewDecimalColumn11.EnableExpressionEditor = false;
+            gridViewDecimalColumn11.FieldName = "TrfInWallet";
+            gridViewDecimalColumn11.FormatString = "{0:N0}";
+            gridViewDecimalColumn11.HeaderText = "Trf-In-Wallet";
+            gridViewDecimalColumn11.Name = "TrfInWallet";
+            gridViewDecimalColumn11.Width = 68;
             this.rgv_info.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDateTimeColumn1,
             gridViewTextBoxColumn1,
@@ -285,7 +292,8 @@
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12});
+            gridViewTextBoxColumn12,
+            gridViewDecimalColumn11});
             this.rgv_info.MasterTemplate.EnableAlternatingRowColor = true;
             this.rgv_info.MasterTemplate.EnableFiltering = true;
             groupDescriptor1.Format = "{0}: {1:dd-MM-yyyy}";

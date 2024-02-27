@@ -569,56 +569,124 @@ namespace eMediShop.ManualSales
             string response = string.Empty; DataTable table = new DataTable();
             if (e.KeyCode == Keys.Enter)
             {
-                try
+                if (cbOldHIS.Checked)
                 {
-                    Cursor.Current = Cursors.WaitCursor;
-                    if (rbOPD.Checked)
+                    #region Old HIS Search
+                    try
                     {
-                        response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtIPOPNo.Text);
-                        table = JsonConvert.DeserializeObject<DataTable>(response);
-                        if (table.Rows.Count > 0)
+                        Cursor.Current = Cursors.WaitCursor;
+                        if (rbOPD.Checked)
                         {
-                            txtPatientName.Text = table.Rows[0]["pt_name"].ToString();
-                            txtPrescribedBy.Text = table.Rows[0]["doctor_name"].ToString();
-                        }
-                        if (txtIPOPNo.Text.Length == 0)
-                            _UHID = "-";
-                        else
-                            _UHID = txtIPOPNo.Text;
-                    }
-                    else if (rbIPD.Checked)
-                    {
-                        response = GlobalUsage.his_proxy.getPatientInfoByIPDNo(txtIPOPNo.Text);
-                        table = JsonConvert.DeserializeObject<DataTable>(response);
-                        if (table.Rows.Count > 0)
-                        {
-                            txtPatientName.Text = table.Rows[0]["PName"].ToString();
-                            txtPrescribedBy.Text = table.Rows[0]["DName"].ToString();
-                            _panelName = table.Rows[0]["Company_name"].ToString();
-                            _UHID = table.Rows[0]["Patient_ID"].ToString();
-
-                            if (table.Rows[0]["IsCash"].ToString() == "1")
+                            response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtIPOPNo.Text);
+                            table = JsonConvert.DeserializeObject<DataTable>(response);
+                            if (table.Rows.Count > 0)
                             {
-                                _PayMode = "Cash";
-                                radioCredit.Checked = false;
-                                radioCash.Enabled = true;
+                                txtPatientName.Text = table.Rows[0]["pt_name"].ToString();
+                                txtPrescribedBy.Text = table.Rows[0]["doctor_name"].ToString();
                             }
+                            if (txtIPOPNo.Text.Length == 0)
+                                _UHID = "-";
                             else
+                                _UHID = txtIPOPNo.Text;
+                        }
+                        else if (rbIPD.Checked)
+                        {
+                            response = GlobalUsage.his_proxy.getPatientInfoByIPDNo(txtIPOPNo.Text);
+                            table = JsonConvert.DeserializeObject<DataTable>(response);
+                            if (table.Rows.Count > 0)
                             {
-                                _PayMode = "Credit";
-                                radioCredit.Checked = true;
-                                radioCash.Enabled = false;
+                                txtPatientName.Text = table.Rows[0]["PName"].ToString();
+                                txtPrescribedBy.Text = table.Rows[0]["DName"].ToString();
+                                _panelName = table.Rows[0]["Company_name"].ToString();
+                                _UHID = table.Rows[0]["Patient_ID"].ToString();
+
+                                if (table.Rows[0]["IsCash"].ToString() == "1")
+                                {
+                                    _PayMode = "Cash";
+                                    radioCredit.Checked = false;
+                                    radioCash.Enabled = true;
+                                }
+                                else
+                                {
+                                    _PayMode = "Credit";
+                                    radioCredit.Checked = true;
+                                    radioCash.Enabled = false;
+                                }
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        RadMessageBox.Show(ex.Message.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    }
+                    finally
+                    {
+                        Cursor.Current = Cursors.Default;
+                    }
+                    #endregion
                 }
-                catch (Exception ex)
-                {
-                    RadMessageBox.Show(ex.Message.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
-                }
-                finally
-                {
-                    Cursor.Current = Cursors.Default;
+                else {
+                    #region New HIS Search
+                    try
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        pm_HospitalQueries p = new pm_HospitalQueries();
+                        if (rbOPD.Checked)
+                        {
+                            p.unit_id = GlobalUsage.Unit_id; p.logic = "ByUHIDNo"; p.prm_1 = txtIPOPNo.Text; p.prm_2 = "";
+                            p.login_id = GlobalUsage.Login_id;
+                            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                            table = dwr.result.Tables[0];
+                            table = JsonConvert.DeserializeObject<DataTable>(response);
+                            if (table.Rows.Count > 0)
+                            {
+                                txtPatientName.Text = table.Rows[0]["pt_name"].ToString();
+                                txtPrescribedBy.Text = table.Rows[0]["doctor_name"].ToString();
+                            }
+                            _PayMode = "Cash";
+                            if (txtIPOPNo.Text.Length == 0)
+                                _UHID = "-";
+                            else
+                                _UHID = txtIPOPNo.Text;
+                        }
+                        else if (rbIPD.Checked)
+                        {
+                            
+                            p.unit_id = GlobalUsage.Unit_id; p.logic = "BYIPDNO"; p.prm_1 = txtIPOPNo.Text; p.prm_2 = "";
+                            p.login_id = GlobalUsage.Login_id;
+                            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                            table = dwr.result.Tables[0];
+                            if (table.Rows.Count > 0)
+                            {
+                                txtPatientName.Text = table.Rows[0]["patient_name"].ToString();
+                                txtPrescribedBy.Text = table.Rows[0]["DoctorName"].ToString();
+                                _panelName = table.Rows[0]["Company_name"].ToString();
+                                _UHID = table.Rows[0]["Patient_ID"].ToString();
+
+                                if (table.Rows[0]["IsCash"].ToString() == "1")
+                                {
+                                    _PayMode = "Cash";
+                                    radioCredit.Checked = false;
+                                    radioCash.Enabled = true;
+                                }
+                                else
+                                {
+                                    _PayMode = "Credit";
+                                    radioCredit.Checked = true;
+                                    radioCash.Enabled = false;
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        RadMessageBox.Show(ex.Message.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    }
+                    finally
+                    {
+                        Cursor.Current = Cursors.Default;
+                    }
+                    #endregion
                 }
             }
         }

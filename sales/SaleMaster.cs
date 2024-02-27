@@ -514,6 +514,7 @@ namespace eMediShop.sales
                 txtPatientName.Text = dr["pt_name"].ToString();
             }
             txtTotal.Text = Convert.ToDecimal(dr["total"]).ToString("####.00");
+            txtWallet.Text= Convert.ToDecimal(dr["TrfInWallet"]).ToString("####.00");
             txtDiscount.Text = Convert.ToDecimal(dr["discount"]).ToString("####.00");
             txtNetValue.Text = Convert.ToDecimal(dr["payable"]).ToString("####0");
             //txtRoundoff.Text = Convert.ToDecimal(dsr.Tables[0].Rows[0]["roundoff"]).ToString("##.00");
@@ -1031,6 +1032,7 @@ namespace eMediShop.sales
             txtDiscount.Text = "0";
             //txtRoundoff.Text = "";
             txtNetValue.Text = "0";
+            txtWallet.Text = "0";
             txtTotalGST.Text = "0";
             txtMedName.Enabled = true;
             txtIGST.Text = "0"; txtSGST.Text = "0"; txtcgst.Text = "0";
