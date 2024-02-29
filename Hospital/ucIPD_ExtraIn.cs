@@ -72,6 +72,7 @@ namespace eMediShop.Hospital
                     }
                     catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
                     finally { Cursor.Current = Cursors.Default; }
+
                 }
             }
             else if (e.Column.Name == "batch_no")
