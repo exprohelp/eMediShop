@@ -51,7 +51,7 @@ namespace eMediShop
             try
             {
                 GlobalUsage.ManualBill = new CrystalReportsPharmacy.eMediShop.ManualDeliveryNote();
-                GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST();
+                GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet();
                 GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
                 GlobalUsage.opthCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic();
                 GlobalUsage.HospitalInternalSheet = new CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet();

@@ -98,6 +98,8 @@ namespace eMediShop.sales
             this.chkReturnMemo = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtWallet = new Telerik.WinControls.UI.RadTextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.btnBillPosting = new System.Windows.Forms.Button();
             this.btnEstiMate = new System.Windows.Forms.Button();
             this.txtIGST = new Telerik.WinControls.UI.RadTextBox();
@@ -161,12 +163,11 @@ namespace eMediShop.sales
             this.txtVMobile = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
-            this.txtWallet = new Telerik.WinControls.UI.RadTextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcgst)).BeginInit();
@@ -201,7 +202,6 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -971,6 +971,30 @@ namespace eMediShop.sales
             this.radGroupBox1.TabIndex = 120;
             this.radGroupBox1.Text = "Payment Info";
             // 
+            // txtWallet
+            // 
+            this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtWallet.Enabled = false;
+            this.txtWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWallet.Location = new System.Drawing.Point(199, 177);
+            this.txtWallet.Name = "txtWallet";
+            this.txtWallet.ReadOnly = true;
+            this.txtWallet.Size = new System.Drawing.Size(65, 23);
+            this.txtWallet.TabIndex = 147;
+            this.txtWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtWallet.GetChildAt(0))).Text = "";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(5, 180);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(182, 20);
+            this.label25.TabIndex = 146;
+            this.label25.Text = "Wallet will be updated By Rs.";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // btnBillPosting
             // 
             this.btnBillPosting.Enabled = false;
@@ -1735,30 +1759,6 @@ namespace eMediShop.sales
             this.label18.Text = "Mobile No.";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtWallet
-            // 
-            this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtWallet.Enabled = false;
-            this.txtWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWallet.Location = new System.Drawing.Point(199, 177);
-            this.txtWallet.Name = "txtWallet";
-            this.txtWallet.ReadOnly = true;
-            this.txtWallet.Size = new System.Drawing.Size(65, 23);
-            this.txtWallet.TabIndex = 147;
-            this.txtWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtWallet.GetChildAt(0))).Text = "";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(5, 180);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(195, 20);
-            this.label25.TabIndex = 146;
-            this.label25.Text = "Discount Transfer in Wallet Rs.";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // SaleMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1787,6 +1787,7 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcgst)).EndInit();
@@ -1825,7 +1826,6 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
