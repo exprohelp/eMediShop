@@ -91,10 +91,7 @@
             this.Label12 = new System.Windows.Forms.Label();
             this.dgProductInfo = new Telerik.WinControls.UI.RadGridView();
             this.gb_Info = new System.Windows.Forms.GroupBox();
-            this.lblCartName = new System.Windows.Forms.Label();
-            this.cmbCartName = new System.Windows.Forms.ComboBox();
             this.cmb_TrfID = new System.Windows.Forms.ComboBox();
-            this.chkFromCart = new System.Windows.Forms.CheckBox();
             this.GVMAIN.SuspendLayout();
             this.gr_VendSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductInfo)).BeginInit();
@@ -298,6 +295,7 @@
             this.lvprobymfdinfo.FullRowSelect = true;
             this.lvprobymfdinfo.GridLines = true;
             this.lvprobymfdinfo.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvprobymfdinfo.HideSelection = false;
             this.lvprobymfdinfo.Location = new System.Drawing.Point(75, 59);
             this.lvprobymfdinfo.Name = "lvprobymfdinfo";
             this.lvprobymfdinfo.Size = new System.Drawing.Size(644, 188);
@@ -353,6 +351,7 @@
             this.lv_Batch.FullRowSelect = true;
             this.lv_Batch.GridLines = true;
             this.lv_Batch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lv_Batch.HideSelection = false;
             this.lv_Batch.Location = new System.Drawing.Point(359, 60);
             this.lv_Batch.Name = "lv_Batch";
             this.lv_Batch.Size = new System.Drawing.Size(413, 226);
@@ -785,9 +784,6 @@
             // gb_Info
             // 
             this.gb_Info.BackColor = System.Drawing.Color.Transparent;
-            this.gb_Info.Controls.Add(this.chkFromCart);
-            this.gb_Info.Controls.Add(this.lblCartName);
-            this.gb_Info.Controls.Add(this.cmbCartName);
             this.gb_Info.Controls.Add(this.btnGo);
             this.gb_Info.Controls.Add(this.cmb_TrfID);
             this.gb_Info.Controls.Add(this.btnInternalSheet);
@@ -800,26 +796,6 @@
             this.gb_Info.TabStop = false;
             this.gb_Info.Text = "[XXXXXXXXXXXXX]";
             // 
-            // lblCartName
-            // 
-            this.lblCartName.AutoSize = true;
-            this.lblCartName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCartName.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCartName.Location = new System.Drawing.Point(710, 19);
-            this.lblCartName.Name = "lblCartName";
-            this.lblCartName.Size = new System.Drawing.Size(114, 17);
-            this.lblCartName.TabIndex = 12;
-            this.lblCartName.Text = "Medicine Cart Name";
-            // 
-            // cmbCartName
-            // 
-            this.cmbCartName.FormattingEnabled = true;
-            this.cmbCartName.Location = new System.Drawing.Point(713, 39);
-            this.cmbCartName.Name = "cmbCartName";
-            this.cmbCartName.Size = new System.Drawing.Size(215, 28);
-            this.cmbCartName.TabIndex = 11;
-            this.cmbCartName.SelectedIndexChanged += new System.EventHandler(this.cmbCartName_SelectedIndexChanged);
-            // 
             // cmb_TrfID
             // 
             this.cmb_TrfID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -829,16 +805,6 @@
             this.cmb_TrfID.Size = new System.Drawing.Size(352, 28);
             this.cmb_TrfID.TabIndex = 8;
             this.cmb_TrfID.SelectedIndexChanged += new System.EventHandler(this.cmb_TrfID_SelectedIndexChanged);
-            // 
-            // chkFromCart
-            // 
-            this.chkFromCart.AutoSize = true;
-            this.chkFromCart.Location = new System.Drawing.Point(586, 15);
-            this.chkFromCart.Name = "chkFromCart";
-            this.chkFromCart.Size = new System.Drawing.Size(88, 24);
-            this.chkFromCart.TabIndex = 13;
-            this.chkFromCart.Text = "From Cart";
-            this.chkFromCart.UseVisualStyleBackColor = true;
             // 
             // ucStockTransfer
             // 
@@ -862,7 +828,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgProductInfo.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductInfo)).EndInit();
             this.gb_Info.ResumeLayout(false);
-            this.gb_Info.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -919,8 +884,5 @@
         private System.Windows.Forms.ComboBox cmb_TrfID;
         private System.Windows.Forms.ColumnHeader remarks;
         private Telerik.WinControls.UI.RadGridView dgProductInfo;
-        private System.Windows.Forms.Label lblCartName;
-        private System.Windows.Forms.ComboBox cmbCartName;
-        private System.Windows.Forms.CheckBox chkFromCart;
     }
 }

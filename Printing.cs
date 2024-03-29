@@ -34,7 +34,32 @@ namespace eMediShop
                     MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            public static void HAL_Billing(DataSet ds,string billNo,string orderdate)
+            public static void HAL_DeliverySummary(DataSet ds, string billNo, string orderdate)
+            {
+                try
+                {
+                    ReportDocument rpt;
+                    rpt = new CrystalReportsPharmacy.Reports.HAl_Delivery_SummaryByTax();
+
+                    rpt.Database.Tables["headerInfo"].SetDataSource(ds.Tables[0]);
+                    rpt.Database.Tables["itemInfo"].SetDataSource(ds.Tables[1]);
+                    rpt.SetParameterValue("billno", "Order No.  : " + billNo);
+                    rpt.SetParameterValue("orderdate", "Order Date : " + orderdate);
+                    //rpt.PrintToPrinter(1, false, 1, 0);
+                    string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
+                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                    if (!dir.Exists)
+                    { dir.Create(); }
+                    if (System.IO.File.Exists(path + "\\" + billNo.Replace('/', '_') + ".pdf"))
+                    { System.IO.File.Delete(path + "\\" + billNo.Replace('/', '_') + ".pdf"); }
+                    rpt.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + billNo.Replace('/', '_') + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            public static void HAL_Billing(DataSet ds, string billNo, string orderdate)
             {
                 try
                 {
@@ -43,8 +68,8 @@ namespace eMediShop
 
                     rpt.Database.Tables["headerInfo"].SetDataSource(ds.Tables[0]);
                     rpt.Database.Tables["itemInfo"].SetDataSource(ds.Tables[1]);
-                    rpt.SetParameterValue("billno",    "Order No.  : "+billNo);
-                    rpt.SetParameterValue("orderdate", "Order Date : "+orderdate);
+                    rpt.SetParameterValue("billno", "Order No.  : " + billNo);
+                    rpt.SetParameterValue("orderdate", "Order Date : " + orderdate);
                     //rpt.PrintToPrinter(1, false, 1, 0);
                     string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
                     System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
@@ -342,7 +367,7 @@ namespace eMediShop
                     pm_SalesAction1 p = new pm_SalesAction1();
                     p.unit_id = GlobalUsage.Unit_id; p.Sale_Trn_No = "-"; p.Sales_Inv_No = SalesInvNo; p.order_no = "-"; p.master_key_id = "-";
                     p.logic = "ManualBillInfo";
-                    
+
                     p.login_id = GlobalUsage.Login_id;
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/GetSalesInvoice_Info", p);
 
@@ -383,6 +408,52 @@ namespace eMediShop
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            public static void HAL_DeliveryNote(string DeliveryNoteNo, string PrintFlag)
+            {
+                try
+                {
+                    string _result = string.Empty;
+                    DataSet ds = new DataSet();
+                    cm2 p = new cm2();
+                    p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                    p.Logic = "DeliveryNote";p.prm_1 = DeliveryNoteNo;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hal/halQueries", p);
+                    ds = dwr.result;
+                    string inwords = ct.changeCurrencyToWords(Convert.ToDouble(ds.Tables[0].Rows[0]["net"]));
+                    #region Chandan Pharmacy 
+                    GlobalUsage.HAL_DeliveryNote.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
+                    GlobalUsage.HAL_DeliveryNote.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("Heading", ds.Tables[2].Rows[0]["Heading"].ToString());
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("gstn", GlobalUsage.GST_No);
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("InWords", "In Words :" + inwords);
+
+
+
+                    if (System.Configuration.ConfigurationManager.AppSettings["SoftBill"].ToString() == "Yes")
+                    {
+                        string path = GlobalUsage.BillDrive + "\\CashMemo\\" + GlobalUsage.Unit_id + "\\" + Convert.ToDateTime(ds.Tables[0].Rows[0]["sale_date"]).ToString("yyyy-MM-dd");
+                        System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                        if (!dir.Exists)
+                        { dir.Create(); }
+                        if (System.IO.File.Exists(path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf"))
+                        { System.IO.File.Delete(path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf"); }
+                        GlobalUsage.PharmacyCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf");
+                    }
+                    if (PrintFlag == "Y")
+                        GlobalUsage.PharmacyCashMemo.PrintToPrinter(1, false, 1, 0);
+
+                    #endregion
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             public static void CashMemo(string SalesInvNo, string PrintFlag)
             {
                 try
@@ -396,6 +467,10 @@ namespace eMediShop
 
                     ds = dwr.result;
                     string inwords = ct.changeCurrencyToWords(Convert.ToDouble(ds.Tables[0].Rows[0]["net"]));
+
+                    //BarcodeGenerator barcodeGenerator = new BarcodeGenerator();
+                    //Bitmap barcodeImage = barcodeGenerator.GenerateBarcode(SalesInvNo, 300, 100);
+
                     if (GlobalUsage.Unit_id.Contains("H"))
                     {
                         #region Hospital Invoice

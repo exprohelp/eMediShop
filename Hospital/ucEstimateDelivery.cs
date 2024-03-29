@@ -1,5 +1,4 @@
-﻿using ExPro.Client;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Data;
 using System.Drawing;
@@ -11,6 +10,7 @@ namespace eMediShop.Hospital
     public partial class ucEstimateDelivery : UserControl
     {
         string _selectedEstimateNo = string.Empty; string _ipdVerified = string.Empty; string _patientName = string.Empty;
+        decimal _billAmt = 0;
         public ucEstimateDelivery()
         {
             InitializeComponent();
@@ -46,8 +46,10 @@ namespace eMediShop.Hospital
                 txtestUHID.Text = e.Row.Cells["uhidno"].Value.ToString();
                 txtEstIpd.Text = e.Row.Cells["ipdno"].Value.ToString();
                 txtEstRemarks.Text = e.Row.Cells["remarks"].Value.ToString();
+                txtPanelName.Text = "-";
                 txtPanelName.Text = e.Row.Cells["panelname"].Value.ToString();
                 _selectedEstimateNo = e.Row.Cells["sale_inv_no"].Value.ToString();
+                _billAmt = Convert.ToDecimal(e.Row.Cells["net"].Value);
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -127,7 +129,7 @@ namespace eMediShop.Hospital
             DataTable table = new DataTable();
             if (!chkOPD.Checked)
             {
-                if (txtEstIpd.Text.Length>4)
+                if (txtEstIpd.Text.Length > 4)
                 {
                     try
                     {
@@ -144,9 +146,9 @@ namespace eMediShop.Hospital
                             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
                             table = dwr.result.Tables[0];
                         }
-                            
-                            
-                       
+
+
+
 
                         if (table.Rows.Count > 0)
                         {
@@ -201,6 +203,8 @@ namespace eMediShop.Hospital
 
         private void txtestUHID_KeyUp(object sender, KeyEventArgs e)
         {
+
+
             if (e.KeyCode == Keys.Enter)
             {
                 try
@@ -225,6 +229,11 @@ namespace eMediShop.Hospital
                         txtPanelName.Text = table.Rows[0]["PanelName"].ToString();
                         txtEstIpd.Text = table.Rows[0]["ipop_no"].ToString();
                         _ipdVerified = "Y";
+                        if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) >= _billAmt)
+                        { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
+                        else
+                            btnDelivered.Enabled = false;
+
                     }
 
                 }
@@ -253,6 +262,24 @@ namespace eMediShop.Hospital
         private void cmbPanelName_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtPanelName.Text = ((AddValue)cmbPanelName.SelectedItem).Value;
+        }
+
+        private void txtPanelName_TextChanged(object sender, EventArgs e)
+        {
+            txtFund.Text = "0";
+            pm_HospitalQueries p = new pm_HospitalQueries();
+            p.unit_id = GlobalUsage.Unit_id; p.logic = "BYUHIDNO"; p.prm_1 = txtestUHID.Text; p.prm_2 = "";
+            p.login_id = GlobalUsage.Login_id;
+            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+            DataTable table = dwr.result.Tables[0];
+
+            if (table.Rows.Count > 0)
+            {
+                if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) >= _billAmt)
+                { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
+                else
+                    btnDelivered.Enabled = false;
+            }
         }
     }
 }

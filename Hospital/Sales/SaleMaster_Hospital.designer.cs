@@ -29,19 +29,19 @@ namespace eMediShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleMaster_Hospital));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.ItemSaleGrid = new System.Windows.Forms.ListView();
             this.Master_Key_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Item_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -114,6 +114,8 @@ namespace eMediShop
             this.chkReturnMemo = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtWallet = new Telerik.WinControls.UI.RadTextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.btnBillPosting = new System.Windows.Forms.Button();
             this.btnEstiMate = new System.Windows.Forms.Button();
             this.btnCompleteCashMemo = new System.Windows.Forms.Button();
@@ -166,13 +168,12 @@ namespace eMediShop
             this.txtEstimateNo = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.rgEstimate = new Telerik.WinControls.UI.RadGroupBox();
-            this.txtWallet = new Telerik.WinControls.UI.RadTextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUHIDNO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcgst)).BeginInit();
@@ -200,7 +201,6 @@ namespace eMediShop
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1018,6 +1018,30 @@ namespace eMediShop
             this.radGroupBox1.TabIndex = 120;
             this.radGroupBox1.Text = "Payment Info";
             // 
+            // txtWallet
+            // 
+            this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtWallet.Enabled = false;
+            this.txtWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWallet.Location = new System.Drawing.Point(200, 201);
+            this.txtWallet.Name = "txtWallet";
+            this.txtWallet.ReadOnly = true;
+            this.txtWallet.Size = new System.Drawing.Size(65, 23);
+            this.txtWallet.TabIndex = 149;
+            this.txtWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtWallet.GetChildAt(0))).Text = "";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(6, 204);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(195, 20);
+            this.label25.TabIndex = 148;
+            this.label25.Text = "Discount Transfer in Wallet Rs.";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // btnBillPosting
             // 
             this.btnBillPosting.Enabled = false;
@@ -1296,81 +1320,81 @@ namespace eMediShop
             // 
             this.radGridView1.MasterTemplate.AllowAddNewRow = false;
             this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDateTimeColumn2.AllowFiltering = false;
-            gridViewDateTimeColumn2.EnableExpressionEditor = false;
-            gridViewDateTimeColumn2.FieldName = "DateOfVisit";
-            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn2.FormatString = "{0:dd-MM-yyyy}";
-            gridViewDateTimeColumn2.HeaderText = "Date";
-            gridViewDateTimeColumn2.Name = "DateOfVisit";
-            gridViewDateTimeColumn2.Width = 88;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "ipop_no";
-            gridViewTextBoxColumn10.HeaderText = "IP/OP No";
-            gridViewTextBoxColumn10.Name = "ipop_no";
-            gridViewTextBoxColumn10.Width = 101;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "doctor_name";
-            gridViewTextBoxColumn11.HeaderText = "Name of Doctor";
-            gridViewTextBoxColumn11.Name = "doctor_name";
-            gridViewTextBoxColumn11.Width = 219;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "pt_name";
-            gridViewTextBoxColumn12.HeaderText = "Name of Patient";
-            gridViewTextBoxColumn12.Name = "pt_name";
-            gridViewTextBoxColumn12.Width = 225;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "panelName";
-            gridViewTextBoxColumn13.HeaderText = "Panel Name";
-            gridViewTextBoxColumn13.Name = "panelName";
-            gridViewTextBoxColumn13.Width = 179;
-            gridViewTextBoxColumn14.AllowFiltering = false;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "card_no";
-            gridViewTextBoxColumn14.HeaderText = "Health Card No";
-            gridViewTextBoxColumn14.Name = "card_no";
-            gridViewTextBoxColumn14.Width = 112;
-            gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "mobile";
-            gridViewTextBoxColumn15.HeaderText = "Mobile No";
-            gridViewTextBoxColumn15.Name = "mobile_no";
-            gridViewTextBoxColumn15.Width = 131;
-            gridViewTextBoxColumn16.EnableExpressionEditor = false;
-            gridViewTextBoxColumn16.FieldName = "uhid";
-            gridViewTextBoxColumn16.HeaderText = "UHID";
-            gridViewTextBoxColumn16.IsVisible = false;
-            gridViewTextBoxColumn16.Name = "UHID";
-            gridViewTextBoxColumn17.AllowFiltering = false;
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "doctor_id";
-            gridViewTextBoxColumn17.HeaderText = "doctor_id";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "doctor_id";
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "-";
-            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
-            gridViewCommandColumn2.ImageLayout = System.Windows.Forms.ImageLayout.Center;
-            gridViewCommandColumn2.Name = "column1";
-            gridViewCommandColumn2.Width = 25;
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "panelID";
-            gridViewTextBoxColumn18.HeaderText = "panelID";
-            gridViewTextBoxColumn18.IsVisible = false;
-            gridViewTextBoxColumn18.Name = "panelID";
+            gridViewDateTimeColumn1.AllowFiltering = false;
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.FieldName = "DateOfVisit";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn1.FormatString = "{0:dd-MM-yyyy}";
+            gridViewDateTimeColumn1.HeaderText = "Date";
+            gridViewDateTimeColumn1.Name = "DateOfVisit";
+            gridViewDateTimeColumn1.Width = 88;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ipop_no";
+            gridViewTextBoxColumn1.HeaderText = "IP/OP No";
+            gridViewTextBoxColumn1.Name = "ipop_no";
+            gridViewTextBoxColumn1.Width = 101;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "doctor_name";
+            gridViewTextBoxColumn2.HeaderText = "Name of Doctor";
+            gridViewTextBoxColumn2.Name = "doctor_name";
+            gridViewTextBoxColumn2.Width = 219;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "pt_name";
+            gridViewTextBoxColumn3.HeaderText = "Name of Patient";
+            gridViewTextBoxColumn3.Name = "pt_name";
+            gridViewTextBoxColumn3.Width = 225;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "panelName";
+            gridViewTextBoxColumn4.HeaderText = "Panel Name";
+            gridViewTextBoxColumn4.Name = "panelName";
+            gridViewTextBoxColumn4.Width = 179;
+            gridViewTextBoxColumn5.AllowFiltering = false;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "card_no";
+            gridViewTextBoxColumn5.HeaderText = "Health Card No";
+            gridViewTextBoxColumn5.Name = "card_no";
+            gridViewTextBoxColumn5.Width = 112;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "mobile";
+            gridViewTextBoxColumn6.HeaderText = "Mobile No";
+            gridViewTextBoxColumn6.Name = "mobile_no";
+            gridViewTextBoxColumn6.Width = 131;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "uhid";
+            gridViewTextBoxColumn7.HeaderText = "UHID";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "UHID";
+            gridViewTextBoxColumn8.AllowFiltering = false;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "doctor_id";
+            gridViewTextBoxColumn8.HeaderText = "doctor_id";
+            gridViewTextBoxColumn8.IsVisible = false;
+            gridViewTextBoxColumn8.Name = "doctor_id";
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "-";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn1.Name = "column1";
+            gridViewCommandColumn1.Width = 25;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "panelID";
+            gridViewTextBoxColumn9.HeaderText = "panelID";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "panelID";
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDateTimeColumn2,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17,
-            gridViewCommandColumn2,
-            gridViewTextBoxColumn18});
+            gridViewDateTimeColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewCommandColumn1,
+            gridViewTextBoxColumn9});
             this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1749,30 +1773,6 @@ namespace eMediShop
             this.rgEstimate.Size = new System.Drawing.Size(1201, 92);
             this.rgEstimate.TabIndex = 118;
             // 
-            // txtWallet
-            // 
-            this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtWallet.Enabled = false;
-            this.txtWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWallet.Location = new System.Drawing.Point(200, 201);
-            this.txtWallet.Name = "txtWallet";
-            this.txtWallet.ReadOnly = true;
-            this.txtWallet.Size = new System.Drawing.Size(65, 23);
-            this.txtWallet.TabIndex = 149;
-            this.txtWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtWallet.GetChildAt(0))).Text = "";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(6, 204);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(195, 20);
-            this.label25.TabIndex = 148;
-            this.label25.Text = "Discount Transfer in Wallet Rs.";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // SaleMaster_Hospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1802,6 +1802,7 @@ namespace eMediShop
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcgst)).EndInit();
@@ -1834,7 +1835,6 @@ namespace eMediShop
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

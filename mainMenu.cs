@@ -51,7 +51,7 @@ namespace eMediShop
             try
             {
                 GlobalUsage.ManualBill = new CrystalReportsPharmacy.eMediShop.ManualDeliveryNote();
-                GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet();
+                GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST();
                 GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
                 GlobalUsage.opthCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic();
                 GlobalUsage.HospitalInternalSheet = new CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet();
@@ -1922,6 +1922,21 @@ namespace eMediShop
         private void rbeHAlBilling_Click(object sender, EventArgs e)
         {
             openControl(new contract.ucMasterBilling(), "HAL Billing");
+        }
+
+        private void rbeDelProcess_Click(object sender, EventArgs e)
+        {
+            openForm(new contract.ProcessOrderDelivery());
+        }
+
+        private void rbeConsBillProcess_Click(object sender, EventArgs e)
+        {
+            openControl(new contract.ucGroupBilling(), "HAL Delivery Billing");
+        }
+
+        private void rdpDeliveryData_Click(object sender, EventArgs e)
+        {
+            openControl(new contract.ucOrderDeliveryData(), "HAL Delivery Records");
         }
 
         private void rb_assign_menu_Click(object sender, EventArgs e)

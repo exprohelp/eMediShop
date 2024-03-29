@@ -1,6 +1,6 @@
 ﻿namespace eMediShop.contract
 {
-    partial class ProcessOrder
+    partial class ProcessOrderDelivery
     {
         /// <summary> 
         /// Required designer variable.
@@ -872,7 +872,7 @@
             ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Text = "radToggleButton1";
             ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Shape = this.ellipseShape1;
             // 
-            // ProcessOrder
+            // ProcessOrderDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -887,14 +887,14 @@
             this.Controls.Add(this.lvOrder);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ProcessOrder";
+            this.Name = "ProcessOrderDelivery";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HAL Order Process Window";
+            this.Text = "HAL Order Delivery Process Window";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ucProcessOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnRemarks)).EndInit();

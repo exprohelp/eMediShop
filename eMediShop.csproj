@@ -591,6 +591,12 @@
     <Compile Include="contract\HAL_Orders.Designer.cs">
       <DependentUpon>HAL_Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="contract\ProcessOrderDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contract\ProcessOrderDelivery.Designer.cs">
+      <DependentUpon>ProcessOrderDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="contract\ProcessOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -608,6 +614,18 @@
     </Compile>
     <Compile Include="contract\ucMasterBilling.Designer.cs">
       <DependentUpon>ucMasterBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contract\ucGroupBilling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="contract\ucGroupBilling.Designer.cs">
+      <DependentUpon>ucGroupBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contract\ucOrderDeliveryData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="contract\ucOrderDeliveryData.Designer.cs">
+      <DependentUpon>ucOrderDeliveryData.cs</DependentUpon>
     </Compile>
     <Compile Include="contract\ucOrderData.cs">
       <SubType>UserControl</SubType>
@@ -1974,6 +1992,9 @@
     <EmbeddedResource Include="contract\HAL_Orders.resx">
       <DependentUpon>HAL_Orders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="contract\ProcessOrderDelivery.resx">
+      <DependentUpon>ProcessOrderDelivery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="contract\ProcessOrder.resx">
       <DependentUpon>ProcessOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -1982,6 +2003,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="contract\ucMasterBilling.resx">
       <DependentUpon>ucMasterBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\ucGroupBilling.resx">
+      <DependentUpon>ucGroupBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contract\ucOrderDeliveryData.resx">
+      <DependentUpon>ucOrderDeliveryData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="contract\ucOrderData.resx">
       <DependentUpon>ucOrderData.cs</DependentUpon>
@@ -2926,6 +2953,7 @@
     <None Include="Resources\update_software_16.png" />
     <None Include="Resources\link5-16.png" />
     <None Include="Resources\split16.png" />
+    <None Include="Resources\Contract.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

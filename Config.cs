@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Data;
-using System.Data.SqlClient;
-using ExPro.Client;
-using ExPro.Server;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
-using System.ServiceModel;
-using System.IO;
 using System.Reflection;
 using System.Drawing;
+using ZXing;
+using ZXing.Common;
 
 namespace eMediShop
 {
@@ -264,5 +260,23 @@ namespace eMediShop
         }
 
     }
-   
+    public class BarcodeGenerator
+    {
+        public Bitmap GenerateBarcode(string content, int width, int height)
+        {
+            BarcodeWriter barcodeWriter = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new EncodingOptions
+                {
+                    Width = width,
+                    Height = height
+                }
+            };
+
+            Bitmap barcodeImage = barcodeWriter.Write(content);
+            return barcodeImage;
+        }
+    }
+
 }

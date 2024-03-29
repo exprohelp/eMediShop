@@ -40,8 +40,6 @@ namespace eMediShop.forms.CentralAccess.Stock
                 cm2 p = new cm2();
                 if (_TrfType == "WPR")
                 { p.unit_id = GlobalUsage.Unit_id; ; p.Logic = "StockListSearchByName_LP"; p.prm_1 = txtMedName.Text.Trim(); }
-                else if (chkFromCart.Checked)
-                { p.unit_id = GlobalUsage.Unit_id; ; p.Logic = "StockListSearchInCart"; p.prm_1 = txtMedName.Text.Trim(); p.prm_2 = cmbCartName.Text; }
                 else
                 { p.unit_id = GlobalUsage.Unit_id; ; p.Logic = "StockListSearchByName_ALL"; p.prm_1 = txtMedName.Text.Trim(); }
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/TranStockQueries", p);
@@ -261,10 +259,7 @@ namespace eMediShop.forms.CentralAccess.Stock
                         p.unit_id = GlobalUsage.Unit_id; ; p.Logic = "ST_TRF_Ledger";p.prm_1 = "New";p.prm_2 = GlobalUsage.Comp_id;
                         datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/TranStockQueries", p);
                         _ds = dwr.result;
-                        //Cart Loading
-                        cmbCartName.Items.Clear();
-                        cmbCartName.Items.AddRange(Config.FillCombo(_ds.Tables[1]));
-                        cmbCartName.SelectedIndex = 0;
+                        
 
                     }
                     else
@@ -272,21 +267,11 @@ namespace eMediShop.forms.CentralAccess.Stock
                         p.unit_id = GlobalUsage.Unit_id; ;p.tran_id = _Trf_Id; p.Logic = "ST_TRF_Ledger"; 
                         datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/TranStockQueries", p);
                         _ds = dwr.result;
-                        cmbCartName.Items.Clear();
-                        cmbCartName.Items.AddRange(Config.FillCombo(_ds.Tables[2]));
-                        if (dwr.result.Tables[2].Rows.Count == 1) { 
-                            cmbCartName.SelectedIndex = 1;
-                            cmbCartName.Enabled = false;
-                            _cartName = _ds.Tables[2].Rows[0]["cart_name"].ToString();
-                        }
-                        else
-                        { }
+              
                     }
                     cbxTrf_to.Items.Clear();
-                    if (_ds.Tables[0].Rows.Count == 1)
-                        cbxTrf_to.Enabled = false;
-                    else
-                        cbxTrf_to.Enabled = true;
+                  
+
                     this.cbxTrf_to.SelectedIndexChanged -= new System.EventHandler(this.cbxTrf_to_SelectedIndexChanged);
                     cbxTrf_to.Items.AddRange(Config.FillCombo(_ds.Tables[0]));
                     this.cbxTrf_to.SelectedIndexChanged += new System.EventHandler(this.cbxTrf_to_SelectedIndexChanged);
@@ -474,10 +459,7 @@ namespace eMediShop.forms.CentralAccess.Stock
             int idx = cmb_TrfID.FindString("New");
             if (idx != null)
                 cmb_TrfID.SelectedIndex = idx;
-            //Cart Loading
-            cmbCartName.Items.Clear();
-            cmbCartName.Items.AddRange(Config.FillCombo(_ds.Tables[2]));
-            cmbCartName.SelectedIndex = 0;
+          
         }
         private void lv_Batch_KeyDown(object sender, KeyEventArgs e)
         {
@@ -617,7 +599,7 @@ namespace eMediShop.forms.CentralAccess.Stock
 
         private void cmbCartName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _cartName= ((AddValue)cmbCartName.SelectedItem).Value.ToString();
+       
         }
     }
 }

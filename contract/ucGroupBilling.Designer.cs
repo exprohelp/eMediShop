@@ -1,6 +1,6 @@
 ﻿namespace eMediShop.contract
 {
-    partial class ucMasterBilling
+    partial class ucGroupBilling
     {
         /// <summary> 
         /// Required designer variable.
@@ -133,9 +133,9 @@
             gridViewTextBoxColumn1.Name = "orderDate";
             gridViewTextBoxColumn1.Width = 94;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "MasterBillNo";
-            gridViewTextBoxColumn2.HeaderText = "MasterBillNo";
-            gridViewTextBoxColumn2.Name = "MasterBillNo";
+            gridViewTextBoxColumn2.FieldName = "MasterOrderNo";
+            gridViewTextBoxColumn2.HeaderText = "MasterOrderNo";
+            gridViewTextBoxColumn2.Name = "MasterOrderNo";
             gridViewTextBoxColumn2.Width = 136;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "isactive";
@@ -251,9 +251,9 @@
             gridViewTextBoxColumn8.Name = "ptname";
             gridViewTextBoxColumn8.Width = 196;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "sale_inv_no";
-            gridViewTextBoxColumn9.HeaderText = "Bill No.";
-            gridViewTextBoxColumn9.Name = "sale_inv_no";
+            gridViewTextBoxColumn9.FieldName = "Del_Note_No";
+            gridViewTextBoxColumn9.HeaderText = "Del. Note No.";
+            gridViewTextBoxColumn9.Name = "Del_Note_No";
             gridViewTextBoxColumn9.Width = 124;
             gridViewTextBoxColumn10.AllowFiltering = false;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
@@ -356,7 +356,7 @@
             this.btnXL.TabIndex = 8;
             this.btnXL.Click += new System.EventHandler(this.btnXL_Click);
             // 
-            // ucMasterBilling
+            // ucGroupBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,9 +366,9 @@
             this.Controls.Add(this.rgCriteria);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ucMasterBilling";
+            this.Name = "ucGroupBilling";
             this.Size = new System.Drawing.Size(1163, 546);
-            this.Load += new System.EventHandler(this.ucMasterBilling_Load);
+            this.Load += new System.EventHandler(this.ucGroupBilling_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rgCriteria)).EndInit();
             this.rgCriteria.ResumeLayout(false);
             this.rgCriteria.PerformLayout();
