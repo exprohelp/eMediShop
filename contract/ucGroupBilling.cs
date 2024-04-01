@@ -121,5 +121,32 @@ namespace eMediShop.contract
 
            
         }
+
+        private void MasterTemplate_RowFormatting(object sender, Telerik.WinControls.UI.RowFormattingEventArgs e)
+        {
+            if (Convert.ToInt16(e.RowElement.RowInfo.Cells["NotDel"].Value) == 0)
+            { e.RowElement.ForeColor = Color.Red;
+                btnBillProcess.Enabled = false;
+            }
+            else
+            { e.RowElement.ForeColor = Color.Green; }
+        }
+
+        private void btnBillProcess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MasterTemplate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.P))
+            {
+                string DeliveryNo = rgvLineItems.CurrentRow.Cells["Del_Note_No"].Value.ToString();
+                if (MessageBox.Show("Do You Want To Print Delivery Note ?  " + DeliveryNo, "ExPro Help", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                        Printing.Laser.HAL_DeliveryNote(DeliveryNo, "Y");
+                }
+            }
+        }
     }
 }

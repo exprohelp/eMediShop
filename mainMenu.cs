@@ -55,6 +55,7 @@ namespace eMediShop
                 GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
                 GlobalUsage.opthCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic();
                 GlobalUsage.HospitalInternalSheet = new CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet();
+                GlobalUsage.HAL_DeliveryNote = new CrystalReportsPharmacy.eMediShop.DeliveryNote_HAL();
             }
             catch (Exception ex) { RadMessageBox.Show("Crystal Library Issue.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
 

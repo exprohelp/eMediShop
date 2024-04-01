@@ -44,7 +44,7 @@ namespace eMediShop.contract
 
         private void rgvOrderHeaders_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            _billNo = e.Row.Cells["masterbillno"].Value.ToString();
+            _billNo = e.Row.Cells["MasterOrderNo"].Value.ToString();
             _orderdate = e.Row.Cells["orderdate"].Value.ToString();
 
             try

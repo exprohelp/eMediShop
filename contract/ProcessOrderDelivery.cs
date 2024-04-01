@@ -403,38 +403,38 @@ namespace eMediShop.contract
                             b.HomeDelivery = "N";
 
                         b.mobileNo = _contactNo;
-                
-                            try
+
+                        try
+                        {
+                            DialogResult res = RadMessageBox.Show("Do You Confirm (Y/N) ", "ExPro Help", MessageBoxButtons.YesNo);
+                            if (res == DialogResult.Yes)
                             {
-                                DialogResult res = RadMessageBox.Show("Do You Confirm (Y/N) ", "ExPro Help", MessageBoxButtons.YesNo);
-                                if (res == DialogResult.Yes)
+                                SaleInvoiceFinalization p = new SaleInvoiceFinalization();
+                                p.unit_id = GlobalUsage.Unit_id; p.Sale_Inv_No = txtInvNo.Text; p.rcmOrderNo = _order_no;
+                                p.login_id = GlobalUsage.Login_id;
+                                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/HalDeliveryFinalization", p);
+                                if (!dwr.message.Contains("Success"))
+                                    MessageBox.Show(dwr.message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                else
                                 {
-                                    SaleInvoiceFinalization p = new SaleInvoiceFinalization();
-                                    p.unit_id = GlobalUsage.Unit_id; p.Sale_Inv_No = txtInvNo.Text; p.rcmOrderNo = _order_no;
-                                    p.login_id = GlobalUsage.Login_id;
-                                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/HalDeliveryFinalization", p);
-                                    if (!dwr.message.Contains("Success"))
-                                        MessageBox.Show(dwr.message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    else
-                                    {
-                                        string[] d = dwr.message.Split(':');
-                                        txtInvNo.Text = d[1];
-                                        printCashMemo(txtInvNo.Text);
-                                        
-                                        btnPrintIS.PerformClick();
+                                    string[] d = dwr.message.Split(':');
+                                    txtInvNo.Text = d[1];
+                                    printDeliveryNote(txtInvNo.Text);
+
+                                    btnPrintIS.PerformClick();
                                     reset();
 
                                 }
 
 
-                                }
                             }
-                            catch (Exception ex)
-                            {
-                                RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
-                            }
-                            finally { Cursor.Current = Cursors.Default; }
-                        
+                        }
+                        catch (Exception ex)
+                        {
+                            RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
+                        finally { Cursor.Current = Cursors.Default; }
+
 
                     }
                     else
@@ -452,7 +452,7 @@ namespace eMediShop.contract
                 Cursor.Current = Cursors.Default;
             }
         }
-        protected void printCashMemo(string inv_no)
+        protected void printDeliveryNote(string inv_no)
         {
             if (MessageBox.Show("Do You Want To Print Delivery Note ?  " + inv_no, "ExPro Help", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -470,14 +470,7 @@ namespace eMediShop.contract
                 reset();
             }
         }
-        protected void printDeliveryNote(string inv_no)
-        {
-            if (MessageBox.Show("Do You Want To Print Delivery Note ? " + inv_no, "ExPro Help", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (GlobalUsage.PrinterType.ToUpper().ToUpper() == "LASER")
-                    Printing.Laser.HAL_DeliveryNote(inv_no, "Y");
-            }
-        }
+       
         private void makeSale(string item_id, string masterkey, int qty)
         {
             DataSet ds = new DataSet();
@@ -819,6 +812,7 @@ namespace eMediShop.contract
             try
             {
                 DialogResult res = MessageBox.Show("Do You want to Print (Y/N) ?", "ExPro Help", MessageBoxButtons.YesNo);
+
                 if (res == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;

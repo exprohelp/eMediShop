@@ -442,10 +442,10 @@ namespace eMediShop
                         { dir.Create(); }
                         if (System.IO.File.Exists(path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf"))
                         { System.IO.File.Delete(path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf"); }
-                        GlobalUsage.PharmacyCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf");
+                        GlobalUsage.HAL_DeliveryNote.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + DeliveryNoteNo.Replace('/', '_') + ".pdf");
                     }
                     if (PrintFlag == "Y")
-                        GlobalUsage.PharmacyCashMemo.PrintToPrinter(1, false, 1, 0);
+                        GlobalUsage.HAL_DeliveryNote.PrintToPrinter(1, false, 1, 0);
 
                     #endregion
                 }

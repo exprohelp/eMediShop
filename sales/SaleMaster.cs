@@ -133,8 +133,11 @@ namespace eMediShop.sales
                     {
                         if (dr["FrontDesk_Alert"].ToString().Length > 2)
                             lvi.ForeColor = Color.Red;
+                        else if (dr["SeqNo"].ToString() == "0")
+                            lvi.ForeColor = Color.Green;
                         else if (dr["promo"].ToString() != "Promote")
                             lvi.ForeColor = Color.Black;
+                     
                         else
                             lvi.ForeColor = Color.FromArgb(0, 0, 192);
 
