@@ -217,7 +217,7 @@
             this.rdp_to.Size = new System.Drawing.Size(117, 25);
             this.rdp_to.TabIndex = 3;
             this.rdp_to.TabStop = false;
-            this.rdp_to.Text = "21/06/2019";
+            this.rdp_to.Text = "21-06-2019";
             this.rdp_to.Value = new System.DateTime(2019, 6, 21, 13, 55, 32, 30);
             // 
             // rdp_from
@@ -229,7 +229,7 @@
             this.rdp_from.Size = new System.Drawing.Size(117, 25);
             this.rdp_from.TabIndex = 2;
             this.rdp_from.TabStop = false;
-            this.rdp_from.Text = "21/06/2019";
+            this.rdp_from.Text = "21-06-2019";
             this.rdp_from.Value = new System.DateTime(2019, 6, 21, 13, 55, 32, 30);
             this.rdp_from.Leave += new System.EventHandler(this.rdp_from_Leave);
             // 

@@ -1217,7 +1217,17 @@ namespace eMediShop
 
         private void MasterTemplate_CommandCellClick(object sender, GridViewCellEventArgs e)
         {
+
             SetUnitInfo(e.Row.Cells[0].Value.ToString());
+            CloseAllOpenForm();
+        }
+        private void CloseAllOpenForm()
+        {
+            Form[] forms = Application.OpenForms.Cast<Form>().ToArray();
+            foreach (Form thisForm in forms)
+            {
+                if (thisForm.Name != "mainMenu") thisForm.Close();
+            }
         }
         private void SetUnitInfo(string selUnitId)
         {
@@ -1272,7 +1282,7 @@ namespace eMediShop
                 TransferInfoTo_ITS();
 
 
-                if (GlobalUsage.Login_id == "CHL-02809" )
+                if (GlobalUsage.Login_id == "CHCL-00009" )
                 {
                     try
                     {

@@ -1448,22 +1448,26 @@ namespace eMediShop
                 rtb_uhidsearch.Enabled = false;
                 radGridView1.DataSource = new string[] { };
              
-                string response = GlobalUsage.his_proxy.getActiveIPDCases();
-                var table = JsonConvert.DeserializeObject<DataTable>(response);
+   
+                pm_HospitalQueries p = new pm_HospitalQueries();
+                p.unit_id = GlobalUsage.Unit_id; p.logic = "ActiveIPD"; p.prm_1 = "-"; p.prm_2 = "";
+                p.login_id = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                var table = dwr.result.Tables[0];
                 if (table.Rows.Count > 0)
                 {
                     var ipddata = table.AsEnumerable().Select(x => new
                     {
                         dateOfvisit = x.Field<string>("AdmitDate"),
-                        ipop_no = x.Field<string>("IPDNO"),
-                        pt_name = x.Field<string>("PName"),
-                        doctor_name = x.Field<string>("DName"),
-                        card_no = x.Field<string>("Mobile"),
-                        mobile = x.Field<string>("Mobile"),
-                        uhid = x.Field<string>("Patient_ID"),
+                        ipop_no = x.Field<string>("IPDNo"),
+                        pt_name = x.Field<string>("patient_name"),
+                        doctor_name = x.Field<string>("DoctorName"),
+                        card_no = x.Field<string>("mobile_no"),
+                        mobile = x.Field<string>("mobile_no"),
+                        uhid = x.Field<string>("UHID"),
                         doctor_id = x.Field<string>("DoctorId"),
-                        panelName = x.Field<string>("Company_Name"),
-                        panelID = x.Field<Int64>("Panel_ID"),
+                        panelName = x.Field<string>("PanelName"),
+                        panelID = x.Field<string>("PanelId"),
                     });
                     radGridView1.DataSource = ipddata;
                 }

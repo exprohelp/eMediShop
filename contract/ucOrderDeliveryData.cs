@@ -192,5 +192,13 @@ namespace eMediShop.contract
                 }
             }
         }
+
+        private void MasterTemplate_RowFormatting(object sender, RowFormattingEventArgs e)
+        {
+            if (e.RowElement.RowInfo.Cells["isDelivered"].Value.ToString() == "Y")
+                e.RowElement.ForeColor = Color.Green;
+            else
+                e.RowElement.ForeColor = Color.Black;
+        }
     }
 }

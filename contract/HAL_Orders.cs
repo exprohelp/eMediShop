@@ -17,7 +17,7 @@ namespace eMediShop.contract
 
         private void HAL_Orders_Load(object sender, EventArgs e)
         {
-            dtpOrderDate.MinDate = DateTime.Today.AddDays(-1);
+            dtpOrderDate.MinDate = DateTime.Today.AddDays(-2);
             dtpOrderDate.MaxDate =DateTime.Now;
             dtpOrderDate.Value = DateTime.Today;
             LoadOrders();

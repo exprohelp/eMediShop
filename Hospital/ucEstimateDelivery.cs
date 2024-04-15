@@ -275,10 +275,10 @@ namespace eMediShop.Hospital
 
             if (table.Rows.Count > 0)
             {
-                if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) >= _billAmt)
-                { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
+                if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) < _billAmt)
+                { btnDelivered.Enabled = false; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
                 else
-                    btnDelivered.Enabled = false;
+                    btnDelivered.Enabled = true;
             }
         }
     }

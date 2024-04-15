@@ -382,7 +382,7 @@
             this.rpvMain.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rpvMain.Location = new System.Drawing.Point(0, 40);
             this.rpvMain.Name = "rpvMain";
-            this.rpvMain.SelectedPage = this.rpvCollection;
+            this.rpvMain.SelectedPage = this.rpvTransfer;
             this.rpvMain.Size = new System.Drawing.Size(974, 460);
             this.rpvMain.TabIndex = 5;
             this.rpvMain.Text = "radPageView1";
