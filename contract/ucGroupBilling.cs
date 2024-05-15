@@ -167,7 +167,7 @@ namespace eMediShop.contract
         {
             if ((Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.P))
             {
-                string DeliveryNo = rgvLineItems.CurrentRow.Cells["Del_Note_No"].Value.ToString();
+                string DeliveryNo = rgvLineItems.CurrentRow.Cells["noteno"].Value.ToString();
                 if (MessageBox.Show("Do You Want To Print Delivery Note ?  " + DeliveryNo, "ExPro Help", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                         Printing.Laser.HAL_DeliveryNote(DeliveryNo, "Y");

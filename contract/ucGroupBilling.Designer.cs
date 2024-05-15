@@ -53,6 +53,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn8 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgCriteria = new Telerik.WinControls.UI.RadGroupBox();
             this.rdpTo = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -66,6 +67,7 @@
             this.btnPrint = new Telerik.WinControls.UI.RadButton();
             this.btnXL = new Telerik.WinControls.UI.RadButton();
             this.btnBillProcess = new Telerik.WinControls.UI.RadButton();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rgCriteria)).BeginInit();
             this.rgCriteria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdpTo)).BeginInit();
@@ -221,6 +223,7 @@
             // rgvItems
             // 
             this.rgvItems.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.rgvItems.Controls.Add(this.label3);
             this.rgvItems.Controls.Add(this.rgvLineItems);
             this.rgvItems.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgvItems.HeaderText = "XXXXXXXXXXXXXXXXXX";
@@ -237,7 +240,7 @@
             this.rgvLineItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.rgvLineItems.ForeColor = System.Drawing.Color.Black;
             this.rgvLineItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rgvLineItems.Location = new System.Drawing.Point(5, 30);
+            this.rgvLineItems.Location = new System.Drawing.Point(5, 56);
             // 
             // 
             // 
@@ -333,6 +336,11 @@
             gridViewDecimalColumn8.HeaderText = "NotDel";
             gridViewDecimalColumn8.IsVisible = false;
             gridViewDecimalColumn8.Name = "NotDel";
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "noteno";
+            gridViewTextBoxColumn15.HeaderText = "noteno";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "noteno";
             this.rgvLineItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8,
@@ -349,14 +357,15 @@
             gridViewDecimalColumn7,
             gridViewTextBoxColumn13,
             gridViewTextBoxColumn14,
-            gridViewDecimalColumn8});
+            gridViewDecimalColumn8,
+            gridViewTextBoxColumn15});
             this.rgvLineItems.MasterTemplate.EnableFiltering = true;
             this.rgvLineItems.MasterTemplate.EnableGrouping = false;
             this.rgvLineItems.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.rgvLineItems.Name = "rgvLineItems";
             this.rgvLineItems.ReadOnly = true;
             this.rgvLineItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rgvLineItems.Size = new System.Drawing.Size(777, 432);
+            this.rgvLineItems.Size = new System.Drawing.Size(777, 406);
             this.rgvLineItems.TabIndex = 7;
             this.rgvLineItems.Text = "radGridView1";
             this.rgvLineItems.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.MasterTemplate_RowFormatting);
@@ -394,6 +403,15 @@
             this.btnBillProcess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBillProcess.Click += new System.EventHandler(this.btnBillProcess_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(271, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "CTRL+P: To Reprint Delivery Slip";
+            // 
             // ucGroupBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -418,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rdtpFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvItems)).EndInit();
             this.rgvItems.ResumeLayout(false);
+            this.rgvItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgvLineItems.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvLineItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
@@ -441,5 +460,6 @@
         private Telerik.WinControls.UI.RadButton btnPrint;
         private Telerik.WinControls.UI.RadButton btnXL;
         private Telerik.WinControls.UI.RadButton btnBillProcess;
+        private System.Windows.Forms.Label label3;
     }
 }

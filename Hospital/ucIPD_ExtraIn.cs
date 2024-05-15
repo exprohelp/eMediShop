@@ -40,11 +40,16 @@ namespace eMediShop.Hospital
 
         private void rgv_processedIndent_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
+            string masterkeyid = string.Empty; int OldQty = 0; int InQty = 0;
+            try
+            {
+                OldQty = Convert.ToInt16(rgv_processedIndent.CurrentRow.Cells["sale_qty"].Value);
+                InQty = Convert.ToInt16(rgv_processedIndent.CurrentRow.Cells["ExtraIn"].Value);
+                masterkeyid = rgv_processedIndent.CurrentRow.Cells["master_key_id"].Value.ToString();
+            }
+            catch (Exception e1) { return; }
             if (e.Column.Name == "ExtraIn")
             {
-                int OldQty = Convert.ToInt16(rgv_processedIndent.CurrentRow.Cells["sale_qty"].Value);
-                int InQty = Convert.ToInt16(rgv_processedIndent.CurrentRow.Cells["ExtraIn"].Value);
-                string masterkeyid = rgv_processedIndent.CurrentRow.Cells["master_key_id"].Value.ToString();
                 if (InQty < 0 || InQty > OldQty)
                 {
                     RadMessageBox.Show("Quantity Should be between  1 and " + OldQty.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
@@ -61,7 +66,7 @@ namespace eMediShop.Hospital
                         p1.Logic = "TPA-Extra"; p1.tran_id = txtIpdNo.Text;
                         p1.prm_3 = rgv_processedIndent.CurrentRow.Cells["batch_no"].Value.ToString();
 
-                        if(_expDate.Length==10)
+                        if (_expDate.Length == 10)
                             p1.prm_4 = _expDate;
                         else
                             p1.prm_4 = "NoChange";
@@ -72,17 +77,39 @@ namespace eMediShop.Hospital
                     }
                     catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
                     finally { Cursor.Current = Cursors.Default; }
-
                 }
             }
             else if (e.Column.Name == "batch_no")
             {
-                if (rgv_processedIndent.CurrentRow.Cells["batch_no"].Value.ToString().Length <5)
+                if (rgv_processedIndent.CurrentRow.Cells["batch_no"].Value.ToString().Length < 5)
                 {
                     MessageBox.Show("Batch No. Should be Minimum 5 Char.", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     rgv_processedIndent.CurrentRow.Cells["batch_no"].Value = _oldBatch;
                 }
-          
+                else
+                {
+                    try
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        cm1 p1 = new cm1();
+                        p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
+                        p1.prm_1 = masterkeyid; p1.prm_2 = InQty.ToString();
+                        p1.Logic = "TPA-Extra"; p1.tran_id = txtIpdNo.Text;
+                        p1.prm_3 = rgv_processedIndent.CurrentRow.Cells["batch_no"].Value.ToString();
+
+                        if (_expDate.Length == 10)
+                            p1.prm_4 = _expDate;
+                        else
+                            p1.prm_4 = "NoChange";
+
+                        p1.login_id = GlobalUsage.Login_id;
+
+                        datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
+                    }
+                    catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
+                    finally { Cursor.Current = Cursors.Default; }
+                }
+
             }
             else if (e.Column.Name == "exp_date")
             {
@@ -91,30 +118,54 @@ namespace eMediShop.Hospital
                     int mth = 1; int fixMth = 0;
                     _newExpiry = rgv_processedIndent.CurrentRow.Cells["exp_date"].Value.ToString();
                     string date = getExpDate(_newExpiry);
-                    if (date != "Fail")
+                    if (date == "Fail")
                     {
-                        DateTime xpDate_Permit = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-01"));
-                        DateTime xpDate_input = Convert.ToDateTime(date);
-                        TimeSpan ts = xpDate_input - xpDate_Permit;
-                        mth = ts.Days / 30; fixMth = 3;
+
+                        MessageBox.Show("Invalid Date", "ExPro Help");
+                        rgv_processedIndent.CurrentRow.Cells["exp_date"].Value = _oldExpiry;
+                        return;
                     }
-
-
-                    if (date != "1900-01-01" && mth <= fixMth)
+                    else if (date != "1900-01-01" && mth <= fixMth)
                     {
                         MessageBox.Show("Bellow " + fixMth.ToString() + " Month Expiry Not Allowed", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         rgv_processedIndent.CurrentRow.Cells["exp_date"].Value = _oldExpiry;
                         return;
                     }
-
-                    if (date == "Fail")
+                    else if (date != "Fail")
                     {
-                       
-                        MessageBox.Show("Invalid Date", "ExPro Help");
-                        rgv_processedIndent.CurrentRow.Cells["exp_date"].Value = _oldExpiry;
-                        return;
+                        DateTime xpDate_Permit = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-01"));
+                        DateTime xpDate_input = Convert.ToDateTime(date);
+                        TimeSpan ts = xpDate_input - xpDate_Permit;
+                        mth = ts.Days / 30; fixMth = 3;
+                        try
+                        {
+                            Cursor.Current = Cursors.WaitCursor;
+                            cm1 p1 = new cm1();
+                            p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
+                            p1.prm_1 = masterkeyid; p1.prm_2 = InQty.ToString();
+                            p1.Logic = "TPA-Extra"; p1.tran_id = txtIpdNo.Text;
+                            p1.prm_3 = rgv_processedIndent.CurrentRow.Cells["batch_no"].Value.ToString();
+
+                            if (_expDate.Length == 10)
+                                p1.prm_4 = _expDate;
+                            else
+                                p1.prm_4 = "NoChange";
+
+                            p1.login_id = GlobalUsage.Login_id;
+
+                            datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
+                        }
+                        catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
+                        finally { Cursor.Current = Cursors.Default; }
+
+
+
                     }
+
+
+
                 }
+
                 catch (Exception ex) { rgv_processedIndent.CurrentRow.Cells["exp_date"].Value = _oldExpiry; }
             }
 
@@ -164,11 +215,12 @@ namespace eMediShop.Hospital
                 p1.prm_1 = "-"; p1.prm_2 = "-";
                 p1.Logic = "-"; p1.tran_id = txtIpdNo.Text;
                 datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/purchase/ExtraInTPA_Process", p1);
-                if (dwr1.message.Contains("Success")) {
+                if (dwr1.message.Contains("Success"))
+                {
                     string[] t = dwr1.message.Split('|');
                     DialogResult res = RadMessageBox.Show("Do You want to Print (Y/N) ", "ExPro Help", MessageBoxButtons.YesNo);
-                    if(res==DialogResult.Yes)
-                    Printing.Laser.InternalSheet(t[1], "Print");
+                    if (res == DialogResult.Yes)
+                        Printing.Laser.InternalSheet(t[1], "Print");
                 }
 
                 RadMessageBox.Show(dwr1.message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);

@@ -807,6 +807,8 @@ namespace eMediShop
         public string ContactNo { get; set; }
         public string swipeMacNo { get; set; }
         public string loginName { get; set; }
+        public string isDischargeMedicine { get; set; }
+
         public List<BillPaymentInfo> BillPaymentDetail { get; set; }
     }
     public class BillPaymentInfo

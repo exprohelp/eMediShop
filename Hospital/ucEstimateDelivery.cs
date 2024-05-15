@@ -68,7 +68,7 @@ namespace eMediShop.Hospital
                 MessageBox.Show("Type Proper Reason of Minimum 10 Char.");
                 return;
             }
-            else if (txtEstIpd.Text.Length < 4)
+            else if (txtEstIpd.Text.Length < 4 && chkOPD.Checked==false)
             {
                 MessageBox.Show("Type IPD No");
                 return;
@@ -88,7 +88,10 @@ namespace eMediShop.Hospital
                 p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id; p.pt_name = _patientName;
                 p.estimateNo = _selectedEstimateNo; p.Hosp_Cr_No = txtestUHID.Text; p.Hosp_IPOP_No = txtEstIpd.Text;
                 p.panelName = txtPanelName.Text; p.remarks = txtEstRemarks.Text; p.loginName = GlobalUsage.Login_id;
-
+                if (chkDischMed.Checked)
+                    p.isDischargeMedicine = "Yes";
+                else
+                    p.isDischargeMedicine = "No";
 
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/RetailMarkNotSettled", p);
                 if (dwr.message.Contains("Success"))
