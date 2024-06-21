@@ -16,8 +16,8 @@ namespace eMediShop.ManualSales
         string _ManualBillNo = string.Empty; string _saleDate = string.Empty;
         string _items_id = string.Empty;string _ipopType = string.Empty; string _payMode = string.Empty;
         string _uhid = string.Empty; string _ipdNo = string.Empty;
-        decimal TOrdqty = 0;
-       
+        decimal TOrdqty = 0;int _itemCount = 0; int _itemCountSales = 0;
+
         int _itemindex = 0;
         int _ordindex = -1;
         ListViewItem item;
@@ -135,9 +135,10 @@ namespace eMediShop.ManualSales
                     contactNo = s.Field<string>("mobileNo"),
                     sale_inv_no = s.Field<string>("sale_inv_no"),
                     Amount = s.Field<decimal>("Amount"),
-                    remarks = s.Field<string>("remarks")
+                    remarks = s.Field<string>("remarks"),
+                    ItemCount=s.Field<Int64>("ItemCount")
                 });
-                rgv_orders.DataSource = Order;
+                rgv_orders.DataSource = Order.ToList();
                
 
 
@@ -277,6 +278,7 @@ namespace eMediShop.ManualSales
             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/GetSalesInvoice_Info", p);
 
             DataSet _ds = dwr.result;
+            _itemCountSales = _ds.Tables[1].AsEnumerable().Select(x => x.Field<string>("item_id")).Distinct().Count();
             ItemSaleGrid.Items.Clear();
             if (_ds.Tables[1].Rows.Count > 0)
             {
@@ -342,6 +344,11 @@ namespace eMediShop.ManualSales
      
         private void btnCompleteSale_Click(object sender, EventArgs e)
         {
+            if(_itemCount!=_itemCountSales)
+            {
+                RadMessageBox.Show("All Manual Bill Items Not Processed.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+            }
             btnCompleteSale.Enabled = false;
             try
             {
@@ -518,7 +525,7 @@ namespace eMediShop.ManualSales
                         DataRow dr = ds.Tables[0].Rows[0];
                         if (_result.Contains("Success"))
                         {
-                            
+                            _itemCountSales = _itemCountSales - 1;
                             txtTotal.Text = Convert.ToDecimal(dr["total"]).ToString("####.00");
                             txtDiscount.Text = Convert.ToDecimal(dr["discount"]).ToString("####.00");
                             txtRoundoff.Text = Convert.ToDecimal(dr["roundoff"]).ToString("####.00");
@@ -609,6 +616,7 @@ namespace eMediShop.ManualSales
             _ipdNo = e.Row.Cells["ipdNo"].Value.ToString();
             lblPayMode.Text = "Pay Mode : " + _payMode;
             _remarks= e.Row.Cells["remarks"].Value.ToString();
+            _itemCount = Convert.ToInt16(e.Row.Cells["ItemCount"].Value);
             rcp_panel.IsExpanded = false;
             SelectedOrder();
         }

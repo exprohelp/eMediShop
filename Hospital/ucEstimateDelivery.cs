@@ -68,7 +68,7 @@ namespace eMediShop.Hospital
                 MessageBox.Show("Type Proper Reason of Minimum 10 Char.");
                 return;
             }
-            else if (txtEstIpd.Text.Length < 4 && chkOPD.Checked==false)
+            else if (txtEstIpd.Text.Length < 4 && chkOPD.Checked == false)
             {
                 MessageBox.Show("Type IPD No");
                 return;
@@ -232,7 +232,9 @@ namespace eMediShop.Hospital
                         txtPanelName.Text = table.Rows[0]["PanelName"].ToString();
                         txtEstIpd.Text = table.Rows[0]["ipop_no"].ToString();
                         _ipdVerified = "Y";
-                        if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) >= _billAmt)
+                        if (table.Rows[0]["panelId"].ToString() != "107")
+                            btnDelivered.Enabled = true;
+                        else if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) >= _billAmt)
                         { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
                         else
                             btnDelivered.Enabled = false;
@@ -255,6 +257,7 @@ namespace eMediShop.Hospital
                 p.unit_id = GlobalUsage.Unit_id; p.logic = "panelName"; p.prm_1 = ""; p.prm_2 = "";
                 p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                cmbPanelName.Items.Clear();
                 cmbPanelName.Items.AddRange(Config.FillCombo(dwr.result.Tables[0]));
 
             }
@@ -276,7 +279,7 @@ namespace eMediShop.Hospital
             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
             DataTable table = dwr.result.Tables[0];
 
-            if (table.Rows.Count > 0)
+            if (table.Rows.Count > 0 && !chkHospitalAdvance.Checked)
             {
                 if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) < _billAmt)
                 { btnDelivered.Enabled = false; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }

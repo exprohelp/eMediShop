@@ -1,6 +1,6 @@
-﻿namespace eMediShop.WholeSales
+﻿namespace eMediShop.challan
 {
-    partial class WholeSale_Window
+    partial class Challan_Window
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WholeSale_Window));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Challan_Window));
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.GroupDescriptor groupDescriptor1 = new Telerik.WinControls.Data.GroupDescriptor();
@@ -63,6 +63,16 @@
             this.rpv_parent = new Telerik.WinControls.UI.RadPageView();
             this.rpvp_sales = new Telerik.WinControls.UI.RadPageViewPage();
             this.rgv_productHelp = new Telerik.WinControls.UI.RadGridView();
+            this.lv_batchno = new System.Windows.Forms.ListView();
+            this.MasterKey = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Batch_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Exp_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.packsize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Packqty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.unitprice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.auditrem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPrintInternal = new Telerik.WinControls.UI.RadButton();
             this.btnPrint = new Telerik.WinControls.UI.RadButton();
             this.rtb_FinalInvoice = new Telerik.WinControls.UI.RadTextBox();
@@ -92,16 +102,6 @@
             this.btnPost = new Telerik.WinControls.UI.RadButton();
             this.btnAdd = new Telerik.WinControls.UI.RadButton();
             this.rgv_sold = new Telerik.WinControls.UI.RadGridView();
-            this.lv_batchno = new System.Windows.Forms.ListView();
-            this.MasterKey = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Batch_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Exp_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.packsize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Packqty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.unitprice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.auditrem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             ((System.ComponentModel.ISupportInitialize)(this.rpv_parent)).BeginInit();
             this.rpv_parent.SuspendLayout();
@@ -235,6 +235,80 @@
             this.rgv_productHelp.Visible = false;
             this.rgv_productHelp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterTemplate_KeyDown);
             // 
+            // lv_batchno
+            // 
+            this.lv_batchno.BackColor = System.Drawing.Color.Gray;
+            this.lv_batchno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lv_batchno.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MasterKey,
+            this.Batch_No,
+            this.Exp_Date,
+            this.packsize,
+            this.Packqty,
+            this.Quantity,
+            this.mr,
+            this.unitprice,
+            this.auditrem});
+            this.lv_batchno.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_batchno.ForeColor = System.Drawing.Color.White;
+            this.lv_batchno.FullRowSelect = true;
+            this.lv_batchno.GridLines = true;
+            this.lv_batchno.HideSelection = false;
+            this.lv_batchno.Location = new System.Drawing.Point(300, -2);
+            this.lv_batchno.Name = "lv_batchno";
+            this.lv_batchno.Size = new System.Drawing.Size(480, 340);
+            this.lv_batchno.TabIndex = 112;
+            this.lv_batchno.UseCompatibleStateImageBehavior = false;
+            this.lv_batchno.View = System.Windows.Forms.View.Details;
+            this.lv_batchno.Visible = false;
+            this.lv_batchno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lv_batchno_KeyDown);
+            // 
+            // MasterKey
+            // 
+            this.MasterKey.Text = "MasterKey";
+            this.MasterKey.Width = 0;
+            // 
+            // Batch_No
+            // 
+            this.Batch_No.Text = "Batch No";
+            this.Batch_No.Width = 98;
+            // 
+            // Exp_Date
+            // 
+            this.Exp_Date.Text = "Ex.Dt";
+            this.Exp_Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // packsize
+            // 
+            this.packsize.Text = "P. Type";
+            this.packsize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Packqty
+            // 
+            this.Packqty.Text = "P. Qty";
+            this.Packqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Packqty.Width = 53;
+            // 
+            // Quantity
+            // 
+            this.Quantity.Text = "Qty";
+            this.Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Quantity.Width = 56;
+            // 
+            // mr
+            // 
+            this.mr.Text = "MRP";
+            this.mr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // unitprice
+            // 
+            this.unitprice.Text = "unitprice";
+            this.unitprice.Width = 0;
+            // 
+            // auditrem
+            // 
+            this.auditrem.Text = "Audit/Promo Remark";
+            // 
             // btnPrintInternal
             // 
             this.btnPrintInternal.Image = global::eMediShop.Properties.Resources.printer;
@@ -253,9 +327,9 @@
             this.btnPrint.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.btnPrint.Location = new System.Drawing.Point(230, 432);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(38, 50);
+            this.btnPrint.Size = new System.Drawing.Size(47, 50);
             this.btnPrint.TabIndex = 30;
-            this.btnPrint.Text = "Bill";
+            this.btnPrint.Text = "Challan";
             this.btnPrint.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -287,7 +361,7 @@
             this.rtbSaleInvNo.ReadOnly = true;
             this.rtbSaleInvNo.Size = new System.Drawing.Size(156, 25);
             this.rtbSaleInvNo.TabIndex = 26;
-            this.rtbSaleInvNo.Text = "New Invoice";
+            this.rtbSaleInvNo.Text = "New Challan";
             this.rtbSaleInvNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // rgv_parties
@@ -342,10 +416,11 @@
             this.rgv_parties.ReadOnly = true;
             this.rgv_parties.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rgv_parties.ShowGroupPanel = false;
-            this.rgv_parties.Size = new System.Drawing.Size(478, 234);
+            this.rgv_parties.Size = new System.Drawing.Size(478, 243);
             this.rgv_parties.TabIndex = 25;
             this.rgv_parties.Text = "radGridView2";
             this.rgv_parties.Visible = false;
+            this.rgv_parties.Click += new System.EventHandler(this.rgv_parties_Click);
             this.rgv_parties.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterTemplate_KeyDown_1);
             // 
             // label10
@@ -488,9 +563,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1127, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Sale Inv No";
+            this.label3.Text = "Challan No.";
             // 
             // rtb_accountid
             // 
@@ -698,97 +773,24 @@
             this.rgv_sold.TabIndex = 7;
             this.rgv_sold.Text = "radGridView1";
             this.rgv_sold.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
+            this.rgv_sold.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rgv_sold_KeyUp);
             // 
-            // lv_batchno
-            // 
-            this.lv_batchno.BackColor = System.Drawing.Color.Gray;
-            this.lv_batchno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lv_batchno.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.MasterKey,
-            this.Batch_No,
-            this.Exp_Date,
-            this.packsize,
-            this.Packqty,
-            this.Quantity,
-            this.mr,
-            this.unitprice,
-            this.auditrem});
-            this.lv_batchno.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lv_batchno.ForeColor = System.Drawing.Color.White;
-            this.lv_batchno.FullRowSelect = true;
-            this.lv_batchno.GridLines = true;
-            this.lv_batchno.HideSelection = false;
-            this.lv_batchno.Location = new System.Drawing.Point(335, -2);
-            this.lv_batchno.Name = "lv_batchno";
-            this.lv_batchno.Size = new System.Drawing.Size(480, 340);
-            this.lv_batchno.TabIndex = 112;
-            this.lv_batchno.UseCompatibleStateImageBehavior = false;
-            this.lv_batchno.View = System.Windows.Forms.View.Details;
-            this.lv_batchno.Visible = false;
-            this.lv_batchno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lv_batchno_KeyDown);
-            // 
-            // MasterKey
-            // 
-            this.MasterKey.Text = "MasterKey";
-            this.MasterKey.Width = 0;
-            // 
-            // Batch_No
-            // 
-            this.Batch_No.Text = "Batch No";
-            this.Batch_No.Width = 98;
-            // 
-            // Exp_Date
-            // 
-            this.Exp_Date.Text = "Ex.Dt";
-            this.Exp_Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // packsize
-            // 
-            this.packsize.Text = "P. Type";
-            this.packsize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Packqty
-            // 
-            this.Packqty.Text = "P. Qty";
-            this.Packqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Packqty.Width = 53;
-            // 
-            // Quantity
-            // 
-            this.Quantity.Text = "Qty";
-            this.Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Quantity.Width = 56;
-            // 
-            // mr
-            // 
-            this.mr.Text = "MRP";
-            this.mr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // unitprice
-            // 
-            this.unitprice.Text = "unitprice";
-            this.unitprice.Width = 0;
-            // 
-            // auditrem
-            // 
-            this.auditrem.Text = "Audit/Promo Remark";
-            // 
-            // WholeSale_Window
+            // Challan_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 539);
             this.Controls.Add(this.rpv_parent);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "WholeSale_Window";
+            this.Name = "Challan_Window";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sold to Inter Company/Vendor";
-            this.Load += new System.EventHandler(this.WholeSale_Window_Load);
+            this.Text = "Stock Transfer By Challan";
+            this.Load += new System.EventHandler(this.Challan_Window_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rpv_parent)).EndInit();
             this.rpv_parent.ResumeLayout(false);
             this.rpvp_sales.ResumeLayout(false);

@@ -30,20 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_NewPurchases));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.btnProcess = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXL = new System.Windows.Forms.Button();
             this.dtTo = new System.Windows.Forms.DateTimePicker();
             this.dtFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnXL = new System.Windows.Forms.Button();
             this.rgv = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgv)).BeginInit();
@@ -73,10 +74,23 @@
             this.groupBox1.ForeColor = System.Drawing.Color.DarkCyan;
             this.groupBox1.Location = new System.Drawing.Point(4, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(724, 53);
+            this.groupBox1.Size = new System.Drawing.Size(799, 53);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Medicine Sold During The Period.";
+            // 
+            // btnXL
+            // 
+            this.btnXL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXL.BackgroundImage")));
+            this.btnXL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnXL.Enabled = false;
+            this.btnXL.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXL.Location = new System.Drawing.Point(752, 9);
+            this.btnXL.Name = "btnXL";
+            this.btnXL.Size = new System.Drawing.Size(41, 40);
+            this.btnXL.TabIndex = 67;
+            this.btnXL.UseVisualStyleBackColor = true;
+            this.btnXL.Click += new System.EventHandler(this.btnXL_Click);
             // 
             // dtTo
             // 
@@ -125,19 +139,6 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
-            // btnXL
-            // 
-            this.btnXL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXL.BackgroundImage")));
-            this.btnXL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnXL.Enabled = false;
-            this.btnXL.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXL.Location = new System.Drawing.Point(678, 9);
-            this.btnXL.Name = "btnXL";
-            this.btnXL.Size = new System.Drawing.Size(41, 40);
-            this.btnXL.TabIndex = 67;
-            this.btnXL.UseVisualStyleBackColor = true;
-            this.btnXL.Click += new System.EventHandler(this.btnXL_Click);
-            // 
             // rgv
             // 
             this.rgv.BackColor = System.Drawing.SystemColors.Control;
@@ -150,41 +151,47 @@
             // 
             // 
             this.rgv.MasterTemplate.AllowAddNewRow = false;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "item_id";
+            gridViewTextBoxColumn1.HeaderText = "Item ID";
+            gridViewTextBoxColumn1.Name = "item_id";
+            gridViewTextBoxColumn1.Width = 92;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "item_name";
+            gridViewTextBoxColumn2.HeaderText = "Name of Product";
+            gridViewTextBoxColumn2.Name = "item_name";
+            gridViewTextBoxColumn2.Width = 403;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "firstRcptDate";
+            gridViewTextBoxColumn3.HeaderText = "First Rcpt Date";
+            gridViewTextBoxColumn3.Name = "firstRcptDate";
+            gridViewTextBoxColumn3.Width = 94;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "firstSaleDate";
+            gridViewTextBoxColumn4.HeaderText = "First Sale Date";
+            gridViewTextBoxColumn4.Name = "firstSaleDate";
+            gridViewTextBoxColumn4.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn4.Width = 98;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "item_id";
-            gridViewTextBoxColumn5.HeaderText = "Item ID";
-            gridViewTextBoxColumn5.Name = "item_id";
-            gridViewTextBoxColumn5.Width = 92;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "item_name";
-            gridViewTextBoxColumn6.HeaderText = "Name of Product";
-            gridViewTextBoxColumn6.Name = "item_name";
-            gridViewTextBoxColumn6.Width = 403;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "firstRcptDate";
-            gridViewTextBoxColumn7.HeaderText = "First Rcpt Date";
-            gridViewTextBoxColumn7.Name = "firstRcptDate";
-            gridViewTextBoxColumn7.Width = 94;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "firstSaleDate";
-            gridViewTextBoxColumn8.HeaderText = "First Sale Date";
-            gridViewTextBoxColumn8.Name = "firstSaleDate";
-            gridViewTextBoxColumn8.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn8.Width = 98;
+            gridViewTextBoxColumn5.FieldName = "LastSaleDate";
+            gridViewTextBoxColumn5.HeaderText = "Last Sale Date";
+            gridViewTextBoxColumn5.Name = "LastSaleDate";
+            gridViewTextBoxColumn5.Width = 78;
             this.rgv.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.rgv.MasterTemplate.EnableGrouping = false;
-            sortDescriptor2.PropertyName = "firstSaleDate";
+            sortDescriptor1.PropertyName = "firstSaleDate";
             this.rgv.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
-            this.rgv.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            sortDescriptor1});
+            this.rgv.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv.Name = "rgv";
             this.rgv.ReadOnly = true;
             this.rgv.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rgv.Size = new System.Drawing.Size(724, 471);
+            this.rgv.Size = new System.Drawing.Size(799, 471);
             this.rgv.TabIndex = 68;
             this.rgv.Text = "radGridView1";
             // 
@@ -197,7 +204,7 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uc_NewPurchases";
-            this.Size = new System.Drawing.Size(731, 540);
+            this.Size = new System.Drawing.Size(806, 540);
             this.Load += new System.EventHandler(this.uc_NewPurchases_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

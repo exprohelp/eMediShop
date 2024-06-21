@@ -1950,6 +1950,11 @@ namespace eMediShop
             openControl(new contract.ucOrderDeliveryData(), "HAL Delivery Records");
         }
 
+        private void rbeChallanCreate_Click(object sender, EventArgs e)
+        {
+            openForm(new challan.Challan_Window());
+        }
+
         private void rb_assign_menu_Click(object sender, EventArgs e)
         {
             openForm(new ITSystem.menuRights("eMediShop"));

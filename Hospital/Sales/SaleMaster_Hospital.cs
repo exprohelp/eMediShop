@@ -1344,18 +1344,13 @@ namespace eMediShop
                     radGridView1.DataSource = new string[] { };
                     if (rbOPD.Checked)
                     {
-                        string response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtUHIDNO.Text);
-                        var table = JsonConvert.DeserializeObject<DataTable>(response);
-                        if(table.Rows.Count>0)
-                        radGridView1.DataSource = table;
-                        else
-                        {
+                        
                             ipPharmacyInfo p = new ipPharmacyInfo();
                             p.prm_1 = txtUHIDNO.Text;p.Logic = "GetPatientLastOpd";
                             resultSetMIS rsm = HISProxy.CallHISWebApiMethod("Pharmacy/Pharmacy_Queries", p);
                             DataSet ds = rsm.ResultSet;
                             radGridView1.DataSource = ds.Tables[0];
-                        }
+                        
                     }
 
 

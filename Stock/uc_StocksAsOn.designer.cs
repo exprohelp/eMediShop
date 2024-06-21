@@ -47,6 +47,7 @@
             Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.GridViewSummaryItem gridViewSummaryItem1 = new Telerik.WinControls.UI.GridViewSummaryItem();
             Telerik.WinControls.UI.GridViewSummaryItem gridViewSummaryItem2 = new Telerik.WinControls.UI.GridViewSummaryItem();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgb = new Telerik.WinControls.UI.RadGroupBox();
             this.rbtn_xl = new Telerik.WinControls.UI.RadButton();
             this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
@@ -109,7 +110,7 @@
             this.rgv_info.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rgv_info.Location = new System.Drawing.Point(80, 3);
             // 
-            // rgv_info
+            // 
             // 
             this.rgv_info.MasterTemplate.AllowAddNewRow = false;
             this.rgv_info.MasterTemplate.AutoExpandGroups = true;
@@ -216,6 +217,7 @@
             this.rgv_info.MasterTemplate.SummaryRowsTop.Add(new Telerik.WinControls.UI.GridViewSummaryRowItem(new Telerik.WinControls.UI.GridViewSummaryItem[] {
                 gridViewSummaryItem1,
                 gridViewSummaryItem2}));
+            this.rgv_info.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_info.Name = "rgv_info";
             this.rgv_info.ReadOnly = true;
             this.rgv_info.RightToLeft = System.Windows.Forms.RightToLeft.No;

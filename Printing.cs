@@ -117,6 +117,30 @@ namespace eMediShop
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            public static void DeliveryChallans(DataSet ds, string ChallanNo)
+            {
+                try
+                {
+                    ReportDocument rpt;
+                    rpt = new CrystalReportsPharmacy.eMediShop.Challans();
+
+                    rpt.Database.Tables["shopInfo"].SetDataSource(ds.Tables[0]);
+                    rpt.Database.Tables["Header"].SetDataSource(ds.Tables[1]);
+                    rpt.Database.Tables["Items"].SetDataSource(ds.Tables[2]);
+                    rpt.PrintToPrinter(1, false, 1, 0);
+                    string path = Application.StartupPath.Substring(0, 2) + "\\challan\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
+                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                    if (!dir.Exists)
+                    { dir.Create(); }
+                    if (System.IO.File.Exists(path + "\\" + ChallanNo.Replace('/', '_') + ".pdf"))
+                    { System.IO.File.Delete(path + "\\" + ChallanNo.Replace('/', '_') + ".pdf"); }
+                    rpt.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + ChallanNo.Replace('/', '_') + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             public static void WholeSalesInvoice(DataSet ds, string Sale_Inv_No)
             {
                 try

@@ -583,6 +583,12 @@
     <Compile Include="challan\uc_ChallanSettlement.Designer.cs">
       <DependentUpon>uc_ChallanSettlement.cs</DependentUpon>
     </Compile>
+    <Compile Include="challan\Challan_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="challan\Challan_Window.Designer.cs">
+      <DependentUpon>Challan_Window.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckInternet.cs" />
     <Compile Include="ConfigWebAPI.cs" />
     <Compile Include="contract\HAL_Orders.cs">
@@ -1988,6 +1994,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="challan\uc_ChallanSettlement.resx">
       <DependentUpon>uc_ChallanSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="challan\Challan_Window.resx">
+      <DependentUpon>Challan_Window.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="contract\HAL_Orders.resx">
       <DependentUpon>HAL_Orders.cs</DependentUpon>

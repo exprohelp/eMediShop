@@ -4,6 +4,22 @@ using System.Data;
 
 namespace eMediShop
 {
+    public class challans
+    {
+        public string unitID { get; set; }
+        public string challan_no { get; set; }
+        public string customer_Id { get; set; }
+        public string item_id { get; set; }
+        public string master_key_id { get; set; }
+        public int Challan_Qty { get; set; }
+        public string Logic { get; set; }
+        public string prm_1 { get; set; }
+        public string prm_2 { get; set; }
+        public string loginId { get; set; }
+        public string result { get; set; }
+
+    }
+
     public class ipPharmacyInfo
     {
         public string unit_id { get; set; }

@@ -47,15 +47,16 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.lv_batchno = new System.Windows.Forms.ListView();
             this.Master_Key_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -688,6 +689,12 @@
             gridViewTextBoxColumn14.HeaderText = "remarks";
             gridViewTextBoxColumn14.IsVisible = false;
             gridViewTextBoxColumn14.Name = "remarks";
+            gridViewDecimalColumn3.EnableExpressionEditor = false;
+            gridViewDecimalColumn3.FieldName = "ItemCount";
+            gridViewDecimalColumn3.FormatString = "{0:N0}";
+            gridViewDecimalColumn3.HeaderText = "ItemCount";
+            gridViewDecimalColumn3.IsVisible = false;
+            gridViewDecimalColumn3.Name = "ItemCount";
             this.rgv_orders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -705,7 +712,8 @@
             gridViewTextBoxColumn11,
             gridViewTextBoxColumn12,
             gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14});
+            gridViewTextBoxColumn14,
+            gridViewDecimalColumn3});
             this.rgv_orders.MasterTemplate.EnableFiltering = true;
             this.rgv_orders.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_orders.Name = "rgv_orders";
@@ -815,34 +823,34 @@
             gridViewTextBoxColumn18.HeaderText = "Expiry";
             gridViewTextBoxColumn18.Name = "exp_date";
             gridViewTextBoxColumn18.Width = 71;
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "mrp";
-            gridViewDecimalColumn3.HeaderText = "MRP";
-            gridViewDecimalColumn3.Name = "mrp";
-            gridViewDecimalColumn3.Width = 72;
             gridViewDecimalColumn4.EnableExpressionEditor = false;
-            gridViewDecimalColumn4.FieldName = "usr";
-            gridViewDecimalColumn4.HeaderText = "USR";
-            gridViewDecimalColumn4.Name = "usr";
-            gridViewDecimalColumn4.Width = 66;
+            gridViewDecimalColumn4.FieldName = "mrp";
+            gridViewDecimalColumn4.HeaderText = "MRP";
+            gridViewDecimalColumn4.Name = "mrp";
+            gridViewDecimalColumn4.Width = 72;
             gridViewDecimalColumn5.EnableExpressionEditor = false;
-            gridViewDecimalColumn5.FieldName = "SoldQty";
-            gridViewDecimalColumn5.HeaderText = "SoldQty";
-            gridViewDecimalColumn5.Name = "SoldQty";
+            gridViewDecimalColumn5.FieldName = "usr";
+            gridViewDecimalColumn5.HeaderText = "USR";
+            gridViewDecimalColumn5.Name = "usr";
+            gridViewDecimalColumn5.Width = 66;
             gridViewDecimalColumn6.EnableExpressionEditor = false;
-            gridViewDecimalColumn6.FieldName = "Amount";
-            gridViewDecimalColumn6.HeaderText = "Amount";
-            gridViewDecimalColumn6.Name = "Amount";
-            gridViewDecimalColumn6.Width = 64;
+            gridViewDecimalColumn6.FieldName = "SoldQty";
+            gridViewDecimalColumn6.HeaderText = "SoldQty";
+            gridViewDecimalColumn6.Name = "SoldQty";
+            gridViewDecimalColumn7.EnableExpressionEditor = false;
+            gridViewDecimalColumn7.FieldName = "Amount";
+            gridViewDecimalColumn7.HeaderText = "Amount";
+            gridViewDecimalColumn7.Name = "Amount";
+            gridViewDecimalColumn7.Width = 64;
             this.rgvManualRecords.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn15,
             gridViewTextBoxColumn16,
             gridViewTextBoxColumn17,
             gridViewTextBoxColumn18,
-            gridViewDecimalColumn3,
             gridViewDecimalColumn4,
             gridViewDecimalColumn5,
-            gridViewDecimalColumn6});
+            gridViewDecimalColumn6,
+            gridViewDecimalColumn7});
             this.rgvManualRecords.MasterTemplate.EnableGrouping = false;
             this.rgvManualRecords.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.rgvManualRecords.Name = "rgvManualRecords";
