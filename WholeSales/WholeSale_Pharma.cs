@@ -4,28 +4,26 @@ using System.Drawing;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
-namespace eMediShop.challan
+namespace eMediShop.WholeSales
 {
-    public partial class Challan_Window : Telerik.WinControls.UI.RadForm
+    public partial class WholeSale_Pharma : Telerik.WinControls.UI.RadForm
     {
         DataSet _ds = new DataSet(); string _result = string.Empty; string _itemid = string.Empty;
         string _masterkeyid = string.Empty; decimal _UnitSaleRate = 0; string _partyid = string.Empty; string _accountid = string.Empty; string _gstn_no = string.Empty;
-        Int32 _qty = 0;
-        public Challan_Window()
+        Int32 _qty = 0;string _challanNo = string.Empty;
+        public WholeSale_Pharma()
         {
             InitializeComponent();
         }
 
-        private void Challan_Window_Load(object sender, EventArgs e)
+        private void WholeSale_Pharma_Load(object sender, EventArgs e)
         {
-            challans p = new challans();
-            p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-            p.Logic = "PendingChallan";
-            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
+            cm1 p = new cm1();
+            p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+            p.Logic = "CEND-Pending";
+            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WholeSaleQueries", p);
             _ds = dwr.result;
             rgv_pending.DataSource = _ds.Tables[0];
-            rdpFrom.Value = DateTime.Today;
-            rdpTo.Value = rdpFrom.Value;
 
         }
 
@@ -36,11 +34,15 @@ namespace eMediShop.challan
                 try
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    Search p = new Search();
-                    p.SearchKey = rtb_productname.Text; p.Logic = "ALL-Product"; p.unit_id = GlobalUsage.Unit_id;
-                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/ProductHelp", p);
-                    _ds = dwr.result;
-                    rgv_productHelp.DataSource = _ds.Tables[0];
+                   
+                    challans p = new challans();
+                    p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
+                    p.challan_no = cmbChallanNo.Text;
+                    p.Logic = "Stockist-Product"; p.prm_1 = rtb_productname.Text;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
+                    DataSet ds = dwr.result;
+
+                    rgv_productHelp.DataSource = ds.Tables[0];
 
                     if (_ds.Tables[0].Rows.Count > 0) rgv_productHelp.Visible = true; else rgv_productHelp.Visible = false;
 
@@ -84,7 +86,7 @@ namespace eMediShop.challan
                     lvi.SubItems.Add(dr["pack_qty"].ToString());
                     lvi.SubItems.Add(dr["qty"].ToString());
                     lvi.SubItems.Add(Convert.ToDecimal(dr["mrp"]).ToString("####.00"));
-                    lvi.SubItems.Add(dr["upr"].ToString());
+                    lvi.SubItems.Add(dr["usr"].ToString());
                     lvi.SubItems.Add(dr["AuditRemark"].ToString());
                     if (dr["AuditMark"].ToString() == "Black")
                     {
@@ -117,7 +119,8 @@ namespace eMediShop.challan
                     rtb_BatchNo.Text = lv_batchno.Items[0].SubItems[1].Text;
                     rtb_packtype.Text = lv_batchno.Items[0].SubItems[3].Text;
                     rtb_packqty.Text = lv_batchno.Items[0].SubItems[4].Text;
-                    rtb_instock.Text = Convert.ToInt32(lv_batchno.Items[0].SubItems[5].Text).ToString();
+                    //rtb_Rate.Text = Convert.ToInt32(lv_batchno.Items[0].SubItems[5].Text).ToString();
+                    rtb_Rate.Text = lv_batchno.Items[0].SubItems[7].Text;
                     _UnitSaleRate = Convert.ToDecimal(lv_batchno.Items[0].SubItems[7].Text);
                     _qty = Convert.ToInt32(lv_batchno.Items[0].SubItems[5].Text);
 
@@ -176,7 +179,7 @@ namespace eMediShop.challan
                 rtb_BatchNo.Text = lv_batchno.Items[FocusedIndex].SubItems[1].Text;
                 rtb_packtype.Text = lv_batchno.Items[FocusedIndex].SubItems[3].Text;
                 rtb_packqty.Text = lv_batchno.Items[FocusedIndex].SubItems[4].Text;
-                rtb_instock.Text = Convert.ToInt32(lv_batchno.Items[FocusedIndex].SubItems[5].Text).ToString();
+                rtb_Rate.Text = Convert.ToInt32(lv_batchno.Items[FocusedIndex].SubItems[5].Text).ToString();
                 _UnitSaleRate = Convert.ToDecimal(lv_batchno.Items[FocusedIndex].SubItems[7].Text);
                 _qty = Convert.ToInt32(lv_batchno.Items[FocusedIndex].SubItems[5].Text);
                 lv_batchno.Visible = false;
@@ -193,7 +196,7 @@ namespace eMediShop.challan
         {
 
 
-            if (Config.isNumeric(rtbSoldQty.Text, System.Globalization.NumberStyles.Integer))
+            if (Config.isNumeric(rtbSoldQty.Text, System.Globalization.NumberStyles.Float))
             {
                 rtb_amount.Text = (Convert.ToDecimal(rtbSoldQty.Text) * _UnitSaleRate).ToString("#####.00");
             }
@@ -228,7 +231,7 @@ namespace eMediShop.challan
         private void rtbSoldQty_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                btnAdd.Focus();
+                txtFree.Focus();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -236,11 +239,27 @@ namespace eMediShop.challan
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                challans p = new challans();
-                p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                p.challan_no = rtbSaleInvNo.Text; p.customer_Id = _partyid; p.Logic = "Insert";
-                p.item_id = _itemid; p.master_key_id = _masterkeyid; p.Challan_Qty = Convert.ToInt16(rtbSoldQty.Text);
-                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/Insert_Modify_Challans_Items_Tran", p);
+                decimal SoldPacks = 0;
+                decimal SoldPacksFree = 0;
+                SoldPacks = Convert.ToDecimal(rtbSoldQty.Text) / Convert.ToDecimal(rtb_packqty.Text);
+                SoldPacksFree = Convert.ToDecimal(txtFree.Text) / Convert.ToDecimal(rtb_packqty.Text);
+
+                pm_sales p = new pm_sales();
+                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                if (rbByMrp.Checked)
+                    p.logic = "By MRP";
+                else
+                    p.logic = "By Trade";
+
+
+                p.sale_inv_no = rtbSaleInvNo.Text; p.party_id = _partyid; p.account_id = rtb_accountid.Text;
+                p.item_id = _itemid; p.master_key_id = _masterkeyid;
+                p.SoldQtyInPacks = SoldPacks = Convert.ToDecimal(rtbSoldQty.Text) / Convert.ToDecimal(rtb_packqty.Text);
+                ;
+                p.order_no = cmbChallanNo.Text;
+                p.freeItems = SoldPacksFree;
+                p.discountPercent = Convert.ToDecimal(txtDisPer.Text);
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/PharmaInsertModifySales", p);
 
                 DataSet ds = dwr.result;
 
@@ -291,6 +310,18 @@ namespace eMediShop.challan
                 _gstn_no = rgv_parties.CurrentRow.Cells["gstn_no"].Value.ToString();
 
                 rtb_accountid.Text = _accountid;
+
+                challans p = new challans();
+                p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
+                p.challan_no = "";
+                p.Logic = "Sale:ChallanNos"; p.prm_1 = _partyid;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
+                DataSet ds = dwr.result;
+
+                cmbChallanNo.Items.Clear();
+                cmbChallanNo.Items.AddRange(Config.FillCombo(ds.Tables[0]));
+                cmbChallanNo.SelectedIndex = 0;
+
                 this.rgv_parties.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterTemplate_KeyDown_1);
                 rgv_parties.Visible = false;
                 rtb_productname.Focus();
@@ -310,10 +341,10 @@ namespace eMediShop.challan
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                challans p = new challans();
-                p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                p.Logic = "PendingChallanInfo"; p.challan_no = e.Row.Cells[0].Value.ToString();
-                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
+                cm1 p = new cm1();
+                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                p.Logic = "CEND-InvoiceInfo"; p.prm_1 = e.Row.Cells[0].Value.ToString();
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WholeSaleQueries", p);
 
                 DataSet ds = dwr.result;
                 rgv_sold.DataSource = ds.Tables[0];
@@ -321,6 +352,11 @@ namespace eMediShop.challan
                 rtb_PartyName.Text = e.Row.Cells["party_name"].Value.ToString();
                 _partyid = e.Row.Cells["party_id"].Value.ToString();
                 _accountid = e.Row.Cells["account_id"].Value.ToString();
+                if (e.Row.Cells["account_id"].Value.ToString() == "By MRP")
+                    rbByMrp.Checked = true;
+                else
+                    rb_ByTadeRate.Checked = false;
+
                 rtb_accountid.Text = _accountid;
                 rtbSaleInvNo.Text = e.Row.Cells[0].Value.ToString();
                 this.rgv_parties.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterTemplate_KeyDown_1);
@@ -341,16 +377,18 @@ namespace eMediShop.challan
                 if (res == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    challans p = new challans();
-                    p.unitID = GlobalUsage.Unit_id;
-                    p.challan_no = rtbSaleInvNo.Text; p.loginId = GlobalUsage.Login_id;
-                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/Challans_Finalization", p);
+                    pm_sales p = new pm_sales();
+                    p.unit_id = GlobalUsage.Unit_id;
+                    p.sale_inv_no = rtbSaleInvNo.Text; p.party_id = _partyid;
+                    p.cust_name = rtb_PartyName.Text; p.account_id = rtb_accountid.Text;
+                    p.gstn_no = _gstn_no; p.sale_type = "IC-TV";
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ICTVBillFinalization", p);
                     DataSet ds = dwr.result;
 
                     if (dwr.message.Contains("Successfully"))
                     {
-                        btnPrint.PerformClick();
-                        rtbSaleInvNo.Text = "New Challan";
+                        rtb_FinalInvoice.Text = ds.Tables[0].Rows[0]["sale_inv_no"].ToString();
+                        rtbSaleInvNo.Text = "New Invoice";
                         rtb_productname.Text = "";
                         rtb_PartyName.Text = "";
                         rgv_pending.CurrentRow.Delete();
@@ -378,13 +416,12 @@ namespace eMediShop.challan
                 if (res == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    challans p = new challans();
-                    p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                    p.challan_no = rtbSaleInvNo.Text;
-                    p.Logic = "Print:Challan"; p.prm_1 = rtb_FinalInvoice.Text;
-                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
+                    cm1 p = new cm1();
+                    p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                    p.Logic = "Pharma:BillInfoPrint"; p.prm_1 = rtb_FinalInvoice.Text;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WholeSaleQueries", p);
                     DataSet ds = dwr.result;
-                    Printing.Laser.DeliveryChallans(ds, p.challan_no);
+                    Printing.Laser.Trade_Invoice(ds, p.prm_1);
                 }
             }
             catch (Exception ex)
@@ -402,12 +439,10 @@ namespace eMediShop.challan
                 if (res == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    challans p = new challans();
-                    p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                    p.challan_no = rtbSaleInvNo.Text; p.customer_Id = _partyid; p.Logic = "Delete"; p.master_key_id = rgv_sold.CurrentRow.Cells["tran_id"].Value.ToString();
-                    p.item_id = _itemid;
-                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/Insert_Modify_Challans_Items_Tran", p);
-
+                    cm1 p = new cm1();
+                    p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                    p.Logic = "ICTV:delete"; p.prm_1 = e.Row.Cells["tran_id"].Value.ToString();
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WholeSaleQueries", p);
                     DataSet ds = dwr.result;
                     rgv_sold.DataSource = ds.Tables[0];
                 }
@@ -448,95 +483,40 @@ namespace eMediShop.challan
             finally { Cursor.Current = Cursors.Default; }
         }
 
-        private void rgv_parties_Click(object sender, EventArgs e)
+        private void txtFree_Enter(object sender, EventArgs e)
         {
-
+            txtFree.SelectAll();
         }
 
-        private void rgv_sold_KeyUp(object sender, KeyEventArgs e)
+        private void rtbSoldQty_Enter(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
-            {
-                try
-                {
-                    DialogResult res = RadMessageBox.Show("Do You Confirm  to Delete?", "ExPro Help", MessageBoxButtons.YesNo);
-                    if (res == DialogResult.Yes)
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
-                        challans p = new challans();
-                        p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                        p.challan_no = rtbSaleInvNo.Text; p.customer_Id = _partyid; p.Logic = "Delete"; p.master_key_id = rgv_sold.CurrentRow.Cells["tran_id"].Value.ToString();
-                        p.item_id = _itemid; p.master_key_id = _masterkeyid; p.Challan_Qty = Convert.ToInt16(rtbSoldQty.Text);
-                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/Insert_Modify_Challans_Items_Tran", p);
-
-                        DataSet ds = dwr.result;
-
-                        rgv_sold.DataSource = ds.Tables[0];
-                        if (ds.Tables[0].Rows.Count > 0)
-                        {
-                            btnPost.Enabled = true;
-                            rtb_productname.Focus();
-                        }
-                    }
-                }
-                catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
-                finally { Cursor.Current = Cursors.Default; }
-
-            }
+            rtbSoldQty.SelectAll();
         }
 
-        private void rdpFrom_Leave(object sender, EventArgs e)
+        private void txtDisPer_Enter(object sender, EventArgs e)
         {
-            rdpTo.MinDate = rdpFrom.Value;
+            txtDisPer.SelectAll();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void txtFree_KeyDown(object sender, KeyEventArgs e)
         {
-            try
-            {
-
-                Cursor.Current = Cursors.WaitCursor;
-                challans p = new challans();
-                p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                p.challan_no ="-";
-                p.Logic = "Challans:Register"; p.prm_1 = rdpFrom.Value.ToString("yyyy-MM-dd");
-                p.prm_2 = rdpTo.Value.ToString("yyyy-MM-dd");
-                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
-                rgv_Register.DataSource = dwr.result.Tables[0];
-
-
-            }
-            catch (Exception ex)
-            {
-                RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-            finally { Cursor.Current = Cursors.Default; }
+            if (e.KeyCode == Keys.Enter)
+                txtDisPer.Focus();
         }
 
-        private void rgv_Register_KeyDown(object sender, KeyEventArgs e)
+        private void txtDisPer_KeyDown(object sender, KeyEventArgs e)
         {
-            if(Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.P)
+            if (e.KeyCode == Keys.Enter)
+                btnAdd.Focus();
+        }
+
+        private void txtDisPer_TextChanged(object sender, EventArgs e)
+        {
+            if (Config.isNumeric(txtDisPer.Text, System.Globalization.NumberStyles.Float))
             {
-                try
-                {
-                    DialogResult res = RadMessageBox.Show("Do You Confirm  to Print ?", "ExPro Help", MessageBoxButtons.YesNo);
-                    if (res == DialogResult.Yes)
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
-                        challans p = new challans();
-                        p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
-                        p.challan_no = rgv_Register.CurrentRow.Cells["challan_no"].Value.ToString();
-                        p.Logic = "Print:Challan"; p.prm_1 = "-";
-                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ChallansQueries", p);
-                        DataSet ds = dwr.result;
-                        Printing.Laser.DeliveryChallans(ds, p.challan_no);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
-                }
-                finally { Cursor.Current = Cursors.Default; }
+                decimal disUnitSaleRate = 0;
+                disUnitSaleRate = _UnitSaleRate - (_UnitSaleRate * Convert.ToDecimal(txtDisPer.Text) / 100);
+                rtb_amount.Text = (Convert.ToDecimal(rtbSoldQty.Text) * disUnitSaleRate).ToString("#####.00");
             }
         }
     }

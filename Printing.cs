@@ -84,6 +84,67 @@ namespace eMediShop
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            public static void Trade_Invoice(DataSet ds, string Sale_Inv_No)
+            {
+                try
+                {
+                    ReportDocument rpt;
+                    rpt = new CrystalReportsPharmacy.Reports.TradeBill();
+
+                    rpt.Database.Tables["Header"].SetDataSource(ds.Tables[1]);
+                    rpt.Database.Tables["shopInfo"].SetDataSource(ds.Tables[0]);
+                    rpt.Database.Tables["Bill_GST"].SetDataSource(ds.Tables[4]);
+                    rpt.Database.Tables["Bill_Info"].SetDataSource(ds.Tables[3]);
+                    rpt.Database.Tables["Bill_Summary"].SetDataSource(ds.Tables[2]);
+                    rpt.Database.Tables["items"].SetDataSource(ds.Tables[5]);
+                    rpt.PrintToPrinter(1, false, 1, 0);
+                    string path = Application.StartupPath.Substring(0, 2) + "\\cashmemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
+                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                    if (!dir.Exists)
+                    { dir.Create(); }
+                    if (System.IO.File.Exists(path + "\\" + Sale_Inv_No.Replace('/', '_') + ".pdf"))
+                    { System.IO.File.Delete(path + "\\" + Sale_Inv_No.Replace('/', '_') + ".pdf"); }
+                    rpt.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + Sale_Inv_No.Replace('/', '_') + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            public static void Trade_Invoice1(DataSet ds, string Sale_Inv_No)
+            {
+                try
+                {
+                    ds.Tables[1].TableName = "Header";
+                    ds.Tables[0].TableName = "shopInfo";
+                    ds.Tables[4].TableName = "Bill_GST";
+                    ds.Tables[3].TableName = "Bill_Info";
+                    ds.Tables[2].TableName = "Bill_Summary";
+
+                    ReportDocument rpt;
+                    rpt = new CrystalReportsPharmacy.Reports.WholeSale_Bill();
+
+                    rpt.Database.Tables["Header"].SetDataSource(ds.Tables[1]);
+                    rpt.Database.Tables["shopInfo"].SetDataSource(ds.Tables[0]);
+                    rpt.Database.Tables["Bill_GST"].SetDataSource(ds.Tables[4]);
+                    rpt.Database.Tables["Bill_Info"].SetDataSource(ds.Tables[3]);
+                    rpt.Database.Tables["Bill_Summary"].SetDataSource(ds.Tables[2]);
+                    rpt.PrintToPrinter(1, false, 1, 0);
+                    string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
+                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                    if (!dir.Exists)
+                    { dir.Create(); }
+                    if (System.IO.File.Exists(path + "\\" + Sale_Inv_No.Replace('/', '_') + ".pdf"))
+                    { System.IO.File.Delete(path + "\\" + Sale_Inv_No.Replace('/', '_') + ".pdf"); }
+                    rpt.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + Sale_Inv_No.Replace('/', '_') + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
             public static void ICTV_Invoice(DataSet ds, string Sale_Inv_No)
             {
                 try

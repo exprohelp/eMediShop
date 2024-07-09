@@ -76,7 +76,6 @@
             this.itemname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.STOCK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnPrintIS = new Telerik.WinControls.UI.RadButton();
             this.ItemSaleGrid = new System.Windows.Forms.ListView();
             this.item_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.item_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -110,7 +109,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rgvManualRecords = new Telerik.WinControls.UI.RadGridView();
             this.txtCustName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
+            this.btnPrintIS = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.rcp_panel)).BeginInit();
             this.rcp_panel.PanelContainer.SuspendLayout();
             this.rcp_panel.SuspendLayout();
@@ -121,6 +120,7 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -290,20 +290,6 @@
             this.Quantity.Text = "O.Qty";
             this.Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Quantity.Width = 45;
-            // 
-            // btnPrintIS
-            // 
-            this.btnPrintIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintIS.Image = global::eMediShop.Properties.Resources.printer;
-            this.btnPrintIS.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPrintIS.Location = new System.Drawing.Point(584, 575);
-            this.btnPrintIS.Name = "btnPrintIS";
-            this.btnPrintIS.Size = new System.Drawing.Size(73, 27);
-            this.btnPrintIS.TabIndex = 305;
-            this.toolTip1.SetToolTip(this.btnPrintIS, "Print Internal Paper");
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.printer;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Text = "";
             // 
             // ItemSaleGrid
             // 
@@ -876,6 +862,20 @@
             this.txtCustName.TabIndex = 306;
             this.txtCustName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // btnPrintIS
+            // 
+            this.btnPrintIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintIS.Image = global::eMediShop.Properties.Resources.printer;
+            this.btnPrintIS.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrintIS.Location = new System.Drawing.Point(584, 575);
+            this.btnPrintIS.Name = "btnPrintIS";
+            this.btnPrintIS.Size = new System.Drawing.Size(73, 27);
+            this.btnPrintIS.TabIndex = 305;
+            this.toolTip1.SetToolTip(this.btnPrintIS, "Print Internal Paper");
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.printer;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Text = "";
+            // 
             // ucManualSalesProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -896,7 +896,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manual Bill Finalization";
             this.Load += new System.EventHandler(this.ucProcessOrder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).EndInit();
             this.rcp_panel.PanelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rcp_panel)).EndInit();
             this.rcp_panel.ResumeLayout(false);
@@ -908,6 +907,7 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -2726,6 +2726,9 @@
     <EmbeddedResource Include="warehouse\uc_SettingofVendorAgainstKeys.resx">
       <DependentUpon>uc_SettingofVendorAgainstKeys.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WholeSales\WholeSale_Pharma.resx">
+      <DependentUpon>WholeSale_Pharma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WholeSales\WholeSale_Window.resx">
       <DependentUpon>WholeSale_Window.cs</DependentUpon>
     </EmbeddedResource>
@@ -2886,6 +2889,12 @@
     </Compile>
     <Compile Include="warehouse\uc_SettingofVendorAgainstKeys.designer.cs">
       <DependentUpon>uc_SettingofVendorAgainstKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WholeSales\WholeSale_Pharma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WholeSales\WholeSale_Pharma.Designer.cs">
+      <DependentUpon>WholeSale_Pharma.cs</DependentUpon>
     </Compile>
     <Compile Include="WholeSales\WholeSale_Window.cs">
       <SubType>Form</SubType>

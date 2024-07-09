@@ -313,6 +313,8 @@ namespace eMediShop
     }
     public class pm_sales
     {
+        public decimal freeItems { get; set; }
+        public decimal SoldQtyInPacks { get; set; }
         public decimal npr { get; set; }
         public decimal cgst { get; set; }
         public decimal Dis_Per { get; set; }
