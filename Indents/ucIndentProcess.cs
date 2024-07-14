@@ -49,6 +49,9 @@ namespace eMediShop.Indents
                 _processType = e.Row.Cells["process_type"].Value.ToString();
                 btnProcess.Text = _processType;
                 _trasferToUnit = e.Row.Cells["unit_id"].Value.ToString();
+                if (btnVerify.Enabled == false)
+                    btnVerify.Enabled = true;
+
                 _indentno = e.Row.Cells["indent_no"].Value.ToString();
                 Fill_Detail(_indentno);
 

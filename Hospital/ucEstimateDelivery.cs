@@ -51,6 +51,7 @@ namespace eMediShop.Hospital
                 _selectedEstimateNo = e.Row.Cells["sale_inv_no"].Value.ToString();
                 _billAmt = Convert.ToDecimal(e.Row.Cells["net"].Value);
 
+                FillOPDPatientList();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             finally { Cursor.Current = Cursors.Default; }
@@ -203,6 +204,14 @@ namespace eMediShop.Hospital
                 cmbPanelName.Enabled = false;
             }
         }
+        private void FillOPDPatientList()
+        {
+            pm_HospitalQueries p = new pm_HospitalQueries();
+            p.unit_id = GlobalUsage.Unit_id; p.logic = "BYUHIDNO"; p.prm_1 = txtestUHID.Text; p.prm_2 = "";
+            p.login_id = GlobalUsage.Login_id;
+            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+            dgHISVisits.DataSource = dwr.result.Tables[0];
+        }
 
         private void txtestUHID_KeyUp(object sender, KeyEventArgs e)
         {
@@ -221,25 +230,9 @@ namespace eMediShop.Hospital
                     }
                     else
                     {
-                        pm_HospitalQueries p = new pm_HospitalQueries();
-                        p.unit_id = GlobalUsage.Unit_id; p.logic = "BYUHIDNO"; p.prm_1 = txtestUHID.Text; p.prm_2 = "";
-                        p.login_id = GlobalUsage.Login_id;
-                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
-                        table = dwr.result.Tables[0];
+                        FillOPDPatientList();
                     }
-                    if (table.Rows.Count > 0)
-                    {
-                        txtPanelName.Text = table.Rows[0]["PanelName"].ToString();
-                        txtEstIpd.Text = table.Rows[0]["ipop_no"].ToString();
-                        _ipdVerified = "Y";
-                        if (table.Rows[0]["panelId"].ToString() != "107")
-                            btnDelivered.Enabled = true;
-                        else if (table.Rows[0]["panelId"].ToString() == "107" && Convert.ToDecimal(table.Rows[0]["FundBal"]) >= _billAmt)
-                        { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
-                        else
-                            btnDelivered.Enabled = false;
-
-                    }
+                 
 
                 }
                 catch (Exception ex) { }
@@ -285,6 +278,22 @@ namespace eMediShop.Hospital
                 { btnDelivered.Enabled = false; txtFund.Text = Convert.ToDecimal(table.Rows[0]["FundBal"]).ToString("######"); }
                 else
                     btnDelivered.Enabled = true;
+            }
+        }
+
+        private void dgHISVisits_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            if(dgHISVisits.Rows.Count > 0)
+            {
+                txtPanelName.Text = dgHISVisits.CurrentRow.Cells["PanelName"].Value.ToString();
+                txtEstIpd.Text = dgHISVisits.CurrentRow.Cells["ipop_no"].Value.ToString(); 
+               _ipdVerified = "Y";
+                if(dgHISVisits.CurrentRow.Cells["panelId"].Value.ToString() != "107")
+                btnDelivered.Enabled = true;
+                else if (dgHISVisits.CurrentRow.Cells["panelId"].Value.ToString()== "107" && Convert.ToDecimal(dgHISVisits.CurrentRow.Cells["FundBal"].Value) >= _billAmt)
+                { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(dgHISVisits.CurrentRow.Cells["FundBal"].Value).ToString("######"); }
+                else
+                    btnDelivered.Enabled = false;
             }
         }
     }

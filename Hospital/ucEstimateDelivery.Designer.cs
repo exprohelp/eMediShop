@@ -45,7 +45,15 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgEstimateInfo = new Telerik.WinControls.UI.RadGroupBox();
+            this.chkDischMed = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFund = new Telerik.WinControls.UI.RadTextBox();
             this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
@@ -67,7 +75,7 @@
             this.btnGetEstimate = new Telerik.WinControls.UI.RadButton();
             this.rgvEstimateInfo = new Telerik.WinControls.UI.RadGridView();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
-            this.chkDischMed = new System.Windows.Forms.CheckBox();
+            this.dgHISVisits = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimateInfo)).BeginInit();
             this.rgEstimateInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtFund)).BeginInit();
@@ -79,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGetEstimate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvEstimateInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvEstimateInfo.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHISVisits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHISVisits.MasterTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // rgEstimateInfo
@@ -109,6 +119,16 @@
             this.rgEstimateInfo.Size = new System.Drawing.Size(1224, 176);
             this.rgEstimateInfo.TabIndex = 3;
             this.rgEstimateInfo.Text = "XXXXXXXXXXXXXXXXXXXXXXXXX";
+            // 
+            // chkDischMed
+            // 
+            this.chkDischMed.AutoSize = true;
+            this.chkDischMed.Location = new System.Drawing.Point(24, 143);
+            this.chkDischMed.Name = "chkDischMed";
+            this.chkDischMed.Size = new System.Drawing.Size(150, 24);
+            this.chkDischMed.TabIndex = 152;
+            this.chkDischMed.Text = "Dischare Medicine";
+            this.chkDischMed.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -444,26 +464,75 @@
             this.rgvEstimateInfo.ReadOnly = true;
             this.rgvEstimateInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rgvEstimateInfo.ShowGroupPanel = false;
-            this.rgvEstimateInfo.Size = new System.Drawing.Size(1227, 317);
+            this.rgvEstimateInfo.Size = new System.Drawing.Size(831, 317);
             this.rgvEstimateInfo.TabIndex = 4;
             this.rgvEstimateInfo.Text = "radGridView2";
             this.rgvEstimateInfo.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.rgvEstimateInfo_RowFormatting);
             this.rgvEstimateInfo.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgvEstimateInfo_CommandCellClick);
             // 
-            // chkDischMed
+            // dgHISVisits
             // 
-            this.chkDischMed.AutoSize = true;
-            this.chkDischMed.Location = new System.Drawing.Point(24, 143);
-            this.chkDischMed.Name = "chkDischMed";
-            this.chkDischMed.Size = new System.Drawing.Size(150, 24);
-            this.chkDischMed.TabIndex = 152;
-            this.chkDischMed.Text = "Dischare Medicine";
-            this.chkDischMed.UseVisualStyleBackColor = true;
+            this.dgHISVisits.BackColor = System.Drawing.SystemColors.Control;
+            this.dgHISVisits.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgHISVisits.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.dgHISVisits.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgHISVisits.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dgHISVisits.Location = new System.Drawing.Point(840, 33);
+            // 
+            // 
+            // 
+            this.dgHISVisits.MasterTemplate.AllowAddNewRow = false;
+            this.dgHISVisits.MasterTemplate.AllowEditRow = false;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "ipop_no";
+            gridViewTextBoxColumn8.HeaderText = "IPOPNo";
+            gridViewTextBoxColumn8.Name = "ipop_no";
+            gridViewTextBoxColumn8.Width = 106;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "DoctorName";
+            gridViewTextBoxColumn9.HeaderText = "Doctor Name";
+            gridViewTextBoxColumn9.Name = "DoctorName";
+            gridViewTextBoxColumn9.Width = 120;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "FundBal";
+            gridViewTextBoxColumn10.HeaderText = "FundBal";
+            gridViewTextBoxColumn10.Name = "FundBal";
+            gridViewTextBoxColumn10.Width = 75;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "PanelName";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "PanelName";
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "panelId";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "panelId";
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "-";
+            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
+            gridViewCommandColumn2.Name = "column1";
+            gridViewCommandColumn2.Width = 32;
+            this.dgHISVisits.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewCommandColumn2});
+            this.dgHISVisits.MasterTemplate.EnableGrouping = false;
+            this.dgHISVisits.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.dgHISVisits.Name = "dgHISVisits";
+            this.dgHISVisits.ReadOnly = true;
+            this.dgHISVisits.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgHISVisits.Size = new System.Drawing.Size(377, 317);
+            this.dgHISVisits.TabIndex = 6;
+            this.dgHISVisits.Text = "radGridView1";
+            this.dgHISVisits.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgHISVisits_CommandCellClick);
             // 
             // ucEstimateDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgHISVisits);
             this.Controls.Add(this.btnGetEstimate);
             this.Controls.Add(this.rgvEstimateInfo);
             this.Controls.Add(this.rgEstimateInfo);
@@ -484,6 +553,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGetEstimate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvEstimateInfo.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvEstimateInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHISVisits.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHISVisits)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +583,6 @@
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadTextBox txtFund;
         private System.Windows.Forms.CheckBox chkDischMed;
+        private Telerik.WinControls.UI.RadGridView dgHISVisits;
     }
 }

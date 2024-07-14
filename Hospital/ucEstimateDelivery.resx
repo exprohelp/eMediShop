@@ -154,4 +154,17 @@
   <metadata name="radThemeManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="gridViewCommandColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGqSURBVDhPpZM/S8NAGMab5k+bYBdrtQ2lNWBBxaEYhIBD
+        KMROxS27o+BHEAlC1S9R1MFJ6OBWsIPUQdBP4CCC0NXNFi0anzd3lgu0XXzgx+W9N897710uiX/ohI9T
+        JTmOozcaDYNGitl0pCMwYI8TFARBsl6vz7uuu0AjxTxF2gchoAJiUSbf92XP88xarVamkWKeIu2ALxBK
+        kjTgnUXaBV1MdnVd7xmGcU8jxZi/5TyAD0DmUFXVIW0PcaQWDOaMlUkdEJlTqVSoaepQ7KBVLhdWZ5j3
+        wNicTqcHIMAcOwNZli9KpdL6FHMBvAvmn1wu58cOVlGUS+pA07Q1hD2wGCWYzv/M2OYLuML+bZ5jog4U
+        JbGNxzdAn+gJzIFlmEdkxiJ9y7K2EJ9ivgpiagEX9AEVIDrJZPKQt/1pmqbHt9cEEwvkwQqIuuBtj2AO
+        M5nMsXA2MwuQLJhf+cpU5NG2bZXnSGKB8U0cF6CVKpVK1TD0Z5i/cWCbNC8oKkBfIXYPQF78B4rFpQ10
+        csbSMTWpKL0n3sQDcANDG6fdphHx9RTustmsyf5SR/8F3PF9KLvqjJwAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
