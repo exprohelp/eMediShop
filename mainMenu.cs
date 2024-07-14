@@ -1954,6 +1954,7 @@ namespace eMediShop
 
         private void rbeStockist_newChallan_Click(object sender, EventArgs e)
         {
+        
             openForm(new challan.Challan_Window());
         }
 
