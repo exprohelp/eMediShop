@@ -90,7 +90,7 @@ namespace eMediShop.purchase.debitNote
                         pm_debitCreditNotes p = new pm_debitCreditNotes();
                         p.unit_id = GlobalUsage.Unit_id; p.Note_No = txtDebitNoteNo.Text; p.vendor_id = "-";
                         p.master_key_id = _masterKeyId;
-                        p.qty = Convert.ToInt16(txtDebitQty.Text); p.login_id = GlobalUsage.Login_id;
+                        p.qty = Convert.ToInt32(txtDebitQty.Text); p.login_id = GlobalUsage.Login_id;
                         datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/DebitNoteTranInsert", p);
                         rgv_products.DataSource = dwr.result.Tables[0];
                         rgv_Vendors.DataSource = dwr.result.Tables[1];
