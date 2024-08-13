@@ -13,8 +13,8 @@ namespace eMediShop.purchase.debitNote
 {
     public partial class DebitNoteFeedingForm : Telerik.WinControls.UI.RadForm
     {
-        Int16 _StockPacks = 0; string _masterKeyId = string.Empty; string _itemID = string.Empty; string _result = string.Empty;
-        Int16 _packqty = 0; 
+        Int64 _StockPacks = 0; string _masterKeyId = string.Empty; string _itemID = string.Empty; string _result = string.Empty;
+        Int64 _packqty = 0; 
         DataSet _ds = new DataSet();
         public DebitNoteFeedingForm()
         {
@@ -53,11 +53,11 @@ namespace eMediShop.purchase.debitNote
         {
             if (e.KeyCode == Keys.Return)
             {
-                _StockPacks = Convert.ToInt16(rgv_info.CurrentRow.Cells["packs"].Value.ToString());
+                _StockPacks = Convert.ToInt64(rgv_info.CurrentRow.Cells["packs"].Value.ToString());
                 _itemID = rgv_info.CurrentRow.Cells["item_id"].Value.ToString();
                 _masterKeyId = rgv_info.CurrentRow.Cells["master_key_id"].Value.ToString();
-                _packqty = Convert.ToInt16(rgv_info.CurrentRow.Cells["pack_qty"].Value);
-                txtDebitQty.Text = (Convert.ToInt16(rgv_info.CurrentRow.Cells["packs"].Value) * Convert.ToInt16(rgv_info.CurrentRow.Cells["pack_qty"].Value)).ToString();
+                _packqty = Convert.ToInt64(rgv_info.CurrentRow.Cells["pack_qty"].Value);
+                txtDebitQty.Text = (Convert.ToInt64(rgv_info.CurrentRow.Cells["packs"].Value) * Convert.ToInt64(rgv_info.CurrentRow.Cells["pack_qty"].Value)).ToString();
                 txtDebitQty.Focus();
             }
         }
@@ -84,13 +84,13 @@ namespace eMediShop.purchase.debitNote
                 try
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    if (_StockPacks >= Convert.ToInt16(rgv_info.CurrentRow.Cells["packs"].Value.ToString()))
+                    if (_StockPacks >= Convert.ToInt64(rgv_info.CurrentRow.Cells["packs"].Value.ToString()))
                     {
                         #region Saving Process
                         pm_debitCreditNotes p = new pm_debitCreditNotes();
                         p.unit_id = GlobalUsage.Unit_id; p.Note_No = txtDebitNoteNo.Text; p.vendor_id = "-";
                         p.master_key_id = _masterKeyId;
-                        p.qty = Convert.ToInt32(txtDebitQty.Text); p.login_id = GlobalUsage.Login_id;
+                        p.qty = Convert.ToInt64(txtDebitQty.Text); p.login_id = GlobalUsage.Login_id;
                         datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/DebitNoteTranInsert", p);
                         rgv_products.DataSource = dwr.result.Tables[0];
                         rgv_Vendors.DataSource = dwr.result.Tables[1];

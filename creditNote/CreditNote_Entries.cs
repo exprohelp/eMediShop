@@ -14,9 +14,9 @@ namespace eMediShop.creditNote
     public partial class CreditNote_Entries : Telerik.WinControls.UI.RadForm
     {
         DataSet _ds = new DataSet();string _result = string.Empty;string _JSON_Result = string.Empty;
-        string _accountid = string.Empty;string _customerid = string.Empty;string _saleInvNo = string.Empty;int _maxQty = 0;
+        string _accountid = string.Empty;string _customerid = string.Empty;string _saleInvNo = string.Empty;Int32 _maxQty = 0;
         string _creditNoteNo = string.Empty;string _itemID = string.Empty;string _itemName = string.Empty;string _masterkeyid = string.Empty;
-        string _batchNo = string.Empty;decimal _usr = 0;decimal _mrp = 0;int _retQty = 0;
+        string _batchNo = string.Empty;decimal _usr = 0;decimal _mrp = 0; Int16 _retQty = 0;
         int _packQty = 0;
         DataTable _dtInfo = new DataTable();
         public CreditNote_Entries()
@@ -68,7 +68,7 @@ namespace eMediShop.creditNote
                      Cursor.Current = Cursors.WaitCursor;
                     pm_debitCreditNotes p = new pm_debitCreditNotes();
                     p.unit_id = GlobalUsage.Unit_id;p.vendor_id = _customerid;p.logic = "GetSoldProdInfo";
-                    p.prm_1 = _accountid;p.prm_2 = rtb_ProductName.Text;p.login_id = GlobalUsage.Login_id;
+                    p.prm_1 = txtDebitNote_No.Text;p.prm_2 = rtb_ProductName.Text;p.login_id = GlobalUsage.Login_id;
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/CreditNoteQueries", p);
                     DataTable dt = dwr.result.Tables[0];
                     rgv_SoldProducts.DataSource = dt;
@@ -163,7 +163,7 @@ namespace eMediShop.creditNote
                     this.rtb_ProductName.TextChanged += new System.EventHandler(this.rtb_ProductName_TextChanged);
                     pm_debitCreditNotes p = new pm_debitCreditNotes();
                     p.unit_id = GlobalUsage.Unit_id; p.vendor_id = _customerid; p.logic = "GetSoldInfo";
-                    p.prm_1 = _accountid; p.prm_2 = itemid; p.login_id = GlobalUsage.Login_id;
+                    p.prm_1 = txtDebitNote_No.Text; p.prm_2 = itemid; p.login_id = GlobalUsage.Login_id;
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/CreditNoteQueries", p);
                     DataTable dt = dwr.result.Tables[0];
                     rgv_keyInfo.Location = new Point(318, 147);
@@ -194,8 +194,8 @@ namespace eMediShop.creditNote
                 rtb_mrp.Text = rgv_keyInfo.CurrentRow.Cells["mrp"].Value.ToString();
                 _mrp = Convert.ToDecimal(rgv_keyInfo.CurrentRow.Cells["usr"].Value);
                 rtb_tax_rate.Text = rgv_keyInfo.CurrentRow.Cells["tax_rate"].Value.ToString();
-                rtb_qty.Text = rgv_keyInfo.CurrentRow.Cells["maxqty"].Value.ToString();
-                _maxQty = Convert.ToInt16(rgv_keyInfo.CurrentRow.Cells["maxqty"].Value.ToString());
+                rtb_qty.Text = Convert.ToInt16(rgv_keyInfo.CurrentRow.Cells["maxqty"].Value).ToString();
+                _maxQty = Convert.ToInt32(rgv_keyInfo.CurrentRow.Cells["maxqty"].Value);
                 rtb_qty.Focus();
                 rtb_qty.SelectAll();
             }
@@ -216,13 +216,16 @@ namespace eMediShop.creditNote
                 Cursor.Current = Cursors.WaitCursor;
                 _creditNoteNo = rtb_CreditNoteNo.Text;
                 pm_debitCreditNotes p = new pm_debitCreditNotes();
-                p.unit_id = GlobalUsage.Unit_id;p.Note_No = _creditNoteNo;p.qty = Convert.ToInt16(rtb_qty.Text);
+                p.unit_id = GlobalUsage.Unit_id;p.Note_No = _creditNoteNo;p.qty = Convert.ToInt32(rtb_qty.Text);
                 p.org_saleInvNo = _saleInvNo;p.master_key_id = rtb_masterkey.Text;
                 p.debitNote_No = txtDebitNote_No.Text;p.debitNote_Date = Convert.ToDateTime(txtDebitNoteDate.Text).ToString("yyyy/MM/dd");
                 p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/CreditNoteTranInsert", p);
 
                 DataTable dt = dwr.result.Tables[0];
+                string cnNo = dt.Rows[0]["result"].ToString();
+                if (cnNo.Length > 5)
+                    rtb_CreditNoteNo.Text = cnNo;
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = _dtInfo.NewRow();
@@ -233,7 +236,7 @@ namespace eMediShop.creditNote
                     dr["usr"] = Convert.ToDecimal(_usr);
                     dr["mrp"] = Convert.ToDecimal(_mrp);
                     dr["tax_rate"] = Convert.ToDecimal(rtb_tax_rate.Text);
-                    dr["retqty"] = Convert.ToInt16(Convert.ToInt16(rtb_qty.Text));
+                    dr["retqty"] = Convert.ToInt32(rtb_qty.Text);
                     addRowInInfo(dr);
                     rgv_info.DataSource = _dtInfo;
                     if (_dtInfo.Rows.Count > 0)
@@ -318,7 +321,7 @@ namespace eMediShop.creditNote
                             _dtInfo.Rows.Remove(orow);
                         }
                     }
-                    _dtInfo.AcceptChanges();
+                    //dtInfo.AcceptChanges();
                     
                     rgv_info.DataSource = _dtInfo;
                     total();
