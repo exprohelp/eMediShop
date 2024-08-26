@@ -74,7 +74,7 @@ namespace eMediShop.Hospital
                 MessageBox.Show("Type IPD No");
                 return;
             }
-            else if (_ipdVerified == "N")
+            else if (_ipdVerified == "N" && chkOPD.Checked == false)
             {
                 MessageBox.Show("verify IPD Number By Pressing Enter Key");
                 return;
@@ -97,6 +97,7 @@ namespace eMediShop.Hospital
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/RetailMarkNotSettled", p);
                 if (dwr.message.Contains("Success"))
                 {
+                    chkHospitalAdvance.Checked = false;
                     string[] r = dwr.message.Split(':');
                     if (MessageBox.Show("Do You Want To Print Bill No " + r[2], "ExPro Help", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {

@@ -10,7 +10,7 @@ namespace eMediShop.WholeSales
     {
         DataSet _ds = new DataSet(); string _result = string.Empty; string _itemid = string.Empty;
         string _masterkeyid = string.Empty; decimal _UnitSaleRate = 0; string _partyid = string.Empty; string _accountid = string.Empty; string _gstn_no = string.Empty;
-        Int32 _qty = 0;string _challanNo = string.Empty;
+        Int32 _qty = 0; string _challanNo = string.Empty;
         public WholeSale_Pharma()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace eMediShop.WholeSales
                 try
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                   
+
                     challans p = new challans();
                     p.unitID = GlobalUsage.Unit_id; p.loginId = GlobalUsage.Login_id;
                     p.challan_no = cmbChallanNo.Text;
@@ -517,6 +517,34 @@ namespace eMediShop.WholeSales
                 decimal disUnitSaleRate = 0;
                 disUnitSaleRate = _UnitSaleRate - (_UnitSaleRate * Convert.ToDecimal(txtDisPer.Text) / 100);
                 rtb_amount.Text = (Convert.ToDecimal(rtbSoldQty.Text) * disUnitSaleRate).ToString("#####.00");
+            }
+        }
+
+        private void cmbChallanNo_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    DialogResult res = RadMessageBox.Show("Do You Confirm  to Process Challan?", "ExPro Help", MessageBoxButtons.YesNo);
+                    if (res == DialogResult.Yes)
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        cm1 p1 = new cm1();
+                        p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
+                        p1.prm_1 = "-"; p1.prm_2 = "-";
+                        p1.Logic = "Lock-ChallansForProcess"; p1.tran_id = cmbChallanNo.Text;
+                        p1.prm_3 = "-";p1.prm_4 = "NoChange";
+                        p1.login_id = GlobalUsage.Login_id;
+                        datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+                finally { Cursor.Current = Cursors.Default; }
             }
         }
     }
