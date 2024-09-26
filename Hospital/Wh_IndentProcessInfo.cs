@@ -416,8 +416,8 @@ namespace eMediShop.Hospital
 
                                     pm_sales p = new pm_sales();
                                     p.unit_id = GlobalUsage.Unit_id;
-                                    p.sale_inv_no = txtInvNo.Text; p.party_id = "VC50668";p.HealthCardNo = _cardNo;p.rcmOrderNo = _order_no;
-                                    p.cust_name = cbxPtName.Text; p.account_id = "13061722";p.sale_type = "Indent";
+                                    p.sale_inv_no = txtInvNo.Text; p.party_id = "V051759"; p.HealthCardNo = _cardNo;p.rcmOrderNo = _order_no;
+                                    p.cust_name = cbxPtName.Text; p.account_id = "13062826"; p.sale_type = "Indent";
                                     p.gstn_no = "09AABCC9314K1ZH"; ;
                                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ICTVBillFinalization", p);
                                     DataSet ds = dwr.result;

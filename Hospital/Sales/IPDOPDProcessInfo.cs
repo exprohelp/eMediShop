@@ -483,7 +483,7 @@ namespace eMediShop.Hospital.Sales
                 p.Cur_sale_inv_no = txtInvNo.Text; p.DiscountLogic = "New"; p.order_no = _order_no; p.promo_flag = "N"; p.login_id = GlobalUsage.Login_id;
                 p.stateName = GlobalUsage.State;
                 //dwr = ConfigWebAPI.CallAPI("api/sales/InsertRetailSales", p);
-                 dwr = ConfigWebAPI.CallAPI("api/sales/RetailInsertWalkInSale", p);
+                 dwr = ConfigWebAPI.CallAPI("api/sales/RetailInsertSaleOfIndent", p);
             }
             catch (Exception ex)
             {
@@ -801,6 +801,7 @@ namespace eMediShop.Hospital.Sales
         {
             try
             {
+                reset();
                 _CreditFlag = "N";
                 _panelName = dgIndentInfo.CurrentRow.Cells["panel_name"].Value.ToString().ToUpper();
                 _accountID = dgIndentInfo.CurrentRow.Cells["AccountId"].Value.ToString().ToUpper();
@@ -923,7 +924,25 @@ namespace eMediShop.Hospital.Sales
             FillDetails();
         }
 
+        private void btnRelease_Click(object sender, EventArgs e)
+        {
 
-
+            try
+            {
+                DialogResult res = MessageBox.Show("Do You want to Release (Y/N) ?", "ExPro Help", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    cm1 p = new cm1();
+                    p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                    p.Logic = "Indent-Release"; p.prm_1 = _order_no; p.tran_id = dgFailure.CurrentRow.Cells["sale_inv_no"].Value.ToString();
+                    datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
+                    dgIndentInfo.CurrentRow.Delete();
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
+            finally { Cursor.Current = Cursors.Default; }
+        }
     }
 }
