@@ -935,9 +935,10 @@ namespace eMediShop.Hospital.Sales
                     Cursor.Current = Cursors.WaitCursor;
                     cm1 p = new cm1();
                     p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-                    p.Logic = "Indent-Release"; p.prm_1 = _order_no; p.tran_id = dgFailure.CurrentRow.Cells["sale_inv_no"].Value.ToString();
+                    p.Logic = "Indent-Release"; p.prm_1 = _order_no; p.tran_id = txtInvNo.Text;
                     datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
                     dgIndentInfo.CurrentRow.Delete();
+                    reset();
                     Cursor.Current = Cursors.Default;
                 }
             }
