@@ -1252,7 +1252,7 @@ namespace eMediShop
             this.rpv_master.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rpv_master.Location = new System.Drawing.Point(0, 0);
             this.rpv_master.Name = "rpv_master";
-            this.rpv_master.SelectedPage = this.rpvp_opdno;
+            this.rpv_master.SelectedPage = this.rpvp_pos;
             this.rpv_master.Size = new System.Drawing.Size(1229, 625);
             this.rpv_master.TabIndex = 122;
             this.rpv_master.Text = "radPageView1";

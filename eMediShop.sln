@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmacyAPI", "..\..\Pharma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReportsPharmacy", "..\CrystalReportsPharmacy\CrystalReportsPharmacy.csproj", "{0BFD40CF-354E-48FD-A11D-D73E8B706925}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "accounts_library", "..\..\accounts_library\accounts_library.csproj", "{0754023F-3196-4F53-B9C6-71D9B30FC9CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BFD40CF-354E-48FD-A11D-D73E8B706925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0754023F-3196-4F53-B9C6-71D9B30FC9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0754023F-3196-4F53-B9C6-71D9B30FC9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0754023F-3196-4F53-B9C6-71D9B30FC9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0754023F-3196-4F53-B9C6-71D9B30FC9CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

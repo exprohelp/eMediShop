@@ -9,7 +9,7 @@ namespace eMediShop
     public partial class ucHealthCardNew : UserControl
     {
         DataSet _ds = new DataSet();
-        string _card_no = string.Empty;
+        string _card_no = string.Empty;int stateCode = 0;
         decimal _DiscountPercentage = 0;
         string _SearchOption = string.Empty;
         string _newcard = "N"; string _otp = string.Empty;
@@ -30,7 +30,11 @@ namespace eMediShop
             txtStateName.Text = GlobalUsage.State;
             txtDistName.Text = GlobalUsage.District;
             FillState();
+
             ddlState.Text = GlobalUsage.State;
+
+            ddlState.SelectedIndex=ddlState.FindString(GlobalUsage.State);
+            //FillDistrict(stateCode.ToString());
             if (_SearchOption == "SearchByCard")
             {
                 if (_ds.Tables.Count > 0 && _ds.Tables[0].Rows.Count > 0)
@@ -469,6 +473,12 @@ namespace eMediShop
         {
             if(e.KeyCode==Keys.Return)
             btnVerify.PerformClick();
+        }
+
+        private void ddlState_TextChanged(object sender, EventArgs e)
+        {
+            if(ddlState.SelectedValue.ToString()!="Select")
+            FillDistrict(ddlState.SelectedValue.ToString());
         }
     }
 }

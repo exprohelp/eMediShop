@@ -1350,7 +1350,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Contact No. " &amp; First(Fields!mobile.Value, "DataSet1") &amp; " Email:care@chandanpharmacy.com"</Value>
+                <Value>="Contact No. " &amp; First(Fields!mobile.Value, "DataSet1") &amp; " Email:care@chandan.co.in"</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>9pt</FontSize>

@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gridViewCommandColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="gridViewCommandColumn3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAg1JREFUOE+FUktrFEEQnjU+iHoygmyy4Gt2uqcfM7szs5mJiVk3uywIgwdhDppT
@@ -136,20 +133,10 @@
         Jovo35r9uQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="gridViewCommandColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAZhJREFUOE/NkMsrhFEYxt8NTUkppVnxlYU/QIpiIRKWIhMz49O4NXK/G7eSFdFI
-        ESO3kGGUsvUXUJMiI4XMzorM5ds9nhONBqnZeevXd77T+3vOe478+zId1gq2qsTNddLHVmJlPm8UBBdK
-        sVktq/xPOEQLtAgiJwMIzhdixyIb3Ps1xHRaI/DbiU54qr9JEGgVPHcKDF87wgcOPM3lYdsqu+z/EWJW
-        srHvhOHtgHHUSYlfnxPRPRsinjKEF3PxOpuN+5FU7OnipRMXoqmA6JYNxo6O6HoVIu4ChGc0hFwpeBsW
-        vI0Sl+CF3A4INu3ioxcL0dToEXcxwtM5CA1S6qXAxpg8TiYYMCm4GxGs2OWMXtqH/hkQ6qPYxcYe0k+G
-        iJLHCEUlP3CC5Xq5pFNEvgJO6/hwDtJM+Hh+Jx+RQc9qAnXylOCRQWsNcsX+CpJJkpWsykzKif6NtgAn
-        eWGAkj263HCvksTJqkxEhWjfyL/opsyxPdaYnEXi5L9KO+Z1lixyzXXCsio1VQkpJQnLqtTVMkg6+UUW
-        eQeCrdxe+ScgbgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+  <metadata name="roundRectShape1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="radThemeManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>165, 17</value>
   </metadata>
 </root>

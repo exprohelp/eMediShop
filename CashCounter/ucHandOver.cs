@@ -105,9 +105,13 @@ namespace eMediShop.CashCounter
                 try
                 {
                     Cursor.Current = Cursors.WaitCursor;
+                   
                     Hoto p = new Hoto();
                     p.unit_id = GlobalUsage.Unit_id;
-                    p.autoId = "0"; p.tnxDate = DateTime.Now.ToString("yyyy-MM-dd");
+                    p.autoId ="0";
+
+                    p.uniqueID = GlobalUsage.Unit_id + "-" + System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
+                    p.tnxDate = DateTime.Now.ToString("yyyy-MM-dd");
                     p.tnxBy = GlobalUsage.Login_id; p.tnxTo = _empCode;
                     p.amount = Convert.ToDecimal(txtAmount.Text);
                     if (rbTransfer.Checked)
@@ -138,6 +142,7 @@ namespace eMediShop.CashCounter
                     Cursor.Current = Cursors.WaitCursor;
                     Hoto p = new Hoto();
                     p.unit_id = GlobalUsage.Unit_id;
+                    p.uniqueID = GlobalUsage.Unit_id + "-" + System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
                     p.autoId = e.Row.Cells["autoid"].Value.ToString(); p.tnxDate = DateTime.Now.ToString("yyyy-MM-dd");
                     p.tnxBy = GlobalUsage.Login_id; p.tnxTo = "-";
                     p.amount = Convert.ToDecimal(e.Row.Cells["Amount"].Value);
@@ -178,6 +183,7 @@ namespace eMediShop.CashCounter
                     Cursor.Current = Cursors.WaitCursor;
                     Hoto p = new Hoto();
                     p.unit_id = GlobalUsage.Unit_id;
+                    p.uniqueID = GlobalUsage.Unit_id + "-" + System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
                     p.autoId = e.Row.Cells["autoid"].Value.ToString(); p.tnxDate = DateTime.Now.ToString("yyyy-MM-dd");
                     p.tnxBy = GlobalUsage.Login_id; p.tnxTo = "-";
                     p.amount = 0;
@@ -204,6 +210,7 @@ namespace eMediShop.CashCounter
                     Cursor.Current = Cursors.WaitCursor;
                     Hoto p = new Hoto();
                     p.unit_id = GlobalUsage.Unit_id;
+                    p.uniqueID = GlobalUsage.Unit_id + "-" + System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
                     p.autoId = "-"; p.tnxDate = DateTime.Now.ToString("yyyy-MM-dd");
                     p.tnxBy = GlobalUsage.Login_id; p.tnxTo = "-";
                     p.amount = 0;
@@ -253,6 +260,7 @@ namespace eMediShop.CashCounter
                 Cursor.Current = Cursors.WaitCursor;
                 Hoto p = new Hoto();
                 p.unit_id = GlobalUsage.Unit_id;
+                p.uniqueID = GlobalUsage.Unit_id + "-" + System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
                 p.autoId = "-"; p.tnxDate = DateTime.Now.ToString("yyyy-MM-dd");
                 p.tnxBy = GlobalUsage.Login_id; p.tnxTo = "-";
                 p.amount = 0;

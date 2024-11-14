@@ -197,6 +197,7 @@ namespace eMediShop
         public string tnxTo { get; set; }
         public decimal amount { get; set; }
         public string result { get; set; }
+        public string uniqueID { get; set; }
     }
     public class CustomerInfo
     {

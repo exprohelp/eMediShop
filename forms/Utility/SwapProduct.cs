@@ -30,18 +30,21 @@ namespace eMediShop.Utility
         protected void FillSearchedProduct(string searchKey)
         {
             lv_FindProducts.Items.Clear();
-            cm1 p = new cm1();
-            p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-            p.Logic = "Search:InProduct"; p.prm_1 = searchKey; p.prm_2 = "N/A"; p.prm_3 = "N/A";
-            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/products/ProductQueries", p);
-            #region Filling List View New Product
-            foreach (DataRow dr in dwr.result.Tables[0].Rows)
+            if (searchKey.Length > 1)
             {
-                ListViewItem lvi = new ListViewItem(dr["item_id"].ToString());
-                lvi.SubItems.Add(dr["item_name"].ToString());
-                lv_FindProducts.Items.Add(lvi);
+                cm1 p = new cm1();
+                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
+                p.Logic = "Search:InProduct"; p.prm_1 = searchKey; p.prm_2 = "N/A"; p.prm_3 = "N/A";
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/products/ProductQueries", p);
+                #region Filling List View New Product
+                foreach (DataRow dr in dwr.result.Tables[0].Rows)
+                {
+                    ListViewItem lvi = new ListViewItem(dr["item_id"].ToString());
+                    lvi.SubItems.Add(dr["item_name"].ToString());
+                    lv_FindProducts.Items.Add(lvi);
+                }
+                #endregion
             }
-            #endregion
         }
         private void txtSearchString_TextChanged(object sender, EventArgs e)
         {

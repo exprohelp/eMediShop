@@ -21,6 +21,23 @@ namespace eMediShop
             }
         }
     }
+    public delegate void SetStaffEventHandler(object sender, SetStaffUpdatedEventArgs e);
+    public class SetStaffUpdatedEventArgs : System.EventArgs
+    {
+        private string Result;
+        public SetStaffUpdatedEventArgs(string result)
+        {
+            this.Result = result;
+
+        }
+        public string RESULT
+        {
+            get
+            {
+                return this.Result;
+            }
+        }
+    }
 
     public delegate void CashCounterEventHandler(object sender, CashCounterUpdatedEventArgs e);
     public class CashCounterUpdatedEventArgs : System.EventArgs

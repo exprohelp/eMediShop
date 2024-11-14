@@ -342,7 +342,7 @@ namespace eMediShop
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                            GlobalUsage.HospitalInternalSheet.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                            GlobalUsage.HospitalInternalSheet.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("gstn", GlobalUsage.GST_No);
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("InWords", "In Words :" + inwords);
@@ -356,7 +356,7 @@ namespace eMediShop
                             GlobalUsage.HospitalCashMemo.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                             GlobalUsage.HospitalCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                             GlobalUsage.HospitalCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                            GlobalUsage.HospitalCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                            GlobalUsage.HospitalCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                             GlobalUsage.HospitalCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                             GlobalUsage.HospitalCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
                             GlobalUsage.HospitalCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
@@ -416,7 +416,7 @@ namespace eMediShop
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                        GlobalUsage.PharmacyCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
@@ -465,7 +465,7 @@ namespace eMediShop
                     GlobalUsage.ManualBill.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
                     GlobalUsage.ManualBill.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                     GlobalUsage.ManualBill.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                    GlobalUsage.ManualBill.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                    GlobalUsage.ManualBill.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                     GlobalUsage.ManualBill.SetParameterValue("gstn", GlobalUsage.GST_No);
                     GlobalUsage.ManualBill.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
 
@@ -512,7 +512,7 @@ namespace eMediShop
                     GlobalUsage.HAL_DeliveryNote.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                     GlobalUsage.HAL_DeliveryNote.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                     GlobalUsage.HAL_DeliveryNote.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                    GlobalUsage.HAL_DeliveryNote.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                     GlobalUsage.HAL_DeliveryNote.SetParameterValue("gstn", GlobalUsage.GST_No);
                     GlobalUsage.HAL_DeliveryNote.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                     GlobalUsage.HAL_DeliveryNote.SetParameterValue("InWords", "In Words :" + inwords);
@@ -567,7 +567,7 @@ namespace eMediShop
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                            GlobalUsage.HospitalInternalSheet.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                            GlobalUsage.HospitalInternalSheet.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("gstn", GlobalUsage.GST_No);
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("InWords", "In Words :" + inwords);
@@ -581,7 +581,7 @@ namespace eMediShop
                             GlobalUsage.HospitalCashMemo.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                             GlobalUsage.HospitalCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                             GlobalUsage.HospitalCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                            GlobalUsage.HospitalCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                            GlobalUsage.HospitalCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                             GlobalUsage.HospitalCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                             GlobalUsage.HospitalCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
                             GlobalUsage.HospitalCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
@@ -642,7 +642,7 @@ namespace eMediShop
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanpharmacy.com");
+                        GlobalUsage.PharmacyCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
                         GlobalUsage.PharmacyCashMemo.SetParameterValue("InWords", "In Words :" + inwords);

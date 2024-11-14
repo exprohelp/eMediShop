@@ -12,6 +12,8 @@ namespace eMediShop.Hospital.Sales
     public partial class IPDOPDProcessInfo : Telerik.WinControls.UI.RadForm
     {
         eMediShop.Utility.SwapProduct objSwap;
+        eMediShop.Hospital.ucStaffAllottment objStaff;
+        eMediShop.Hospital.IndentComplete objindentComplete;
         private CashMemoSearch frmCashMemoSearch;
         public event CashCounterEventHandler CashCounterUpdated;
         private eMediShop.sales.SaleBill_Posting frmsaleBillPosting;
@@ -424,7 +426,7 @@ namespace eMediShop.Hospital.Sales
                         frmsaleBillPosting.Owner = this;
                         frmsaleBillPosting.Show();
 
-                       
+
                     }
                 }
                 else
@@ -477,13 +479,13 @@ namespace eMediShop.Hospital.Sales
                 p.unit_id = GlobalUsage.Unit_id;
                 p.counter_id = GlobalUsage.CounterID; p.computer_id = GlobalUsage.computerName; p.Sale_Type = "INDENT";
                 p.cust_name = cbxPtName.Text; p.prescribedBy = txtdoctorName.Text; p.refCode = _doctor_id;
-                p.item_id = item_id; p.master_key_id = masterkey;p.panelID = _panelID; p.accountID = _accountID;
+                p.item_id = item_id; p.master_key_id = masterkey; p.panelID = _panelID; p.accountID = _accountID;
                 p.card_no = _cardNo; p.card_level = _card_Level; p.discountPercent = _discountPercentage; p.sold_qty = Convert.ToDouble(qty);
                 p.old_sale_inv_no = _old_sale_inv_no; p.gstn_no = "-"; p.hosp_cr_no = _UHID; p.hosp_ipop_no = _ipopno;
                 p.Cur_sale_inv_no = txtInvNo.Text; p.DiscountLogic = "New"; p.order_no = _order_no; p.promo_flag = "N"; p.login_id = GlobalUsage.Login_id;
                 p.stateName = GlobalUsage.State;
                 //dwr = ConfigWebAPI.CallAPI("api/sales/InsertRetailSales", p);
-                 dwr = ConfigWebAPI.CallAPI("api/sales/RetailInsertSaleOfIndent", p);
+                dwr = ConfigWebAPI.CallAPI("api/sales/RetailInsertSaleOfIndent", p);
             }
             catch (Exception ex)
             {
@@ -627,6 +629,7 @@ namespace eMediShop.Hospital.Sales
                 objSwap.Show();
             }
         }
+
         private void UpdateItemByNewMed(object sender, CashMemeoNoUpdatedEventArgs e)
         {
             string old_itemid = e.CASHMEMONO.Split('|')[0];
@@ -818,7 +821,7 @@ namespace eMediShop.Hospital.Sales
                     chkCorporate.Enabled = false;
                 }
 
-              
+
                 string indent_type = dgIndentInfo.CurrentRow.Cells["indent_type"].Value.ToString();
                 _order_no = dgIndentInfo.CurrentRow.Cells["indent_no"].Value.ToString();
                 _HISPUSH_Flag = dgIndentInfo.CurrentRow.Cells["hispush_flag"].Value.ToString();
@@ -874,9 +877,9 @@ namespace eMediShop.Hospital.Sales
 
         }
 
-      
-       
-       
+
+
+
         private void dgFailure_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -926,24 +929,27 @@ namespace eMediShop.Hospital.Sales
 
         private void btnRelease_Click(object sender, EventArgs e)
         {
+            objStaff = new eMediShop.Hospital.ucStaffAllottment(_order_no);
+            objStaff.StaffUpdated += new SetStaffEventHandler(UpdateStaffCode);
+            objStaff.Show();
+        }
+        private void UpdateStaffCode(object sender, SetStaffUpdatedEventArgs e)
+        {
 
-            try
+            if (e.RESULT == "Updated")
             {
-                DialogResult res = MessageBox.Show("Do You want to Release (Y/N) ?", "ExPro Help", MessageBoxButtons.YesNo);
-                if (res == DialogResult.Yes)
-                {
-                    Cursor.Current = Cursors.WaitCursor;
-                    cm1 p = new cm1();
-                    p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-                    p.Logic = "Indent-Release"; p.prm_1 = _order_no; p.tran_id = txtInvNo.Text;
-                    datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-                    dgIndentInfo.CurrentRow.Delete();
-                    reset();
-                    Cursor.Current = Cursors.Default;
-                }
+                dgIndentInfo.CurrentRow.Delete();
+                reset();
             }
-            catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
-            finally { Cursor.Current = Cursors.Default; }
+            
+
+        }
+
+        private void btnFinal_Click(object sender, EventArgs e)
+        {
+            objindentComplete = new eMediShop.Hospital.IndentComplete();
+            objindentComplete.Owner = this;
+            objindentComplete.Show();
         }
     }
 }
