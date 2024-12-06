@@ -159,7 +159,6 @@ namespace eMediShop.Hospital
                         finally { Cursor.Current = Cursors.Default; }
 
 
-
                     }
 
 
@@ -167,6 +166,8 @@ namespace eMediShop.Hospital
                 }
 
                 catch (Exception ex) { rgv_processedIndent.CurrentRow.Cells["exp_date"].Value = _oldExpiry; }
+                _expDate = "";
+
             }
 
         }

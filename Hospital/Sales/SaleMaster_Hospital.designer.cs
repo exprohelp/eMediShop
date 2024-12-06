@@ -29,19 +29,24 @@ namespace eMediShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleMaster_Hospital));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
             this.ItemSaleGrid = new System.Windows.Forms.ListView();
             this.Master_Key_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Item_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -167,6 +172,10 @@ namespace eMediShop
             this.label32 = new System.Windows.Forms.Label();
             this.txtEstimateNo = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtChop = new Telerik.WinControls.UI.RadTextBox();
+            this.rpv_opdMedicine = new Telerik.WinControls.UI.RadGridView();
             this.rgEstimate = new Telerik.WinControls.UI.RadGroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
@@ -200,6 +209,10 @@ namespace eMediShop
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).BeginInit();
+            this.radPageViewPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpv_opdMedicine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpv_opdMedicine.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -1247,12 +1260,13 @@ namespace eMediShop
             this.rpv_master.Controls.Add(this.rpvp_pos);
             this.rpv_master.Controls.Add(this.rpvpHealthCard);
             this.rpv_master.Controls.Add(this.rpvpSalesreturn);
+            this.rpv_master.Controls.Add(this.radPageViewPage1);
             this.rpv_master.DefaultPage = this.rpvp_opdno;
             this.rpv_master.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rpv_master.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rpv_master.Location = new System.Drawing.Point(0, 0);
             this.rpv_master.Name = "rpv_master";
-            this.rpv_master.SelectedPage = this.rpvp_pos;
+            this.rpv_master.SelectedPage = this.rpvp_opdno;
             this.rpv_master.Size = new System.Drawing.Size(1229, 625);
             this.rpv_master.TabIndex = 122;
             this.rpv_master.Text = "radPageView1";
@@ -1320,81 +1334,81 @@ namespace eMediShop
             // 
             this.radGridView1.MasterTemplate.AllowAddNewRow = false;
             this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDateTimeColumn1.AllowFiltering = false;
-            gridViewDateTimeColumn1.EnableExpressionEditor = false;
-            gridViewDateTimeColumn1.FieldName = "DateOfVisit";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn1.FormatString = "{0:dd-MM-yyyy}";
-            gridViewDateTimeColumn1.HeaderText = "Date";
-            gridViewDateTimeColumn1.Name = "DateOfVisit";
-            gridViewDateTimeColumn1.Width = 88;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ipop_no";
-            gridViewTextBoxColumn1.HeaderText = "IP/OP No";
-            gridViewTextBoxColumn1.Name = "ipop_no";
-            gridViewTextBoxColumn1.Width = 101;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "pt_name";
-            gridViewTextBoxColumn2.HeaderText = "Name of Patient";
-            gridViewTextBoxColumn2.Name = "pt_name";
-            gridViewTextBoxColumn2.Width = 225;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "doctor_name";
-            gridViewTextBoxColumn3.HeaderText = "Name of Doctor";
-            gridViewTextBoxColumn3.Name = "doctor_name";
-            gridViewTextBoxColumn3.Width = 219;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "panelName";
-            gridViewTextBoxColumn4.HeaderText = "Panel Name";
-            gridViewTextBoxColumn4.Name = "panelName";
-            gridViewTextBoxColumn4.Width = 179;
-            gridViewTextBoxColumn5.AllowFiltering = false;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "card_no";
-            gridViewTextBoxColumn5.HeaderText = "Health Card No";
-            gridViewTextBoxColumn5.Name = "card_no";
-            gridViewTextBoxColumn5.Width = 112;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "mobile";
-            gridViewTextBoxColumn6.HeaderText = "Mobile No";
-            gridViewTextBoxColumn6.Name = "mobile_no";
-            gridViewTextBoxColumn6.Width = 131;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "uhid";
-            gridViewTextBoxColumn7.HeaderText = "UHID";
-            gridViewTextBoxColumn7.IsVisible = false;
-            gridViewTextBoxColumn7.Name = "UHID";
-            gridViewTextBoxColumn8.AllowFiltering = false;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "doctor_id";
-            gridViewTextBoxColumn8.HeaderText = "doctor_id";
-            gridViewTextBoxColumn8.IsVisible = false;
-            gridViewTextBoxColumn8.Name = "doctor_id";
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "-";
-            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
-            gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
-            gridViewCommandColumn1.Name = "column1";
-            gridViewCommandColumn1.Width = 25;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "panelID";
-            gridViewTextBoxColumn9.HeaderText = "panelID";
-            gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "panelID";
+            gridViewDateTimeColumn2.AllowFiltering = false;
+            gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.FieldName = "DateOfVisit";
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn2.FormatString = "{0:dd-MM-yyyy}";
+            gridViewDateTimeColumn2.HeaderText = "Date";
+            gridViewDateTimeColumn2.Name = "DateOfVisit";
+            gridViewDateTimeColumn2.Width = 88;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "ipop_no";
+            gridViewTextBoxColumn12.HeaderText = "IP/OP No";
+            gridViewTextBoxColumn12.Name = "ipop_no";
+            gridViewTextBoxColumn12.Width = 101;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "pt_name";
+            gridViewTextBoxColumn13.HeaderText = "Name of Patient";
+            gridViewTextBoxColumn13.Name = "pt_name";
+            gridViewTextBoxColumn13.Width = 225;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "doctor_name";
+            gridViewTextBoxColumn14.HeaderText = "Name of Doctor";
+            gridViewTextBoxColumn14.Name = "doctor_name";
+            gridViewTextBoxColumn14.Width = 219;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "panelName";
+            gridViewTextBoxColumn15.HeaderText = "Panel Name";
+            gridViewTextBoxColumn15.Name = "panelName";
+            gridViewTextBoxColumn15.Width = 179;
+            gridViewTextBoxColumn16.AllowFiltering = false;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "card_no";
+            gridViewTextBoxColumn16.HeaderText = "Health Card No";
+            gridViewTextBoxColumn16.Name = "card_no";
+            gridViewTextBoxColumn16.Width = 112;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "mobile";
+            gridViewTextBoxColumn17.HeaderText = "Mobile No";
+            gridViewTextBoxColumn17.Name = "mobile_no";
+            gridViewTextBoxColumn17.Width = 131;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "uhid";
+            gridViewTextBoxColumn18.HeaderText = "UHID";
+            gridViewTextBoxColumn18.IsVisible = false;
+            gridViewTextBoxColumn18.Name = "UHID";
+            gridViewTextBoxColumn19.AllowFiltering = false;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "doctor_id";
+            gridViewTextBoxColumn19.HeaderText = "doctor_id";
+            gridViewTextBoxColumn19.IsVisible = false;
+            gridViewTextBoxColumn19.Name = "doctor_id";
+            gridViewCommandColumn3.EnableExpressionEditor = false;
+            gridViewCommandColumn3.HeaderText = "-";
+            gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
+            gridViewCommandColumn3.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn3.Name = "column1";
+            gridViewCommandColumn3.Width = 25;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.FieldName = "panelID";
+            gridViewTextBoxColumn20.HeaderText = "panelID";
+            gridViewTextBoxColumn20.IsVisible = false;
+            gridViewTextBoxColumn20.Name = "panelID";
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDateTimeColumn1,
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewCommandColumn1,
-            gridViewTextBoxColumn9});
+            gridViewDateTimeColumn2,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewCommandColumn3,
+            gridViewTextBoxColumn20});
             this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1763,6 +1777,82 @@ namespace eMediShop
             this.label33.Text = "Estimate Number";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // radPageViewPage1
+            // 
+            this.radPageViewPage1.Controls.Add(this.label26);
+            this.radPageViewPage1.Controls.Add(this.txtChop);
+            this.radPageViewPage1.Controls.Add(this.rpv_opdMedicine);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(115F, 34F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(10, 43);
+            this.radPageViewPage1.Name = "radPageViewPage1";
+            this.radPageViewPage1.Size = new System.Drawing.Size(1208, 571);
+            this.radPageViewPage1.Text = "OPD Medicine";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(963, 14);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(127, 20);
+            this.label26.TabIndex = 112;
+            this.label26.Text = "Search Character :";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtChop
+            // 
+            this.txtChop.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtChop.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChop.Location = new System.Drawing.Point(1093, 12);
+            this.txtChop.Name = "txtChop";
+            this.txtChop.Size = new System.Drawing.Size(50, 25);
+            this.txtChop.TabIndex = 111;
+            this.txtChop.Text = "5";
+            this.txtChop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // rpv_opdMedicine
+            // 
+            this.rpv_opdMedicine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
+            this.rpv_opdMedicine.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rpv_opdMedicine.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.rpv_opdMedicine.ForeColor = System.Drawing.Color.Black;
+            this.rpv_opdMedicine.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rpv_opdMedicine.Location = new System.Drawing.Point(4, 3);
+            // 
+            // 
+            // 
+            this.rpv_opdMedicine.MasterTemplate.AllowAddNewRow = false;
+            gridViewTextBoxColumn21.EnableExpressionEditor = false;
+            gridViewTextBoxColumn21.FieldName = "medicine_id";
+            gridViewTextBoxColumn21.HeaderText = "Item Id";
+            gridViewTextBoxColumn21.Name = "medicine_id";
+            gridViewTextBoxColumn21.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn22.EnableExpressionEditor = false;
+            gridViewTextBoxColumn22.FieldName = "MedicineName";
+            gridViewTextBoxColumn22.HeaderText = "Name of Product";
+            gridViewTextBoxColumn22.Name = "MedicineName";
+            gridViewTextBoxColumn22.Width = 800;
+            gridViewCommandColumn4.EnableExpressionEditor = false;
+            gridViewCommandColumn4.HeaderText = "-";
+            gridViewCommandColumn4.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn4.Image")));
+            gridViewCommandColumn4.Name = "column1";
+            gridViewCommandColumn4.Width = 25;
+            this.rpv_opdMedicine.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn21,
+            gridViewTextBoxColumn22,
+            gridViewCommandColumn4});
+            sortDescriptor2.PropertyName = "medicine_id";
+            this.rpv_opdMedicine.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor2});
+            this.rpv_opdMedicine.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.rpv_opdMedicine.Name = "rpv_opdMedicine";
+            this.rpv_opdMedicine.ReadOnly = true;
+            this.rpv_opdMedicine.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rpv_opdMedicine.ShowGroupPanel = false;
+            this.rpv_opdMedicine.Size = new System.Drawing.Size(917, 567);
+            this.rpv_opdMedicine.TabIndex = 0;
+            this.rpv_opdMedicine.Text = "radGridView2";
+            this.rpv_opdMedicine.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rpv_opdMedicine_CommandCellClick);
+            // 
             // rgEstimate
             // 
             this.rgEstimate.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -1834,6 +1924,11 @@ namespace eMediShop
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).EndInit();
+            this.radPageViewPage1.ResumeLayout(false);
+            this.radPageViewPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpv_opdMedicine.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpv_opdMedicine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgEstimate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -1968,5 +2063,9 @@ namespace eMediShop
         private System.Windows.Forms.Button btnBillPosting;
         private Telerik.WinControls.UI.RadTextBox txtWallet;
         private System.Windows.Forms.Label label25;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage1;
+        private Telerik.WinControls.UI.RadGridView rpv_opdMedicine;
+        private System.Windows.Forms.Label label26;
+        private Telerik.WinControls.UI.RadTextBox txtChop;
     }
 }

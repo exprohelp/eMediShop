@@ -1,19 +1,17 @@
+using ExPro.Client;
+using Newtonsoft.Json;
 using System;
 using System.Data;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using ExPro.Server;
-using ExPro.Client;
 using System.Drawing;
+using System.Windows.Forms;
 using Telerik.WinControls;
-using Newtonsoft.Json;
 
 namespace eMediShop
 {
     public partial class SaleMaster_Hospital : Telerik.WinControls.UI.RadForm
     {
         private CashMemoSearch frmCashMemoSearch;
-        private  eMediShop.sales.SaleBill_Posting frmsaleBillPosting;
+        private eMediShop.sales.SaleBill_Posting frmsaleBillPosting;
         ucHealthCardNew HealthCardHelp;
         public event CashCounterEventHandler CashCounterUpdated;
         DataSet _ds = new DataSet();
@@ -27,7 +25,7 @@ namespace eMediShop
         string _PayMode = "Cash"; string _CardType = "Health"; string _healthCardNo = string.Empty; string _opdVisitNo = string.Empty;
         DataTable _tempTable = new DataTable(); DataTable _opdMedicine = new System.Data.DataTable();
         DataTable _healthcard = new DataTable();
-        string _refCode = string.Empty; string _orderNo = "N/A";string _selectedEstimateNo = string.Empty;
+        string _refCode = string.Empty; string _orderNo = "N/A"; string _selectedEstimateNo = string.Empty;
         string _CallFrom = string.Empty; string _estimateNo = string.Empty;
         decimal _Qty = 0; string _Lock_Flag = "N"; string _hospUhID = string.Empty;
         public SaleMaster_Hospital(string CallFrom, string uhid, string estimateNo)
@@ -514,7 +512,7 @@ namespace eMediShop
                                     //p.Cur_sale_inv_no = txtInvNo.Text; p.DiscountLogic = "New"; p.order_no = "-"; p.promo_flag = "N"; p.login_id = GlobalUsage.Login_id;
                                     //p.stateName = GlobalUsage.State;
                                     //datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/InsertRetailSales", p);
-                                   
+
                                     pm_InsertRetailSales p = new pm_InsertRetailSales();
                                     p.unit_id = GlobalUsage.Unit_id;
                                     p.counter_id = GlobalUsage.CounterID; p.computer_id = GlobalUsage.computerName; p.Sale_Type = "BYUHID";
@@ -524,7 +522,7 @@ namespace eMediShop
                                         p.accountID = "16070050";
                                     else
                                         p.accountID = "16040001";
-                                   
+
                                     p.card_no = txtCardNo.Text; p.card_level = txtCardStatus.Text; p.sold_qty = Convert.ToDouble(txtQty.Text);
                                     p.old_sale_inv_no = GlobalUsage.Old_Sale_Inv_No; p.gstn_no = txtGSTN_No.Text; p.hosp_cr_no = _hospUhID;
                                     p.hosp_ipop_no = _ipdno;
@@ -617,7 +615,7 @@ namespace eMediShop
             {
                 _PayMode = "Cash";
             }
-          
+
 
             if (dr["card_no"].ToString() == "Credit-Allowed")
             { groupBox2.Enabled = false; txtMedName.Enabled = false; }
@@ -651,7 +649,7 @@ namespace eMediShop
 
                 if (ds.Tables.Count > 0)
                 {
-                   
+
                     #region Fill Item Grid
                     foreach (DataRow dr in _tempTable.Rows)
                     {
@@ -767,9 +765,9 @@ namespace eMediShop
                 catch (Exception ex) { MessageBox.Show("Select Patient Name.", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
         }
-      
-     
-      
+
+
+
         private void CalculateDiscount(string Sale_Inv_No)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -897,7 +895,7 @@ namespace eMediShop
         }
         private void txtPrescribedBy_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down && txtPrescribedBy.Text.Length > 0 && txtPrescribedBy.Enabled==true)
+            if (e.KeyCode == Keys.Down && txtPrescribedBy.Text.Length > 0 && txtPrescribedBy.Enabled == true)
             {
                 try
                 {
@@ -1076,16 +1074,16 @@ namespace eMediShop
 
         }
 
-     
 
-      
 
-      
-       
 
-       
 
-       
+
+
+
+
+
+
         private void txtQty_MouseClick(object sender, MouseEventArgs e)
         {
             txtQty.SelectAll();
@@ -1151,7 +1149,7 @@ namespace eMediShop
                         _PayMode = ds.Tables[0].Rows[0]["paymode"].ToString().ToUpper();
                         txtCardNo.Enabled = false;
                         rpv_master.SelectedPage = rpv_master.Pages[1];
-                      
+
                         CalculateDiscount(txtInvNo.Text);
                         _CardChangeFlag = "N";
 
@@ -1162,7 +1160,7 @@ namespace eMediShop
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-       
+
 
 
 
@@ -1199,11 +1197,11 @@ namespace eMediShop
 
         private void btnCompleteCashMemo_Click(object sender, EventArgs e)
         {
-           
+
             //try
             //{
             //    Cursor.Current = Cursors.WaitCursor;
-           
+
             //    if (txtInvNo.Text.Substring(0, 1) == "E" && ((Conversion.Val(txtNetValue.Text) > 0) || Conversion.Val(txtNetValue.Text) < 0) && txtPrescribedBy.Text.Length > 4)
             //    {
             //        if (GlobalUsage.Posting_Rights == "Y")
@@ -1297,21 +1295,33 @@ namespace eMediShop
             _healthCardNo = e.Row.Cells["card_no"].Value.ToString();
             txtPatientName.Text = e.Row.Cells["pt_name"].Value.ToString();
             _opdVisitNo = e.Row.Cells["ipop_no"].Value.ToString();
-            _panelID= e.Row.Cells["panelID"].Value.ToString();
-            _panelName= e.Row.Cells["panelName"].Value.ToString();
+            _panelID = e.Row.Cells["panelID"].Value.ToString();
+            _panelName = e.Row.Cells["panelName"].Value.ToString();
             _refCode = e.Row.Cells["doctor_id"].Value.ToString();
             txtPrescribedBy.Text = e.Row.Cells["doctor_name"].Value.ToString();
             _PayMode = paymode(_panelID);
             _hospUhID = e.Row.Cells["UHID"].Value.ToString();
             _ipdno = e.Row.Cells["ipop_no"].Value.ToString();
+            txtCardNo.Text = e.Row.Cells["mobile_no"].Value.ToString();
+            _mobileNo = txtCardNo.Text;
+            txtCardStatus.Text = "Silver";
 
-            
+
             lv_referralList.Visible = false;
+            if (rbIPD.Checked == false)
+            {
+                //string response = GlobalUsage.his_proxy.getMedicineAgainstOpdNo(txtUHIDNO.Text, _opdVisitNo);
+                //_opdMedicine = JsonConvert.DeserializeObject<DataTable>(response);
+                //rpv_master.SelectedPage = rpvp_pos;
 
-            string response = GlobalUsage.his_proxy.getMedicineAgainstOpdNo(txtUHIDNO.Text, _opdVisitNo);
-            _opdMedicine = JsonConvert.DeserializeObject<DataTable>(response);
-            rpv_master.SelectedPage = rpvp_pos;
-
+                ipPharmacyInfo p = new ipPharmacyInfo();
+                p.prm_1 = _opdVisitNo; p.Logic = "GetOpdMedicine";
+                resultSetMIS rsm = HISProxy.CallHISWebApiMethod("Pharmacy/Pharmacy_Queries", p);
+                DataSet ds = rsm.ResultSet;
+                _opdMedicine = ds.Tables[0];
+                rpv_opdMedicine.DataSource = _opdMedicine;
+            }
+            rpv_master.SelectedPage= rpv_master.Pages[1];
             txtMedName.Focus();
         }
         private string paymode(string panelID)
@@ -1344,13 +1354,13 @@ namespace eMediShop
                     radGridView1.DataSource = new string[] { };
                     if (rbOPD.Checked)
                     {
-                        
-                            ipPharmacyInfo p = new ipPharmacyInfo();
-                            p.prm_1 = txtUHIDNO.Text;p.Logic = "GetPatientLastOpd";
-                            resultSetMIS rsm = HISProxy.CallHISWebApiMethod("Pharmacy/Pharmacy_Queries", p);
-                            DataSet ds = rsm.ResultSet;
-                            radGridView1.DataSource = ds.Tables[0];
-                        
+
+                        ipPharmacyInfo p = new ipPharmacyInfo();
+                        p.prm_1 = txtUHIDNO.Text; p.Logic = "GetPatientLastOpd";
+                        resultSetMIS rsm = HISProxy.CallHISWebApiMethod("Pharmacy/Pharmacy_Queries", p);
+                        DataSet ds = rsm.ResultSet;
+                        radGridView1.DataSource = ds.Tables[0];
+
                     }
 
 
@@ -1416,12 +1426,12 @@ namespace eMediShop
             _mobileNo = e.MobileNo;
             txtCardNo.Enabled = false;
             rpv_master.SelectedPage = rpv_master.Pages[1];
-           
+
             CalculateDiscount(txtInvNo.Text);
             _CardChangeFlag = "N";
         }
 
-      
+
 
         private void rbOPD_CheckedChanged(object sender, EventArgs e)
         {
@@ -1442,8 +1452,8 @@ namespace eMediShop
                 rbOPD.Checked = false;
                 rtb_uhidsearch.Enabled = false;
                 radGridView1.DataSource = new string[] { };
-             
-   
+
+
                 pm_HospitalQueries p = new pm_HospitalQueries();
                 p.unit_id = GlobalUsage.Unit_id; p.logic = "ActiveIPD"; p.prm_1 = "-"; p.prm_2 = "";
                 p.login_id = GlobalUsage.Login_id;
@@ -1471,10 +1481,10 @@ namespace eMediShop
 
         }
 
-      
-     
 
-   
+
+
+
 
         private void txtPrescribedBy_TextChanged(object sender, EventArgs e)
         {
@@ -1610,7 +1620,7 @@ namespace eMediShop
             b.sale_inv_no = txtInvNo.Text;
             b.card_no = _healthCardNo; b.customer_name = txtPatientName.Text; b.ipopNo = _ipdno; b.panelName = _panelName;
             b.panelType = _PayMode; b.prescribedBy = txtPrescribedBy.Text; b.uhidNo = txtUHIDNO.Text;
-            b.orderNo = _orderNo;b.saleType = "BYUHID";
+            b.orderNo = _orderNo; b.saleType = "BYUHID";
             if (_PayMode.ToLower() == "credit")
                 b.AccountID = "16070050";
             else
@@ -1639,7 +1649,7 @@ namespace eMediShop
             {
                 printCashMemo(txtInvNo.Text);
                 ResetForNewBill();
-                btnBillPosting.Enabled=false;
+                btnBillPosting.Enabled = false;
                 if (_CallFrom == "Cash Counter")
                 {
                     CashCounterUpdatedEventArgs ValueArgs = new CashCounterUpdatedEventArgs(_estimateNo, "Success");
@@ -1649,5 +1659,10 @@ namespace eMediShop
             }
         }
 
+        private void rpv_opdMedicine_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            txtMedName.Text = e.Row.Cells[1].Value.ToString().Substring(0, Convert.ToInt16(txtChop.Text));
+            rpv_master.SelectedPage = rpv_master.Pages[1];
+        }
     }  // Second Last Brace
 }

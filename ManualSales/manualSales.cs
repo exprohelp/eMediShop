@@ -358,6 +358,17 @@ namespace eMediShop.ManualSales
                     txtMedName.SelectAll();
                     return;
                 }
+                DateTime d; DateTime curDate; string expdate = "01-" + txtExpDate.Text;
+                d = Convert.ToDateTime(expdate);curDate = DateTime.Today;
+                if (d <= curDate.AddMonths(1))
+                {
+                    txtExpDate.Focus(); txtExpDate.SelectAll();
+                    RadMessageBox.Show("Expiry is not Correct.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    txtExpDate.Focus();
+                    txtExpDate.SelectAll();
+                    return;
+                }
+
 
                 #region Add Records In Grid
 
@@ -429,10 +440,10 @@ namespace eMediShop.ManualSales
 
                 GetProductDiscountByItemID p = new GetProductDiscountByItemID();
                 p.unit_id = GlobalUsage.Unit_id; p.Itemid = _SelectedItem_Id; p.cardLevel = "Silver";
-                p.ipdNo = txtIPOPNo.Text;p.orderNo = "-";p.sold_qty = Convert.ToInt16(txtQty.Text);
+                p.ipdNo = txtIPOPNo.Text; p.orderNo = "-"; p.sold_qty = Convert.ToInt16(txtQty.Text);
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/GetProductDiscountByItemID", p);
                 string[] dl = dwr.message.Split('|');
-                DiscountPer = Convert.ToDecimal(dl[0]) ;
+                DiscountPer = Convert.ToDecimal(dl[0]);
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "ExPro", MessageBoxButtons.OK, MessageBoxIcon.Information); DiscountPer = 0; }
@@ -625,7 +636,8 @@ namespace eMediShop.ManualSales
                     }
                     #endregion
                 }
-                else {
+                else
+                {
                     #region New HIS Search
                     try
                     {
@@ -651,7 +663,7 @@ namespace eMediShop.ManualSales
                         }
                         else if (rbIPD.Checked)
                         {
-                            
+
                             p.unit_id = GlobalUsage.Unit_id; p.logic = "BYIPDNO"; p.prm_1 = txtIPOPNo.Text; p.prm_2 = "";
                             p.login_id = GlobalUsage.Login_id;
                             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
@@ -848,6 +860,7 @@ namespace eMediShop.ManualSales
             bool chValidity = DateTime.TryParseExact(expdate, "dd-MM-yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out d);
             if (!chValidity)
             { txtExpDate.Focus(); txtExpDate.SelectAll(); }
+
         }
 
         private void lv_referralList_KeyDown(object sender, KeyEventArgs e)
@@ -909,7 +922,7 @@ namespace eMediShop.ManualSales
                 //if(rbCancel.Checked)
                 //p1.Logic = "CancelManualBill";
                 //else 
-                if(rbchCash.Checked)
+                if (rbchCash.Checked)
                 {
                     p1.Logic = "ChangePayModeManualBill";
                     p1.prm_1 = "Cash";
