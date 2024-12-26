@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucIndentChecking));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.GroupDescriptor groupDescriptor1 = new Telerik.WinControls.Data.GroupDescriptor();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.GroupDescriptor groupDescriptor3 = new Telerik.WinControls.Data.GroupDescriptor();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor3 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition11 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition12 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgv_Info = new Telerik.WinControls.UI.RadGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIndentNo = new Telerik.WinControls.UI.RadTextBox();
@@ -51,6 +51,7 @@
             this.rgv_Header = new Telerik.WinControls.UI.RadGridView();
             this.rpvIndent = new Telerik.WinControls.UI.RadPageViewPage();
             this.rgvIndent = new Telerik.WinControls.UI.RadGridView();
+            this.btnReleaseIndent = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_Info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_Info.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIndentNo)).BeginInit();
@@ -66,6 +67,7 @@
             this.rpvIndent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgvIndent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvIndent.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReleaseIndent)).BeginInit();
             this.SuspendLayout();
             // 
             // rgv_Info
@@ -81,44 +83,44 @@
             // 
             this.rgv_Info.MasterTemplate.AllowAddNewRow = false;
             this.rgv_Info.MasterTemplate.AutoExpandGroups = true;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "indent_no";
-            gridViewTextBoxColumn1.HeaderText = "Indent No";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "indent_no";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "proctype";
-            gridViewTextBoxColumn2.HeaderText = "Proc Type";
-            gridViewTextBoxColumn2.Name = "proctype";
-            gridViewTextBoxColumn2.Width = 155;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Trn_No";
-            gridViewTextBoxColumn3.HeaderText = "Transaction No";
-            gridViewTextBoxColumn3.Name = "Trn_No";
-            gridViewTextBoxColumn3.Width = 151;
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderImage = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.HeaderImage")));
-            gridViewCommandColumn1.HeaderText = "-";
-            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
-            gridViewCommandColumn1.Name = "column4";
-            gridViewCommandColumn1.Width = 25;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "indentgroup";
-            gridViewTextBoxColumn4.HeaderText = "indentgroup";
-            gridViewTextBoxColumn4.Name = "indentgroup";
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "indent_no";
+            gridViewTextBoxColumn9.HeaderText = "Indent No";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "indent_no";
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "proctype";
+            gridViewTextBoxColumn10.HeaderText = "Proc Type";
+            gridViewTextBoxColumn10.Name = "proctype";
+            gridViewTextBoxColumn10.Width = 155;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Trn_No";
+            gridViewTextBoxColumn11.HeaderText = "Transaction No";
+            gridViewTextBoxColumn11.Name = "Trn_No";
+            gridViewTextBoxColumn11.Width = 151;
+            gridViewCommandColumn3.EnableExpressionEditor = false;
+            gridViewCommandColumn3.HeaderImage = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.HeaderImage")));
+            gridViewCommandColumn3.HeaderText = "-";
+            gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
+            gridViewCommandColumn3.Name = "column4";
+            gridViewCommandColumn3.Width = 25;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "indentgroup";
+            gridViewTextBoxColumn12.HeaderText = "indentgroup";
+            gridViewTextBoxColumn12.Name = "indentgroup";
             this.rgv_Info.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCommandColumn1,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewCommandColumn3,
+            gridViewTextBoxColumn12});
             this.rgv_Info.MasterTemplate.EnableFiltering = true;
-            sortDescriptor1.PropertyName = "indentgroup";
-            groupDescriptor1.GroupNames.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
+            sortDescriptor3.PropertyName = "indentgroup";
+            groupDescriptor3.GroupNames.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor3});
             this.rgv_Info.MasterTemplate.GroupDescriptors.AddRange(new Telerik.WinControls.Data.GroupDescriptor[] {
-            groupDescriptor1});
-            this.rgv_Info.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            groupDescriptor3});
+            this.rgv_Info.MasterTemplate.ViewDefinition = tableViewDefinition9;
             this.rgv_Info.Name = "rgv_Info";
             this.rgv_Info.ReadOnly = true;
             this.rgv_Info.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -171,7 +173,7 @@
             this.rgv_detail.MasterTemplate.AllowAddNewRow = false;
             this.rgv_detail.MasterTemplate.EnableFiltering = true;
             this.rgv_detail.MasterTemplate.EnableGrouping = false;
-            this.rgv_detail.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.rgv_detail.MasterTemplate.ViewDefinition = tableViewDefinition10;
             this.rgv_detail.Name = "rgv_detail";
             this.rgv_detail.ReadOnly = true;
             this.rgv_detail.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -189,6 +191,7 @@
             this.btnProcessSales.Size = new System.Drawing.Size(128, 24);
             this.btnProcessSales.TabIndex = 4;
             this.btnProcessSales.Text = "Process Sales";
+            this.btnProcessSales.Visible = false;
             this.btnProcessSales.Click += new System.EventHandler(this.btnProcessSales_Click);
             // 
             // rpv_Pages
@@ -227,7 +230,7 @@
             this.rgv_Header.MasterTemplate.AllowAddNewRow = false;
             this.rgv_Header.MasterTemplate.EnableFiltering = true;
             this.rgv_Header.MasterTemplate.EnableGrouping = false;
-            this.rgv_Header.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.rgv_Header.MasterTemplate.ViewDefinition = tableViewDefinition11;
             this.rgv_Header.Name = "rgv_Header";
             this.rgv_Header.ReadOnly = true;
             this.rgv_Header.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -259,7 +262,7 @@
             this.rgvIndent.MasterTemplate.AllowAddNewRow = false;
             this.rgvIndent.MasterTemplate.EnableFiltering = true;
             this.rgvIndent.MasterTemplate.EnableGrouping = false;
-            this.rgvIndent.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.rgvIndent.MasterTemplate.ViewDefinition = tableViewDefinition12;
             this.rgvIndent.Name = "rgvIndent";
             this.rgvIndent.ReadOnly = true;
             this.rgvIndent.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -268,10 +271,22 @@
             this.rgvIndent.TabIndex = 2;
             this.rgvIndent.Text = "radGridView2";
             // 
+            // btnReleaseIndent
+            // 
+            this.btnReleaseIndent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReleaseIndent.Location = new System.Drawing.Point(845, 18);
+            this.btnReleaseIndent.Name = "btnReleaseIndent";
+            this.btnReleaseIndent.Size = new System.Drawing.Size(128, 24);
+            this.btnReleaseIndent.TabIndex = 6;
+            this.btnReleaseIndent.Text = "Release Indent";
+            this.btnReleaseIndent.Visible = false;
+            this.btnReleaseIndent.Click += new System.EventHandler(this.btnReleaseIndent_Click);
+            // 
             // ucIndentChecking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReleaseIndent);
             this.Controls.Add(this.rpv_Pages);
             this.Controls.Add(this.btnProcessSales);
             this.Controls.Add(this.radButton1);
@@ -298,6 +313,7 @@
             this.rpvIndent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rgvIndent.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvIndent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReleaseIndent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +332,6 @@
         private Telerik.WinControls.UI.RadGridView rgv_Header;
         private Telerik.WinControls.UI.RadPageViewPage rpvIndent;
         private Telerik.WinControls.UI.RadGridView rgvIndent;
+        private Telerik.WinControls.UI.RadButton btnReleaseIndent;
     }
 }

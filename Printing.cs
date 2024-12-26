@@ -34,6 +34,29 @@ namespace eMediShop
                     MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            public static void NER_Bill(DataSet ds,string billNo)
+            {
+                try
+                {
+                    ReportDocument rpt;
+                    rpt = new CrystalReportsPharmacy.Reports.Ner_Bill();
+
+                    rpt.Database.Tables["sale_header"].SetDataSource(ds.Tables[0]);
+                    rpt.Database.Tables["sale_items"].SetDataSource(ds.Tables[1]);
+                    //rpt.PrintToPrinter(1, false, 1, 0);
+                    string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
+                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                    if (!dir.Exists)
+                    { dir.Create(); }
+                    if (System.IO.File.Exists(path + "\\" + billNo.Replace('/', '_') + ".pdf"))
+                    { System.IO.File.Delete(path + "\\" + billNo.Replace('/', '_') + ".pdf"); }
+                    rpt.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + billNo.Replace('/', '_') + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             public static void HAL_DeliverySummary(DataSet ds, string billNo, string orderdate)
             {
                 try

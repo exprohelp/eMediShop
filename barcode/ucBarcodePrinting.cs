@@ -77,10 +77,10 @@ namespace eMediShop.barcode
                 {
                     int[] vals = { 1, 2}; //, 3,4,5,6,7,8,9,10 
 
-                    foreach (var val in vals)
-                    {
-                        eMediShop.RawPrinterHelper.SendStringToPrinter(pd.PrinterSettings.PrinterName, sb.ToString());
-                    }
+                    //foreach (var val in vals)
+                    //{
+                    //    eMediShop.RawPrinterHelper.SendStringToPrinter(pd.PrinterSettings.PrinterName, sb.ToString());
+                    //}
 
 
 

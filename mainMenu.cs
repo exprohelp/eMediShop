@@ -1964,6 +1964,11 @@ namespace eMediShop
 
         }
 
+        private void rbe_bill_Click(object sender, EventArgs e)
+        {
+            openControl(new contract.ucNERBill(), "NER Billing");
+        }
+
         private void rb_assign_menu_Click(object sender, EventArgs e)
         {
             openForm(new ITSystem.menuRights("eMediShop"));

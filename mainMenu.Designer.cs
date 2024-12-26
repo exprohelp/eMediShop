@@ -444,6 +444,8 @@
             this.rbeDelProcess = new Telerik.WinControls.UI.RadButtonElement();
             this.rdpDeliveryData = new Telerik.WinControls.UI.RadButtonElement();
             this.rbeConsBillProcess = new Telerik.WinControls.UI.RadButtonElement();
+            this.rrbg_ner = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.rbe_bill = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab7 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup40 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.rbeStockist_newChallan = new Telerik.WinControls.UI.RadButtonElement();
@@ -4059,9 +4061,10 @@
             // 
             this.ribbonTab6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonTab6.Image = global::eMediShop.Properties.Resources.Contract;
-            this.ribbonTab6.IsSelected = false;
+            this.ribbonTab6.IsSelected = true;
             this.ribbonTab6.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radRibbonBarGroup39});
+            this.radRibbonBarGroup39,
+            this.rrbg_ner});
             this.ribbonTab6.Name = "ribbonTab6";
             this.ribbonTab6.Text = "Contracts";
             // 
@@ -4150,10 +4153,23 @@
             this.rbeConsBillProcess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rbeConsBillProcess.Click += new System.EventHandler(this.rbeConsBillProcess_Click);
             // 
+            // rrbg_ner
+            // 
+            this.rrbg_ner.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.rbe_bill});
+            this.rrbg_ner.Name = "rrbg_ner";
+            this.rrbg_ner.Text = "NER";
+            // 
+            // rbe_bill
+            // 
+            this.rbe_bill.Name = "rbe_bill";
+            this.rbe_bill.Text = "Bill";
+            this.rbe_bill.Click += new System.EventHandler(this.rbe_bill_Click);
+            // 
             // ribbonTab7
             // 
             this.ribbonTab7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonTab7.IsSelected = true;
+            this.ribbonTab7.IsSelected = false;
             this.ribbonTab7.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup40});
             this.ribbonTab7.Name = "ribbonTab7";
@@ -4828,5 +4844,7 @@
         private Telerik.WinControls.UI.RadButtonElement rbeStockist_newChallan;
         private Telerik.WinControls.UI.RadButtonElement rbeChallanCreate;
         private Telerik.WinControls.UI.RadButtonElement rbeStockist_Sales;
+        private Telerik.WinControls.UI.RadRibbonBarGroup rrbg_ner;
+        private Telerik.WinControls.UI.RadButtonElement rbe_bill;
     }
 }

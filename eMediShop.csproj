@@ -634,6 +634,12 @@
     <Compile Include="contract\ucGroupBilling.Designer.cs">
       <DependentUpon>ucGroupBilling.cs</DependentUpon>
     </Compile>
+    <Compile Include="contract\ucNERBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="contract\ucNERBill.Designer.cs">
+      <DependentUpon>ucNERBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="contract\ucOrderDeliveryData.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2035,6 +2041,9 @@
     <EmbeddedResource Include="contract\ucGroupBilling.resx">
       <DependentUpon>ucGroupBilling.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="contract\ucNERBill.resx">
+      <DependentUpon>ucNERBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="contract\ucOrderDeliveryData.resx">
       <DependentUpon>ucOrderDeliveryData.cs</DependentUpon>
     </EmbeddedResource>
@@ -2999,6 +3008,7 @@
     <None Include="Resources\Contract.png" />
     <None Include="Resources\delivery.gif" />
     <None Include="Resources\delivery1.gif" />
+    <None Include="Resources\barcode.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

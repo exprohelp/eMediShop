@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using Telerik.WinControls;
 
 namespace eMediShop.Hospital
 {
@@ -72,13 +73,18 @@ namespace eMediShop.Hospital
                 p.from = "1900/01/01"; p.to = "1900/01/01"; p.card_no = "-"; p.uhid = "-";
                 p.IPOPNo = e.Row.Cells["trn_no"].Value.ToString(); p.logic = "Bill-Verify"; p.prm_1 = e.Row.Cells["proctype"].Value.ToString();
                 dwr = ConfigWebAPI.CallAPI("api/hospital/ipopqueries", p);
-               
+                if (dwr.result.Tables[1].Rows.Count == 0)
+                    btnReleaseIndent.Visible = true;
+                else
+                    btnReleaseIndent.Visible = false;
+
                 if (p.prm_1.Contains("Sold"))
                 {
                     rgv_detail.DataSource = dwr.result.Tables[1];
                     foreach (GridViewColumn column in rgv_detail.Columns){column.BestFit();}
                     rgv_Header.DataSource = dwr.result.Tables[0];
                     foreach (GridViewColumn column in rgv_Header.Columns) { column.BestFit(); }
+                    
                 }
                 else
                 {
@@ -115,6 +121,36 @@ namespace eMediShop.Hospital
         private void ucIndentChecking_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReleaseIndent_Click(object sender, EventArgs e)
+        {
+            if (rgv_Info.CurrentRow.Cells["proctype"].Value.ToString() != "Estimate")
+            {
+                RadMessageBox.Show("Click on Estimate Option Row.", "ExPro Help", MessageBoxButtons.OK);
+                return;
+            }
+            try
+            {
+                DialogResult res = RadMessageBox.Show("Do You Confirm  to Release Indent?", "ExPro Help", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    cm1 p1 = new cm1();
+                    p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
+                    p1.prm_1 = "-"; p1.prm_2 = "-";
+                    p1.Logic = "Indent-Release"; p1.tran_id = rgv_Info.CurrentRow.Cells["trn_no"].Value.ToString();
+                    p1.prm_3 = "-"; p1.prm_4 = "-";
+                    p1.login_id = GlobalUsage.Login_id;
+                    datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
+                    radButton1.PerformClick();
+                }
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(ex.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+            finally { Cursor.Current = Cursors.Default; }
         }
     }
 }

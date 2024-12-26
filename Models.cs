@@ -4,6 +4,19 @@ using System.Data;
 
 namespace eMediShop
 {
+    public class selectQry
+    {
+        public string unitID { get; set; }
+        public string tranId { get; set; }
+        public string Logic { get; set; }
+        public string prm_1 { get; set; }
+        public string prm_2 { get; set; }
+        public string prm_3 { get; set; }
+        public string dtFrom { get; set; }
+        public string dtTo { get; set; }
+        public string loginId { get; set; }
+
+    }
     public class challans
     {
         public string unitID { get; set; }
