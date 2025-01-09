@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace eMediShop.contract
 {
@@ -45,8 +46,11 @@ namespace eMediShop.contract
                 p.prm_3 = "-"; p.loginId = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ContractQueries", p);
                 DataSet ds = dwr.result;
-
-                Printing.Laser.NER_Bill(ds, e.Row.Cells["sale_inv_no"].Value.ToString());
+                DialogResult res = RadMessageBox.Show("Do You want to Print (Y/N)? ", "ExPro Help", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    Printing.Laser.NER_Bill(ds, e.Row.Cells["sale_inv_no"].Value.ToString());
+                }
 
             }
             catch (Exception ex)

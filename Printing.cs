@@ -43,7 +43,7 @@ namespace eMediShop
 
                     rpt.Database.Tables["sale_header"].SetDataSource(ds.Tables[0]);
                     rpt.Database.Tables["sale_items"].SetDataSource(ds.Tables[1]);
-                    //rpt.PrintToPrinter(1, false, 1, 0);
+                    rpt.PrintToPrinter(1, false, 1, 0);
                     string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
                     System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
                     if (!dir.Exists)

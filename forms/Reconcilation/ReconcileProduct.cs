@@ -140,6 +140,18 @@ namespace eMediShop.forms.Reconcilation
             _ds.Dispose();
             progressBar1.Visible = false;
         }
+        private void fillAnalysisInfo()
+        {
+            if (_ds.Tables.Count > 0)
+            {
+                _dtTracing = _ds.Tables[0].Copy();
+
+                rgvTracing.DataSource = _dtTracing;
+            }
+            _ds.Clear();
+            _ds.Dispose();
+            progressBar1.Visible = false;
+        }
 
         private void fillProductInfo()
         {
@@ -201,9 +213,7 @@ namespace eMediShop.forms.Reconcilation
                     }
                 }
                 #region Product Movement Tracing
-                _dtTracing = _ds.Tables[3].Copy();
-
-                rgvTracing.DataSource = _dtTracing;
+               
 
                 //decimal runBal = 0;
                 //lv_Run_Bal.Items.Clear();
@@ -279,8 +289,22 @@ namespace eMediShop.forms.Reconcilation
                     pm_Stocks p1 = new pm_Stocks();
                     p1.unit_id = GlobalUsage.Unit_id; p1.item_id = _ItemId;
                     p1.master_key_id = "N/A"; p1.searchKey = "N/A"; p1.logic = "PurchaseInfo"; p1.login_id = GlobalUsage.Login_id;
-                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/ProductMovementInfo", p);
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/ProductMovementInfo", p1);
                     _ds = dwr.result;
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            }
+            else if (_Action == "AnalysisInfo")
+            {
+                try
+                {
+                    pm_Stocks p1 = new pm_Stocks();
+                    p1.unit_id = GlobalUsage.Unit_id; p1.item_id = _ItemId;
+                    p1.master_key_id = "N/A"; p1.searchKey = "N/A"; p1.logic = "AnalysisInfo"; p1.login_id = GlobalUsage.Login_id;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/ProductMovementInfo", p1);
+                    _ds = dwr.result;
+                    
                 }
                 catch (Exception ex)
                 { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
@@ -294,6 +318,7 @@ namespace eMediShop.forms.Reconcilation
             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/ProductMovementInfo", p);
             return dwr.result;
         }
+
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (_Action == "SearchProduct" || _Action == "SearchInShelf_No")
@@ -302,6 +327,9 @@ namespace eMediShop.forms.Reconcilation
                 fillProductInfo();
             else if (_Action == "PurchaseInfo")
                 fillPurchaseInfo();
+            else if (_Action == "AnalysisInfo")
+                fillAnalysisInfo();
+
         }
         private void lvSearchItem_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -365,6 +393,14 @@ namespace eMediShop.forms.Reconcilation
         private void btnTracing_Click(object sender, EventArgs e)
         {
             rgvTracing.DataSource = _ds.Tables[3];
+        }
+
+        private void btnAnalysis_Click(object sender, EventArgs e)
+        {
+            progressBar1.Visible = true;
+            _Action = "AnalysisInfo";
+            if (!backgroundWorker1.IsBusy)
+                backgroundWorker1.RunWorkerAsync();
         }
     }
 }

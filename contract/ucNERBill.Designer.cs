@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucNERBill));
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor3 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgCriteria = new Telerik.WinControls.UI.RadGroupBox();
             this.btnGo = new Telerik.WinControls.UI.RadButton();
             this.rdtpTo = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -63,7 +63,7 @@
             this.rgCriteria.HeaderText = "";
             this.rgCriteria.Location = new System.Drawing.Point(3, 3);
             this.rgCriteria.Name = "rgCriteria";
-            this.rgCriteria.Size = new System.Drawing.Size(403, 55);
+            this.rgCriteria.Size = new System.Drawing.Size(403, 56);
             this.rgCriteria.TabIndex = 4;
             // 
             // btnGo
@@ -125,45 +125,45 @@
             this.rgv_info.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.rgv_info.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rgv_info.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rgv_info.Location = new System.Drawing.Point(4, 64);
+            this.rgv_info.Location = new System.Drawing.Point(4, 65);
             // 
             // 
             // 
             this.rgv_info.MasterTemplate.AllowAddNewRow = false;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "sale_inv_no";
-            gridViewTextBoxColumn5.HeaderText = "Sale Inv No";
-            gridViewTextBoxColumn5.Name = "sale_inv_no";
-            gridViewTextBoxColumn5.Width = 146;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "category";
-            gridViewTextBoxColumn6.HeaderText = "Category";
-            gridViewTextBoxColumn6.Name = "category";
-            gridViewTextBoxColumn6.Width = 153;
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "Nos";
-            gridViewDecimalColumn3.FormatString = "{0:N0}";
-            gridViewDecimalColumn3.HeaderText = "NoS";
-            gridViewDecimalColumn3.Name = "Nos";
-            gridViewCommandColumn3.EnableExpressionEditor = false;
-            gridViewCommandColumn3.HeaderText = "-";
-            gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
-            gridViewCommandColumn3.Name = "column1";
-            gridViewCommandColumn3.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewCommandColumn3.Width = 25;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "sale_inv_no";
+            gridViewTextBoxColumn1.HeaderText = "Sale Inv No";
+            gridViewTextBoxColumn1.Name = "sale_inv_no";
+            gridViewTextBoxColumn1.Width = 146;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "category";
+            gridViewTextBoxColumn2.HeaderText = "Category";
+            gridViewTextBoxColumn2.Name = "category";
+            gridViewTextBoxColumn2.Width = 153;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "Nos";
+            gridViewDecimalColumn1.FormatString = "{0:N0}";
+            gridViewDecimalColumn1.HeaderText = "NoS";
+            gridViewDecimalColumn1.Name = "Nos";
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "-";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.Name = "column1";
+            gridViewCommandColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewCommandColumn1.Width = 25;
             this.rgv_info.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewDecimalColumn3,
-            gridViewCommandColumn3});
-            sortDescriptor3.PropertyName = "column1";
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDecimalColumn1,
+            gridViewCommandColumn1});
+            sortDescriptor1.PropertyName = "column1";
             this.rgv_info.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor3});
-            this.rgv_info.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            sortDescriptor1});
+            this.rgv_info.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_info.Name = "rgv_info";
             this.rgv_info.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rgv_info.ShowGroupPanel = false;
-            this.rgv_info.Size = new System.Drawing.Size(403, 447);
+            this.rgv_info.Size = new System.Drawing.Size(403, 446);
             this.rgv_info.TabIndex = 5;
             this.rgv_info.Text = "radGridView1";
             this.rgv_info.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgv_info_CommandCellClick);
