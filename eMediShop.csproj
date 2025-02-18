@@ -1236,6 +1236,12 @@
     <Compile Include="Inventory\ucStockRecRegister.Designer.cs">
       <DependentUpon>ucStockRecRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalWarehouse\ucLW_Orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalWarehouse\ucLW_Orders.Designer.cs">
+      <DependentUpon>ucLW_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManualSales\ucCancelSales.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2328,6 +2334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\ucStockRecRegister.resx">
       <DependentUpon>ucStockRecRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalWarehouse\ucLW_Orders.resx">
+      <DependentUpon>ucLW_Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManualSales\ucCancelSales.resx">
       <DependentUpon>ucCancelSales.cs</DependentUpon>

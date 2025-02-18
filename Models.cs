@@ -4,6 +4,19 @@ using System.Data;
 
 namespace eMediShop
 {
+    public class Localwarehouse
+    {
+        //unit_id,ForUnit,processAverage,ordermth,nProduct,login_id,logic,order_no,includeWh_Stocks
+        public string unit_id { get; set; }
+        public string ForUnit { get; set; }
+        public string processAverage { get; set; }
+        public string ordermth { get; set; }
+        public string nProduct { get; set; }
+        public string login_id { get; set; }
+        public string logic { get; set; }
+        public string includeWh_Stocks { get; set; }
+        public string order_no { get; set; }
+    }
     public class selectQry
     {
         public string unitID { get; set; }
@@ -599,6 +612,7 @@ namespace eMediShop
         public int RcptQty { get; set; }
         public string CheckFlag { get; set; }
     }
+
     public class pm_PurchaseOrders
     {
         public string unit_id { get; set; }

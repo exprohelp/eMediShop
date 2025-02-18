@@ -247,7 +247,8 @@ namespace eMediShop
                                 RadItem currentItem2 = ribbonBarButtonGroup.Items[l];
                                 if (currentItem2.GetType().ToString() == "Telerik.WinControls.UI.RadButtonElement")
                                 {
-                                    if (currentItem2.Text.Contains("Import From"))
+                                    //if (currentItem2.Text.Contains("Purchase"))
+                                    //if(ribbonBarGroup.Text.Contains("Local Warehouse"))
                                     {
                                         p.AppName = Application.ProductName; p.cmd_name = ribbonTab.Name.ToString(); p.cmd_text = ribbonTab.Text;
                                         p.grp_name = ribbonBarGroup.Name.ToString(); p.grp_text = ribbonBarGroup.Text; p.element_name = currentItem.Name.ToString();
@@ -1967,6 +1968,12 @@ namespace eMediShop
         private void rbe_bill_Click(object sender, EventArgs e)
         {
             openControl(new contract.ucNERBill(), "NER Billing");
+        }
+
+        private void radButtonElement8_Click_1(object sender, EventArgs e)
+        {
+            openControl(new LocalWarehouse.ucLW_Orders(), "Local Warehouse Order Information");
+
         }
 
         private void rb_assign_menu_Click(object sender, EventArgs e)

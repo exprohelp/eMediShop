@@ -233,7 +233,11 @@ namespace eMediShop.WholeSales
             if (e.KeyCode == Keys.Enter)
                 txtFree.Focus();
         }
-
+        private void reset()
+        {
+            rtbSoldQty.Text = "0"; txtFree.Text = "0";
+            txtDisPer.Text = "0";rtb_amount.Text = "0";
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -272,6 +276,7 @@ namespace eMediShop.WholeSales
                     rtbSaleInvNo.Text = ds.Tables[0].Rows[0]["sale_inv_no"].ToString();
                     btnPost.Enabled = true;
                     rtb_productname.Focus();
+                    reset();
                 }
             }
             catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }

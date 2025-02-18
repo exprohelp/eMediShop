@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenu));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rss_Info = new Telerik.WinControls.UI.RadStatusStrip();
             this.rle_User = new Telerik.WinControls.UI.RadLabelElement();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
@@ -175,6 +175,7 @@
             this.adm_Promotion = new Telerik.WinControls.UI.RadButtonElement();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rbeChallanCreate = new Telerik.WinControls.UI.RadButtonElement();
             this.rrb_menu = new Telerik.WinControls.UI.RadRibbonBar();
             this.rt_accounts = new Telerik.WinControls.UI.RibbonTab();
             this.rrbg_accounts = new Telerik.WinControls.UI.RadRibbonBarGroup();
@@ -302,7 +303,6 @@
             this.rbeChallanRegister = new Telerik.WinControls.UI.RadButtonElement();
             this.rbe_purch_merge = new Telerik.WinControls.UI.RadButtonElement();
             this.rbePurchRec = new Telerik.WinControls.UI.RadButtonElement();
-            this.rbeBarcodePrinting = new Telerik.WinControls.UI.RadButtonElement();
             this.rrbg_poHelp = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.rbe_PO = new Telerik.WinControls.UI.RadButtonElement();
             this.rbe_purch_LP_ZeroStocks = new Telerik.WinControls.UI.RadButtonElement();
@@ -405,6 +405,9 @@
             this.radRibbonBarGroup36 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement18 = new Telerik.WinControls.UI.RadButtonElement();
             this.rbeIndentChecking = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbbg_localpurchase = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.rb_w_lp_po = new Telerik.WinControls.UI.RadButtonElement();
+            this.rrbg_cw = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.ribbonTab4 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup21 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.rbe_Cons_Report = new Telerik.WinControls.UI.RadButtonElement();
@@ -469,7 +472,6 @@
             this.rbe_Manual = new Telerik.WinControls.UI.RadButtonElement();
             this.rbeChangeUnit = new Telerik.WinControls.UI.RadButtonElement();
             this.rbe_opticalAdv = new Telerik.WinControls.UI.RadButtonElement();
-            this.rbeChallanCreate = new Telerik.WinControls.UI.RadButtonElement();
             ((System.ComponentModel.ISupportInitialize)(this.rss_Info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtb_empCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtb_Password)).BeginInit();
@@ -1218,70 +1220,70 @@
             // 
             this.rgv_UnitInfo.MasterTemplate.AllowAddNewRow = false;
             this.rgv_UnitInfo.MasterTemplate.AllowColumnChooser = false;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "unit_id";
-            gridViewTextBoxColumn8.HeaderText = "unit_id";
-            gridViewTextBoxColumn8.IsVisible = false;
-            gridViewTextBoxColumn8.Name = "unit_id";
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "unit_name";
-            gridViewTextBoxColumn9.HeaderText = "Name of Unit";
-            gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "unit_name";
-            gridViewTextBoxColumn9.Width = 242;
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "-";
-            gridViewCommandColumn2.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn2.Image")));
-            gridViewCommandColumn2.Name = "column1";
-            gridViewCommandColumn2.Width = 25;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "sh_name";
-            gridViewTextBoxColumn10.HeaderText = "Unit Name";
-            gridViewTextBoxColumn10.Name = "sh_name";
-            gridViewTextBoxColumn10.Width = 242;
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "expiredin";
-            gridViewDecimalColumn3.HeaderText = "expiredin";
-            gridViewDecimalColumn3.IsVisible = false;
-            gridViewDecimalColumn3.Name = "expiredin";
-            gridViewDecimalColumn4.EnableExpressionEditor = false;
-            gridViewDecimalColumn4.FieldName = "alertdays";
-            gridViewDecimalColumn4.HeaderText = "alertdays";
-            gridViewDecimalColumn4.IsVisible = false;
-            gridViewDecimalColumn4.Name = "alertdays";
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "billing_flag";
-            gridViewTextBoxColumn11.HeaderText = "billing_flag";
-            gridViewTextBoxColumn11.IsVisible = false;
-            gridViewTextBoxColumn11.Name = "billing_flag";
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "dispatch_flag";
-            gridViewTextBoxColumn12.HeaderText = "dispatch_flag";
-            gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "dispatch_flag";
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "posting_flag";
-            gridViewTextBoxColumn13.HeaderText = "posting_flag";
-            gridViewTextBoxColumn13.IsVisible = false;
-            gridViewTextBoxColumn13.Name = "posting_flag";
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "cur_version";
-            gridViewTextBoxColumn14.HeaderText = "cur_version";
-            gridViewTextBoxColumn14.IsVisible = false;
-            gridViewTextBoxColumn14.Name = "cur_version";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "unit_id";
+            gridViewTextBoxColumn1.HeaderText = "unit_id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "unit_id";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "unit_name";
+            gridViewTextBoxColumn2.HeaderText = "Name of Unit";
+            gridViewTextBoxColumn2.IsVisible = false;
+            gridViewTextBoxColumn2.Name = "unit_name";
+            gridViewTextBoxColumn2.Width = 242;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "-";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.Name = "column1";
+            gridViewCommandColumn1.Width = 25;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "sh_name";
+            gridViewTextBoxColumn3.HeaderText = "Unit Name";
+            gridViewTextBoxColumn3.Name = "sh_name";
+            gridViewTextBoxColumn3.Width = 242;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "expiredin";
+            gridViewDecimalColumn1.HeaderText = "expiredin";
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "expiredin";
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "alertdays";
+            gridViewDecimalColumn2.HeaderText = "alertdays";
+            gridViewDecimalColumn2.IsVisible = false;
+            gridViewDecimalColumn2.Name = "alertdays";
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "billing_flag";
+            gridViewTextBoxColumn4.HeaderText = "billing_flag";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "billing_flag";
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "dispatch_flag";
+            gridViewTextBoxColumn5.HeaderText = "dispatch_flag";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "dispatch_flag";
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "posting_flag";
+            gridViewTextBoxColumn6.HeaderText = "posting_flag";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "posting_flag";
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "cur_version";
+            gridViewTextBoxColumn7.HeaderText = "cur_version";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "cur_version";
             this.rgv_UnitInfo.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewCommandColumn2,
-            gridViewTextBoxColumn10,
-            gridViewDecimalColumn3,
-            gridViewDecimalColumn4,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewCommandColumn1,
+            gridViewTextBoxColumn3,
+            gridViewDecimalColumn1,
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7});
             this.rgv_UnitInfo.MasterTemplate.EnableAlternatingRowColor = true;
-            this.rgv_UnitInfo.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.rgv_UnitInfo.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_UnitInfo.Name = "rgv_UnitInfo";
             this.rgv_UnitInfo.ReadOnly = true;
             this.rgv_UnitInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1465,6 +1467,10 @@
             this.textBox1.TabIndex = 17;
             this.textBox1.Visible = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // rbeChallanCreate
+            // 
+            this.rbeChallanCreate.Name = "rbeChallanCreate";
             // 
             // rrb_menu
             // 
@@ -1966,7 +1972,7 @@
             this.rt_inventory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rt_inventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(24)))));
             this.rt_inventory.Image = global::eMediShop.Properties.Resources.inventory_16;
-            this.rt_inventory.IsSelected = true;
+            this.rt_inventory.IsSelected = false;
             this.rt_inventory.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.rrbg_inv_rt,
             this.rrbg_Transfer,
@@ -2634,8 +2640,7 @@
             this.radRibbonBarButtonGroup23,
             this.radRibbonBarButtonGroup24,
             this.rbe_purch_merge,
-            this.rbePurchRec,
-            this.rbeBarcodePrinting});
+            this.rbePurchRec});
             this.rrbg_Bills.Name = "rrbg_Bills";
             this.rrbg_Bills.Text = "Bills/Invoices";
             // 
@@ -2766,12 +2771,6 @@
             this.rbePurchRec.Text = "Purchase Receiving";
             this.rbePurchRec.TextWrap = true;
             this.rbePurchRec.Click += new System.EventHandler(this.rbePurchRec_Click);
-            // 
-            // rbeBarcodePrinting
-            // 
-            this.rbeBarcodePrinting.Name = "rbeBarcodePrinting";
-            this.rbeBarcodePrinting.Text = "Barcode";
-            this.rbeBarcodePrinting.Click += new System.EventHandler(this.rbeBarcodePrinting_Click);
             // 
             // rrbg_poHelp
             // 
@@ -3666,12 +3665,14 @@
             this.ribbonTab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonTab1.ForeColor = System.Drawing.Color.DarkGreen;
             this.ribbonTab1.Image = global::eMediShop.Properties.Resources.warehouse_16;
-            this.ribbonTab1.IsSelected = false;
+            this.ribbonTab1.IsSelected = true;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup9,
             this.rrbg_cop,
             this.radRibbonBarGroup29,
-            this.radRibbonBarGroup36});
+            this.radRibbonBarGroup36,
+            this.rbbg_localpurchase,
+            this.rrbg_cw});
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Text = "Warehouse";
             // 
@@ -3808,6 +3809,24 @@
             this.rbeIndentChecking.Text = "Indent Checking";
             this.rbeIndentChecking.TextWrap = true;
             this.rbeIndentChecking.Click += new System.EventHandler(this.rbeIndentChecking_Click);
+            // 
+            // rbbg_localpurchase
+            // 
+            this.rbbg_localpurchase.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.rb_w_lp_po});
+            this.rbbg_localpurchase.Name = "rbbg_localpurchase";
+            this.rbbg_localpurchase.Text = "Local Warehouse";
+            // 
+            // rb_w_lp_po
+            // 
+            this.rb_w_lp_po.Name = "rb_w_lp_po";
+            this.rb_w_lp_po.Text = "Purchase Order";
+            this.rb_w_lp_po.Click += new System.EventHandler(this.radButtonElement8_Click_1);
+            // 
+            // rrbg_cw
+            // 
+            this.rrbg_cw.Name = "rrbg_cw";
+            this.rrbg_cw.Text = "Central Warehouse";
             // 
             // ribbonTab4
             // 
@@ -4370,10 +4389,6 @@
             this.rbe_opticalAdv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rbe_opticalAdv.Click += new System.EventHandler(this.rbe_opticalAdv_Click);
             // 
-            // rbeChallanCreate
-            // 
-            this.rbeChallanCreate.Name = "rbeChallanCreate";
-            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4809,7 +4824,6 @@
         private Telerik.WinControls.UI.RadButtonElement rbe_hospCons;
         private Telerik.WinControls.UI.RadButtonElement rbeEstimateDelivery;
         private Telerik.WinControls.UI.RadRibbonBarButtonGroup radRibbonBarButtonGroup7;
-        private Telerik.WinControls.UI.RadButtonElement rbeBarcodePrinting;
         private Telerik.WinControls.UI.RadButtonElement rbeExtraIn;
         private Telerik.WinControls.UI.RadButtonElement rbeView;
         private Telerik.WinControls.UI.RadButtonElement rbeImplantSales;
@@ -4846,5 +4860,8 @@
         private Telerik.WinControls.UI.RadButtonElement rbeStockist_Sales;
         private Telerik.WinControls.UI.RadRibbonBarGroup rrbg_ner;
         private Telerik.WinControls.UI.RadButtonElement rbe_bill;
+        private Telerik.WinControls.UI.RadRibbonBarGroup rrbg_cw;
+        private Telerik.WinControls.UI.RadRibbonBarGroup rbbg_localpurchase;
+        private Telerik.WinControls.UI.RadButtonElement rb_w_lp_po;
     }
 }
