@@ -54,6 +54,8 @@
             this.rgb_info = new Telerik.WinControls.UI.RadGroupBox();
             this.btn_process = new Telerik.WinControls.UI.RadButton();
             this.rgv_detail = new Telerik.WinControls.UI.RadGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ddlNames = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.rddl_order_no)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_dist_info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_dist_info.MasterTemplate)).BeginInit();
@@ -63,13 +65,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_process)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlNames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // rddl_order_no
             // 
             this.rddl_order_no.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rddl_order_no.Location = new System.Drawing.Point(77, 3);
+            this.rddl_order_no.Location = new System.Drawing.Point(221, 30);
             this.rddl_order_no.Name = "rddl_order_no";
             this.rddl_order_no.Size = new System.Drawing.Size(205, 25);
             this.rddl_order_no.TabIndex = 0;
@@ -78,7 +81,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 8);
+            this.label1.Location = new System.Drawing.Point(217, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 20);
             this.label1.TabIndex = 1;
@@ -91,7 +94,7 @@
             this.rgv_dist_info.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.rgv_dist_info.ForeColor = System.Drawing.Color.Black;
             this.rgv_dist_info.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rgv_dist_info.Location = new System.Drawing.Point(-3, 32);
+            this.rgv_dist_info.Location = new System.Drawing.Point(-3, 61);
             // 
             // 
             // 
@@ -146,18 +149,18 @@
             this.rgv_dist_info.ReadOnly = true;
             this.rgv_dist_info.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rgv_dist_info.ShowGroupPanel = false;
-            this.rgv_dist_info.Size = new System.Drawing.Size(483, 513);
+            this.rgv_dist_info.Size = new System.Drawing.Size(483, 484);
             this.rgv_dist_info.TabIndex = 2;
             this.rgv_dist_info.Text = "radGridView1";
             this.rgv_dist_info.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgv_dist_info_CommandCellClick);
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(289, 5);
+            this.btn_submit.Location = new System.Drawing.Point(441, 19);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(65, 24);
+            this.btn_submit.Size = new System.Drawing.Size(39, 36);
             this.btn_submit.TabIndex = 3;
-            this.btn_submit.Text = "Submit";
+            this.btn_submit.Text = ">>";
             this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // rgb_info
@@ -259,11 +262,31 @@
             this.rgv_detail.TabIndex = 3;
             this.rgv_detail.Text = "radGridView1";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Unit/Sub-Warehouse";
+            // 
+            // ddlNames
+            // 
+            this.ddlNames.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlNames.Location = new System.Drawing.Point(7, 30);
+            this.ddlNames.Name = "ddlNames";
+            this.ddlNames.Size = new System.Drawing.Size(205, 25);
+            this.ddlNames.TabIndex = 6;
+            this.ddlNames.Text = "Select";
+            // 
             // Bulk_PO_Distribution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 547);
+            this.Controls.Add(this.ddlNames);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.rgb_info);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.rgv_dist_info);
@@ -288,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_process)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlNames)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -303,5 +327,7 @@
         private Telerik.WinControls.UI.RadGridView rgv_detail;
         private Telerik.WinControls.UI.RadGroupBox rgb_info;
         private Telerik.WinControls.UI.RadButton btn_process;
+        private System.Windows.Forms.Label label2;
+        private Telerik.WinControls.UI.RadDropDownList ddlNames;
     }
 }

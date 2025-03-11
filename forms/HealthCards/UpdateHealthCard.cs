@@ -170,9 +170,8 @@ namespace eMediShop
             p.card_no = _card_no; p.unit_id = GlobalUsage.Unit_id; p.old_cardno = "-"; p.mobile = _card_no;
             p.from = "1900/01/01"; p.to = "1900/01/01"; p.login_id = GlobalUsage.Login_id; p.prm_1 = "-"; p.prm_2 = "-";
             p.Logic = "CardDetailtoEdit";
-            resultSetMIS rsm = MISProxy.CallMISWebApiMethod("HealthCard/GetCard_Queries", p);
-
-            DataSet ds = rsm.ResultSet;
+            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/GetCard_Queries", p);
+            DataSet ds = dwr.result;
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 utxtArea.Text = ds.Tables[0].Rows[0]["Area"].ToString();

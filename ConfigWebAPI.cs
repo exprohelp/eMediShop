@@ -87,37 +87,37 @@ namespace eMediShop
 
         }
     }
-    public static class MISProxy
-    {
-        public static string Baseurl = ConfigurationManager.AppSettings["APIHostPath"].ToString();
-        public static resultSetMIS CallMISWebApiMethod(string methodRoute, Object obj)
-        {
-            resultSetMIS dwr = new resultSetMIS();
-            using (var client = new HttpClient())
-            {
-                try
-                {
-                    client.BaseAddress = new Uri(Baseurl);
-                    HttpResponseMessage response = client.PostAsJsonAsync("api/" + methodRoute + "", obj).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string response_data = response.Content.ReadAsStringAsync().Result;
-                        dwr = JsonConvert.DeserializeObject<resultSetMIS>(response_data, new JsonSerializerSettings
-                        {
-                            NullValueHandling = NullValueHandling.Ignore,
-                            MissingMemberHandling = MissingMemberHandling.Ignore,
-                            Formatting = Formatting.None,
-                            DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                            FloatParseHandling = FloatParseHandling.Decimal
-                        });
-                    }
-                }
-                catch (Exception ex) { dwr.ResultSet = null; dwr.Msg = ex.Message; }
-            }
-            return dwr;
-        }
+    //public static class MISProxy
+    //{
+    //    public static string Baseurl = ConfigurationManager.AppSettings["APIHostPath"].ToString();
+    //    public static resultSetMIS CallMISWebApiMethod(string methodRoute, Object obj)
+    //    {
+    //        resultSetMIS dwr = new resultSetMIS();
+    //        using (var client = new HttpClient())
+    //        {
+    //            try
+    //            {
+    //                client.BaseAddress = new Uri(Baseurl);
+    //                HttpResponseMessage response = client.PostAsJsonAsync("api/" + methodRoute + "", obj).Result;
+    //                if (response.IsSuccessStatusCode)
+    //                {
+    //                    string response_data = response.Content.ReadAsStringAsync().Result;
+    //                    dwr = JsonConvert.DeserializeObject<resultSetMIS>(response_data, new JsonSerializerSettings
+    //                    {
+    //                        NullValueHandling = NullValueHandling.Ignore,
+    //                        MissingMemberHandling = MissingMemberHandling.Ignore,
+    //                        Formatting = Formatting.None,
+    //                        DateFormatHandling = DateFormatHandling.IsoDateFormat,
+    //                        FloatParseHandling = FloatParseHandling.Decimal
+    //                    });
+    //                }
+    //            }
+    //            catch (Exception ex) { dwr.ResultSet = null; dwr.Msg = ex.Message; }
+    //        }
+    //        return dwr;
+    //    }
 
-    }
+    //}
     public static class HISProxy
     {
         public static string Baseurl = ConfigurationManager.AppSettings["APIHospitalHostPath"].ToString();

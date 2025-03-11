@@ -1123,8 +1123,8 @@ namespace eMediShop
                     p.card_no = txtCardNo.Text; p.unit_id = GlobalUsage.Unit_id; p.old_cardno = "-"; p.mobile = txtCardNo.Text;
                     p.from = "1900/01/01"; p.to = "1900/01/01"; p.login_id = GlobalUsage.Login_id; p.prm_1 = "-"; p.prm_2 = "-";
                     p.Logic = logic;
-                    resultSetMIS rsm = MISProxy.CallMISWebApiMethod("HealthCard/GetCard_Queries", p);
-                    ds = rsm.ResultSet;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/GetCard_Queries", p);
+                    ds = dwr.result;
                     if (!txtCardNo.Text.ToUpper().Contains("CORP"))
                     {
                         HealthCardHelp = new ucHealthCardNew(txtCardNo.Text, ds, SearchOption);
@@ -1198,90 +1198,6 @@ namespace eMediShop
         private void btnCompleteCashMemo_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    Cursor.Current = Cursors.WaitCursor;
-
-            //    if (txtInvNo.Text.Substring(0, 1) == "E" && ((Conversion.Val(txtNetValue.Text) > 0) || Conversion.Val(txtNetValue.Text) < 0) && txtPrescribedBy.Text.Length > 4)
-            //    {
-            //        if (GlobalUsage.Posting_Rights == "Y")
-            //        {
-            //            #region Process body
-            //            DialogResult dr = MessageBox.Show("Do You Confirm To Finalize The Bill No. " + txtInvNo.Text + " ? ", "ExPro Help", MessageBoxButtons.YesNo);
-            //            switch (dr)
-            //            {
-            //                case DialogResult.Yes:
-            //                    try
-            //                    {
-            //                        SaleInvoiceFinalization p = new SaleInvoiceFinalization();
-            //                        p.unit_id = GlobalUsage.Unit_id; p.computerName = GlobalUsage.computerName;
-            //                        p.counter_id = GlobalUsage.CounterID; p.Sale_Inv_No = txtInvNo.Text; p.pt_name = txtPatientName.Text;
-            //                        p.gstn_no = "-"; p.HealthCardNo = _healthCardNo; p.Hosp_Cr_No = txtUHIDNO.Text; p.Hosp_IPOP_No = _ipdno;
-            //                        p.rcmOrderNo = _orderNo; p.hd_flag = "N"; p.refBy = _refCode; p.ref_name = txtPrescribedBy.Text;
-            //                        p.payMode = _PayMode; p.payDetail = "-"; p.login_id = GlobalUsage.Login_id; p.sale_type = _saleType;
-            //                        p.couponCode = GlobalUsage.couponCode;
-            //                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/SaleInvoiceFinalization", p);
-            //                        if (!dwr.message.Contains("Success"))
-            //                            MessageBox.Show(_result, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                        else
-            //                        {
-            //                            string[] s = dwr.message.Split(':');
-            //                            txtInvNo.Text = s[1];
-            //                            #region Upgrad Health Card
-            //                            if (_healthCardNo.Length > 100)
-            //                            {
-            //                                ipCardUpgrade pc = new ipCardUpgrade();
-            //                                pc.healthCardNo = _healthCardNo; pc.unit_id = p.unit_id; pc.sale_inv_no = txtInvNo.Text;
-            //                                pc.billAmt = txtNetValue.Text; pc.sale_Date = DateTime.Now.ToShortDateString();
-            //                                pc.order_no = _orderNo; pc.division = "Pharmacy";
-
-            //                                resultSetMIS dwrCard = MISProxy.CallMISWebApiMethod("HealthCard/Healthcard_UpgradeProcess", pc);
-            //                                if (dwrCard.Msg.Contains("Success"))
-            //                                {
-            //                                    cm1 p1 = new cm1();
-            //                                    p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
-            //                                    p1.Logic = "sale_master:cardUpgrd_Flag"; p1.tran_id = txtInvNo.Text;
-            //                                    datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-            //                                }
-            //                            }
-            //                            #endregion
-            //                            printCashMemo(txtInvNo.Text);
-            //                            ResetForNewBill();
-            //                        }
-            //                        if (_hospUhID != "-")
-            //                        {
-            //                            CashCounterUpdatedEventArgs ValueArgs = new CashCounterUpdatedEventArgs(_estimateNo, "Success");
-            //                            CashCounterUpdated(this, ValueArgs);
-            //                            this.Close();
-            //                        }
-            //                    }
-            //                    catch (Exception ex)
-            //                    {
-            //                        MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                    }
-            //                    break;
-            //                case DialogResult.No: break;
-            //            }
-            //            #endregion
-            //        }
-            //        else
-            //        {
-            //            RadMessageBox.Show("Posting of Bill Not Allowed.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
-            //        }
-            //    }
-            //    else if (txtInvNo.Text.Substring(0, 1) == "P")
-            //    {
-            //        if (Convert.ToInt32(txtNetValue.Text) < 20)
-            //            printCashMemo(txtInvNo.Text);
-            //        else
-            //            Printing.Laser.CashMemo(txtInvNo.Text, "Y");
-            //    }
-            //}
-            //catch { }
-            //finally
-            //{
-            //    Cursor.Current = Cursors.Default;
-            //}
 
         }
 

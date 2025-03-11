@@ -824,26 +824,7 @@ namespace eMediShop
                                 {
                                     string[] s = dwr.message.Split(':');
                                     txtInvNo.Text = s[1];
-                                    #region Upgrad Health Card
-                                    if (txtCardNo.Text.Length > 5 && s[2] == "N")
-                                    {
-                                        ipCardUpgrade pc = new ipCardUpgrade();
-                                        pc.healthCardNo = txtCardNo.Text; pc.unit_id = p.unit_id; pc.sale_inv_no = txtInvNo.Text;
-                                        pc.billAmt = txtNetValue.Text; pc.sale_Date = DateTime.Now.ToString("yyyy-MM-dd");
-                                        pc.order_no = _orderNo; pc.division = "Pharmacy";
-                                        string upgradeAPI = "HealthCard/HealthcardUpgradeProcess";
-                                        resultSetMIS dwrCard = MISProxy.CallMISWebApiMethod(upgradeAPI, pc);
-
-                                        if (dwrCard.Msg.Contains("Success"))
-                                        {
-                                            cm1 p1 = new cm1();
-                                            p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
-                                            p1.Logic = "sale_master:cardUpgrd_Flag"; p1.prm_1 = "Y"; p1.tran_id = txtInvNo.Text;
-                                            datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-
-                                        }
-                                    }
-                                    #endregion
+                                   
 
                                     printCashMemo(txtInvNo.Text);
                                     ResetForNewBill();
@@ -1351,8 +1332,8 @@ namespace eMediShop
                     p.card_no = txtCardNo.Text; p.unit_id = GlobalUsage.Unit_id; p.old_cardno = "-"; p.mobile = txtCardNo.Text;
                     p.from = "1900/01/01"; p.to = "1900/01/01"; p.login_id = GlobalUsage.Login_id; p.prm_1 = "-"; p.prm_2 = "-";
                     p.Logic = logic;
-                    resultSetMIS rsm = MISProxy.CallMISWebApiMethod("HealthCard/GetCard_Queries", p);
-                    ds = rsm.ResultSet;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/GetCard_Queries", p);
+                    ds = dwr.result;
                     if (ds.Tables[1].Rows.Count == 0)
                     {
                         RadMessageBox.Show("Information Not Found.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);

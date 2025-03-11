@@ -88,8 +88,8 @@ namespace eMediShop.ManualSales
                     p.card_no = txtCardNo.Text; p.unit_id = GlobalUsage.Unit_id; p.old_cardno = "-"; p.mobile = txtCardNo.Text;
                     p.from = "1900/01/01"; p.to = "1900/01/01"; p.login_id = GlobalUsage.Login_id; p.prm_1 = "-"; p.prm_2 = "-";
                     p.Logic = logic;
-                    resultSetMIS rsm = MISProxy.CallMISWebApiMethod("HealthCard/GetCard_Queries", p);
-                    ds = rsm.ResultSet;
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/GetCard_Queries", p);
+                    ds = dwr.result;
                     if (ds.Tables[1].Rows.Count == 0)
                     {
                         RadMessageBox.Show("Information Not Found.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);

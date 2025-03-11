@@ -31,6 +31,10 @@ namespace eMediShop.warehouse
                 rddl_order_no.DataSource = dwr.result.Tables[0];
                 rddl_order_no.ValueMember = "order_no";
                 rddl_order_no.DisplayMember = "order_no";
+                ddlNames.DataSource= dwr.result.Tables[1];
+                ddlNames.ValueMember = "unit_id";
+                ddlNames.DisplayMember = "sh_name";
+                ddlNames.SelectedValue = GlobalUsage.Unit_id;
             }
             catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
             finally { Cursor.Current = Cursors.Default; }

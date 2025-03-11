@@ -259,7 +259,7 @@ namespace eMediShop.WholeSales
                 p.sale_inv_no = rtbSaleInvNo.Text; p.party_id = _partyid; p.account_id = rtb_accountid.Text;
                 p.item_id = _itemid; p.master_key_id = _masterkeyid;
                 p.SoldQtyInPacks = SoldPacks = Convert.ToDecimal(rtbSoldQty.Text) / Convert.ToDecimal(rtb_packqty.Text);
-                ;
+                
                 p.order_no = cmbChallanNo.Text;
                 p.freeItems = SoldPacksFree;
                 p.discountPercent = Convert.ToDecimal(txtDisPer.Text);

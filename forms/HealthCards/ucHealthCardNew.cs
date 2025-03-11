@@ -266,9 +266,7 @@ namespace eMediShop
                 }
                 Cursor.Current = Cursors.WaitCursor;
 
-                //string result = GlobalUsage.pharmacy_proxy.Insert_CustCardInfowithMemberNew(GlobalUsage.Unit_id, txtNewCardNo.Text, "M", "P", txtPName.Text, 
-                //    ddlPGender.Text, dob, txtPmobile.Text, utxtArea.Text, utxtLocality.Text, txtDistName.Text, txtStateName.Text, utxtEmail.Text, utxtPin.Text, "Insert", dsmembers, GlobalUsage.Login_id);
-
+          
                 ipCardDetail cd = new ipCardDetail();
                 cd.unit_id = GlobalUsage.Unit_id; cd.card_no = txtNewCardNo.Text; cd.member_id = "M"; cd.m_type = "P";
                 cd.cust_name = txtPName.Text; cd.gender = ddlgender.Text; cd.dob = dob; cd.mobileno = txtPmobile.Text; cd.area = utxtArea.Text;
@@ -277,10 +275,10 @@ namespace eMediShop
 
                 List<object> obj = new List<object>();
                 obj.Add(cd); obj.Add(memberList);
+       
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/Insert_CustCardInfowithMember", obj);
 
-                resultSetMIS dwr = MISProxy.CallMISWebApiMethod("HealthCard/Insert_CustCardInfowithMember", obj);
-
-                if (dwr.Msg.Contains("Success"))
+                if (dwr.message.Contains("Success"))
                 {
                     string CardNo = txtNewCardNo.Text;
                     string cust_name = txtPName.Text.ToUpperInvariant();
@@ -288,7 +286,7 @@ namespace eMediShop
                     SearchUpdated(this, valueArgs);
                 }
                 else
-                { RadMessageBox.Show(dwr.Msg, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
+                { RadMessageBox.Show(dwr.message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
             }
             catch (Exception ex) { }
             finally { Cursor.Current = Cursors.Default; }
@@ -322,13 +320,11 @@ namespace eMediShop
                 Cursor.Current = Cursors.WaitCursor;
                 if (_card_no.Length > 5 && txtNewCard.Text.Trim().Length > 5)
                 {
-                    //string result = GlobalUsage.pharmacy_proxy.ReplaceCard(_oldCardNo, txtNewCard.Text, GlobalUsage.Unit_id, "ReplaceCard", GlobalUsage.Login_id);
                     ipHealthCard p = new ipHealthCard();
                     p.old_cardno = _oldCardNo; p.card_no = txtNewCard.Text; p.unit_id = GlobalUsage.Unit_id; p.Logic = "ReplaceCard"; p.login_id = GlobalUsage.Login_id;
-
-                    resultSetMIS dwr = MISProxy.CallMISWebApiMethod("HealthCard/ReplaceCard", p);
-
-                    RadMessageBox.Show(dwr.Msg, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    
+                    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/ReplaceCard", p);
+                    RadMessageBox.Show(dwr.message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
                 else
                 {
@@ -408,7 +404,7 @@ namespace eMediShop
                     string[] r = dwr.message.Split('|');
                     ipSms p1 = new ipSms();
                     p1.Message = r[1] + " is your Chandan Member Verification Code."; p1.MobileNo = txtValidateMobile_Coupon.Text;
-                    resultSetMIS dwr1 = MISProxy.CallMISWebApiMethod("Utility/SendSms", p1);
+                    ConfigWebAPI.CallAPI("api/Utility/SendSms", p1);
                 }
                 else
                 { string[] r = dwr.message.Split('|');

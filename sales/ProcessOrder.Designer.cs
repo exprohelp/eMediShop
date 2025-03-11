@@ -69,6 +69,10 @@
             this.itemname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.STOCK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnPrintIS = new Telerik.WinControls.UI.RadButton();
+            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
+            this.rtBtn = new Telerik.WinControls.UI.RadToggleButton();
+            this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.ItemSaleGrid = new System.Windows.Forms.ListView();
             this.item_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.item_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -109,11 +113,9 @@
             this.SubmitButton = new Telerik.WinControls.UI.RadButton();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.lblHd = new System.Windows.Forms.Label();
-            this.btnPrintIS = new Telerik.WinControls.UI.RadButton();
-            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
             this.rbtn_prescription = new Telerik.WinControls.UI.RadButton();
-            this.rtBtn = new Telerik.WinControls.UI.RadToggleButton();
-            this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rcp_panel)).BeginInit();
@@ -124,9 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SubmitButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbtn_prescription)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,6 +296,48 @@
             this.Quantity.Text = "O.Qty";
             this.Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Quantity.Width = 45;
+            // 
+            // btnPrintIS
+            // 
+            this.btnPrintIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintIS.Image = global::eMediShop.Properties.Resources.printer;
+            this.btnPrintIS.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrintIS.Location = new System.Drawing.Point(520, 376);
+            this.btnPrintIS.Name = "btnPrintIS";
+            this.btnPrintIS.Size = new System.Drawing.Size(73, 27);
+            this.btnPrintIS.TabIndex = 305;
+            this.toolTip1.SetToolTip(this.btnPrintIS, "Print Internal Paper");
+            this.btnPrintIS.Click += new System.EventHandler(this.btnPrintIS_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.printer;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Shape = this.roundRectShape1;
+            // 
+            // rtBtn
+            // 
+            this.rtBtn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.rtBtn.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.rtBtn.Image = global::eMediShop.Properties.Resources.Pedistrain_32;
+            this.rtBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rtBtn.Location = new System.Drawing.Point(8, 498);
+            this.rtBtn.Name = "rtBtn";
+            // 
+            // 
+            // 
+            this.rtBtn.RootElement.Shape = this.ellipseShape1;
+            this.rtBtn.Size = new System.Drawing.Size(41, 38);
+            this.rtBtn.TabIndex = 298;
+            this.rtBtn.Tag = "Self";
+            this.rtBtn.Text = "radToggleButton1";
+            this.rtBtn.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.toolTip1.SetToolTip(this.rtBtn, "Self Collection");
+            this.rtBtn.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.rtBtn_ToggleStateChanged);
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.Pedistrain_32;
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Text = "radToggleButton1";
+            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Shape = this.ellipseShape1;
             // 
             // ItemSaleGrid
             // 
@@ -871,22 +913,6 @@
             this.lblHd.Tag = "Discount";
             this.lblHd.Text = "Home Delivery : Y";
             // 
-            // btnPrintIS
-            // 
-            this.btnPrintIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintIS.Image = global::eMediShop.Properties.Resources.printer;
-            this.btnPrintIS.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPrintIS.Location = new System.Drawing.Point(520, 376);
-            this.btnPrintIS.Name = "btnPrintIS";
-            this.btnPrintIS.Size = new System.Drawing.Size(73, 27);
-            this.btnPrintIS.TabIndex = 305;
-            this.toolTip1.SetToolTip(this.btnPrintIS, "Print Internal Paper");
-            this.btnPrintIS.Click += new System.EventHandler(this.btnPrintIS_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.printer;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Text = "";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Shape = this.roundRectShape1;
-            // 
             // rbtn_prescription
             // 
             this.rbtn_prescription.Enabled = false;
@@ -897,32 +923,6 @@
             this.rbtn_prescription.Size = new System.Drawing.Size(30, 32);
             this.rbtn_prescription.TabIndex = 297;
             this.rbtn_prescription.Click += new System.EventHandler(this.rbtn_prescription_Click);
-            // 
-            // rtBtn
-            // 
-            this.rtBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rtBtn.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.rtBtn.Image = global::eMediShop.Properties.Resources.Pedistrain_32;
-            this.rtBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rtBtn.Location = new System.Drawing.Point(8, 498);
-            this.rtBtn.Name = "rtBtn";
-            // 
-            // 
-            // 
-            this.rtBtn.RootElement.Shape = this.ellipseShape1;
-            this.rtBtn.Size = new System.Drawing.Size(41, 38);
-            this.rtBtn.TabIndex = 298;
-            this.rtBtn.Tag = "Self";
-            this.rtBtn.Text = "radToggleButton1";
-            this.rtBtn.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            this.toolTip1.SetToolTip(this.rtBtn, "Self Collection");
-            this.rtBtn.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.rtBtn_ToggleStateChanged);
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.Pedistrain_32;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Text = "radToggleButton1";
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.rtBtn.GetChildAt(0))).Shape = this.ellipseShape1;
             // 
             // ProcessOrder
             // 
@@ -950,6 +950,8 @@
             this.Text = "Customer Order Process Window";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ucProcessOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks)).EndInit();
             this.rcp_panel.PanelContainer.ResumeLayout(false);
@@ -961,9 +963,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbtn_prescription)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

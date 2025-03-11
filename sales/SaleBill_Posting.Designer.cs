@@ -446,7 +446,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 68);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 15);
+            this.label9.Size = new System.Drawing.Size(88, 15);
             this.label9.TabIndex = 144;
             this.label9.Text = "Neft/RTGS/Chq";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -682,9 +682,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(15, 8);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(163, 20);
+            this.label19.Size = new System.Drawing.Size(147, 20);
             this.label19.TabIndex = 169;
-            this.label19.Text = "Redeem Wallet Money ";
+            this.label19.Text = "Redeem Wallet Point";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkHomeDelivery

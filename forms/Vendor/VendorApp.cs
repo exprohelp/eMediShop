@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.IO;
 using System.Data.SqlClient;
-using ExPro.Client;
-using ExPro.Server;
+using System.Drawing;
+using System.Windows.Forms;
 using Telerik.WinControls;
 
 namespace eMediShop
@@ -134,8 +128,8 @@ namespace eMediShop
                 table.Columns.Add("account_id", typeof(string));
                 table.Columns.Add("created_by", typeof(string));
                 table.Rows.Add("New", txtVendorName.Text, txtContactPerson.Text, txtAddress.Text, "-", "-", ddlDistrict.Text,
-                    ddlState.Text,"-",txtPhoneNo.Text, "-", "Cash", 30, txtTinNo.Text, "-", GlobalUsage.Login_id);
-                 cm3 p = new cm3();
+                    ddlState.Text, "-", txtPhoneNo.Text, "-", "Cash", 30, txtTinNo.Text, "-", GlobalUsage.Login_id);
+                cm3 p = new cm3();
                 p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
                 p.Logic = "ForApp:Insert"; p.dt = table; p.prm_1 = "ForApp:Insert";
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/vendor/Insert_Modify_Vendor_Master", p);
@@ -203,7 +197,7 @@ namespace eMediShop
             if ((e.KeyChar < '0') || (e.KeyChar > '9'))
             {
                 chk = true;
-              
+
             }
         }
 
@@ -211,15 +205,15 @@ namespace eMediShop
         {
             #region Fill Vendor For Acknowledge Paper
             DataSet ds = new DataSet();
-           
+
             cm1 p = new cm1();
-            p.unit_id = GlobalUsage.Unit_id;p.Logic = "Pending-Ack"; p.login_id = GlobalUsage.Login_id;
+            p.unit_id = GlobalUsage.Unit_id; p.Logic = "Pending-Ack"; p.login_id = GlobalUsage.Login_id;
             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/vendor/VendorQueries", p);
             ds = dwr.result;
             if (ds.Tables[0].Rows.Count > 0)
             {
                 rgv_vendorInfo.DataSource = ds.Tables[0];
-           
+
             }
             #endregion
         }
@@ -261,7 +255,7 @@ namespace eMediShop
             }
             #endregion
         }
-     
+
         private void tabControl1_TabIndexChanged(object sender, EventArgs e)
         {
 
@@ -281,13 +275,14 @@ namespace eMediShop
                 fillAllVendor();
             }
         }
-        private void fillAllVendor() {
+        private void fillAllVendor()
+        {
             cm1 p = new cm1();
             p.unit_id = GlobalUsage.Unit_id; p.Logic = "Vendor-List"; p.login_id = GlobalUsage.Login_id;
             datasetWithResult dwr = ConfigWebAPI.CallAPI("api/vendor/VendorQueries", p);
             rgv_info.DataSource = dwr.result.Tables[0];
         }
-      
+
 
         private void lv_accountApp_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
@@ -338,11 +333,11 @@ namespace eMediShop
                 table.Columns.Add("account_id", typeof(string));
                 table.Columns.Add("created_by", typeof(string));
                 table.Rows.Add(e.Row.Cells["vendor_id"].Value.ToString(),
-                    e.Row.Cells["vendor_name"].Value.ToString(), 
+                    e.Row.Cells["vendor_name"].Value.ToString(),
                     "-", e.Row.Cells["address1"].Value.ToString(), "-", "-", e.Row.Cells["city"].Value.ToString(),
                     e.Row.Cells["state"].Value.ToString(), "-", "-", "-", "Cash", 30,
                     "-", e.Row.Cells["ac_code"].Value.ToString(), GlobalUsage.Login_id);
-               
+
                 cm3 p = new cm3();
                 p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
                 p.Logic = "Merge"; p.dt = table;
@@ -377,7 +372,7 @@ namespace eMediShop
             }
             catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
             finally { Cursor.Current = Cursors.Default; }
-           
+
         }
     }
 }

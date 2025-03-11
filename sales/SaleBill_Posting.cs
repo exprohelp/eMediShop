@@ -433,26 +433,7 @@ namespace eMediShop.sales
                             {
                                 string[] s = dwr.message.Split(':');
                                 _saleInvNo = s[1];
-                                #region Upgrad Health Card
-                                if (_card_no.Length > 5 && s[2] == "N")
-                                {
-                                    ipCardUpgrade pc = new ipCardUpgrade();
-                                    pc.healthCardNo = _card_no; pc.unit_id = p.unit_id; pc.sale_inv_no = _saleInvNo;
-                                    pc.billAmt = txtnetPayable.Text; pc.sale_Date = DateTime.Now.ToString("yyyy-MM-dd");
-                                    pc.order_no = _orderNo; pc.division = "Pharmacy";
-                                    string upgradeAPI = "HealthCard/HealthcardUpgradeProcess";
-                                    resultSetMIS dwrCard = MISProxy.CallMISWebApiMethod(upgradeAPI, pc);
 
-                                    if (dwrCard.Msg.Contains("Success"))
-                                    {
-                                        cm1 p1 = new cm1();
-                                        p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
-                                        p1.Logic = "sale_master:cardUpgrd_Flag"; p1.prm_1 = "Y"; p1.tran_id = _saleInvNo;
-                                        datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-
-                                    }
-                                }
-                                #endregion
                                 BillPostingUpdatedEventArgs ValuArgs = new BillPostingUpdatedEventArgs(_saleInvNo, "POSTED");
                                 eventBillUpdated(this, ValuArgs);
                                 Cursor.Current = Cursors.Default;

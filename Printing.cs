@@ -120,6 +120,7 @@ namespace eMediShop
                     rpt.Database.Tables["Bill_Info"].SetDataSource(ds.Tables[3]);
                     rpt.Database.Tables["Bill_Summary"].SetDataSource(ds.Tables[2]);
                     rpt.Database.Tables["items"].SetDataSource(ds.Tables[5]);
+                    rpt.SetParameterValue("comp_name", GlobalUsage.Company);
                     rpt.PrintToPrinter(1, false, 1, 0);
                     string path = Application.StartupPath.Substring(0, 2) + "\\cashmemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
                     System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
