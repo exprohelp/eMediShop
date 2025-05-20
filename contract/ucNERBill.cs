@@ -34,13 +34,35 @@ namespace eMediShop.contract
 
         private void rgv_info_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    selectQry p = new selectQry();
+            //    p.unitID = GlobalUsage.Unit_id; p.Logic = "NER:BillInfo";
+            //    p.tranId = e.Row.Cells["sale_inv_no"].Value.ToString();
+            //    p.prm_1 = e.Row.Cells["category"].Value.ToString();
+            //    p.prm_2 = "-";
+
+            //    p.prm_3 = "-"; p.loginId = GlobalUsage.Login_id;
+            //    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ContractQueries", p);
+            //    DataSet ds = dwr.result;
+            //    DialogResult res = RadMessageBox.Show("Do You want to Print (Y/N)? ", "ExPro Help", MessageBoxButtons.YesNo);
+            //    if (res == DialogResult.Yes)
+            //    {
+            //        Printing.Laser.NER_Bill(ds, e.Row.Cells["sale_inv_no"].Value.ToString());
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{ }
+            //finally { Cursor.Current = Cursors.Default; }
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
                 selectQry p = new selectQry();
-                p.unitID = GlobalUsage.Unit_id; p.Logic = "NER:BillInfo";
+                p.unitID = GlobalUsage.Unit_id; p.Logic = "NER:BillInfo2";
                 p.tranId = e.Row.Cells["sale_inv_no"].Value.ToString();
-                p.prm_1 = e.Row.Cells["category"].Value.ToString();
+                p.prm_1 = "-";
                 p.prm_2 = "-";
 
                 p.prm_3 = "-"; p.loginId = GlobalUsage.Login_id;
@@ -49,7 +71,7 @@ namespace eMediShop.contract
                 DialogResult res = RadMessageBox.Show("Do You want to Print (Y/N)? ", "ExPro Help", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
-                    Printing.Laser.NER_Bill(ds, e.Row.Cells["sale_inv_no"].Value.ToString());
+                    Printing.Laser.NER_Bill2(ds, p.tranId);
                 }
 
             }
@@ -68,6 +90,32 @@ namespace eMediShop.contract
         private void rdtpFrom_Leave(object sender, EventArgs e)
         {
             rdtpTo.MinDate = rdtpFrom.Value;
+        }
+
+        private void btn_Consolidated_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                selectQry p = new selectQry();
+                p.unitID = GlobalUsage.Unit_id; p.Logic = "NER:BillInfo2";
+                p.tranId = rgv_info.CurrentRow.Cells["sale_inv_no"].Value.ToString();
+                p.prm_1 = "-";
+                p.prm_2 = "-";
+
+                p.prm_3 = "-"; p.loginId = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/ContractQueries", p);
+                DataSet ds = dwr.result;
+                DialogResult res = RadMessageBox.Show("Do You want to Print (Y/N)? ", "ExPro Help", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    Printing.Laser.NER_Bill2(ds, p.tranId);
+                }
+
+            }
+            catch (Exception ex)
+            { }
+            finally { Cursor.Current = Cursors.Default; }
         }
     }
 }

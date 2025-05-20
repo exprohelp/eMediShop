@@ -13,7 +13,8 @@ namespace eMediShop.WholeSales
     public partial class WholeSale_Window : Telerik.WinControls.UI.RadForm
     {
         DataSet _ds = new DataSet(); string _result = string.Empty; string _itemid = string.Empty;
-        string _masterkeyid = string.Empty; decimal _UnitSaleRate = 0; string _partyid = string.Empty; string _accountid = string.Empty; string _gstn_no = string.Empty;
+        string _masterkeyid = string.Empty; decimal _UnitSaleRate = 0; string _partyid = string.Empty;
+        string _accountid = string.Empty; string _gstn_no = string.Empty;string _saleProcess = string.Empty;
         Int32 _qty = 0;
         public WholeSale_Window()
         {
@@ -206,7 +207,7 @@ namespace eMediShop.WholeSales
         {
             if (rtbSoldQty.Text.Length > 0)
             {
-                if (Convert.ToDecimal(rtbSoldQty.Text) % Convert.ToDecimal(rtb_packqty.Text) > 0)
+                if ((Convert.ToDecimal(rtbSoldQty.Text) % Convert.ToDecimal(rtb_packqty.Text) > 0) && _saleProcess== "In-Packs")
                 {
                     MessageBox.Show("Quanty Should be in multiple of pack qty", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     rtbSoldQty.Focus();
@@ -290,6 +291,7 @@ namespace eMediShop.WholeSales
                 _partyid = rgv_parties.CurrentRow.Cells["party_id"].Value.ToString();
                 _accountid = rgv_parties.CurrentRow.Cells["account_id"].Value.ToString();
                 _gstn_no = rgv_parties.CurrentRow.Cells["gstn_no"].Value.ToString();
+                _saleProcess = rgv_parties.CurrentRow.Cells["saleProcess"].Value.ToString();
 
                 rtb_accountid.Text = _accountid;
                 this.rgv_parties.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterTemplate_KeyDown_1);

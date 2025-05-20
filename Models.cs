@@ -337,6 +337,9 @@ namespace eMediShop
         public string login_id { get; set; }
         public byte[] dataInBytes { get; set; }
         public string doc_path { get; set; }
+        public string filename { get; set; }
+        public string extension { get; set; }
+
     }
     public class pm_sales
     {

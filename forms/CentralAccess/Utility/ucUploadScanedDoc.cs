@@ -73,10 +73,14 @@ namespace eMediShop
         {
             try
             {
-               Cursor.Current = Cursors.WaitCursor;
+                FileInfo fi = new FileInfo(txtpath.Text);
+
+                Cursor.Current = Cursors.WaitCursor;
                btnSave.Enabled = false;
                 pm_documents p = new pm_documents();
                 p.DocId = _DocId;p.DocType = _DocType;p.login_id = GlobalUsage.Login_id;p.unit_id = GlobalUsage.Unit_id;
+                p.extension = fi.Extension;
+                p.filename = fi.Name;
                 p.dataInBytes = System.IO.File.ReadAllBytes(txtpath.Text);
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/documents/InsertScanedDocuments", p);
                 _result = dwr.message;

@@ -59,7 +59,6 @@
             Telerik.WinControls.UI.GridViewSummaryItem gridViewSummaryItem1 = new Telerik.WinControls.UI.GridViewSummaryItem();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.btnBarCodePrint = new Telerik.WinControls.UI.RadButton();
             this.btnLocationSheet = new Telerik.WinControls.UI.RadButton();
             this.rbtn_PrintBil = new Telerik.WinControls.UI.RadButton();
             this.rbtn_Submit = new Telerik.WinControls.UI.RadButton();
@@ -71,7 +70,6 @@
             this.gvt_Detail = new Telerik.WinControls.UI.GridViewTemplate();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBarCodePrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLocationSheet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbtn_PrintBil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbtn_Submit)).BeginInit();
@@ -87,7 +85,6 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.btnBarCodePrint);
             this.radGroupBox1.Controls.Add(this.btnLocationSheet);
             this.radGroupBox1.Controls.Add(this.rbtn_PrintBil);
             this.radGroupBox1.Controls.Add(this.rbtn_Submit);
@@ -100,19 +97,6 @@
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(124, 514);
             this.radGroupBox1.TabIndex = 0;
-            // 
-            // btnBarCodePrint
-            // 
-            this.btnBarCodePrint.Enabled = false;
-            this.btnBarCodePrint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBarCodePrint.Image = global::eMediShop.Properties.Resources.barcode;
-            this.btnBarCodePrint.Location = new System.Drawing.Point(5, 358);
-            this.btnBarCodePrint.Name = "btnBarCodePrint";
-            this.btnBarCodePrint.Size = new System.Drawing.Size(110, 57);
-            this.btnBarCodePrint.TabIndex = 7;
-            this.btnBarCodePrint.Text = "QR Label";
-            this.btnBarCodePrint.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBarCodePrint.Click += new System.EventHandler(this.btnBarCodePrint_Click);
             // 
             // btnLocationSheet
             // 
@@ -409,7 +393,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBarCodePrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLocationSheet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbtn_PrintBil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rbtn_Submit)).EndInit();
@@ -436,6 +419,5 @@
         private Telerik.WinControls.UI.GridViewTemplate gvt_Detail;
         private Telerik.WinControls.UI.RadButton rbtn_PrintBil;
         private Telerik.WinControls.UI.RadButton btnLocationSheet;
-        private Telerik.WinControls.UI.RadButton btnBarCodePrint;
     }
 }

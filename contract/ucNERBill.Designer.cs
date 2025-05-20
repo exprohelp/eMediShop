@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rgv_info = new Telerik.WinControls.UI.RadGridView();
+            this.btn_Consolidated = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.rgCriteria)).BeginInit();
             this.rgCriteria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo)).BeginInit();
@@ -49,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rdtpFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_info.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Consolidated)).BeginInit();
             this.SuspendLayout();
             // 
             // rgCriteria
@@ -168,10 +170,21 @@
             this.rgv_info.Text = "radGridView1";
             this.rgv_info.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgv_info_CommandCellClick);
             // 
+            // btn_Consolidated
+            // 
+            this.btn_Consolidated.Location = new System.Drawing.Point(149, 481);
+            this.btn_Consolidated.Name = "btn_Consolidated";
+            this.btn_Consolidated.Size = new System.Drawing.Size(121, 24);
+            this.btn_Consolidated.TabIndex = 6;
+            this.btn_Consolidated.Text = "Consolidated Bill";
+            this.btn_Consolidated.Visible = false;
+            this.btn_Consolidated.Click += new System.EventHandler(this.btn_Consolidated_Click);
+            // 
             // ucNERBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_Consolidated);
             this.Controls.Add(this.rgv_info);
             this.Controls.Add(this.rgCriteria);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rdtpFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_info.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_info)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Consolidated)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +214,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadGridView rgv_info;
+        private Telerik.WinControls.UI.RadButton btn_Consolidated;
     }
 }

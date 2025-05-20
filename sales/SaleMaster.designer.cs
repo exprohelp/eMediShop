@@ -54,6 +54,7 @@ namespace eMediShop.sales
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb_ByMobile = new System.Windows.Forms.RadioButton();
             this.rb_byCard = new System.Windows.Forms.RadioButton();
+            this.txtCardNo = new Telerik.WinControls.UI.RadTextBox();
             this.txtCardStatus = new System.Windows.Forms.TextBox();
             this.txtPrescribedBy = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -162,8 +163,8 @@ namespace eMediShop.sales
             this.txtVMobile = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
-            this.txtCardNo = new Telerik.WinControls.UI.RadTextBox();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtWallet)).BeginInit();
@@ -201,7 +202,6 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -407,6 +407,18 @@ namespace eMediShop.sales
             this.rb_byCard.Text = "By Card";
             this.rb_byCard.UseVisualStyleBackColor = true;
             this.rb_byCard.CheckedChanged += new System.EventHandler(this.rb_byCard_CheckedChanged);
+            // 
+            // txtCardNo
+            // 
+            this.txtCardNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCardNo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardNo.Location = new System.Drawing.Point(14, 41);
+            this.txtCardNo.Name = "txtCardNo";
+            this.txtCardNo.NullText = "Press Enter Key After Typing";
+            this.txtCardNo.Size = new System.Drawing.Size(180, 24);
+            this.txtCardNo.TabIndex = 2;
+            this.txtCardNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCardNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCardNo_KeyDown);
             // 
             // txtCardStatus
             // 
@@ -1747,18 +1759,6 @@ namespace eMediShop.sales
             this.label18.Text = "Mobile No.";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtCardNo
-            // 
-            this.txtCardNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCardNo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNo.Location = new System.Drawing.Point(14, 41);
-            this.txtCardNo.Name = "txtCardNo";
-            this.txtCardNo.NullText = "Press Enter Key After Typing";
-            this.txtCardNo.Size = new System.Drawing.Size(180, 24);
-            this.txtCardNo.TabIndex = 2;
-            this.txtCardNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCardNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCardNo_KeyDown);
-            // 
             // SaleMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1783,6 +1783,7 @@ namespace eMediShop.sales
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleMaster_KeyDown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -1825,7 +1826,6 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

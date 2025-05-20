@@ -279,6 +279,7 @@
             this.ddlNames.Size = new System.Drawing.Size(205, 25);
             this.ddlNames.TabIndex = 6;
             this.ddlNames.Text = "Select";
+            this.ddlNames.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ddlNames_SelectedIndexChanged);
             // 
             // Bulk_PO_Distribution
             // 

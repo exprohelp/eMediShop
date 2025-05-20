@@ -13,9 +13,9 @@ namespace eMediShop.forms.CentralAccess.Purchase
 {
     public partial class uc_PurchaseRegister : UserControl
     {
-        string _prnFilePath = ConfigurationManager.AppSettings["LabelPrinterFile"].ToString();
-        //@"C:\Users\expro\OneDrive\Desktop\PharmacyQrCode.prn"; // Path to your PRN file
-        string _printerName = ConfigurationManager.AppSettings["LabelPrinterName"].ToString();
+        //string _prnFilePath = ConfigurationManager.AppSettings["LabelPrinterFile"].ToString();
+        ////@"C:\Users\expro\OneDrive\Desktop\PharmacyQrCode.prn"; // Path to your PRN file
+        //string _printerName = ConfigurationManager.AppSettings["LabelPrinterName"].ToString();
 
         string _fileContent = string.Empty;
 
@@ -96,7 +96,6 @@ namespace eMediShop.forms.CentralAccess.Purchase
                 _invDate = Convert.ToDateTime(e.ParentRow.Cells["Inv Date"].Value).ToString("dd-MM-yyyy");
                 _invNumber = e.ParentRow.Cells["Inv No."].Value.ToString();
                 rbtn_PrintBil.Enabled = true;
-                btnBarCodePrint.Enabled = true;
                 pm_PurchaseQueries p = new pm_PurchaseQueries();
                 p.unit_id = GlobalUsage.Unit_id; p.Purchase_id = _purch_id; p.logic = "PurchaseBillDetail"; p.prm_1 = _purch_id; p.prm_2 = "N/A"; p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/PurchaseQueries", p);
@@ -154,7 +153,6 @@ namespace eMediShop.forms.CentralAccess.Purchase
 
                     crReport.PrintToPrinter(0, false, 1, 2);
                     rbtn_PrintBil.Enabled = false;
-                    btnBarCodePrint.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -194,38 +192,38 @@ namespace eMediShop.forms.CentralAccess.Purchase
             Cursor.Current = Cursors.Default;
         }
 
-        private void btnBarCodePrint_Click(object sender, EventArgs e)
-        {
-            _fileContent = System.IO.File.ReadAllText(_prnFilePath);
-            foreach (DataRow row in _ds.Tables[0].Rows)
-            {
-                printLabel(row["item_name"].ToString(),
-                    row["batch_no"].ToString(),
-                    row["exp date"].ToString(),
-                    row["mrp"].ToString(),
-                    row["master_key_id"].ToString(),
-                    Convert.ToInt16(row["purchPackQty"])
-                    );
-            }
-            btnBarCodePrint.Enabled = false;
-        }
+        //private void btnBarCodePrint_Click(object sender, EventArgs e)
+        //{
+        //    _fileContent = System.IO.File.ReadAllText(_prnFilePath);
+        //    foreach (DataRow row in _ds.Tables[0].Rows)
+        //    {
+        //        printLabel(row["item_name"].ToString(),
+        //            row["batch_no"].ToString(),
+        //            row["exp date"].ToString(),
+        //            row["mrp"].ToString(),
+        //            row["master_key_id"].ToString(),
+        //            Convert.ToInt16(row["purchPackQty"])
+        //            );
+        //    }
+        //    btnBarCodePrint.Enabled = false;
+        //}
 
-        private void printLabel(string product,string batch,string expiry,string mrp,string mkey,int nos)
-        {
+        //private void printLabel(string product,string batch,string expiry,string mrp,string mkey,int nos)
+        //{
 
-            string ReplfileContent = _fileContent.Replace("{product}", product);
-            ReplfileContent = ReplfileContent.Replace("{batch}", batch);
-            ReplfileContent = ReplfileContent.Replace("{expiry}", expiry);
-            ReplfileContent = ReplfileContent.Replace("{mrp}", mrp);
-            ReplfileContent = ReplfileContent.Replace("{masterkey}", mkey);
+        //    string ReplfileContent = _fileContent.Replace("{product}", product);
+        //    ReplfileContent = ReplfileContent.Replace("{batch}", batch);
+        //    ReplfileContent = ReplfileContent.Replace("{expiry}", expiry);
+        //    ReplfileContent = ReplfileContent.Replace("{mrp}", mrp);
+        //    ReplfileContent = ReplfileContent.Replace("{masterkey}", mkey);
 
-            for(int i=0; i<=nos; i++)
-            {
-                // Read the PRN file
-                byte[] fileBytes = Encoding.UTF8.GetBytes(ReplfileContent);
-                eMediShop.RawPrinterHelper.SendBytesToPrinter(_printerName, fileBytes);
-            }
-        }
+        //    for(int i=0; i<=nos; i++)
+        //    {
+        //        // Read the PRN file
+        //        byte[] fileBytes = Encoding.UTF8.GetBytes(ReplfileContent);
+        //        eMediShop.RawPrinterHelper.SendBytesToPrinter(_printerName, fileBytes);
+        //    }
+        //}
 
 
     }

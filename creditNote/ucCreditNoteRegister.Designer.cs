@@ -62,9 +62,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnestimate = new Telerik.WinControls.UI.RadButton();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.rgv_detail = new Telerik.WinControls.UI.RadGridView();
-            this.btnestimate = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.rpv_CreditNoteMaster)).BeginInit();
             this.rpv_CreditNoteMaster.SuspendLayout();
             this.dp_to.SuspendLayout();
@@ -74,11 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rdp_to)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdp_from)).BeginInit();
             this.radPageViewPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnestimate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnestimate)).BeginInit();
             this.SuspendLayout();
             // 
             // rpv_CreditNoteMaster
@@ -89,7 +89,7 @@
             this.rpv_CreditNoteMaster.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rpv_CreditNoteMaster.Location = new System.Drawing.Point(0, 0);
             this.rpv_CreditNoteMaster.Name = "rpv_CreditNoteMaster";
-            this.rpv_CreditNoteMaster.SelectedPage = this.dp_to;
+            this.rpv_CreditNoteMaster.SelectedPage = this.radPageViewPage2;
             this.rpv_CreditNoteMaster.Size = new System.Drawing.Size(1200, 500);
             this.rpv_CreditNoteMaster.TabIndex = 0;
             // 
@@ -101,10 +101,10 @@
             this.dp_to.Controls.Add(this.rdp_from);
             this.dp_to.Controls.Add(this.label2);
             this.dp_to.Controls.Add(this.label1);
-            this.dp_to.ItemSize = new System.Drawing.SizeF(152F, 30F);
-            this.dp_to.Location = new System.Drawing.Point(10, 39);
+            this.dp_to.ItemSize = new System.Drawing.SizeF(156F, 34F);
+            this.dp_to.Location = new System.Drawing.Point(10, 43);
             this.dp_to.Name = "dp_to";
-            this.dp_to.Size = new System.Drawing.Size(1179, 450);
+            this.dp_to.Size = new System.Drawing.Size(1179, 446);
             this.dp_to.Text = "Credit Note Register";
             // 
             // rgv_summary
@@ -115,7 +115,7 @@
             this.rgv_summary.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.rgv_summary.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rgv_summary.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rgv_summary.Location = new System.Drawing.Point(0, 54);
+            this.rgv_summary.Location = new System.Drawing.Point(0, 50);
             // 
             // 
             // 
@@ -215,7 +215,7 @@
             this.rdp_to.Size = new System.Drawing.Size(117, 25);
             this.rdp_to.TabIndex = 3;
             this.rdp_to.TabStop = false;
-            this.rdp_to.Text = "21/06/2019";
+            this.rdp_to.Text = "21-06-2019";
             this.rdp_to.Value = new System.DateTime(2019, 6, 21, 13, 55, 32, 30);
             // 
             // rdp_from
@@ -227,7 +227,7 @@
             this.rdp_from.Size = new System.Drawing.Size(117, 25);
             this.rdp_from.TabIndex = 2;
             this.rdp_from.TabStop = false;
-            this.rdp_from.Text = "21/06/2019";
+            this.rdp_from.Text = "21-06-2019";
             this.rdp_from.Value = new System.DateTime(2019, 6, 21, 13, 55, 32, 30);
             this.rdp_from.Leave += new System.EventHandler(this.rdp_from_Leave);
             // 
@@ -253,11 +253,23 @@
             // 
             this.radPageViewPage2.Controls.Add(this.btnestimate);
             this.radPageViewPage2.Controls.Add(this.radGroupBox1);
-            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(136F, 30F);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(140F, 34F);
             this.radPageViewPage2.Location = new System.Drawing.Point(10, 43);
             this.radPageViewPage2.Name = "radPageViewPage2";
             this.radPageViewPage2.Size = new System.Drawing.Size(1179, 446);
             this.radPageViewPage2.Text = "Credit Note Detail";
+            // 
+            // btnestimate
+            // 
+            this.btnestimate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnestimate.Image = global::eMediShop.Properties.Resources.printer;
+            this.btnestimate.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnestimate.Location = new System.Drawing.Point(4, 5);
+            this.btnestimate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnestimate.Name = "btnestimate";
+            this.btnestimate.Size = new System.Drawing.Size(38, 36);
+            this.btnestimate.TabIndex = 14;
+            this.btnestimate.Click += new System.EventHandler(this.btnestimate_Click);
             // 
             // radGroupBox1
             // 
@@ -372,18 +384,6 @@
             this.rgv_detail.TabIndex = 6;
             this.rgv_detail.Text = "radGridView2";
             // 
-            // btnestimate
-            // 
-            this.btnestimate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnestimate.Image = global::eMediShop.Properties.Resources.printer;
-            this.btnestimate.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnestimate.Location = new System.Drawing.Point(4, 5);
-            this.btnestimate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnestimate.Name = "btnestimate";
-            this.btnestimate.Size = new System.Drawing.Size(38, 36);
-            this.btnestimate.TabIndex = 14;
-            this.btnestimate.Click += new System.EventHandler(this.btnestimate_Click);
-            // 
             // ucCreditNoteRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,11 +402,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rdp_to)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdp_from)).EndInit();
             this.radPageViewPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnestimate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_detail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnestimate)).EndInit();
             this.ResumeLayout(false);
 
         }

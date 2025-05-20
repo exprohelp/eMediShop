@@ -78,7 +78,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage2);
             this.radPageView1.Location = new System.Drawing.Point(1, 5);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage2;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(958, 488);
             this.radPageView1.TabIndex = 0;
             // 

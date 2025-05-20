@@ -57,6 +57,31 @@ namespace eMediShop
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            public static void NER_Bill2(DataSet ds, string billNo)
+            {
+                try
+                {
+                    ReportDocument rpt;
+                    rpt = new CrystalReportsPharmacy.Reports.Ner_Bill3();
+
+                    rpt.Database.Tables["sale_header"].SetDataSource(ds.Tables[0]);
+                    rpt.Database.Tables["sale_items"].SetDataSource(ds.Tables[1]);
+                    rpt.Database.Tables["catTotal"].SetDataSource(ds.Tables[2]);
+                    rpt.PrintToPrinter(1, false, 1, 0);
+                    string path = Application.StartupPath.Substring(0, 2) + "\\CashMemo\\" + utility.GetFinYear(DateTime.Now.ToString("yyyy-MM-dd")) + "\\" + DateTime.Now.ToString("MMM");
+                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+                    if (!dir.Exists)
+                    { dir.Create(); }
+                    if (System.IO.File.Exists(path + "\\" + billNo.Replace('/', '_') + ".pdf"))
+                    { System.IO.File.Delete(path + "\\" + billNo.Replace('/', '_') + ".pdf"); }
+                    rpt.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + billNo.Replace('/', '_') + ".pdf");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
             public static void HAL_DeliverySummary(DataSet ds, string billNo, string orderdate)
             {
                 try
@@ -839,7 +864,7 @@ namespace eMediShop
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/purchase/DebitNoteQueries", p);
 
 
-                    CrystalReportsPharmacy.eMediShop.InternalSheet rpt = new CrystalReportsPharmacy.eMediShop.InternalSheet();
+                    CrystalReportsPharmacy.eMediShop.InternalSheetDN rpt = new CrystalReportsPharmacy.eMediShop.InternalSheetDN();
                     rpt.Database.Tables["InternalSheet"].SetDataSource(dwr.result.Tables[0]);
                     rpt.SetParameterValue("Unit_Name", GlobalUsage.UnitName);
                     rpt.SetParameterValue("address", GlobalUsage.UnitAddress);

@@ -66,7 +66,6 @@ namespace eMediShop.forms.CentralAccess.Purchase
                 if (((sender as Telerik.WinControls.UI.GridCommandCellElement)).ColumnInfo.HeaderText == "Load")
                 {
                     _purchId = ((sender as Telerik.WinControls.UI.GridCommandCellElement)).Value.ToString();
-
                     Panel1.Controls.Clear();
                     ucUploadScanedDoc obj = new ucUploadScanedDoc();
                     obj.DocId = _purchId;
@@ -91,7 +90,7 @@ namespace eMediShop.forms.CentralAccess.Purchase
                     rgb_ViewDocument.Size = new Size(951, 510);
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
             finally { Cursor.Current = Cursors.WaitCursor; }
         }
         private Telerik.WinControls.UI.RadImageItem GetThumbNail(string path)

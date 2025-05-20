@@ -123,5 +123,23 @@ namespace eMediShop.warehouse
             }
             finally { Cursor.Current = Cursors.Default; }
         }
+
+        private void ddlNames_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                pm_BulkTrfSales p = new pm_BulkTrfSales();
+                p.unit_id = ddlNames.SelectedValue.ToString(); p.logic = "Open Order"; p.prm_1 = GlobalUsage.Comp_id; p.login_id = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/BulkDistributionQueries", p);
+
+                rddl_order_no.DataSource = dwr.result.Tables[0];
+                rddl_order_no.ValueMember = "order_no";
+                rddl_order_no.DisplayMember = "order_no";
+               
+            }
+            catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.YesNo, RadMessageIcon.Info); }
+            finally { Cursor.Current = Cursors.Default; }
+        }
     }
 }
