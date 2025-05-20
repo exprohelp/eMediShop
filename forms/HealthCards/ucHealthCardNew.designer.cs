@@ -71,7 +71,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtmobile = new Telerik.WinControls.UI.RadTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnmobile = new Telerik.WinControls.UI.RadButton();
             this.label9 = new System.Windows.Forms.Label();
             this.dgNewMembers = new Telerik.WinControls.UI.RadGridView();
             this.txtDistName = new System.Windows.Forms.TextBox();
@@ -101,7 +100,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.utxtLocality = new System.Windows.Forms.TextBox();
             this.utxtArea = new System.Windows.Forms.TextBox();
-            this.btnSave = new Telerik.WinControls.UI.RadButton();
             this.View_ExistingCARD = new Telerik.WinControls.UI.RadPageViewPage();
             this.rbMobileVerify = new System.Windows.Forms.RadioButton();
             this.rbApp = new System.Windows.Forms.RadioButton();
@@ -111,10 +109,12 @@
             this.btnAction = new Telerik.WinControls.UI.RadButton();
             this.rgb_replace = new Telerik.WinControls.UI.RadGroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnReplace = new Telerik.WinControls.UI.RadButton();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNewCard = new System.Windows.Forms.TextBox();
             this.dgMembers = new Telerik.WinControls.UI.RadGridView();
+            this.btnmobile = new Telerik.WinControls.UI.RadButton();
+            this.btnSave = new Telerik.WinControls.UI.RadButton();
+            this.btnReplace = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.View_NewCard.SuspendLayout();
@@ -126,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlgender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmobile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPmobile)).BeginInit();
@@ -135,7 +134,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddldistrict)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.View_ExistingCARD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerify)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValidateMobile_Coupon)).BeginInit();
@@ -144,9 +142,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgb_replace)).BeginInit();
             this.rgb_replace.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).BeginInit();
             this.SuspendLayout();
             // 
             // radPageView1
@@ -200,10 +200,10 @@
             this.View_NewCard.Controls.Add(this.utxtLocality);
             this.View_NewCard.Controls.Add(this.utxtArea);
             this.View_NewCard.Controls.Add(this.btnSave);
-            this.View_NewCard.ItemSize = new System.Drawing.SizeF(564F, 32F);
+            this.View_NewCard.ItemSize = new System.Drawing.SizeF(562F, 24F);
             this.View_NewCard.Location = new System.Drawing.Point(5, 29);
             this.View_NewCard.Name = "View_NewCard";
-            this.View_NewCard.Size = new System.Drawing.Size(554, 401);
+            this.View_NewCard.Size = new System.Drawing.Size(554, 413);
             this.View_NewCard.Text = "New Card Window";
             // 
             // label7
@@ -211,7 +211,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(381, 51);
+            this.label7.Location = new System.Drawing.Point(381, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 14);
             this.label7.TabIndex = 98;
@@ -222,7 +222,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(298, 55);
+            this.label4.Location = new System.Drawing.Point(298, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 14);
             this.label4.TabIndex = 97;
@@ -338,17 +338,6 @@
             this.label12.TabIndex = 70;
             this.label12.Text = "Mobile No";
             // 
-            // btnmobile
-            // 
-            this.btnmobile.Image = global::eMediShop.Properties.Resources.click16;
-            this.btnmobile.Location = new System.Drawing.Point(480, 23);
-            this.btnmobile.Name = "btnmobile";
-            this.btnmobile.Size = new System.Drawing.Size(39, 22);
-            this.btnmobile.TabIndex = 12;
-            this.btnmobile.Text = "Add";
-            this.btnmobile.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnmobile.Click += new System.EventHandler(this.btnmobile_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -433,10 +422,10 @@
             this.txtDistName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDistName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDistName.Enabled = false;
-            this.txtDistName.Location = new System.Drawing.Point(361, 176);
+            this.txtDistName.Location = new System.Drawing.Point(361, 182);
             this.txtDistName.MaxLength = 7;
             this.txtDistName.Name = "txtDistName";
-            this.txtDistName.Size = new System.Drawing.Size(165, 20);
+            this.txtDistName.Size = new System.Drawing.Size(165, 22);
             this.txtDistName.TabIndex = 92;
             // 
             // txtStateName
@@ -444,10 +433,10 @@
             this.txtStateName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtStateName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStateName.Enabled = false;
-            this.txtStateName.Location = new System.Drawing.Point(128, 179);
+            this.txtStateName.Location = new System.Drawing.Point(128, 185);
             this.txtStateName.MaxLength = 7;
             this.txtStateName.Name = "txtStateName";
-            this.txtStateName.Size = new System.Drawing.Size(180, 20);
+            this.txtStateName.Size = new System.Drawing.Size(180, 22);
             this.txtStateName.TabIndex = 91;
             // 
             // label18
@@ -591,7 +580,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(55, 22);
+            this.label8.Location = new System.Drawing.Point(55, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 20);
             this.label8.TabIndex = 52;
@@ -603,7 +592,7 @@
             this.utxtPin.Location = new System.Drawing.Point(358, 114);
             this.utxtPin.MaxLength = 7;
             this.utxtPin.Name = "utxtPin";
-            this.utxtPin.Size = new System.Drawing.Size(163, 20);
+            this.utxtPin.Size = new System.Drawing.Size(163, 22);
             this.utxtPin.TabIndex = 8;
             // 
             // txtNewCardNo
@@ -624,7 +613,7 @@
             this.utxtEmail.Location = new System.Drawing.Point(126, 114);
             this.utxtEmail.MaxLength = 50;
             this.utxtEmail.Name = "utxtEmail";
-            this.utxtEmail.Size = new System.Drawing.Size(180, 20);
+            this.utxtEmail.Size = new System.Drawing.Size(180, 22);
             this.utxtEmail.TabIndex = 7;
             // 
             // ulblMessage
@@ -632,7 +621,7 @@
             this.ulblMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ulblMessage.AutoSize = true;
             this.ulblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ulblMessage.Location = new System.Drawing.Point(21, 390);
+            this.ulblMessage.Location = new System.Drawing.Point(21, 396);
             this.ulblMessage.Name = "ulblMessage";
             this.ulblMessage.Size = new System.Drawing.Size(65, 13);
             this.ulblMessage.TabIndex = 37;
@@ -643,7 +632,7 @@
             this.label49.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(91, 107);
+            this.label49.Location = new System.Drawing.Point(91, 113);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(32, 14);
             this.label49.TabIndex = 6;
@@ -654,7 +643,7 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(84, 128);
+            this.label29.Location = new System.Drawing.Point(84, 134);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(38, 15);
             this.label29.TabIndex = 13;
@@ -664,7 +653,7 @@
             // 
             this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(312, 108);
+            this.label48.Location = new System.Drawing.Point(312, 114);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(45, 13);
             this.label48.TabIndex = 7;
@@ -675,7 +664,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 132);
+            this.label2.Location = new System.Drawing.Point(331, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 14);
             this.label2.TabIndex = 45;
@@ -687,7 +676,7 @@
             this.utxtLocality.Location = new System.Drawing.Point(358, 88);
             this.utxtLocality.MaxLength = 50;
             this.utxtLocality.Name = "utxtLocality";
-            this.utxtLocality.Size = new System.Drawing.Size(163, 20);
+            this.utxtLocality.Size = new System.Drawing.Size(163, 22);
             this.utxtLocality.TabIndex = 6;
             // 
             // utxtArea
@@ -696,20 +685,8 @@
             this.utxtArea.Location = new System.Drawing.Point(126, 89);
             this.utxtArea.MaxLength = 50;
             this.utxtArea.Name = "utxtArea";
-            this.utxtArea.Size = new System.Drawing.Size(180, 20);
+            this.utxtArea.Size = new System.Drawing.Size(180, 22);
             this.utxtArea.TabIndex = 5;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Image = global::eMediShop.Properties.Resources.Save_16;
-            this.btnSave.Location = new System.Drawing.Point(466, 369);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(57, 28);
-            this.btnSave.TabIndex = 77;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // View_ExistingCARD
             // 
@@ -721,7 +698,7 @@
             this.View_ExistingCARD.Controls.Add(this.btnAction);
             this.View_ExistingCARD.Controls.Add(this.rgb_replace);
             this.View_ExistingCARD.Controls.Add(this.dgMembers);
-            this.View_ExistingCARD.ItemSize = new System.Drawing.SizeF(564F, 32F);
+            this.View_ExistingCARD.ItemSize = new System.Drawing.SizeF(562F, 24F);
             this.View_ExistingCARD.Location = new System.Drawing.Point(5, 29);
             this.View_ExistingCARD.Name = "View_ExistingCARD";
             this.View_ExistingCARD.Size = new System.Drawing.Size(554, 401);
@@ -820,18 +797,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(499, 42);
             this.panel2.TabIndex = 100;
-            // 
-            // btnReplace
-            // 
-            this.btnReplace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnReplace.Image = global::eMediShop.Properties.Resources.Refresh_16;
-            this.btnReplace.Location = new System.Drawing.Point(248, 10);
-            this.btnReplace.Name = "btnReplace";
-            this.btnReplace.Size = new System.Drawing.Size(105, 23);
-            this.btnReplace.TabIndex = 99;
-            this.btnReplace.Text = "REPLACE CARD";
-            this.btnReplace.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
             // 
             // label13
             // 
@@ -962,6 +927,41 @@
             this.dgMembers.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.dgMembers_RowFormatting);
             this.dgMembers.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgMembers_CommandCellClick);
             // 
+            // btnmobile
+            // 
+            this.btnmobile.Image = global::eMediShop.Properties.Resources.click16;
+            this.btnmobile.Location = new System.Drawing.Point(480, 23);
+            this.btnmobile.Name = "btnmobile";
+            this.btnmobile.Size = new System.Drawing.Size(39, 22);
+            this.btnmobile.TabIndex = 12;
+            this.btnmobile.Text = "Add";
+            this.btnmobile.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnmobile.Click += new System.EventHandler(this.btnmobile_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Image = global::eMediShop.Properties.Resources.Save_16;
+            this.btnSave.Location = new System.Drawing.Point(466, 369);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(57, 28);
+            this.btnSave.TabIndex = 77;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnReplace
+            // 
+            this.btnReplace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnReplace.Image = global::eMediShop.Properties.Resources.Refresh_16;
+            this.btnReplace.Location = new System.Drawing.Point(248, 10);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(105, 23);
+            this.btnReplace.TabIndex = 99;
+            this.btnReplace.Text = "REPLACE CARD";
+            this.btnReplace.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            // 
             // ucHealthCardNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -983,7 +983,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdob)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlgender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmobile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPmobile)).EndInit();
@@ -992,7 +991,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddldistrict)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             this.View_ExistingCARD.ResumeLayout(false);
             this.View_ExistingCARD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerify)).EndInit();
@@ -1003,9 +1001,11 @@
             this.rgb_replace.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).EndInit();
             this.ResumeLayout(false);
 
         }

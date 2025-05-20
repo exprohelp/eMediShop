@@ -1212,6 +1212,12 @@
     <Compile Include="Hospital\IndentComplete.Designer.cs">
       <DependentUpon>IndentComplete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hospital\Sales\PreBookCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital\Sales\PreBookCounter.Designer.cs">
+      <DependentUpon>PreBookCounter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hospital\Sales\IPDOPDProcessInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2322,6 +2328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hospital\IndentComplete.resx">
       <DependentUpon>IndentComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\Sales\PreBookCounter.resx">
+      <DependentUpon>PreBookCounter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hospital\Sales\IPDOPDProcessInfo.resx">
       <DependentUpon>IPDOPDProcessInfo.cs</DependentUpon>

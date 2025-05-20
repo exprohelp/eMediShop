@@ -1976,6 +1976,11 @@ namespace eMediShop
 
         }
 
+        private void rbe_prebook_Click(object sender, EventArgs e)
+        {
+            openForm(new Hospital.Sales.PreBookCounter());
+        }
+
         private void rb_assign_menu_Click(object sender, EventArgs e)
         {
             openForm(new ITSystem.menuRights("eMediShop"));

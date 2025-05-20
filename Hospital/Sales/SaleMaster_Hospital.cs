@@ -62,6 +62,10 @@ namespace eMediShop
             lblCurDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
             chkReturnMemo.Enabled = true;
             this.Text = "{Sales Master " + DateTime.Now.ToString("dd-MM-yyyy") + "}  Key Control: F2:Search Posted Bill, Ctrl+H or F3: Search Unposted Bill, Ctrl+N: New Bill, F1:OPD Medicine";
+            if (GlobalUsage.CounterID == "PREBOOK")
+                chkPreBook.Visible = true;
+            else
+                chkPreBook.Visible = false;
 
             if (GlobalUsage.Posting_Rights == "Y")
                 btnCompleteCashMemo.Enabled = true;
