@@ -717,6 +717,10 @@ namespace eMediShop
                     _orderNo = ds.Tables[0].Rows[0]["order_no"].ToString();
                     _PayMode = ds.Tables[0].Rows[0]["pay_mode"].ToString();
 
+                    if (ds.Tables[0].Rows[0]["order_no"].ToString() == "1")
+                        chkPreBook.Checked = true;
+                    else
+                        chkPreBook.Checked = false;
 
                     this.txtUHIDNO.Leave += new EventHandler(this.txtCardNo_Leave);
                     this.txtPrescribedBy.TextChanged += new EventHandler(this.txtPrescribedBy_TextChanged);
@@ -1583,6 +1587,14 @@ namespace eMediShop
         {
             txtMedName.Text = e.Row.Cells[1].Value.ToString().Substring(0, Convert.ToInt16(txtChop.Text));
             rpv_master.SelectedPage = rpv_master.Pages[1];
+        }
+
+        private void chkPreBook_CheckedChanged(object sender, EventArgs e)
+        {
+            cm1 p1 = new cm1();
+            p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id; p1.prm_3 = GlobalUsage.Login_id;
+            p1.Logic = "Pre-BookMedicine"; p1.prm_1 = "-"; p1.tran_id = txtEstimateNo.Text;
+            datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
         }
     }  // Second Last Brace
 }

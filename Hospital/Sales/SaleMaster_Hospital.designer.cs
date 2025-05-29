@@ -119,6 +119,7 @@ namespace eMediShop
             this.chkReturnMemo = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.chkPreBook = new System.Windows.Forms.CheckBox();
             this.txtWallet = new Telerik.WinControls.UI.RadTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnBillPosting = new System.Windows.Forms.Button();
@@ -177,7 +178,6 @@ namespace eMediShop
             this.txtChop = new Telerik.WinControls.UI.RadTextBox();
             this.rpv_opdMedicine = new Telerik.WinControls.UI.RadGridView();
             this.rgEstimate = new Telerik.WinControls.UI.RadGroupBox();
-            this.chkPreBook = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUHIDNO)).BeginInit();
@@ -1033,6 +1033,20 @@ namespace eMediShop
             this.radGroupBox1.TabIndex = 120;
             this.radGroupBox1.Text = "Payment Info";
             // 
+            // chkPreBook
+            // 
+            this.chkPreBook.AutoSize = true;
+            this.chkPreBook.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPreBook.ForeColor = System.Drawing.Color.Green;
+            this.chkPreBook.Location = new System.Drawing.Point(33, 295);
+            this.chkPreBook.Name = "chkPreBook";
+            this.chkPreBook.Size = new System.Drawing.Size(208, 22);
+            this.chkPreBook.TabIndex = 140;
+            this.chkPreBook.Text = "Trf. To OPD Pharmacy";
+            this.chkPreBook.UseVisualStyleBackColor = true;
+            this.chkPreBook.Visible = false;
+            this.chkPreBook.CheckedChanged += new System.EventHandler(this.chkPreBook_CheckedChanged);
+            // 
             // txtWallet
             // 
             this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -1864,19 +1878,6 @@ namespace eMediShop
             this.rgEstimate.Name = "rgEstimate";
             this.rgEstimate.Size = new System.Drawing.Size(1201, 92);
             this.rgEstimate.TabIndex = 118;
-            // 
-            // chkPreBook
-            // 
-            this.chkPreBook.AutoSize = true;
-            this.chkPreBook.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPreBook.ForeColor = System.Drawing.Color.Green;
-            this.chkPreBook.Location = new System.Drawing.Point(33, 295);
-            this.chkPreBook.Name = "chkPreBook";
-            this.chkPreBook.Size = new System.Drawing.Size(208, 22);
-            this.chkPreBook.TabIndex = 140;
-            this.chkPreBook.Text = "Trf. To OPD Pharmacy";
-            this.chkPreBook.UseVisualStyleBackColor = true;
-            this.chkPreBook.Visible = false;
             // 
             // SaleMaster_Hospital
             // 
