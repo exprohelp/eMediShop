@@ -178,6 +178,7 @@ namespace eMediShop
             this.txtChop = new Telerik.WinControls.UI.RadTextBox();
             this.rpv_opdMedicine = new Telerik.WinControls.UI.RadGridView();
             this.rgEstimate = new Telerik.WinControls.UI.RadGroupBox();
+            this.lblTokenNo = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUHIDNO)).BeginInit();
@@ -1458,6 +1459,7 @@ namespace eMediShop
             // 
             // rpvp_pos
             // 
+            this.rpvp_pos.Controls.Add(this.lblTokenNo);
             this.rpvp_pos.Controls.Add(this.lv_referralList);
             this.rpvp_pos.Controls.Add(this.chkBySalt);
             this.rpvp_pos.Controls.Add(this.chkSubstitute);
@@ -1879,6 +1881,17 @@ namespace eMediShop
             this.rgEstimate.Size = new System.Drawing.Size(1201, 92);
             this.rgEstimate.TabIndex = 118;
             // 
+            // lblTokenNo
+            // 
+            this.lblTokenNo.AutoSize = true;
+            this.lblTokenNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTokenNo.Location = new System.Drawing.Point(623, 38);
+            this.lblTokenNo.Name = "lblTokenNo";
+            this.lblTokenNo.Size = new System.Drawing.Size(103, 20);
+            this.lblTokenNo.TabIndex = 140;
+            this.lblTokenNo.Text = "Token : XXXX";
+            this.lblTokenNo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // SaleMaster_Hospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2084,5 +2097,6 @@ namespace eMediShop
         private System.Windows.Forms.Label label26;
         private Telerik.WinControls.UI.RadTextBox txtChop;
         private System.Windows.Forms.CheckBox chkPreBook;
+        private System.Windows.Forms.Label lblTokenNo;
     }
 }

@@ -133,6 +133,7 @@
             this.itemname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mktby = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mTaxRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtBatchNo = new System.Windows.Forms.TextBox();
             this.txtHSN = new System.Windows.Forms.TextBox();
@@ -167,7 +168,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.rgv_purchase = new Telerik.WinControls.UI.RadGridView();
-            this.mTaxRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grpPament.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdpPurchInfo)).BeginInit();
             this.rdpPurchInfo.SuspendLayout();
@@ -584,7 +584,7 @@
             this.txtInvoiceNo.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceNo.ForeColor = System.Drawing.Color.Blue;
             this.txtInvoiceNo.Location = new System.Drawing.Point(109, 83);
-            this.txtInvoiceNo.MaxLength = 10;
+            this.txtInvoiceNo.MaxLength = 17;
             this.txtInvoiceNo.Name = "txtInvoiceNo";
             this.txtInvoiceNo.Size = new System.Drawing.Size(139, 21);
             this.txtInvoiceNo.TabIndex = 3;
@@ -1079,6 +1079,10 @@
             // 
             this.Code.Text = "HSN";
             this.Code.Width = 0;
+            // 
+            // mTaxRate
+            // 
+            this.mTaxRate.Width = 0;
             // 
             // toolTip1
             // 
@@ -1705,16 +1709,12 @@
             this.rgv_purchase.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.MasterTemplate_RowFormatting);
             this.rgv_purchase.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgv_purchase_CommandCellClick);
             // 
-            // mTaxRate
-            // 
-            this.mTaxRate.Width = 0;
-            // 
             // Purchase_Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1114, 577);
+            this.ClientSize = new System.Drawing.Size(1114, 567);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.txtHSN);
             this.Controls.Add(this.btn_IC_Gen);

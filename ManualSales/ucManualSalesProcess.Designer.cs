@@ -48,15 +48,16 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn8 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.lv_batchno = new System.Windows.Forms.ListView();
             this.Master_Key_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -76,6 +77,7 @@
             this.itemname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.STOCK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnPrintIS = new Telerik.WinControls.UI.RadButton();
             this.ItemSaleGrid = new System.Windows.Forms.ListView();
             this.item_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.item_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -109,7 +111,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rgvManualRecords = new Telerik.WinControls.UI.RadGridView();
             this.txtCustName = new System.Windows.Forms.TextBox();
-            this.btnPrintIS = new Telerik.WinControls.UI.RadButton();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rcp_panel)).BeginInit();
             this.rcp_panel.PanelContainer.SuspendLayout();
             this.rcp_panel.SuspendLayout();
@@ -120,7 +122,6 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -290,6 +291,20 @@
             this.Quantity.Text = "O.Qty";
             this.Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Quantity.Width = 45;
+            // 
+            // btnPrintIS
+            // 
+            this.btnPrintIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintIS.Image = global::eMediShop.Properties.Resources.printer;
+            this.btnPrintIS.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrintIS.Location = new System.Drawing.Point(584, 575);
+            this.btnPrintIS.Name = "btnPrintIS";
+            this.btnPrintIS.Size = new System.Drawing.Size(73, 27);
+            this.btnPrintIS.TabIndex = 305;
+            this.toolTip1.SetToolTip(this.btnPrintIS, "Print Internal Paper");
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.printer;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Text = "";
             // 
             // ItemSaleGrid
             // 
@@ -681,6 +696,11 @@
             gridViewDecimalColumn3.HeaderText = "ItemCount";
             gridViewDecimalColumn3.IsVisible = false;
             gridViewDecimalColumn3.Name = "ItemCount";
+            gridViewDecimalColumn4.EnableExpressionEditor = false;
+            gridViewDecimalColumn4.FieldName = "TotalQty";
+            gridViewDecimalColumn4.HeaderText = "TotalQty";
+            gridViewDecimalColumn4.IsVisible = false;
+            gridViewDecimalColumn4.Name = "TotalQty";
             this.rgv_orders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -699,7 +719,8 @@
             gridViewTextBoxColumn12,
             gridViewTextBoxColumn13,
             gridViewTextBoxColumn14,
-            gridViewDecimalColumn3});
+            gridViewDecimalColumn3,
+            gridViewDecimalColumn4});
             this.rgv_orders.MasterTemplate.EnableFiltering = true;
             this.rgv_orders.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_orders.Name = "rgv_orders";
@@ -809,34 +830,34 @@
             gridViewTextBoxColumn18.HeaderText = "Expiry";
             gridViewTextBoxColumn18.Name = "exp_date";
             gridViewTextBoxColumn18.Width = 71;
-            gridViewDecimalColumn4.EnableExpressionEditor = false;
-            gridViewDecimalColumn4.FieldName = "mrp";
-            gridViewDecimalColumn4.HeaderText = "MRP";
-            gridViewDecimalColumn4.Name = "mrp";
-            gridViewDecimalColumn4.Width = 72;
             gridViewDecimalColumn5.EnableExpressionEditor = false;
-            gridViewDecimalColumn5.FieldName = "usr";
-            gridViewDecimalColumn5.HeaderText = "USR";
-            gridViewDecimalColumn5.Name = "usr";
-            gridViewDecimalColumn5.Width = 66;
+            gridViewDecimalColumn5.FieldName = "mrp";
+            gridViewDecimalColumn5.HeaderText = "MRP";
+            gridViewDecimalColumn5.Name = "mrp";
+            gridViewDecimalColumn5.Width = 72;
             gridViewDecimalColumn6.EnableExpressionEditor = false;
-            gridViewDecimalColumn6.FieldName = "SoldQty";
-            gridViewDecimalColumn6.HeaderText = "SoldQty";
-            gridViewDecimalColumn6.Name = "SoldQty";
+            gridViewDecimalColumn6.FieldName = "usr";
+            gridViewDecimalColumn6.HeaderText = "USR";
+            gridViewDecimalColumn6.Name = "usr";
+            gridViewDecimalColumn6.Width = 66;
             gridViewDecimalColumn7.EnableExpressionEditor = false;
-            gridViewDecimalColumn7.FieldName = "Amount";
-            gridViewDecimalColumn7.HeaderText = "Amount";
-            gridViewDecimalColumn7.Name = "Amount";
-            gridViewDecimalColumn7.Width = 64;
+            gridViewDecimalColumn7.FieldName = "SoldQty";
+            gridViewDecimalColumn7.HeaderText = "SoldQty";
+            gridViewDecimalColumn7.Name = "SoldQty";
+            gridViewDecimalColumn8.EnableExpressionEditor = false;
+            gridViewDecimalColumn8.FieldName = "Amount";
+            gridViewDecimalColumn8.HeaderText = "Amount";
+            gridViewDecimalColumn8.Name = "Amount";
+            gridViewDecimalColumn8.Width = 64;
             this.rgvManualRecords.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn15,
             gridViewTextBoxColumn16,
             gridViewTextBoxColumn17,
             gridViewTextBoxColumn18,
-            gridViewDecimalColumn4,
             gridViewDecimalColumn5,
             gridViewDecimalColumn6,
-            gridViewDecimalColumn7});
+            gridViewDecimalColumn7,
+            gridViewDecimalColumn8});
             this.rgvManualRecords.MasterTemplate.EnableGrouping = false;
             this.rgvManualRecords.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.rgvManualRecords.Name = "rgvManualRecords";
@@ -862,20 +883,6 @@
             this.txtCustName.TabIndex = 306;
             this.txtCustName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btnPrintIS
-            // 
-            this.btnPrintIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintIS.Image = global::eMediShop.Properties.Resources.printer;
-            this.btnPrintIS.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPrintIS.Location = new System.Drawing.Point(584, 575);
-            this.btnPrintIS.Name = "btnPrintIS";
-            this.btnPrintIS.Size = new System.Drawing.Size(73, 27);
-            this.btnPrintIS.TabIndex = 305;
-            this.toolTip1.SetToolTip(this.btnPrintIS, "Print Internal Paper");
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Image = global::eMediShop.Properties.Resources.printer;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnPrintIS.GetChildAt(0))).Text = "";
-            // 
             // ucManualSalesProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -896,6 +903,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manual Bill Finalization";
             this.Load += new System.EventHandler(this.ucProcessOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).EndInit();
             this.rcp_panel.PanelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rcp_panel)).EndInit();
             this.rcp_panel.ResumeLayout(false);
@@ -907,7 +915,6 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgvManualRecords)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

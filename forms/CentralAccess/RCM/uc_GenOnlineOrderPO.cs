@@ -90,9 +90,20 @@ namespace eMediShop.forms.CentralAccess.RCM
             {
                 Cursor.Current = Cursors.WaitCursor;
                 cm1 p = new cm1();
-                p.unit_id = GlobalUsage.Unit_id; p.Logic = "csdOrderStatus"; p.prm_1 = "N/A"; p.login_id = GlobalUsage.Login_id;
+                p.unit_id = GlobalUsage.Unit_id;
+                if(chkGenerate.Checked==true)
+                    p.Logic = "GenerateUrgent";
+                else
+                    p.Logic = "csdOrderStatus";
+                p.prm_1 = "N/A"; p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/retailstorequeries", p);
-                dgPO.DataSource = dwr.result.Tables[0];
+                if (p.Logic == "csdOrderStatus")
+                    dgPO.DataSource = dwr.result.Tables[0];
+                else
+                {
+                    chkGenerate.Text = "Generated";
+                    chkGenerate.Enabled = false;
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { Cursor.Current = Cursors.Default; }

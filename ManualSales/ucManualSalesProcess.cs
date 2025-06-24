@@ -16,7 +16,7 @@ namespace eMediShop.ManualSales
         string _ManualBillNo = string.Empty; string _saleDate = string.Empty;
         string _items_id = string.Empty;string _ipopType = string.Empty; string _payMode = string.Empty;
         string _uhid = string.Empty; string _ipdNo = string.Empty;
-        decimal TOrdqty = 0;int _itemCount = 0; int _itemCountSales = 0;
+        decimal TOrdqty = 0;int _itemCount = 0; int _itemCountSales = 0; decimal _TotalQty = 0; int _TotalQtySales = 0;
 
         int _itemindex = 0;
         int _ordindex = -1;
@@ -80,20 +80,20 @@ namespace eMediShop.ManualSales
         private void lv_batchno_Click(object sender, EventArgs e)
         {
             // Check whether the subitem was clicked
-            int x = getXaxisWidth(lv_batchno);
-            subItemText = item.SubItems[selectedSubItem].Text;
-            column = lv_batchno.Columns[selectedSubItem].Text;
-            if (column == "Qty")
-            {
-                int y = item.Bounds.Bottom - item.Bounds.Top;
-                _sale_qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                _sale_qty.Size = new System.Drawing.Size(lv_batchno.Columns[selectedSubItem].Width, 22);
-                _sale_qty.Location = new System.Drawing.Point(position, item.Bounds.Y);
-                _sale_qty.Show();
-                _sale_qty.Text = subItemText;
-                _sale_qty.SelectAll();
-                _sale_qty.Focus();
-            }
+            //int x = getXaxisWidth(lv_batchno);
+            //subItemText = item.SubItems[selectedSubItem].Text;
+            //column = lv_batchno.Columns[selectedSubItem].Text;
+            //if (column == "Qty")
+            //{
+            //    int y = item.Bounds.Bottom - item.Bounds.Top;
+            //    _sale_qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //    _sale_qty.Size = new System.Drawing.Size(lv_batchno.Columns[selectedSubItem].Width, 22);
+            //    _sale_qty.Location = new System.Drawing.Point(position, item.Bounds.Y);
+            //    _sale_qty.Show();
+            //    _sale_qty.Text = subItemText;
+            //    _sale_qty.SelectAll();
+            //    _sale_qty.Focus();
+            //}
         }
         private void lv_batchno_MouseDown(object sender, MouseEventArgs e)
         {
@@ -136,7 +136,8 @@ namespace eMediShop.ManualSales
                     sale_inv_no = s.Field<string>("sale_inv_no"),
                     Amount = s.Field<decimal>("Amount"),
                     remarks = s.Field<string>("remarks"),
-                    ItemCount=s.Field<Int64>("ItemCount")
+                    ItemCount=s.Field<Int64>("ItemCount"),
+                    TotalQty = s.Field<Int64>("TotalQty")
                 });
                 rgv_orders.DataSource = Order.ToList();
                
@@ -279,12 +280,14 @@ namespace eMediShop.ManualSales
 
             DataSet _ds = dwr.result;
             _itemCountSales = _ds.Tables[1].AsEnumerable().Select(x => x.Field<string>("item_id")).Distinct().Count();
+           
             ItemSaleGrid.Items.Clear();
             if (_ds.Tables[1].Rows.Count > 0)
             {
                 btnCompleteSale.Enabled = true;
                 #region Fill Item Grid
                 string temp = string.Empty;
+             
                 foreach (DataRow dr in _ds.Tables[1].Rows)
                 {
                     ListViewItem lvi = new ListViewItem(dr["item_id"].ToString());
@@ -300,7 +303,9 @@ namespace eMediShop.ManualSales
                     lvi.SubItems.Add(Convert.ToDecimal(dr["Mrp"]).ToString("####.00"));             //6
                     lvi.SubItems.Add(Convert.ToDecimal(dr["usr"]).ToString("####.00"));       //7
                     lvi.SubItems.Add(Convert.ToInt32(dr["sale_qty"]).ToString());                                    //9
-                    lvi.SubItems.Add(Convert.ToDecimal(dr["sv"]).ToString("####.00"));
+                    _TotalQtySales += Convert.ToInt32(dr["sale_qty"]);
+
+                   lvi.SubItems.Add(Convert.ToDecimal(dr["sv"]).ToString("####.00"));
                     lvi.SubItems.Add(dr["sale_trn_no"].ToString());
                     ItemSaleGrid.Items.Add(lvi);
                 }
@@ -349,6 +354,12 @@ namespace eMediShop.ManualSales
                 RadMessageBox.Show("All Manual Bill Items Not Processed.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
                 return;
             }
+            if (_TotalQty != _TotalQtySales)
+            {
+                RadMessageBox.Show("All Manual Bill Qty Not Processed.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+            }
+
             btnCompleteSale.Enabled = false;
             try
             {
@@ -600,6 +611,7 @@ namespace eMediShop.ManualSales
      
         private void rgv_orders_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
+            _TotalQtySales = 0;
             _ordindex = e.RowIndex;
             radGroupBox1.Text = e.Row.Cells["cust_name"].Value.ToString() + " Sale Date: " + Convert.ToDateTime(e.Row.Cells["sale_date"].Value).ToString("dd-MM-yyyy") + " M-Inv. No.:" + e.Row.Cells["ManualInvNo"].Value.ToString();
             rcp_panel.HeaderText = e.Row.Cells["info"].Value.ToString();
@@ -617,6 +629,8 @@ namespace eMediShop.ManualSales
             lblPayMode.Text = "Pay Mode : " + _payMode;
             _remarks= e.Row.Cells["remarks"].Value.ToString();
             _itemCount = Convert.ToInt16(e.Row.Cells["ItemCount"].Value);
+            _TotalQty = Convert.ToInt16(e.Row.Cells["TotalQty"].Value);
+
             rcp_panel.IsExpanded = false;
             SelectedOrder();
         }

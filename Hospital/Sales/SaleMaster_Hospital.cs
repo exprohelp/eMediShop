@@ -744,6 +744,13 @@ namespace eMediShop
 
                     #endregion
                 }
+                if (ds.Tables[3].Rows.Count > 0)
+                {
+                    lblTokenNo.Text = "Token No. " + ds.Tables[3].Rows[0]["token_no"].ToString();
+                }
+                else
+                    lblTokenNo.Text = "Token No. XXXX";
+
             }
             catch (Exception ex)
             { }
