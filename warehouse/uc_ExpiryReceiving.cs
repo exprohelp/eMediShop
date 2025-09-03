@@ -347,7 +347,7 @@ namespace eMediShop.warehouse
                     _result = DateTime.Now.Millisecond.ToString();
                     pm_Transfer p = new pm_Transfer();
                     p.unit_id = GlobalUsage.Unit_id; p.transfer_id = _trfID; p.TrfUnit_AccountNo = _selectedUnitLedgerID;
-                    p.login_id = GlobalUsage.Login_id;
+                    p.login_id = GlobalUsage.Login_id;p.logic = "Expiry";
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/stocks/ExpiryWHCompleteUnitIDs", p);
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show(dwr.message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);

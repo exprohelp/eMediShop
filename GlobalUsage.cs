@@ -84,10 +84,10 @@ namespace eMediShop
         public static string SmsID = "N/A";
         public static string smsProvider = "N/A";
         //public static CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet PharmacyCashMemo;
-        public static CrystalReportsPharmacy.eMediShop.CashMemoGST PharmacyCashMemo;
+        public static CrystalReportsPharmacy.eMediShop.CashMemoGSTByWallet PharmacyCashMemo;
         public static CrystalReportsPharmacy.eMediShop.DeliveryNote_HAL HAL_DeliveryNote;
         public static CrystalReportsPharmacy.eMediShop.ManualDeliveryNote ManualBill;
-        public static CrystalReportsPharmacy.eMediShop.HP_CashMemo HospitalCashMemo;
+        public static CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet HospitalCashMemo;
         public static CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet HospitalInternalSheet;
         public static CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic opthCashMemo;
 

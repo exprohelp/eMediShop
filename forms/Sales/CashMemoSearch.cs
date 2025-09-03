@@ -77,9 +77,11 @@ namespace eMediShop
                 Cursor.Current = Cursors.WaitCursor;
                 _SearchId = rgv_info.CurrentRow.Cells["sale_inv_no"].Value.ToString();
                 CashMemeoNoUpdatedEventArgs ValuArgs = new CashMemeoNoUpdatedEventArgs(_SearchId);
-                SearchUpdated(this, ValuArgs);
-                Cursor.Current = Cursors.Default;
                 this.Close();
+                Cursor.Current = Cursors.Default;
+                SearchUpdated(this, ValuArgs);
+                
+               
 
             }
         }

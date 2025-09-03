@@ -33,27 +33,25 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHealthCardNew));
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHealthCardNew));
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
@@ -66,17 +64,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.txtname = new Telerik.WinControls.UI.RadTextBox();
-            this.txtdob = new Telerik.WinControls.UI.RadTextBox();
             this.ddlgender = new Telerik.WinControls.UI.RadDropDownList();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtmobile = new Telerik.WinControls.UI.RadTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnmobile = new Telerik.WinControls.UI.RadButton();
             this.dgNewMembers = new Telerik.WinControls.UI.RadGridView();
-            this.txtDistName = new System.Windows.Forms.TextBox();
-            this.txtStateName = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -100,6 +91,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.utxtLocality = new System.Windows.Forms.TextBox();
             this.utxtArea = new System.Windows.Forms.TextBox();
+            this.btnSave = new Telerik.WinControls.UI.RadButton();
             this.View_ExistingCARD = new Telerik.WinControls.UI.RadPageViewPage();
             this.rbMobileVerify = new System.Windows.Forms.RadioButton();
             this.rbApp = new System.Windows.Forms.RadioButton();
@@ -109,12 +101,10 @@
             this.btnAction = new Telerik.WinControls.UI.RadButton();
             this.rgb_replace = new Telerik.WinControls.UI.RadGroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReplace = new Telerik.WinControls.UI.RadButton();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNewCard = new System.Windows.Forms.TextBox();
             this.dgMembers = new Telerik.WinControls.UI.RadGridView();
-            this.btnmobile = new Telerik.WinControls.UI.RadButton();
-            this.btnSave = new Telerik.WinControls.UI.RadButton();
-            this.btnReplace = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.View_NewCard.SuspendLayout();
@@ -123,9 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGenOtp)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlgender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmobile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPmobile)).BeginInit();
@@ -134,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddldistrict)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.View_ExistingCARD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerify)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtValidateMobile_Coupon)).BeginInit();
@@ -142,11 +132,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgb_replace)).BeginInit();
             this.rgb_replace.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).BeginInit();
             this.SuspendLayout();
             // 
             // radPageView1
@@ -157,7 +145,7 @@
             this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.View_NewCard;
+            this.radPageView1.SelectedPage = this.View_ExistingCARD;
             this.radPageView1.Size = new System.Drawing.Size(564, 496);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.Text = "radPageView1";
@@ -172,10 +160,6 @@
             this.View_NewCard.Controls.Add(this.txtOTP);
             this.View_NewCard.Controls.Add(this.btnGenOtp);
             this.View_NewCard.Controls.Add(this.panel1);
-            this.View_NewCard.Controls.Add(this.txtDistName);
-            this.View_NewCard.Controls.Add(this.txtStateName);
-            this.View_NewCard.Controls.Add(this.label18);
-            this.View_NewCard.Controls.Add(this.label17);
             this.View_NewCard.Controls.Add(this.label16);
             this.View_NewCard.Controls.Add(this.label14);
             this.View_NewCard.Controls.Add(this.label6);
@@ -200,10 +184,11 @@
             this.View_NewCard.Controls.Add(this.utxtLocality);
             this.View_NewCard.Controls.Add(this.utxtArea);
             this.View_NewCard.Controls.Add(this.btnSave);
-            this.View_NewCard.ItemSize = new System.Drawing.SizeF(562F, 24F);
+            this.View_NewCard.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_NewCard.ItemSize = new System.Drawing.SizeF(564F, 32F);
             this.View_NewCard.Location = new System.Drawing.Point(5, 29);
             this.View_NewCard.Name = "View_NewCard";
-            this.View_NewCard.Size = new System.Drawing.Size(554, 413);
+            this.View_NewCard.Size = new System.Drawing.Size(554, 401);
             this.View_NewCard.Text = "New Card Window";
             // 
             // label7
@@ -211,7 +196,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(381, 57);
+            this.label7.Location = new System.Drawing.Point(449, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 14);
             this.label7.TabIndex = 98;
@@ -222,7 +207,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(298, 61);
+            this.label4.Location = new System.Drawing.Point(288, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 14);
             this.label4.TabIndex = 97;
@@ -230,6 +215,7 @@
             // 
             // btnOTPVerify
             // 
+            this.btnOTPVerify.Enabled = false;
             this.btnOTPVerify.Location = new System.Drawing.Point(466, 5);
             this.btnOTPVerify.Name = "btnOTPVerify";
             this.btnOTPVerify.Size = new System.Drawing.Size(55, 24);
@@ -260,13 +246,9 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtname);
-            this.panel1.Controls.Add(this.txtdob);
             this.panel1.Controls.Add(this.ddlgender);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.txtmobile);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.btnmobile);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.dgNewMembers);
             this.panel1.Location = new System.Drawing.Point(3, 211);
             this.panel1.Name = "panel1";
@@ -278,7 +260,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(55, 5);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.Size = new System.Drawing.Size(97, 17);
             this.label10.TabIndex = 66;
             this.label10.Text = "Member Name";
             // 
@@ -287,17 +269,8 @@
             this.txtname.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.Location = new System.Drawing.Point(55, 24);
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(186, 21);
+            this.txtname.Size = new System.Drawing.Size(322, 21);
             this.txtname.TabIndex = 11;
-            // 
-            // txtdob
-            // 
-            this.txtdob.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdob.Location = new System.Drawing.Point(317, 24);
-            this.txtdob.Name = "txtdob";
-            this.txtdob.NullText = "dd/MM/yyyy";
-            this.txtdob.Size = new System.Drawing.Size(79, 21);
-            this.txtdob.TabIndex = 13;
             // 
             // ddlgender
             // 
@@ -307,7 +280,7 @@
             radListDataItem2.Text = "Female";
             this.ddlgender.Items.Add(radListDataItem1);
             this.ddlgender.Items.Add(radListDataItem2);
-            this.ddlgender.Location = new System.Drawing.Point(243, 24);
+            this.ddlgender.Location = new System.Drawing.Point(383, 25);
             this.ddlgender.Name = "ddlgender";
             this.ddlgender.Size = new System.Drawing.Size(74, 21);
             this.ddlgender.TabIndex = 12;
@@ -315,37 +288,22 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(236, 5);
+            this.label11.Location = new System.Drawing.Point(376, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
+            this.label11.Size = new System.Drawing.Size(51, 17);
             this.label11.TabIndex = 67;
             this.label11.Text = "Gender";
             // 
-            // txtmobile
+            // btnmobile
             // 
-            this.txtmobile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmobile.Location = new System.Drawing.Point(398, 24);
-            this.txtmobile.Name = "txtmobile";
-            this.txtmobile.Size = new System.Drawing.Size(81, 21);
-            this.txtmobile.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(400, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
-            this.label12.TabIndex = 70;
-            this.label12.Text = "Mobile No";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(312, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "Date of birth";
+            this.btnmobile.Image = global::eMediShop.Properties.Resources.click16;
+            this.btnmobile.Location = new System.Drawing.Point(480, 23);
+            this.btnmobile.Name = "btnmobile";
+            this.btnmobile.Size = new System.Drawing.Size(39, 22);
+            this.btnmobile.TabIndex = 12;
+            this.btnmobile.Text = "Add";
+            this.btnmobile.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnmobile.Click += new System.EventHandler(this.btnmobile_Click);
             // 
             // dgNewMembers
             // 
@@ -371,28 +329,15 @@
             gridViewTextBoxColumn2.HeaderText = "Name";
             gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewTextBoxColumn2.Name = "member_name";
-            gridViewTextBoxColumn2.Width = 190;
+            gridViewTextBoxColumn2.Width = 326;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "member_gender";
             gridViewTextBoxColumn3.HeaderText = "Gender";
             gridViewTextBoxColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewTextBoxColumn3.Name = "member_gender";
             gridViewTextBoxColumn3.Width = 77;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "d_o_b";
-            gridViewTextBoxColumn4.HeaderText = "Date of birth";
-            gridViewTextBoxColumn4.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn4.Name = "d_o_b";
-            gridViewTextBoxColumn4.Width = 80;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "mobile_no";
-            gridViewTextBoxColumn5.HeaderText = "Mobile No";
-            gridViewTextBoxColumn5.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn5.Name = "mobile_no";
-            gridViewTextBoxColumn5.Width = 81;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.FieldName = "member_id";
-            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
             gridViewCommandColumn1.IsVisible = false;
             gridViewCommandColumn1.Name = "member_id";
             gridViewCommandColumn1.Width = 20;
@@ -404,8 +349,6 @@
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.dgNewMembers.MasterTemplate.EnableGrouping = false;
@@ -417,55 +360,13 @@
             this.dgNewMembers.Text = "radGridView1";
             this.dgNewMembers.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgNewMembers_CommandCellClick);
             // 
-            // txtDistName
-            // 
-            this.txtDistName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDistName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDistName.Enabled = false;
-            this.txtDistName.Location = new System.Drawing.Point(361, 182);
-            this.txtDistName.MaxLength = 7;
-            this.txtDistName.Name = "txtDistName";
-            this.txtDistName.Size = new System.Drawing.Size(165, 22);
-            this.txtDistName.TabIndex = 92;
-            // 
-            // txtStateName
-            // 
-            this.txtStateName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtStateName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStateName.Enabled = false;
-            this.txtStateName.Location = new System.Drawing.Point(128, 185);
-            this.txtStateName.MaxLength = 7;
-            this.txtStateName.Name = "txtStateName";
-            this.txtStateName.Size = new System.Drawing.Size(180, 22);
-            this.txtStateName.TabIndex = 91;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(342, 171);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(12, 13);
-            this.label18.TabIndex = 90;
-            this.label18.Text = "*";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(108, 171);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(12, 13);
-            this.label17.TabIndex = 89;
-            this.label17.Text = "*";
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(42, 39);
+            this.label16.Location = new System.Drawing.Point(29, 39);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(12, 13);
+            this.label16.Size = new System.Drawing.Size(13, 17);
             this.label16.TabIndex = 88;
             this.label16.Text = "*";
             // 
@@ -473,27 +374,27 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(43, 67);
+            this.label14.Location = new System.Drawing.Point(30, 67);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(12, 13);
+            this.label14.Size = new System.Drawing.Size(13, 17);
             this.label14.TabIndex = 86;
             this.label14.Text = "*";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 66);
+            this.label6.Location = new System.Drawing.Point(42, 66);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.Size = new System.Drawing.Size(80, 17);
             this.label6.TabIndex = 83;
             this.label6.Text = "Card Holder";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 37);
+            this.label5.Location = new System.Drawing.Point(47, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 82;
             this.label5.Text = "Mobile No";
             // 
@@ -505,14 +406,13 @@
             this.txtPmobile.Name = "txtPmobile";
             this.txtPmobile.Size = new System.Drawing.Size(121, 23);
             this.txtPmobile.TabIndex = 4;
-            this.txtPmobile.TextChanged += new System.EventHandler(this.txtPmobile_TextChanged);
             // 
             // txtPdob
             // 
             this.txtPdob.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPdob.Location = new System.Drawing.Point(369, 62);
+            this.txtPdob.Location = new System.Drawing.Point(447, 62);
             this.txtPdob.Name = "txtPdob";
-            this.txtPdob.NullText = "dd/MM/yyyy";
+            this.txtPdob.NullText = "dd-MM-yyyy";
             this.txtPdob.Size = new System.Drawing.Size(77, 21);
             this.txtPdob.TabIndex = 3;
             // 
@@ -541,25 +441,25 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(311, 144);
+            this.label3.Location = new System.Drawing.Point(307, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 76;
             this.label3.Text = "District";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 148);
+            this.label1.Location = new System.Drawing.Point(47, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 75;
             this.label1.Text = "Select State";
             // 
             // ddldistrict
             // 
             this.ddldistrict.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddldistrict.Location = new System.Drawing.Point(358, 140);
+            this.ddldistrict.Location = new System.Drawing.Point(365, 145);
             this.ddldistrict.Name = "ddldistrict";
             this.ddldistrict.Size = new System.Drawing.Size(164, 21);
             this.ddldistrict.TabIndex = 10;
@@ -568,7 +468,7 @@
             // ddlState
             // 
             this.ddlState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlState.Location = new System.Drawing.Point(126, 140);
+            this.ddlState.Location = new System.Drawing.Point(126, 145);
             this.ddlState.Name = "ddlState";
             this.ddlState.Size = new System.Drawing.Size(180, 21);
             this.ddlState.TabIndex = 9;
@@ -580,7 +480,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(55, 28);
+            this.label8.Location = new System.Drawing.Point(55, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 20);
             this.label8.TabIndex = 52;
@@ -589,10 +489,10 @@
             // utxtPin
             // 
             this.utxtPin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.utxtPin.Location = new System.Drawing.Point(358, 114);
+            this.utxtPin.Location = new System.Drawing.Point(365, 116);
             this.utxtPin.MaxLength = 7;
             this.utxtPin.Name = "utxtPin";
-            this.utxtPin.Size = new System.Drawing.Size(163, 22);
+            this.utxtPin.Size = new System.Drawing.Size(163, 25);
             this.utxtPin.TabIndex = 8;
             // 
             // txtNewCardNo
@@ -602,7 +502,6 @@
             this.txtNewCardNo.Location = new System.Drawing.Point(126, 7);
             this.txtNewCardNo.MaxLength = 50;
             this.txtNewCardNo.Name = "txtNewCardNo";
-            this.txtNewCardNo.ReadOnly = true;
             this.txtNewCardNo.Size = new System.Drawing.Size(121, 23);
             this.txtNewCardNo.TabIndex = 51;
             // 
@@ -610,10 +509,10 @@
             // 
             this.utxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.utxtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.utxtEmail.Location = new System.Drawing.Point(126, 114);
+            this.utxtEmail.Location = new System.Drawing.Point(126, 116);
             this.utxtEmail.MaxLength = 50;
             this.utxtEmail.Name = "utxtEmail";
-            this.utxtEmail.Size = new System.Drawing.Size(180, 22);
+            this.utxtEmail.Size = new System.Drawing.Size(180, 25);
             this.utxtEmail.TabIndex = 7;
             // 
             // ulblMessage
@@ -632,7 +531,7 @@
             this.label49.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(91, 113);
+            this.label49.Location = new System.Drawing.Point(86, 99);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(32, 14);
             this.label49.TabIndex = 6;
@@ -643,7 +542,7 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(84, 134);
+            this.label29.Location = new System.Drawing.Point(84, 126);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(38, 15);
             this.label29.TabIndex = 13;
@@ -653,9 +552,9 @@
             // 
             this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(312, 114);
+            this.label48.Location = new System.Drawing.Point(308, 97);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(45, 13);
+            this.label48.Size = new System.Drawing.Size(51, 17);
             this.label48.TabIndex = 7;
             this.label48.Text = "Locality";
             // 
@@ -664,7 +563,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 138);
+            this.label2.Location = new System.Drawing.Point(326, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 14);
             this.label2.TabIndex = 45;
@@ -673,10 +572,10 @@
             // utxtLocality
             // 
             this.utxtLocality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.utxtLocality.Location = new System.Drawing.Point(358, 88);
+            this.utxtLocality.Location = new System.Drawing.Point(365, 88);
             this.utxtLocality.MaxLength = 50;
             this.utxtLocality.Name = "utxtLocality";
-            this.utxtLocality.Size = new System.Drawing.Size(163, 22);
+            this.utxtLocality.Size = new System.Drawing.Size(163, 25);
             this.utxtLocality.TabIndex = 6;
             // 
             // utxtArea
@@ -685,8 +584,20 @@
             this.utxtArea.Location = new System.Drawing.Point(126, 89);
             this.utxtArea.MaxLength = 50;
             this.utxtArea.Name = "utxtArea";
-            this.utxtArea.Size = new System.Drawing.Size(180, 22);
+            this.utxtArea.Size = new System.Drawing.Size(180, 25);
             this.utxtArea.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Image = global::eMediShop.Properties.Resources.Save_16;
+            this.btnSave.Location = new System.Drawing.Point(466, 369);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(57, 28);
+            this.btnSave.TabIndex = 77;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // View_ExistingCARD
             // 
@@ -698,7 +609,7 @@
             this.View_ExistingCARD.Controls.Add(this.btnAction);
             this.View_ExistingCARD.Controls.Add(this.rgb_replace);
             this.View_ExistingCARD.Controls.Add(this.dgMembers);
-            this.View_ExistingCARD.ItemSize = new System.Drawing.SizeF(562F, 24F);
+            this.View_ExistingCARD.ItemSize = new System.Drawing.SizeF(564F, 32F);
             this.View_ExistingCARD.Location = new System.Drawing.Point(5, 29);
             this.View_ExistingCARD.Name = "View_ExistingCARD";
             this.View_ExistingCARD.Size = new System.Drawing.Size(554, 401);
@@ -798,6 +709,18 @@
             this.panel2.Size = new System.Drawing.Size(499, 42);
             this.panel2.TabIndex = 100;
             // 
+            // btnReplace
+            // 
+            this.btnReplace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnReplace.Image = global::eMediShop.Properties.Resources.Refresh_16;
+            this.btnReplace.Location = new System.Drawing.Point(248, 10);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(105, 23);
+            this.btnReplace.TabIndex = 99;
+            this.btnReplace.Text = "REPLACE CARD";
+            this.btnReplace.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -833,85 +756,85 @@
             this.dgMembers.MasterTemplate.AllowAddNewRow = false;
             this.dgMembers.MasterTemplate.AllowDeleteRow = false;
             this.dgMembers.MasterTemplate.AllowEditRow = false;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "m_type";
+            gridViewTextBoxColumn4.HeaderText = "MType";
+            gridViewTextBoxColumn4.Name = "m_type";
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "card_no";
+            gridViewTextBoxColumn5.HeaderText = "Card No";
+            gridViewTextBoxColumn5.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn5.Name = "card_no";
+            gridViewTextBoxColumn5.Width = 76;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "m_type";
-            gridViewTextBoxColumn6.HeaderText = "MType";
-            gridViewTextBoxColumn6.Name = "m_type";
+            gridViewTextBoxColumn6.FieldName = "member_name";
+            gridViewTextBoxColumn6.HeaderText = "Name";
+            gridViewTextBoxColumn6.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn6.Name = "member_name";
+            gridViewTextBoxColumn6.Width = 165;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "card_no";
-            gridViewTextBoxColumn7.HeaderText = "Card No";
-            gridViewTextBoxColumn7.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn7.Name = "card_no";
-            gridViewTextBoxColumn7.Width = 76;
+            gridViewTextBoxColumn7.FieldName = "gender";
+            gridViewTextBoxColumn7.HeaderText = "Gender";
+            gridViewTextBoxColumn7.Name = "gender";
+            gridViewTextBoxColumn7.Width = 46;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "member_name";
-            gridViewTextBoxColumn8.HeaderText = "Name";
-            gridViewTextBoxColumn8.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn8.Name = "member_name";
-            gridViewTextBoxColumn8.Width = 165;
+            gridViewTextBoxColumn8.FieldName = "d_o_b";
+            gridViewTextBoxColumn8.HeaderText = "DOB";
+            gridViewTextBoxColumn8.Name = "d_o_b";
+            gridViewTextBoxColumn8.Width = 77;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "gender";
-            gridViewTextBoxColumn9.HeaderText = "Gender";
-            gridViewTextBoxColumn9.Name = "gender";
-            gridViewTextBoxColumn9.Width = 46;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "d_o_b";
-            gridViewTextBoxColumn10.HeaderText = "DOB";
-            gridViewTextBoxColumn10.Name = "d_o_b";
-            gridViewTextBoxColumn10.Width = 77;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "mobile_no";
-            gridViewTextBoxColumn11.HeaderText = "Mobile No";
-            gridViewTextBoxColumn11.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn11.Name = "mobile_no";
-            gridViewTextBoxColumn11.Width = 69;
+            gridViewTextBoxColumn9.FieldName = "mobile_no";
+            gridViewTextBoxColumn9.HeaderText = "Mobile No";
+            gridViewTextBoxColumn9.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn9.Name = "mobile_no";
+            gridViewTextBoxColumn9.Width = 69;
             gridViewCommandColumn3.EnableExpressionEditor = false;
             gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
             gridViewCommandColumn3.Name = "column1";
             gridViewCommandColumn3.Width = 28;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "cardtype";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "cardtype";
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "memeber_id";
+            gridViewTextBoxColumn11.HeaderText = "memeber_id";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "memeber_id";
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "cardtype";
+            gridViewTextBoxColumn12.FieldName = "address";
             gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "cardtype";
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "memeber_id";
-            gridViewTextBoxColumn13.HeaderText = "memeber_id";
-            gridViewTextBoxColumn13.IsVisible = false;
-            gridViewTextBoxColumn13.Name = "memeber_id";
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "address";
-            gridViewTextBoxColumn14.IsVisible = false;
-            gridViewTextBoxColumn14.Name = "address";
+            gridViewTextBoxColumn12.Name = "address";
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "DiscPerc";
             gridViewDecimalColumn1.FormatString = "{0:N2}";
             gridViewDecimalColumn1.HeaderText = "Dis%";
             gridViewDecimalColumn1.IsVisible = false;
             gridViewDecimalColumn1.Name = "disper";
-            gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "paymode";
-            gridViewTextBoxColumn15.HeaderText = "paymode";
-            gridViewTextBoxColumn15.IsVisible = false;
-            gridViewTextBoxColumn15.Name = "paymode";
-            gridViewTextBoxColumn16.EnableExpressionEditor = false;
-            gridViewTextBoxColumn16.FieldName = "app_flag";
-            gridViewTextBoxColumn16.HeaderText = "app_flag";
-            gridViewTextBoxColumn16.IsVisible = false;
-            gridViewTextBoxColumn16.Name = "app_flag";
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "paymode";
+            gridViewTextBoxColumn13.HeaderText = "paymode";
+            gridViewTextBoxColumn13.IsVisible = false;
+            gridViewTextBoxColumn13.Name = "paymode";
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "app_flag";
+            gridViewTextBoxColumn14.HeaderText = "app_flag";
+            gridViewTextBoxColumn14.IsVisible = false;
+            gridViewTextBoxColumn14.Name = "app_flag";
             this.dgMembers.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8,
             gridViewTextBoxColumn9,
+            gridViewCommandColumn3,
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
-            gridViewCommandColumn3,
             gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
             gridViewDecimalColumn1,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16});
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14});
             sortDescriptor1.PropertyName = "column2";
             this.dgMembers.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});
@@ -927,46 +850,12 @@
             this.dgMembers.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.dgMembers_RowFormatting);
             this.dgMembers.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgMembers_CommandCellClick);
             // 
-            // btnmobile
-            // 
-            this.btnmobile.Image = global::eMediShop.Properties.Resources.click16;
-            this.btnmobile.Location = new System.Drawing.Point(480, 23);
-            this.btnmobile.Name = "btnmobile";
-            this.btnmobile.Size = new System.Drawing.Size(39, 22);
-            this.btnmobile.TabIndex = 12;
-            this.btnmobile.Text = "Add";
-            this.btnmobile.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnmobile.Click += new System.EventHandler(this.btnmobile_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Image = global::eMediShop.Properties.Resources.Save_16;
-            this.btnSave.Location = new System.Drawing.Point(466, 369);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(57, 28);
-            this.btnSave.TabIndex = 77;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnReplace
-            // 
-            this.btnReplace.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnReplace.Image = global::eMediShop.Properties.Resources.Refresh_16;
-            this.btnReplace.Location = new System.Drawing.Point(248, 10);
-            this.btnReplace.Name = "btnReplace";
-            this.btnReplace.Size = new System.Drawing.Size(105, 23);
-            this.btnReplace.TabIndex = 99;
-            this.btnReplace.Text = "REPLACE CARD";
-            this.btnReplace.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
-            // 
             // ucHealthCardNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.radPageView1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "ucHealthCardNew";
             this.Size = new System.Drawing.Size(567, 521);
             this.Load += new System.EventHandler(this.ucHealthCard_Load);
@@ -980,9 +869,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdob)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlgender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmobile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNewMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPmobile)).EndInit();
@@ -991,6 +879,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddldistrict)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             this.View_ExistingCARD.ResumeLayout(false);
             this.View_ExistingCARD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerify)).EndInit();
@@ -1001,11 +890,9 @@
             this.rgb_replace.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnmobile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReplace)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1026,12 +913,9 @@
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.TextBox txtNewCardNo;
         private Telerik.WinControls.UI.RadButton btnmobile;
-        private System.Windows.Forms.Label label12;
-        private Telerik.WinControls.UI.RadTextBox txtmobile;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private Telerik.WinControls.UI.RadDropDownList ddlgender;
-        private Telerik.WinControls.UI.RadTextBox txtdob;
         private Telerik.WinControls.UI.RadTextBox txtname;
         private Telerik.WinControls.UI.RadGridView dgNewMembers;
         private Telerik.WinControls.UI.RadButton btnSave;
@@ -1041,7 +925,6 @@
         private Telerik.WinControls.UI.RadDropDownList ddlState;
         internal System.Windows.Forms.TextBox utxtPin;
         internal System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private Telerik.WinControls.UI.RadTextBox txtPmobile;
@@ -1050,10 +933,6 @@
         private Telerik.WinControls.UI.RadTextBox txtPName;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        internal System.Windows.Forms.TextBox txtDistName;
-        internal System.Windows.Forms.TextBox txtStateName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private Telerik.WinControls.UI.RadButton btnReplace;

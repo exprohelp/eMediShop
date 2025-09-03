@@ -44,7 +44,7 @@ namespace eMediShop.purchase.debitNote
                 cmbAdjtype.DataSource = new BindingSource(adjustmentType, null);
                 cmbAdjtype.DisplayMember = "value";
                 cmbAdjtype.ValueMember = "Key";
-                cmbAdjtype.SelectedIndex = 2;
+                cmbAdjtype.SelectedValue = "Select";
 
                 rdbCNDate.MinDate = Convert.ToDateTime(dwr.result.Tables[2].Rows[0]["minDate"].ToString());
             }
@@ -127,8 +127,14 @@ namespace eMediShop.purchase.debitNote
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             #region Validation
-            
-                if (!adjustmentType.ContainsKey(cmbAdjtype.Text))
+
+            if (cmbAdjtype.Text.ToUpper()=="SELECT")
+            {
+                RadMessageBox.Show(cmbAdjtype.Text + " Not In Adjustment Type.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+                return;
+            }
+
+            if (!adjustmentType.ContainsKey(cmbAdjtype.Text))
                 {
                     RadMessageBox.Show(cmbAdjtype.Text + " Not In Adjustment Type.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
                     return;

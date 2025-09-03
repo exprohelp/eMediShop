@@ -27,12 +27,8 @@ namespace eMediShop
         {
             ddlgender.SelectedIndex = 0;
             ddlPGender.SelectedIndex = 0;
-            txtStateName.Text = GlobalUsage.State;
-            txtDistName.Text = GlobalUsage.District;
             FillState();
-
-            ddlState.Text = GlobalUsage.State;
-
+            
             ddlState.SelectedIndex=ddlState.FindString(GlobalUsage.State);
             //FillDistrict(stateCode.ToString());
             if (_SearchOption == "SearchByCard")
@@ -116,23 +112,25 @@ namespace eMediShop
 
         private void FillState()
         {
-            Cursor.Current = Cursors.WaitCursor;
+          
             DataSet ds = new DataSet();
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 ddlState.Items.Clear();
                 ddlState.SelectedIndexChanged -= new Telerik.WinControls.UI.Data.PositionChangedEventHandler(ddlState_SelectedIndexChanged);
                 cm1 p = new cm1();
                 p.unit_id = GlobalUsage.Unit_id; p.Logic = "GetStateInfo";
                 p.prm_1 = "N/A"; p.prm_2 = "N/A"; p.prm_3 = "N/A"; p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/units/UnitInfoQueries", p);
-               
+
                 ddlState.Items.AddRange(Config.FillTelrikCombo(dwr.result.Tables[0]));
                 ddlState.SelectedIndex = 0;
                 ddlState.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(ddlState_SelectedIndexChanged);
-                Cursor.Current = Cursors.Default;
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            finally { Cursor.Current = Cursors.Default; }
         }
         private void FillDistrict(string statecode)
         {
@@ -175,39 +173,23 @@ namespace eMediShop
         {
             if (ddlState.SelectedItem.Value != null)
             {
-                txtStateName.Text = ddlState.SelectedItem.ToString();
+              
                 FillDistrict(ddlState.SelectedItem.Value.ToString());
             }
         }
         private void ddldistrict_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            txtDistName.Text = ddldistrict.Text;
+           
         }
         private void btnmobile_Click(object sender, EventArgs e)
         {
             try
             {
-                string dob = string.Empty;
-                if (txtdob.Text.Trim().Length > 0)
-                {
-                    if (!IsValidDateTime(txtdob.Text))
-                    {
-                        MessageBox.Show("input date should be in dd/MM/yyyy format");
-                        return;
-                    }
-                    else
-                    {
-                        string[] t = txtdob.Text.Split('/');
-                        dob = t[2] + "/" + t[1] + "/" + t[0];
-                    }
-                }
                 GridViewRowInfo gr = dgNewMembers.Rows.AddNew();
                 gr.Cells["member_id"].Value = "-";
                 gr.Cells["m_type"].Value = "M";
                 gr.Cells["member_name"].Value = txtname.Text;
                 gr.Cells["member_gender"].Value = ddlgender.Text;
-                gr.Cells["d_o_b"].Value = dob;
-                gr.Cells["mobile_no"].Value = txtmobile.Text;
             }
             catch (Exception ex) { }
         }
@@ -222,8 +204,6 @@ namespace eMediShop
                 m.m_type = gr.Cells["m_type"].Value.ToString();
                 m.cust_name = gr.Cells["member_name"].Value.ToString();
                 m.gender = gr.Cells["member_gender"].Value.ToString();
-                m.dob = gr.Cells["d_o_b"].Value.ToString();
-                m.mobileno = gr.Cells["mobile_no"].Value.ToString();
                 memberList.Add(m);
              
             }
@@ -240,39 +220,17 @@ namespace eMediShop
                     MessageBox.Show("Please input 10 degit mobile number");
                     return;
                 }
-                if (txtStateName.Text.Length < 2)
-                {
-                    MessageBox.Show("Please select State ");
-                    return;
-                }
-                if (txtDistName.Text.Length < 2)
-                {
-                    MessageBox.Show("Please select district");
-                    return;
-                }
-                string dob = string.Empty;
-                if (txtPdob.Text.Trim().Length > 0)
-                {
-                    if (!IsValidDateTime(txtPdob.Text))
-                    {
-                        MessageBox.Show("input date should be in dd/MM/yyyy format");
-                        return;
-                    }
-                    else
-                    {
-                        string[] t = txtPdob.Text.Split('/');
-                        dob = t[2] + "/" + t[1] + "/" + t[0];
-                    }
-                }
+               
+              
                 Cursor.Current = Cursors.WaitCursor;
 
           
                 ipCardDetail cd = new ipCardDetail();
                 cd.unit_id = GlobalUsage.Unit_id; cd.card_no = txtNewCardNo.Text; cd.member_id = "M"; cd.m_type = "P";
-                cd.cust_name = txtPName.Text; cd.gender = ddlgender.Text; cd.dob = dob; cd.mobileno = txtPmobile.Text; cd.area = utxtArea.Text;
-                cd.Locality = utxtLocality.Text; cd.district = txtDistName.Text; cd.state = txtStateName.Text; cd.email = utxtEmail.Text;
+                cd.cust_name = txtPName.Text; cd.gender = ddlgender.Text; cd.area = utxtArea.Text;
+                cd.Locality = utxtLocality.Text; cd.district = ddlState.Text; cd.state = ddldistrict.Text; cd.email = utxtEmail.Text;
                 cd.pin = utxtPin.Text; cd.logic = "Insert"; cd.login_id = GlobalUsage.Login_id;
-
+                cd.mobileno = txtPmobile.Text;
                 List<object> obj = new List<object>();
                 obj.Add(cd); obj.Add(memberList);
        
@@ -308,10 +266,7 @@ namespace eMediShop
         {
             e.Row.Delete();
         }
-        private void txtPmobile_TextChanged(object sender, EventArgs e)
-        {
-            txtmobile.Text = txtPmobile.Text;
-        }
+      
 
         private void btnReplace_Click(object sender, EventArgs e)
         {
@@ -342,7 +297,7 @@ namespace eMediShop
 
         private void btnGenOtp_Click(object sender, EventArgs e)
         {
-            GenerateOTP(txtNewCardNo.Text);
+            GenerateOTP(txtPmobile.Text);
         }
 
         private void GenerateOTP(string mobileno)
@@ -355,13 +310,34 @@ namespace eMediShop
                 sms p = new sms();
                 p.msg = _otp + " is Your Chandan Member Verification Code.";// + DateTime.Now.ToString();
                 p.MobileNo = mobileno;
+                p.templateID = "1007368458238551885";
+                p.smsProvider = GlobalUsage.smsProvider;
                 p.smsAPI = GlobalUsage.SmsAPI;
                 p.smsID = GlobalUsage.SmsID;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/common/sendsms", p);
                 btnGenOtp.Enabled = false;
+                 btnOTPVerify.Enabled = true;
             }
             catch (Exception ex) { }
             finally { Cursor.Current = Cursors.Default; }
+
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    Random rnd = new Random();
+            //    _otp = (rnd.Next(100000, 999999)).ToString();
+            //    sms p = new sms();
+            //    p.msg = _otp + " is Your Chandan Member Verification Code.";// + DateTime.Now.ToString();
+            //    p.MobileNo = mobileno;
+            //    p.smsProvider = "tata";
+            //    p.smsAPI = GlobalUsage.SmsAPI;
+            //    p.smsID = GlobalUsage.SmsID;
+            //    datasetWithResult dwr = ConfigWebAPI.CallAPI("api/common/sendsms", p);
+            //    btnGenOtp.Enabled = false;
+            //    btnVerify.Enabled = true;
+            //}
+            //catch (Exception ex) { }
+            //finally { Cursor.Current = Cursors.Default; }
         }
 
         private void btnOTPVerify_Click(object sender, EventArgs e)
@@ -369,11 +345,11 @@ namespace eMediShop
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                if (txtOTP.Text == _otp)
+                if (txtOTP.Text == _otp & txtOTP.TextLength>0)
                 {
                     btnSave.Enabled = true;
                     RadMessageBox.Show("OTP Verified Successfully.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
-
+                    
                 }
                 else
                 {
@@ -473,7 +449,8 @@ namespace eMediShop
 
         private void ddlState_TextChanged(object sender, EventArgs e)
         {
-            if(ddlState.SelectedValue.ToString()!="Select")
+
+
             FillDistrict(ddlState.SelectedValue.ToString());
         }
     }

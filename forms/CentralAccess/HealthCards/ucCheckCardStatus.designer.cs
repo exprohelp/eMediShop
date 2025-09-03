@@ -45,6 +45,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.txtActivationNo = new System.Windows.Forms.MaskedTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.btn_act_no = new System.Windows.Forms.Button();
             this.gb_HealthCard = new System.Windows.Forms.GroupBox();
             this.lblPurchaseAmt = new System.Windows.Forms.Label();
             this.btnPrivilege = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.btnGold = new System.Windows.Forms.Button();
             this.btnSilver = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_act_no = new System.Windows.Forms.Button();
             this.groupBox8.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -184,7 +184,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Image = global::eMediShop.Properties.Resources.Search_32;
-            this.btnSubmit.Location = new System.Drawing.Point(296, 14);
+            this.btnSubmit.Location = new System.Drawing.Point(305, 14);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(42, 38);
             this.btnSubmit.TabIndex = 10;
@@ -195,7 +195,7 @@
             // 
             this.check_txtCardNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.check_txtCardNo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_txtCardNo.Location = new System.Drawing.Point(103, 20);
+            this.check_txtCardNo.Location = new System.Drawing.Point(112, 20);
             this.check_txtCardNo.MaxLength = 12;
             this.check_txtCardNo.Name = "check_txtCardNo";
             this.check_txtCardNo.Size = new System.Drawing.Size(186, 31);
@@ -219,9 +219,9 @@
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.Location = new System.Drawing.Point(12, 34);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(84, 13);
+            this.label52.Size = new System.Drawing.Size(95, 13);
             this.label52.TabIndex = 7;
-            this.label52.Text = "Put Card No. ";
+            this.label52.Text = "Put Mobile No. ";
             this.label52.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // groupBox6
@@ -274,6 +274,21 @@
             this.richTextBox2.TabIndex = 38;
             this.richTextBox2.Text = "Get the Activation Code From the Member and Put the Activation Code in Given Box " +
     "Then you Click Activate Card Button to activate the card.";
+            // 
+            // btn_act_no
+            // 
+            this.btn_act_no.BackColor = System.Drawing.Color.DimGray;
+            this.btn_act_no.Enabled = false;
+            this.btn_act_no.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_act_no.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_act_no.Location = new System.Drawing.Point(666, 39);
+            this.btn_act_no.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_act_no.Name = "btn_act_no";
+            this.btn_act_no.Size = new System.Drawing.Size(159, 36);
+            this.btn_act_no.TabIndex = 37;
+            this.btn_act_no.Text = "Activate Card";
+            this.btn_act_no.UseVisualStyleBackColor = false;
+            this.btn_act_no.Click += new System.EventHandler(this.btn_act_no_Click);
             // 
             // gb_HealthCard
             // 
@@ -372,21 +387,6 @@
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Activate a Card";
-            // 
-            // btn_act_no
-            // 
-            this.btn_act_no.BackColor = System.Drawing.Color.DimGray;
-            this.btn_act_no.Enabled = false;
-            this.btn_act_no.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_act_no.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_act_no.Location = new System.Drawing.Point(666, 39);
-            this.btn_act_no.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_act_no.Name = "btn_act_no";
-            this.btn_act_no.Size = new System.Drawing.Size(159, 36);
-            this.btn_act_no.TabIndex = 37;
-            this.btn_act_no.Text = "Activate Card";
-            this.btn_act_no.UseVisualStyleBackColor = false;
-            this.btn_act_no.Click += new System.EventHandler(this.btn_act_no_Click);
             // 
             // ucCheckCardStatus
             // 

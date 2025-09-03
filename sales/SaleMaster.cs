@@ -513,7 +513,9 @@ namespace eMediShop.sales
             DataRow dr = dt.Rows[0];
             if (_CardChangeFlag == "N")
             {
-                txtCardNo.Text = dr["card_no"].ToString();
+                txtCardNo.Text = dr["contactNo"].ToString();
+                _mobileNo= dr["contactNo"].ToString();
+                _cardNo= dr["card_no"].ToString();
                 txtPatientName.Text = dr["pt_name"].ToString();
             }
             txtTotal.Text = Convert.ToDecimal(dr["total"]).ToString("####.00");
@@ -1459,7 +1461,7 @@ namespace eMediShop.sales
             b.amount = Convert.ToInt32(txtNetValue.Text);b.mobileNo = _mobileNo;
             b.Oldsale_inv_no = txtOldCashMemoNo.Text;
 
-            if (rb_ByMobile.Checked && txtCardNo.Text.Length == 10)
+            if (rb_ByMobile.Checked && txtCardNo.Text.Length == 20)
                 b.mobileNo = txtCardNo.Text;
             else if (_mobileNo.Length == 10)
                 b.mobileNo = _mobileNo;

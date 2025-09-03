@@ -51,8 +51,8 @@ namespace eMediShop
             try
             {
                 GlobalUsage.ManualBill = new CrystalReportsPharmacy.eMediShop.ManualDeliveryNote();
-                GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST();
-                GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
+                GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGSTByWallet();
+                GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet();
                 GlobalUsage.opthCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic();
                 GlobalUsage.HospitalInternalSheet = new CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet();
                 GlobalUsage.HAL_DeliveryNote = new CrystalReportsPharmacy.eMediShop.DeliveryNote_HAL();
@@ -414,7 +414,7 @@ namespace eMediShop
         #region Sales
         private void rbe_sales_pharmacy_Click(object sender, EventArgs e)
         {
-            //openForm(new SaleMaster("New Invoice"));
+         
             openForm(new sales.SaleMaster("Direct","New Invoice"));
 
         }
@@ -760,7 +760,7 @@ namespace eMediShop
 
         private void rbe_ord_process_Click(object sender, EventArgs e)
         {
-            // openForm(new eMediShop.forms.CentralAccess.RCM.ProcessOrder());
+           
             openForm(new eMediShop.sales.ProcessOrder());
         }
 
