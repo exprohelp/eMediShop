@@ -577,7 +577,7 @@ namespace eMediShop
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 61);
+            this.label6.Location = new System.Drawing.Point(74, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 7;
@@ -1067,9 +1067,9 @@ namespace eMediShop
             this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(6, 204);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(195, 20);
+            this.label25.Size = new System.Drawing.Size(137, 20);
             this.label25.TabIndex = 148;
-            this.label25.Text = "Discount Transfer in Wallet Rs.";
+            this.label25.Text = "Transfer in Wallet Rs.";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnBillPosting
@@ -1193,7 +1193,7 @@ namespace eMediShop
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(17, 175);
+            this.label23.Location = new System.Drawing.Point(42, 175);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(101, 20);
             this.label23.TabIndex = 33;
@@ -1204,7 +1204,7 @@ namespace eMediShop
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(19, 85);
+            this.label24.Location = new System.Drawing.Point(47, 85);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(96, 20);
             this.label24.TabIndex = 11;

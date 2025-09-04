@@ -493,7 +493,7 @@ namespace eMediShop.sales
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(58, 98);
+            this.label20.Location = new System.Drawing.Point(76, 98);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(44, 20);
             this.label20.TabIndex = 27;
@@ -503,7 +503,7 @@ namespace eMediShop.sales
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(128, 98);
+            this.label5.Location = new System.Drawing.Point(146, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 20);
             this.label5.TabIndex = 25;
@@ -514,7 +514,7 @@ namespace eMediShop.sales
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 53);
+            this.label6.Location = new System.Drawing.Point(81, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 7;
@@ -976,10 +976,10 @@ namespace eMediShop.sales
             this.txtWallet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtWallet.Enabled = false;
             this.txtWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWallet.Location = new System.Drawing.Point(199, 177);
+            this.txtWallet.Location = new System.Drawing.Point(168, 177);
             this.txtWallet.Name = "txtWallet";
             this.txtWallet.ReadOnly = true;
-            this.txtWallet.Size = new System.Drawing.Size(65, 23);
+            this.txtWallet.Size = new System.Drawing.Size(96, 23);
             this.txtWallet.TabIndex = 147;
             this.txtWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtWallet.GetChildAt(0))).Text = "";
@@ -988,11 +988,11 @@ namespace eMediShop.sales
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(5, 180);
+            this.label25.Location = new System.Drawing.Point(13, 180);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(182, 20);
+            this.label25.Size = new System.Drawing.Size(137, 20);
             this.label25.TabIndex = 146;
-            this.label25.Text = "Wallet will be updated By Rs.";
+            this.label25.Text = "Transfer in Wallet Rs.";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnBillPosting
@@ -1039,7 +1039,7 @@ namespace eMediShop.sales
             this.txtSGST.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSGST.Enabled = false;
             this.txtSGST.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSGST.Location = new System.Drawing.Point(108, 121);
+            this.txtSGST.Location = new System.Drawing.Point(126, 121);
             this.txtSGST.Name = "txtSGST";
             this.txtSGST.ReadOnly = true;
             this.txtSGST.Size = new System.Drawing.Size(65, 23);
@@ -1052,7 +1052,7 @@ namespace eMediShop.sales
             this.txtcgst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcgst.Enabled = false;
             this.txtcgst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcgst.Location = new System.Drawing.Point(37, 121);
+            this.txtcgst.Location = new System.Drawing.Point(55, 121);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.ReadOnly = true;
             this.txtcgst.Size = new System.Drawing.Size(65, 23);
@@ -1068,7 +1068,7 @@ namespace eMediShop.sales
             this.txtTotalGST.Location = new System.Drawing.Point(164, 146);
             this.txtTotalGST.Name = "txtTotalGST";
             this.txtTotalGST.ReadOnly = true;
-            this.txtTotalGST.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalGST.Size = new System.Drawing.Size(96, 23);
             this.txtTotalGST.TabIndex = 136;
             this.txtTotalGST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             ((Telerik.WinControls.UI.RadTextBoxElement)(this.txtTotalGST.GetChildAt(0))).Text = "";
@@ -1081,7 +1081,7 @@ namespace eMediShop.sales
             this.txtDiscount.Location = new System.Drawing.Point(165, 72);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.ReadOnly = true;
-            this.txtDiscount.Size = new System.Drawing.Size(100, 23);
+            this.txtDiscount.Size = new System.Drawing.Size(96, 23);
             this.txtDiscount.TabIndex = 135;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1095,7 +1095,7 @@ namespace eMediShop.sales
             this.txtTotal.Location = new System.Drawing.Point(165, 47);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(100, 23);
+            this.txtTotal.Size = new System.Drawing.Size(96, 23);
             this.txtTotal.TabIndex = 134;
             this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1119,7 +1119,7 @@ namespace eMediShop.sales
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(5, 149);
+            this.label23.Location = new System.Drawing.Point(49, 149);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(101, 20);
             this.label23.TabIndex = 33;
@@ -1130,7 +1130,7 @@ namespace eMediShop.sales
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(7, 77);
+            this.label24.Location = new System.Drawing.Point(54, 77);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(96, 20);
             this.label24.TabIndex = 11;
@@ -1208,7 +1208,7 @@ namespace eMediShop.sales
             this.rpv_master.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rpv_master.Location = new System.Drawing.Point(0, 0);
             this.rpv_master.Name = "rpv_master";
-            this.rpv_master.SelectedPage = this.rpvp_healthcard;
+            this.rpv_master.SelectedPage = this.rpvp_pos;
             this.rpv_master.Size = new System.Drawing.Size(1211, 625);
             this.rpv_master.TabIndex = 122;
             this.rpv_master.Text = "radPageView1";

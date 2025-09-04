@@ -114,6 +114,8 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.lblHd = new System.Windows.Forms.Label();
             this.rbtn_prescription = new Telerik.WinControls.UI.RadButton();
+            this.txtWalletTransfer = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrintIS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemarks)).BeginInit();
@@ -869,6 +871,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.txtWalletTransfer);
+            this.radGroupBox1.Controls.Add(this.label1);
             this.radGroupBox1.Controls.Add(this.lblHd);
             this.radGroupBox1.Controls.Add(this.btnPrintIS);
             this.radGroupBox1.Controls.Add(this.lv_batchno);
@@ -923,6 +927,33 @@
             this.rbtn_prescription.Size = new System.Drawing.Size(30, 32);
             this.rbtn_prescription.TabIndex = 297;
             this.rbtn_prescription.Click += new System.EventHandler(this.rbtn_prescription_Click);
+            // 
+            // txtWalletTransfer
+            // 
+            this.txtWalletTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtWalletTransfer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWalletTransfer.Enabled = false;
+            this.txtWalletTransfer.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWalletTransfer.ForeColor = System.Drawing.Color.Green;
+            this.txtWalletTransfer.Location = new System.Drawing.Point(416, 391);
+            this.txtWalletTransfer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtWalletTransfer.MaxLength = 20;
+            this.txtWalletTransfer.Name = "txtWalletTransfer";
+            this.txtWalletTransfer.ReadOnly = true;
+            this.txtWalletTransfer.Size = new System.Drawing.Size(59, 18);
+            this.txtWalletTransfer.TabIndex = 307;
+            this.txtWalletTransfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(295, 394);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 11);
+            this.label1.TabIndex = 308;
+            this.label1.Tag = "";
+            this.label1.Text = "Transfer To Wallet Rs.";
             // 
             // ProcessOrder
             // 
@@ -1034,5 +1065,7 @@
         private System.Windows.Forms.ListView lvOrder;
         private Telerik.WinControls.UI.RadGridView rgv_orders;
         private System.Windows.Forms.Label lblHd;
+        private System.Windows.Forms.TextBox txtWalletTransfer;
+        private System.Windows.Forms.Label label1;
     }
 }

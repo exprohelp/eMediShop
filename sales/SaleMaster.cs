@@ -519,7 +519,7 @@ namespace eMediShop.sales
                 txtPatientName.Text = dr["pt_name"].ToString();
             }
             txtTotal.Text = Convert.ToDecimal(dr["total"]).ToString("####.00");
-            //txtWallet.Text= Convert.ToDecimal(dr["TrfInWallet"]).ToString("####.00");
+            txtWallet.Text= Convert.ToDecimal(dr["TrfInWallet"]).ToString("####.00");
             txtDiscount.Text = Convert.ToDecimal(dr["discount"]).ToString("####.00");
             txtNetValue.Text = Convert.ToDecimal(dr["payable"]).ToString("####0");
             //txtRoundoff.Text = Convert.ToDecimal(dsr.Tables[0].Rows[0]["roundoff"]).ToString("##.00");

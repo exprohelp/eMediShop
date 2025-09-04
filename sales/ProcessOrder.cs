@@ -609,7 +609,7 @@ namespace eMediShop.sales
                     Printing.Laser.CashMemo(inv_no, "Y");
             }
         }
-        private void makeSale(string item_id, string masterkey, int qty)
+        private void makeSaleWithoutWallet(string item_id, string masterkey, int qty)
         {
              DataSet ds = new DataSet();
             datasetWithResult dwr = new datasetWithResult();
@@ -675,6 +675,92 @@ namespace eMediShop.sales
             #endregion
             Cursor.Current = Cursors.Default;
         }
+        private void makeSale(string item_id, string masterkey, int qty)
+        {
+            DataSet ds = new DataSet();
+            datasetWithResult dwr = new datasetWithResult();
+            Cursor.Current = Cursors.WaitCursor;
+            #region Saving of Record
+            try
+            {
+
+
+                /*
+                pm_InsertRetailSales p = new pm_InsertRetailSales();
+                p.unit_id = GlobalUsage.Unit_id;
+                p.counter_id = GlobalUsage.CounterID; p.computer_id = GlobalUsage.computerName; p.Sale_Type = "RO-PROCESS";
+                p.cust_name = cbxPtName.Text; p.prescribedBy = rgv_orders.CurrentRow.Cells["prescribedBy"].Value.ToString();
+                p.refCode = "New";
+                p.item_id = item_id; p.master_key_id = masterkey;
+                p.card_no = _cardNo; p.card_level = _card_Level; p.discountPercent = _discountPercentage;
+                p.sold_qty = Convert.ToDouble(qty); p.ContactNo = _contactNo;
+                p.old_sale_inv_no = GlobalUsage.Old_Sale_Inv_No; p.gstn_no = "-"; p.hosp_cr_no = "-"; p.hosp_ipop_no = "-";
+                p.Cur_sale_inv_no = txtInvNo.Text; p.DiscountLogic = "New"; p.order_no = _order_no; p.promo_flag = _promoTag;
+                p.login_id = GlobalUsage.Login_id;
+                p.stateName = GlobalUsage.State;
+                dwr = ConfigWebAPI.CallAPI("api/sales/InsertRetailSales", p);
+                ds = dwr.result; _result = dwr.message;
+                */
+                pm_InsertRetailSales p = new pm_InsertRetailSales();
+                p.unit_id = GlobalUsage.Unit_id;
+                p.counter_id = GlobalUsage.CounterID; p.computer_id = GlobalUsage.computerName; p.Sale_Type = "Walk-In";
+                p.cust_name = cbxPtName.Text;
+                p.prescribedBy = rgv_orders.CurrentRow.Cells["prescribedBy"].Value.ToString();
+                p.refCode = "New";
+                p.item_id = item_id; p.master_key_id = masterkey; p.panelName = "Cash"; p.accountID = "16040001";
+                p.card_no = _cardNo; p.card_level = _card_Level; p.sold_qty = Convert.ToDouble(qty);
+                p.old_sale_inv_no = GlobalUsage.Old_Sale_Inv_No; p.gstn_no = "-"; p.hosp_cr_no = "-";
+                p.hosp_ipop_no = "-";
+                p.Cur_sale_inv_no = txtInvNo.Text; p.order_no = "N/A"; p.login_id = GlobalUsage.Login_id;
+                p.stateName = GlobalUsage.State; p.couponCode = GlobalUsage.couponCode; p.ContactNo = _contactNo;
+                dwr = ConfigWebAPI.CallAPI("api/sales/RetailInsertWalkInSale", p);
+                ds = dwr.result; _result = dwr.message;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //Refresh Sales Item Grid
+            if (_result.Contains("Success"))
+            {
+                #region Grid Filling Process
+                string[] r = _result.Split('|');
+                txtInvNo.Text = r[1];
+
+                Fill_ItemSalesGrid(txtInvNo.Text);
+                txtTotal.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["total"]).ToString("####.00");
+                txtDiscount.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["discount"]).ToString("####.00");
+                txtPayable.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["payable"]).ToString("####");
+                txtRoundoff.Text = Convert.ToDecimal(ds.Tables[0].Rows[0]["roundoff"]).ToString("##.00");
+                txtWalletTransfer.Text= Convert.ToDecimal(ds.Tables[0].Rows[0]["TrfInWallet"]).ToString("##.00");
+                #endregion
+
+                cm1 p = new cm1();
+                p.unit_id = GlobalUsage.Unit_id; p.prm_1 = txtInvNo.Text; p.prm_2 = _order_no;
+                p.prm_3 = item_id + ","; p.Logic = "StockofItems"; p.login_id = GlobalUsage.Login_id;
+                dwr = ConfigWebAPI.CallAPI("api/stocks/StocksQueries", p);
+
+                DataSet dsStock = dwr.result;
+                if (dsStock.Tables.Count > 0 && dsStock.Tables[0].Rows.Count > 0)
+                {
+                    var lvorder = lvOrder.Items.Cast<ListViewItem>().Where(x => x.Text == item_id).First();
+                    lvorder.SubItems[2].Text = dsStock.Tables[0].Rows[0]["qty"].ToString();
+                }
+                try
+                {
+                    customerOrders o = new customerOrders();
+                    o.order_no = _order_no; o.sale_inv_no = txtInvNo.Text; o.item_id = item_id;
+                    o.master_key_id = masterkey; o.qty = qty; o.login_id = GlobalUsage.Login_id; o.logic = "Insert";
+                    dwr = ConfigWebAPI.CallAPI("api/customerdata/InsertCustHoldSalesInfo", o);
+                }
+                catch (Exception ex) { }
+            }
+
+            #endregion
+            Cursor.Current = Cursors.Default;
+        }
+
         private void lvOrder_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             TOrdqty = Convert.ToDecimal(e.Item.SubItems[3].Text);
