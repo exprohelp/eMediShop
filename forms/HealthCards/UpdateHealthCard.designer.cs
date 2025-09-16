@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateHealthCard));
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.View_NewCard = new Telerik.WinControls.UI.RadPageViewPage();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMobileNo = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.utxtArea = new System.Windows.Forms.TextBox();
             this.utxtLocality = new System.Windows.Forms.TextBox();
@@ -64,19 +60,11 @@
             this.dgMembers = new Telerik.WinControls.UI.RadGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.txtname = new Telerik.WinControls.UI.RadTextBox();
-            this.txtdob = new Telerik.WinControls.UI.RadTextBox();
-            this.ddlgender = new Telerik.WinControls.UI.RadDropDownList();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtmobile = new Telerik.WinControls.UI.RadTextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnadd = new Telerik.WinControls.UI.RadButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.ulblMessage = new System.Windows.Forms.Label();
             this.btnGet = new Telerik.WinControls.UI.RadButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMobileNo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.View_NewCard.SuspendLayout();
@@ -90,9 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdob)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlgender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmobile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnadd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -154,6 +139,26 @@
             this.radGroupBox1.Size = new System.Drawing.Size(520, 162);
             this.radGroupBox1.TabIndex = 95;
             this.radGroupBox1.Text = "Address Detail";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 14);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "Mobile No";
+            // 
+            // txtMobileNo
+            // 
+            this.txtMobileNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMobileNo.Location = new System.Drawing.Point(81, 135);
+            this.txtMobileNo.MaxLength = 10;
+            this.txtMobileNo.Name = "txtMobileNo";
+            this.txtMobileNo.ReadOnly = true;
+            this.txtMobileNo.Size = new System.Drawing.Size(180, 20);
+            this.txtMobileNo.TabIndex = 93;
             // 
             // label49
             // 
@@ -328,13 +333,7 @@
             this.panel1.Controls.Add(this.dgMembers);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtname);
-            this.panel1.Controls.Add(this.txtdob);
-            this.panel1.Controls.Add(this.ddlgender);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.txtmobile);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.btnadd);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(3, 212);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(522, 241);
@@ -365,55 +364,27 @@
             this.dgMembers.MasterTemplate.AllowAddNewRow = false;
             this.dgMembers.MasterTemplate.AllowDeleteRow = false;
             this.dgMembers.MasterTemplate.AllowEditRow = false;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "m_type";
-            gridViewTextBoxColumn6.HeaderText = "Type";
-            gridViewTextBoxColumn6.Name = "m_type";
-            gridViewTextBoxColumn6.Width = 30;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "member_name";
-            gridViewTextBoxColumn7.HeaderText = "Name";
-            gridViewTextBoxColumn7.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn7.Name = "member_name";
-            gridViewTextBoxColumn7.Width = 190;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "member_gender";
-            gridViewTextBoxColumn8.HeaderText = "Gender";
-            gridViewTextBoxColumn8.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn8.Name = "member_gender";
-            gridViewTextBoxColumn8.Width = 77;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "d_o_b";
-            gridViewTextBoxColumn9.HeaderText = "Date of birth";
-            gridViewTextBoxColumn9.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn9.Name = "d_o_b";
-            gridViewTextBoxColumn9.Width = 80;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "mobile_no";
-            gridViewTextBoxColumn10.HeaderText = "Mobile No";
-            gridViewTextBoxColumn10.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            gridViewTextBoxColumn10.Name = "mobile_no";
-            gridViewTextBoxColumn10.Width = 81;
-            gridViewCommandColumn3.EnableExpressionEditor = false;
-            gridViewCommandColumn3.FieldName = "member_id";
-            gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
-            gridViewCommandColumn3.IsVisible = false;
-            gridViewCommandColumn3.Name = "member_id";
-            gridViewCommandColumn3.Width = 20;
-            gridViewCommandColumn4.EnableExpressionEditor = false;
-            gridViewCommandColumn4.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn4.Image")));
-            gridViewCommandColumn4.Name = "column1";
-            gridViewCommandColumn4.Width = 23;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "m_type";
+            gridViewTextBoxColumn1.HeaderText = "Type";
+            gridViewTextBoxColumn1.Name = "m_type";
+            gridViewTextBoxColumn1.Width = 30;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "member_name";
+            gridViewTextBoxColumn2.HeaderText = "Name";
+            gridViewTextBoxColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            gridViewTextBoxColumn2.Name = "member_name";
+            gridViewTextBoxColumn2.Width = 430;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.Name = "column1";
+            gridViewCommandColumn1.Width = 23;
             this.dgMembers.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewCommandColumn3,
-            gridViewCommandColumn4});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewCommandColumn1});
             this.dgMembers.MasterTemplate.EnableGrouping = false;
-            this.dgMembers.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.dgMembers.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.dgMembers.Name = "dgMembers";
             this.dgMembers.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgMembers.Size = new System.Drawing.Size(515, 182);
@@ -434,77 +405,21 @@
             // 
             this.txtname.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.Location = new System.Drawing.Point(55, 24);
+            this.txtname.MaxLength = 50;
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(186, 21);
+            this.txtname.Size = new System.Drawing.Size(321, 21);
             this.txtname.TabIndex = 11;
-            // 
-            // txtdob
-            // 
-            this.txtdob.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdob.Location = new System.Drawing.Point(317, 24);
-            this.txtdob.Name = "txtdob";
-            this.txtdob.NullText = "dd/MM/yyyy";
-            this.txtdob.Size = new System.Drawing.Size(79, 21);
-            this.txtdob.TabIndex = 13;
-            // 
-            // ddlgender
-            // 
-            this.ddlgender.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.ddlgender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radListDataItem3.Text = "Male";
-            radListDataItem4.Text = "Female";
-            this.ddlgender.Items.Add(radListDataItem3);
-            this.ddlgender.Items.Add(radListDataItem4);
-            this.ddlgender.Location = new System.Drawing.Point(243, 24);
-            this.ddlgender.Name = "ddlgender";
-            this.ddlgender.Size = new System.Drawing.Size(74, 21);
-            this.ddlgender.TabIndex = 12;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(236, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 67;
-            this.label11.Text = "Gender";
-            // 
-            // txtmobile
-            // 
-            this.txtmobile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmobile.Location = new System.Drawing.Point(398, 24);
-            this.txtmobile.Name = "txtmobile";
-            this.txtmobile.Size = new System.Drawing.Size(79, 21);
-            this.txtmobile.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(400, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
-            this.label12.TabIndex = 70;
-            this.label12.Text = "Mobile No";
             // 
             // btnadd
             // 
             this.btnadd.Image = global::eMediShop.Properties.Resources.click16;
-            this.btnadd.Location = new System.Drawing.Point(480, 23);
+            this.btnadd.Location = new System.Drawing.Point(468, 23);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(39, 22);
+            this.btnadd.Size = new System.Drawing.Size(51, 22);
             this.btnadd.TabIndex = 12;
             this.btnadd.Text = "Add";
             this.btnadd.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(312, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "Date of birth";
             // 
             // label8
             // 
@@ -551,25 +466,6 @@
             this.btnGet.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 14);
-            this.label4.TabIndex = 94;
-            this.label4.Text = "Mobile No";
-            // 
-            // txtMobileNo
-            // 
-            this.txtMobileNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMobileNo.Location = new System.Drawing.Point(81, 135);
-            this.txtMobileNo.MaxLength = 10;
-            this.txtMobileNo.Name = "txtMobileNo";
-            this.txtMobileNo.Size = new System.Drawing.Size(180, 20);
-            this.txtMobileNo.TabIndex = 93;
-            // 
             // UpdateHealthCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,9 +498,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdob)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlgender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmobile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnadd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -626,12 +519,7 @@
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.TextBox txtCardNo;
         private Telerik.WinControls.UI.RadButton btnadd;
-        private System.Windows.Forms.Label label12;
-        private Telerik.WinControls.UI.RadTextBox txtmobile;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private Telerik.WinControls.UI.RadDropDownList ddlgender;
-        private Telerik.WinControls.UI.RadTextBox txtdob;
         private Telerik.WinControls.UI.RadTextBox txtname;
         private Telerik.WinControls.UI.RadGridView dgMembers;
         private Telerik.WinControls.UI.RadButton btnSave;
@@ -641,7 +529,6 @@
         private Telerik.WinControls.UI.RadDropDownList ddlState;
         internal System.Windows.Forms.TextBox utxtPin;
         internal System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         internal System.Windows.Forms.TextBox txtDistName;

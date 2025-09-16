@@ -22,16 +22,16 @@ namespace eMediShop.sales
         string _MasterKeyId = string.Empty;
         string _SelectedItem_Id = string.Empty; string _ProductName = string.Empty; string _creditFlag = string.Empty;
         string _BatchNo = string.Empty; string _SaleType = string.Empty;
-        decimal _Mrp = 0;string _cardNo = string.Empty;
+        decimal _Mrp = 0; string _cardNo = string.Empty;
         decimal _UnitSaleRate = 0; decimal _discountPercntage = 0;
         string _ExpDate = string.Empty; string _mobileNo = string.Empty;
         string _PayMode = "Cash"; string _CardType = "Health";
         DataTable _tempTable = new DataTable();
         DataTable _healthcard = new DataTable();
         string _refCode = string.Empty; string _orderNo = "N/A";
-        string _CardChangeFlag = "N";string _CallFrom = string.Empty;
+        string _CardChangeFlag = "N"; string _CallFrom = string.Empty;
         decimal _Qty = 0; string _Lock_Flag = "N"; string _estimateNo = string.Empty;
-        public SaleMaster(string CallFrom,string refSaleInvNo)
+        public SaleMaster(string CallFrom, string refSaleInvNo)
         {
             _CallFrom = CallFrom;
             InitializeComponent();
@@ -137,7 +137,7 @@ namespace eMediShop.sales
                             lvi.ForeColor = Color.Green;
                         else if (dr["promo"].ToString() != "Promote")
                             lvi.ForeColor = Color.Black;
-                     
+
                         else
                             lvi.ForeColor = Color.FromArgb(0, 0, 192);
 
@@ -514,12 +514,12 @@ namespace eMediShop.sales
             if (_CardChangeFlag == "N")
             {
                 txtCardNo.Text = dr["contactNo"].ToString();
-                _mobileNo= dr["contactNo"].ToString();
-                _cardNo= dr["card_no"].ToString();
+                _mobileNo = dr["contactNo"].ToString();
+                _cardNo = dr["card_no"].ToString();
                 txtPatientName.Text = dr["pt_name"].ToString();
             }
             txtTotal.Text = Convert.ToDecimal(dr["total"]).ToString("####.00");
-            txtWallet.Text= Convert.ToDecimal(dr["TrfInWallet"]).ToString("####.00");
+            txtWallet.Text = Convert.ToDecimal(dr["TrfInWallet"]).ToString("####.00");
             txtDiscount.Text = Convert.ToDecimal(dr["discount"]).ToString("####.00");
             txtNetValue.Text = Convert.ToDecimal(dr["payable"]).ToString("####0");
             //txtRoundoff.Text = Convert.ToDecimal(dsr.Tables[0].Rows[0]["roundoff"]).ToString("##.00");
@@ -752,15 +752,15 @@ namespace eMediShop.sales
         }
         protected void ProcessDiscount(string item_id, string master_key_id, string HealthCardNo, Int32 SoldQty, string inv_no)
         {
-            
+
             if (txtInvNo.Text != "New Invoice")
             {
                 pm_InsertRetailSales p = new pm_InsertRetailSales();
                 p.unit_id = GlobalUsage.Unit_id;
-                p.card_no = HealthCardNo; p.card_level = txtCardStatus.Text;
-                p.Cur_sale_inv_no = txtInvNo.Text; p.hosp_cr_no = "-"; p.old_sale_inv_no = txtOldCashMemoNo.Text;
+                p.card_no = _cardNo; p.card_level = txtCardStatus.Text;
+                p.Cur_sale_inv_no = txtInvNo.Text;  p.old_sale_inv_no = txtOldCashMemoNo.Text;
                 p.old_sale_inv_no = GlobalUsage.Old_Sale_Inv_No; p.gstn_no = txtGSTN_No.Text;
-                p.hosp_cr_no = "-"; p.hosp_ipop_no = "-";
+                p.hosp_cr_no = "-"; p.hosp_ipop_no = "-";p.ContactNo = _mobileNo;
                 p.login_id = GlobalUsage.Login_id;
                 p.stateName = GlobalUsage.State;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/RetailSalesRecalculate", p);
@@ -1152,7 +1152,7 @@ namespace eMediShop.sales
                     p.card_no = txtCardNo.Text; p.unit_id = GlobalUsage.Unit_id; p.old_cardno = "-"; p.mobile = txtCardNo.Text;
                     p.from = "1900/01/01"; p.to = "1900/01/01"; p.login_id = GlobalUsage.Login_id; p.prm_1 = "-"; p.prm_2 = "-";
                     p.Logic = logic;
-                  
+
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/customerdata/GetCard_Queries", p);
                     ds = dwr.result;
                     if (ds.Tables[1].Rows.Count == 0)
@@ -1170,6 +1170,8 @@ namespace eMediShop.sales
                     }
                     else
                     {
+                        if(rb_ByMobile.Checked)
+                        _mobileNo = txtCardNo.Text;
                         HealthCardHelp = new ucHealthCardNew(txtCardNo.Text, ds, SearchOption);
                         HealthCardHelp.SearchUpdated += new HealthCardUpdatedEventHandler(FillCardDetail);
                         HealthCardHelp.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1190,9 +1192,9 @@ namespace eMediShop.sales
             _CardChangeFlag = "Y";
             txtPatientName.Text = e.NewCardName;
             txtPatientName.Enabled = false;
-            if(rb_ByMobile.Checked)
-            { 
-            txtCardNo.Text = e.MobileNo;//e.NewCardNo;
+            if (rb_ByMobile.Checked)
+            {
+                txtCardNo.Text = e.MobileNo;//e.NewCardNo;
                 _cardNo = e.NewCardNo;
             }
             else
@@ -1458,7 +1460,7 @@ namespace eMediShop.sales
             b.sale_inv_no = txtInvNo.Text;
             b.card_no = _cardNo; b.customer_name = txtPatientName.Text; b.ipopNo = "-"; b.panelName = "Retail Sales";
             b.panelType = "Cash"; b.prescribedBy = txtPrescribedBy.Text; b.uhidNo = "-";
-            b.amount = Convert.ToInt32(txtNetValue.Text);b.mobileNo = _mobileNo;
+            b.amount = Convert.ToInt32(txtNetValue.Text); b.mobileNo = _mobileNo;
             b.Oldsale_inv_no = txtOldCashMemoNo.Text;
 
             if (rb_ByMobile.Checked && txtCardNo.Text.Length == 20)
@@ -1483,7 +1485,7 @@ namespace eMediShop.sales
                 printCashMemo(txtInvNo.Text);
                 ResetForNewBill();
                 btnBillPosting.Enabled = false;
-                if (_CallFrom== "Cash Counter")
+                if (_CallFrom == "Cash Counter")
                 {
                     CashCounterUpdatedEventArgs ValueArgs = new CashCounterUpdatedEventArgs(_estimateNo, "Success");
                     CashCounterUpdated(this, ValueArgs);
@@ -1508,6 +1510,41 @@ namespace eMediShop.sales
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
+
+        private void btnApproval_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cm2 p = new cm2();
+             
+                p.unit_id = GlobalUsage.Unit_id;
+                if (rbRedemtion.Checked)
+                    p.tranType = "Redemption";
+                if (rbSalesReturn.Checked)
+                    p.tranType = "SalesReturn";
+                p.Logic = "Insert";p.tran_id = txtInvNo.Text;p.prm_2 = "-";
+                p.login_id = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/audit/InsertModifyLogApprovals", p);
+                _ds = dwr.result;
+                if (_ds.Tables[0].Rows.Count > 0)
+                {
+                    MessageBox.Show("Successfully Sent", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnApproval.Enabled = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+        }
+
+        private void rbRedemtion_CheckedChanged(object sender, EventArgs e)
+        {
+            btnApproval.Enabled = true;
+        }
+
+        private void rbSalesReturn_CheckedChanged(object sender, EventArgs e)
+        {
+            btnApproval.Enabled = true;
         }
     }
 }  // Last Brace

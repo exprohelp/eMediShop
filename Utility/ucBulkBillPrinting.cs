@@ -17,6 +17,8 @@ namespace eMediShop.Utility
 
         private void btnPrintAll_Click(object sender, EventArgs e)
         {
+            int printed = 0;
+            btnPrintAll.Enabled = false;
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
@@ -29,12 +31,24 @@ namespace eMediShop.Utility
                 {
                     _saleInvNo = rowInfo.Cells["sale_inv_no"].Value.ToString();
                     Printing.Laser.CashMemo(_saleInvNo, "Y");
+                    printed++;
+                    Application.DoEvents();
+
+                    if (printed % 10 == 0)
+                    {
+                        System.GC.Collect();
+                        System.GC.WaitForPendingFinalizers();
+                    }
 
                 }
-                btnPrintAll.Enabled = false;
+               
             }
             catch (Exception ex) { RadMessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
-            finally { Cursor.Current = Cursors.Default; }
+            finally
+            {
+                btnPrintAll.Enabled = true;
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void rgvInfo_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)

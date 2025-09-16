@@ -359,7 +359,7 @@ namespace eMediShop.ManualSales
                     return;
                 }
                 DateTime d; DateTime curDate; string expdate = "01-" + txtExpDate.Text;
-                d = Convert.ToDateTime(expdate);curDate = DateTime.Today;
+                d = Convert.ToDateTime(expdate); curDate = DateTime.Today;
                 if (d <= curDate.AddMonths(1))
                 {
                     txtExpDate.Focus(); txtExpDate.SelectAll();
@@ -422,7 +422,10 @@ namespace eMediShop.ManualSales
                 if (_discountFlag == "Y")
                 {
                     //_discountPercntage = getDiscount(_SelectedItem_Id);
-                    _unitSaleRate = Convert.ToDecimal(txtmrp.Text) * ((100 - _discountPercntage) / 100) / Convert.ToInt16(txtpackqty.Text);
+                    if (GlobalUsage.isWalletActive == "N")
+                        _unitSaleRate = Convert.ToDecimal(txtmrp.Text) * ((100 - _discountPercntage) / 100) / Convert.ToInt16(txtpackqty.Text);
+                    else
+                        _unitSaleRate = Convert.ToDecimal(txtmrp.Text) * ((100 - 0) / 100) / Convert.ToInt16(txtpackqty.Text);
 
                 }
                 else

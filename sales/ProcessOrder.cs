@@ -711,7 +711,7 @@ namespace eMediShop.sales
                 p.card_no = _cardNo; p.card_level = _card_Level; p.sold_qty = Convert.ToDouble(qty);
                 p.old_sale_inv_no = GlobalUsage.Old_Sale_Inv_No; p.gstn_no = "-"; p.hosp_cr_no = "-";
                 p.hosp_ipop_no = "-";
-                p.Cur_sale_inv_no = txtInvNo.Text; p.order_no = "N/A"; p.login_id = GlobalUsage.Login_id;
+                p.Cur_sale_inv_no = txtInvNo.Text; p.order_no = _order_no; p.login_id = GlobalUsage.Login_id;
                 p.stateName = GlobalUsage.State; p.couponCode = GlobalUsage.couponCode; p.ContactNo = _contactNo;
                 dwr = ConfigWebAPI.CallAPI("api/sales/RetailInsertWalkInSale", p);
                 ds = dwr.result; _result = dwr.message;

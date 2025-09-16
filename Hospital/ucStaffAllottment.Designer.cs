@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaffAllottment));
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor3 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgv_info = new Telerik.WinControls.UI.RadGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIndentNo = new Telerik.WinControls.UI.RadTextBox();
@@ -59,39 +59,39 @@
             // 
             // 
             this.rgv_info.MasterTemplate.AllowAddNewRow = false;
-            gridViewTextBoxColumn5.AllowFiltering = false;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "emp_code";
-            gridViewTextBoxColumn5.HeaderText = "Code";
-            gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "emp_code";
-            gridViewTextBoxColumn5.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "emp_name";
-            gridViewTextBoxColumn6.HeaderText = "Name of Staff";
-            gridViewTextBoxColumn6.Name = "emp_name";
-            gridViewTextBoxColumn6.Width = 308;
-            gridViewDecimalColumn3.AllowFiltering = false;
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "nos";
-            gridViewDecimalColumn3.HeaderText = "No.";
-            gridViewDecimalColumn3.Name = "nos";
-            gridViewCommandColumn3.EnableExpressionEditor = false;
-            gridViewCommandColumn3.HeaderText = "-";
-            gridViewCommandColumn3.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn3.Image")));
-            gridViewCommandColumn3.Name = "column4";
-            gridViewCommandColumn3.Width = 25;
+            gridViewTextBoxColumn1.AllowFiltering = false;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "emp_code";
+            gridViewTextBoxColumn1.HeaderText = "Code";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "emp_code";
+            gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "emp_name";
+            gridViewTextBoxColumn2.HeaderText = "Name of Staff";
+            gridViewTextBoxColumn2.Name = "emp_name";
+            gridViewTextBoxColumn2.Width = 308;
+            gridViewDecimalColumn1.AllowFiltering = false;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "nos";
+            gridViewDecimalColumn1.HeaderText = "No.";
+            gridViewDecimalColumn1.Name = "nos";
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "-";
+            gridViewCommandColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridViewCommandColumn1.Image")));
+            gridViewCommandColumn1.Name = "column4";
+            gridViewCommandColumn1.Width = 25;
             this.rgv_info.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewDecimalColumn3,
-            gridViewCommandColumn3});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDecimalColumn1,
+            gridViewCommandColumn1});
             this.rgv_info.MasterTemplate.EnableFiltering = true;
             this.rgv_info.MasterTemplate.EnableGrouping = false;
-            sortDescriptor3.PropertyName = "emp_code";
+            sortDescriptor1.PropertyName = "emp_code";
             this.rgv_info.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor3});
-            this.rgv_info.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            sortDescriptor1});
+            this.rgv_info.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_info.Name = "rgv_info";
             this.rgv_info.ReadOnly = true;
             this.rgv_info.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 453);
+            this.ClientSize = new System.Drawing.Size(431, 428);
             this.Controls.Add(this.txtIndentNo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rgv_info);

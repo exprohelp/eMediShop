@@ -34,7 +34,7 @@ namespace eMediShop
                     MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            public static void NER_Bill(DataSet ds,string billNo)
+            public static void NER_Bill(DataSet ds, string billNo)
             {
                 try
                 {
@@ -550,7 +550,7 @@ namespace eMediShop
                     DataSet ds = new DataSet();
                     cm2 p = new cm2();
                     p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-                    p.Logic = "DeliveryNote";p.prm_1 = DeliveryNoteNo;
+                    p.Logic = "DeliveryNote"; p.prm_1 = DeliveryNoteNo;
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hal/halQueries", p);
                     ds = dwr.result;
                     string inwords = ct.changeCurrencyToWords(Convert.ToDouble(ds.Tables[0].Rows[0]["net"]));
@@ -590,6 +590,10 @@ namespace eMediShop
             }
             public static void CashMemo(string SalesInvNo, string PrintFlag)
             {
+                string WalletFlag = string.Empty;
+                WalletFlag = "Y";
+ 
+
                 try
                 {
                     string _result = string.Empty;
@@ -600,7 +604,20 @@ namespace eMediShop
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/billInformation", p);
 
                     ds = dwr.result;
+                    WalletFlag = ds.Tables[0].Rows[0]["WalletFlag"].ToString();
                     string inwords = ct.changeCurrencyToWords(Convert.ToDouble(ds.Tables[0].Rows[0]["net"]));
+
+                    if (GlobalUsage.isWalletActive == "Y" && WalletFlag=="Y")
+                    {
+                        GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGSTByWallet();
+                        GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet();
+                    }
+                    else
+                    {
+                        GlobalUsage.PharmacyCashMemoNoWallet = new CrystalReportsPharmacy.eMediShop.CashMemoGST();
+                        GlobalUsage.HospitalCashMemoNoWallet = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
+                    }
+
 
                     //BarcodeGenerator barcodeGenerator = new BarcodeGenerator();
                     //Bitmap barcodeImage = barcodeGenerator.GenerateBarcode(SalesInvNo, 300, 100);
@@ -622,7 +639,7 @@ namespace eMediShop
                             GlobalUsage.HospitalInternalSheet.SetParameterValue("InWords", "In Words :" + inwords);
                             GlobalUsage.HospitalInternalSheet.PrintToPrinter(1, false, 1, 0);
                         }
-                        else if (PrintFlag == "Y")
+                        else if (PrintFlag == "Y" && GlobalUsage.isWalletActive == "Y" && WalletFlag == "Y")
                         {
                             GlobalUsage.HospitalCashMemo.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
                             GlobalUsage.HospitalCashMemo.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
@@ -635,6 +652,19 @@ namespace eMediShop
                             GlobalUsage.HospitalCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
                             GlobalUsage.HospitalCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
                         }
+                        else if (PrintFlag == "Y" && (GlobalUsage.isWalletActive == "N" || WalletFlag == "N"))
+                        {
+                            GlobalUsage.HospitalCashMemoNoWallet.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
+                            GlobalUsage.HospitalCashMemoNoWallet.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("Heading", ds.Tables[2].Rows[0]["Heading"].ToString());
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("gstn", GlobalUsage.GST_No);
+                            GlobalUsage.HospitalCashMemoNoWallet.SetParameterValue("InWords", "In Words :" + inwords);
+                        }
 
                         if (System.Configuration.ConfigurationManager.AppSettings["SoftBill"].ToString() == "Yes" && SalesInvNo.Contains("P"))
                         {
@@ -644,58 +674,50 @@ namespace eMediShop
                             { dir.Create(); }
                             if (System.IO.File.Exists(path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf"))
                             { System.IO.File.Delete(path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf"); }
-                            GlobalUsage.HospitalCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
+                            if (GlobalUsage.isWalletActive == "Y" && WalletFlag == "Y")
+                                GlobalUsage.HospitalCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
+                            else
+                                GlobalUsage.HospitalCashMemoNoWallet.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
 
 
                         }
-                        GlobalUsage.HospitalCashMemo.PrintToPrinter(1, false, 1, 0);
-
-                        #endregion
-                    }
-                    else if (GlobalUsage.Unit_id.Contains("CH"))
-                    {
-                        #region Chandan Opthelmic 
-                        GlobalUsage.opthCashMemo.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
-                        GlobalUsage.opthCashMemo.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
-                        GlobalUsage.opthCashMemo.SetParameterValue("Heading", ds.Tables[2].Rows[0]["Heading"].ToString());
-                        GlobalUsage.opthCashMemo.SetParameterValue("AdvMatter", "");
-                        GlobalUsage.opthCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
-                        GlobalUsage.opthCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                        GlobalUsage.opthCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandanhospital.in");
-                        GlobalUsage.opthCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
-                        GlobalUsage.opthCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
-                        GlobalUsage.opthCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
-                        if (PrintFlag == "Y")
-                            GlobalUsage.opthCashMemo.PrintToPrinter(1, false, 1, 0);
+                        if (GlobalUsage.isWalletActive == "Y" && WalletFlag == "Y")
+                            GlobalUsage.HospitalCashMemo.PrintToPrinter(1, false, 1, 0);
+                        else
+                            GlobalUsage.HospitalCashMemoNoWallet.PrintToPrinter(1, false, 1, 0);
 
 
-
-                        if (System.Configuration.ConfigurationManager.AppSettings["SoftBill"].ToString() == "Yes")
-                        {
-                            string path = GlobalUsage.BillDrive + "\\CashMemo\\" + GlobalUsage.Unit_id + "\\" + Convert.ToDateTime(ds.Tables[0].Rows[0]["sale_date"]).ToString("yyyy-MM-dd");
-                            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
-                            if (!dir.Exists)
-                            { dir.Create(); }
-                            if (System.IO.File.Exists(path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf"))
-                            { System.IO.File.Delete(path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf"); }
-                            GlobalUsage.opthCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
-                        }
                         #endregion
                     }
                     else
                     {
                         #region Chandan Pharmacy 
-                        GlobalUsage.PharmacyCashMemo.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
-                        GlobalUsage.PharmacyCashMemo.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("Heading", ds.Tables[2].Rows[0]["Heading"].ToString());
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
-                        GlobalUsage.PharmacyCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
-
+                        if (GlobalUsage.isWalletActive == "Y" && WalletFlag == "Y")
+                        {
+                            GlobalUsage.PharmacyCashMemo.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
+                            GlobalUsage.PharmacyCashMemo.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("Heading", ds.Tables[2].Rows[0]["Heading"].ToString());
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("gstn", GlobalUsage.GST_No);
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
+                            GlobalUsage.PharmacyCashMemo.SetParameterValue("InWords", "In Words :" + inwords);
+                        }
+                        else
+                        {
+                            GlobalUsage.PharmacyCashMemoNoWallet.Database.Tables["HeaderInfo"].SetDataSource(ds.Tables[0]);
+                            GlobalUsage.PharmacyCashMemoNoWallet.Database.Tables["Item_Info"].SetDataSource(ds.Tables[1]);
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("Heading", ds.Tables[2].Rows[0]["Heading"].ToString());
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("AdvMatter", ds.Tables[2].Rows[0]["AdvMatter"].ToString());
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("Shop_Addr", GlobalUsage.CashMemoAddress);
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("CounterId", ds.Tables[0].Rows[0]["counter_id"]);
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("PhoneNo", "Contact No. " + GlobalUsage.ContactNo + ", Email:care@chandan.co.in");
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("gstn", GlobalUsage.GST_No);
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("managerSign_path", Application.StartupPath + "\\managerSign.jpg");
+                            GlobalUsage.PharmacyCashMemoNoWallet.SetParameterValue("InWords", "In Words :" + inwords);
+                        }
 
 
                         if (System.Configuration.ConfigurationManager.AppSettings["SoftBill"].ToString() == "Yes")
@@ -706,10 +728,16 @@ namespace eMediShop
                             { dir.Create(); }
                             if (System.IO.File.Exists(path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf"))
                             { System.IO.File.Delete(path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf"); }
-                            GlobalUsage.PharmacyCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
+                            if (GlobalUsage.isWalletActive == "Y" && WalletFlag=="Y")
+                                GlobalUsage.PharmacyCashMemo.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
+                            else
+                                GlobalUsage.PharmacyCashMemoNoWallet.ExportToDisk(ExportFormatType.PortableDocFormat, path + "\\" + SalesInvNo.Replace('/', '_') + ".pdf");
+
                         }
-                        if (PrintFlag == "Y")
+                        if (PrintFlag == "Y" && GlobalUsage.isWalletActive == "Y" && WalletFlag == "Y")
                             GlobalUsage.PharmacyCashMemo.PrintToPrinter(1, false, 1, 0);
+                        else if (PrintFlag == "Y" && (GlobalUsage.isWalletActive == "N" || WalletFlag == "N"))
+                            GlobalUsage.PharmacyCashMemoNoWallet.PrintToPrinter(1, false, 1, 0);
 
                         #endregion
                     }

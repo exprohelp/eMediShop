@@ -163,6 +163,10 @@ namespace eMediShop.sales
             this.txtVMobile = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
+            this.btnApproval = new Telerik.WinControls.UI.RadButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbRedemtion = new System.Windows.Forms.RadioButton();
+            this.rbSalesReturn = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -202,6 +206,8 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnApproval)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -944,6 +950,8 @@ namespace eMediShop.sales
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.radGroupBox1.Controls.Add(this.groupBox1);
+            this.radGroupBox1.Controls.Add(this.btnApproval);
             this.radGroupBox1.Controls.Add(this.txtWallet);
             this.radGroupBox1.Controls.Add(this.label25);
             this.radGroupBox1.Controls.Add(this.btnBillPosting);
@@ -999,7 +1007,7 @@ namespace eMediShop.sales
             // 
             this.btnBillPosting.Enabled = false;
             this.btnBillPosting.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBillPosting.Location = new System.Drawing.Point(97, 365);
+            this.btnBillPosting.Location = new System.Drawing.Point(97, 384);
             this.btnBillPosting.Name = "btnBillPosting";
             this.btnBillPosting.Size = new System.Drawing.Size(76, 59);
             this.btnBillPosting.TabIndex = 145;
@@ -1759,6 +1767,49 @@ namespace eMediShop.sales
             this.label18.Text = "Mobile No.";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnApproval
+            // 
+            this.btnApproval.Enabled = false;
+            this.btnApproval.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApproval.Location = new System.Drawing.Point(62, 314);
+            this.btnApproval.Name = "btnApproval";
+            this.btnApproval.Size = new System.Drawing.Size(141, 29);
+            this.btnApproval.TabIndex = 148;
+            this.btnApproval.Text = "Send Approval";
+            this.btnApproval.Click += new System.EventHandler(this.btnApproval_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbSalesReturn);
+            this.groupBox1.Controls.Add(this.rbRedemtion);
+            this.groupBox1.Location = new System.Drawing.Point(18, 264);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(239, 42);
+            this.groupBox1.TabIndex = 149;
+            this.groupBox1.TabStop = false;
+            // 
+            // rbRedemtion
+            // 
+            this.rbRedemtion.AutoSize = true;
+            this.rbRedemtion.Location = new System.Drawing.Point(7, 15);
+            this.rbRedemtion.Name = "rbRedemtion";
+            this.rbRedemtion.Size = new System.Drawing.Size(100, 24);
+            this.rbRedemtion.TabIndex = 0;
+            this.rbRedemtion.Text = "Redemtion";
+            this.rbRedemtion.UseVisualStyleBackColor = true;
+            this.rbRedemtion.CheckedChanged += new System.EventHandler(this.rbRedemtion_CheckedChanged);
+            // 
+            // rbSalesReturn
+            // 
+            this.rbSalesReturn.AutoSize = true;
+            this.rbSalesReturn.Location = new System.Drawing.Point(132, 15);
+            this.rbSalesReturn.Name = "rbSalesReturn";
+            this.rbSalesReturn.Size = new System.Drawing.Size(108, 24);
+            this.rbSalesReturn.TabIndex = 1;
+            this.rbSalesReturn.Text = "Sales Return";
+            this.rbSalesReturn.UseVisualStyleBackColor = true;
+            this.rbSalesReturn.CheckedChanged += new System.EventHandler(this.rbSalesReturn_CheckedChanged);
+            // 
             // SaleMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1826,6 +1877,9 @@ namespace eMediShop.sales
             ((System.ComponentModel.ISupportInitialize)(this.btnVerifyOTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGenerateCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGetInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnApproval)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1966,5 +2020,9 @@ namespace eMediShop.sales
         private Telerik.WinControls.UI.RadTextBox txtWallet;
         private System.Windows.Forms.Label label25;
         private Telerik.WinControls.UI.RadTextBox txtCardNo;
+        private Telerik.WinControls.UI.RadButton btnApproval;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbSalesReturn;
+        private System.Windows.Forms.RadioButton rbRedemtion;
     }
 }

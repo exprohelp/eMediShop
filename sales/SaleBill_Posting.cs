@@ -11,13 +11,13 @@ namespace eMediShop.sales
     public partial class SaleBill_Posting : Telerik.WinControls.UI.RadForm
     {
         public event BillPostingEventHandler eventBillUpdated;
-        string _saleInvNo = string.Empty;
+        string _saleInvNo = string.Empty; string _ByPassOTP = string.Empty;
         string _customername = string.Empty; string _card_no = string.Empty; string _mobileNo = string.Empty;
         string _panelType = string.Empty; string _prescribedBy = string.Empty; string _uhidNo = string.Empty;
         string _ipopNo = string.Empty; string _panelName = string.Empty; string _partyAccountNo = string.Empty;
         string _orderNo = string.Empty; string _machineAccountNo = string.Empty; string _homeDelivery = string.Empty;
         Int32 _amount = 0; string _msgToCustomer = string.Empty; string _callFrom = string.Empty;
-        string _oldInvNo = string.Empty;string _gstNo = string.Empty;
+        string _oldInvNo = string.Empty; string _gstNo = string.Empty;
         public SaleBill_Posting(BillPosting billInfo)
         {
             _saleInvNo = billInfo.sale_inv_no; _customername = billInfo.customer_name; _card_no = billInfo.card_no;
@@ -25,7 +25,7 @@ namespace eMediShop.sales
             _uhidNo = billInfo.uhidNo; _panelName = billInfo.panelName; _panelType = billInfo.panelType;
             _amount = billInfo.amount; _partyAccountNo = billInfo.AccountID; _mobileNo = billInfo.mobileNo;
             _homeDelivery = "N"; _callFrom = billInfo.CallFrom; _oldInvNo = billInfo.Oldsale_inv_no;
-            _orderNo = billInfo.orderNo;_gstNo = billInfo.gstNo;
+            _orderNo = billInfo.orderNo; _gstNo = billInfo.gstNo;
             InitializeComponent();
         }
 
@@ -34,15 +34,14 @@ namespace eMediShop.sales
             this.Text = "Sales Invoice Posting::" + _customername + " {" + _saleInvNo + "}";
             txtEstimateNo.Text = _saleInvNo; txtCustomerName.Text = _customername; txtPrescribedBy.Text = _prescribedBy;
             txtUHID.Text = _uhidNo; txtIPOPNo.Text = _ipopNo; txtPanelName.Text = _panelName; txtPanelType.Text = _panelType;
-            txtnetPayable.Text = _amount.ToString();  txtMobileNo.Text = _mobileNo;
-            
+            txtnetPayable.Text = _amount.ToString(); txtMobileNo.Text = _mobileNo;
+            cm1 p = new cm1();
             #region Old Sales Information
-            if(_oldInvNo!=null && _oldInvNo.Length>6 && _amount<0)
-            { 
+            if (_oldInvNo != null && _oldInvNo.Length > 6 && _amount < 0)
+            {
                 try
                 {
-                    cm1 p = new cm1();
-                    p.unit_id = GlobalUsage.Unit_id; p.Logic = "OldSalesInfo"; p.prm_1 = _oldInvNo; p.prm_2 = "-"; p.prm_3 = "-";
+                    p.unit_id = GlobalUsage.Unit_id; p.Logic = "OldSalesInfo"; p.prm_1 = _oldInvNo; p.prm_2 = _saleInvNo; p.prm_3 = "-";
                     p.login_id = GlobalUsage.Login_id;
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/retailstorequeries", p);
                     DataTable dt = dwr.result.Tables[0];
@@ -50,7 +49,7 @@ namespace eMediShop.sales
                     {
                         DataRow dr = dt.Rows[0];
                         txtMobileNo.Text = dr["contactNo"].ToString();
-                        if (Convert.ToInt32(dr["dlvChgs"])!=0 && Convert.ToInt32(dr["net"])==_amount)
+                        if (Convert.ToInt32(dr["dlvChgs"]) != 0 && Convert.ToInt32(dr["net"]) == _amount)
                         {
                             chkHomeDelivery.Checked = true;
                             pnlPayments.Enabled = false;
@@ -58,14 +57,14 @@ namespace eMediShop.sales
                             txtSwipeCard.ReadOnly = true;
                             txtNEFT_RTGS.ReadOnly = true;
                         }
-                        else if (_amount<0 )
+                        else if (_amount < 0)
                         {
                             pnlPayments.Enabled = false;
                             txtCash.ReadOnly = true;
                             txtSwipeCard.ReadOnly = true;
                             txtNEFT_RTGS.ReadOnly = true;
                         }
-                        if(dr["pay_mode"].ToString() == "Credit")
+                        if (dr["pay_mode"].ToString() == "Credit")
                         {
                             _panelType = dr["pay_mode"].ToString();
                             txtPanelType.Text = _panelType;
@@ -79,6 +78,10 @@ namespace eMediShop.sales
                 }
             }
             #endregion
+
+
+           
+
 
 
 
@@ -102,30 +105,83 @@ namespace eMediShop.sales
             else
                 pnlWallet.Enabled = true;
             if (_panelType.ToUpper() == "CREDIT")
-            { pnlWallet.Enabled = false; pnlPayments.Enabled = false; txtCash.Text = "0";}
+            { pnlWallet.Enabled = false; pnlPayments.Enabled = false; txtCash.Text = "0"; }
             else
-            { pnlWallet.Enabled = true; pnlPayments.Enabled = true; txtCash.Text = txtnetPayable.Text;}
+            { pnlWallet.Enabled = true; pnlPayments.Enabled = true; txtCash.Text = txtnetPayable.Text; }
 
 
-                swipeMachines();
+            swipeMachines();
             txtWalletBalance.Text = "0";
-            if(_amount<0)
+            if (_amount < 0)
                 GetWalletUsedAmount(_oldInvNo);
             else
-            GetWalletBalance(_mobileNo);
+                GetWalletBalance(_mobileNo);
+
+            #region get Current Bill Information
+            try
+            {
+                p.unit_id = GlobalUsage.Unit_id; p.Logic = "EstimateSalesInfo"; p.prm_1 = txtEstimateNo.Text; p.prm_2 = "-"; p.prm_3 = "-";
+                p.login_id = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/retailstorequeries", p);
+                DataTable dt = dwr.result.Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    txtMobileNo.Text = dr["contactNo"].ToString();
+
+                    if (dr["isOTPVerified"].ToString().ToUpper() == "Y")
+                    {
+                        _ByPassOTP = "Y";
+                        btnSendWalletOTP.Enabled = false;
+                        lblWalletVerifyresult.ForeColor = Color.Green; lblWalletVerifyresult.Text = "Verified";
+                        if(txtWalletRedeem.Text=="0")
+                        txtWalletRedeem.Text = txtRedeemAmount.Text;
+                        if (txtWalletRedeem.Text.Length > 0)
+                            txtCash.Text = (_amount - Convert.ToInt32(txtWalletRedeem.Text)).ToString();
+                        else
+                            txtWalletRedeem.Text = "0";
+                        isDistribution(txtWalletRedeem.Text);
+                        btnOTPVerify.Enabled = false;
+                    }
+                    else if (_amount < 0)
+                    {
+                        pnlPayments.Enabled = false;
+                        txtCash.ReadOnly = true;
+                        txtSwipeCard.ReadOnly = true;
+                        txtNEFT_RTGS.ReadOnly = true;
+                    }
+                    if (dr["pay_mode"].ToString() == "Credit")
+                    {
+                        _panelType = dr["pay_mode"].ToString();
+                        txtPanelType.Text = _panelType;
+                        _partyAccountNo = dr["account_id"].ToString(); ;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(ex.Message.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
+            }
+
+            #endregion
         }
         private void GetWalletUsedAmount(string OldSalesInvNo)
         {
             try
             {
                 WalletMoney p = new WalletMoney();
-                p.unitID = GlobalUsage.Unit_id; p.walletID = "-";p.prm_1 = OldSalesInvNo; p.Logic = "WB-Used"; p.loginId = GlobalUsage.Login_id;
+                p.unitID = GlobalUsage.Unit_id; p.walletID = "-"; p.prm_1 = OldSalesInvNo; p.Logic = "WB-Used"; p.loginId = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WalletQueries", p);
                 if (dwr.result.Tables[0].Rows.Count > 0)
                 {
-                    Int32 WalletUsedAmt= Convert.ToInt32(dwr.result.Tables[0].Rows[0]["WalletUsedAmt"]);
+                    Int32 WalletUsedAmt = Convert.ToInt32(dwr.result.Tables[0].Rows[0]["WalletUsedAmt"]);
+                    Int32 WalletBalance = Convert.ToInt32(dwr.result.Tables[0].Rows[0]["WalletBalance"]);
+
                     if (System.Math.Abs(_amount) >= WalletUsedAmt)
-                    { txtWalletRedeem.Text = (WalletUsedAmt).ToString(); }
+                    {
+                        txtWalletRedeem.Text = (WalletUsedAmt).ToString();
+
+                    }
                     else if (System.Math.Abs(_amount) < WalletUsedAmt)
                     {
                         txtWalletRedeem.Text = _amount.ToString();
@@ -158,7 +214,7 @@ namespace eMediShop.sales
                     }
 
                 }
-                if (Convert.ToInt32(txtWalletBalance.Text) > 0 && _amount>0 )
+                if (Convert.ToInt32(txtWalletBalance.Text) > 0 && _amount > 0)
                     pnlWallet.Enabled = true;
                 else
                     pnlWallet.Enabled = false;
@@ -418,9 +474,9 @@ namespace eMediShop.sales
                             p.unit_id = GlobalUsage.Unit_id; p.computerName = GlobalUsage.computerName;
                             p.counter_id = GlobalUsage.CounterID; p.Sale_Inv_No = txtEstimateNo.Text; p.pt_name = txtCustomerName.Text;
                             p.gstn_no = "-"; p.HealthCardNo = _card_no; p.Hosp_Cr_No = txtUHID.Text; p.Hosp_IPOP_No = txtIPOPNo.Text;
-                            p.OrderNo = _orderNo;p.ContactNo = _mobileNo;
+                            p.OrderNo = _orderNo; p.ContactNo = _mobileNo;
                             p.hd_flag = _homeDelivery;
-                            p.refBy = "New";p.gstn_no = _gstNo;
+                            p.refBy = "New"; p.gstn_no = _gstNo;
                             p.ref_name = txtPrescribedBy.Text;
                             p.BillPaymentDetail = bpiList;
                             p.login_id = GlobalUsage.Login_id;
@@ -508,7 +564,7 @@ namespace eMediShop.sales
             p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id; p1.prm_3 = GlobalUsage.Login_id;
             p1.Logic = "VerifyOTP"; p1.prm_1 = txtWalletOTP.Text; p1.tran_id = txtEstimateNo.Text;
             datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
-            if(dwr1.message==null)
+            if (dwr1.message == null)
             {
                 lblWalletVerifyresult.ForeColor = Color.Red;
                 lblWalletVerifyresult.Text = "Fail to Verify";
@@ -521,12 +577,12 @@ namespace eMediShop.sales
                 isDistribution(txtWalletRedeem.Text);
                 btnOTPVerify.Enabled = false;
             }
-            else 
+            else
             {
                 lblWalletVerifyresult.ForeColor = Color.Red;
                 lblWalletVerifyresult.Text = "Fail to Verify";
             }
-            
+
         }
 
         private void btnSendWalletOTP_Click(object sender, EventArgs e)
@@ -567,22 +623,22 @@ namespace eMediShop.sales
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-              
-          
+
+
                 cm1 p = new cm1();
                 p.unit_id = GlobalUsage.Unit_id; p.Logic = "DeliveryCharges"; p.prm_1 = txtEstimateNo.Text; p.prm_2 = _homeDelivery; p.prm_3 = "-";
                 p.login_id = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/retailstorequeries", p);
                 DataTable dt = dwr.result.Tables[0];
-              
-                if(dt.Rows.Count>0)
+
+                if (dt.Rows.Count > 0)
                 {
                     txtnetPayable.Text = dt.Rows[0]["payable"].ToString();
                     isDistribution(txtnetPayable.Text);
-                    txtCash.Text= dt.Rows[0]["payable"].ToString();
-                   
+                    txtCash.Text = dt.Rows[0]["payable"].ToString();
+
                 }
-                
+
 
             }
             catch (Exception ex) { }

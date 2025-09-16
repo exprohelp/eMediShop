@@ -51,8 +51,17 @@ namespace eMediShop
             try
             {
                 GlobalUsage.ManualBill = new CrystalReportsPharmacy.eMediShop.ManualDeliveryNote();
+
+                if (GlobalUsage.isWalletActive=="Y")
+                { 
                 GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGSTByWallet();
                 GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet();
+                }
+                else
+                {
+                    GlobalUsage.PharmacyCashMemoNoWallet = new CrystalReportsPharmacy.eMediShop.CashMemoGST();
+                    GlobalUsage.HospitalCashMemoNoWallet = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
+                }
                 GlobalUsage.opthCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic();
                 GlobalUsage.HospitalInternalSheet = new CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet();
                 GlobalUsage.HAL_DeliveryNote = new CrystalReportsPharmacy.eMediShop.DeliveryNote_HAL();
@@ -1236,6 +1245,7 @@ namespace eMediShop
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+               
                 rgb_SelectUnit.Visible = false;
                 GlobalUsage.Unit_id = selUnitId;
 
@@ -1258,7 +1268,17 @@ namespace eMediShop
                 GlobalUsage.SmsAPI= dt.Rows[0]["smsAPI"].ToString();
                 GlobalUsage.SmsID = dt.Rows[0]["SMS_ID"].ToString();
                 GlobalUsage.smsProvider = dt.Rows[0]["sms_provider"].ToString();
-
+                GlobalUsage.isWalletActive= dt.Rows[0]["isWalletActive"].ToString();
+                if (GlobalUsage.isWalletActive == "Y")
+                {
+                    GlobalUsage.PharmacyCashMemo = new CrystalReportsPharmacy.eMediShop.CashMemoGSTByWallet();
+                    GlobalUsage.HospitalCashMemo = new CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet();
+                }
+                else
+                {
+                    GlobalUsage.PharmacyCashMemoNoWallet = new CrystalReportsPharmacy.eMediShop.CashMemoGST();
+                    GlobalUsage.HospitalCashMemoNoWallet = new CrystalReportsPharmacy.eMediShop.HP_CashMemo();
+                }
                 this.rrb_menu.Text = GlobalUsage.UnitName + " [" + GlobalUsage.Unit_id + "], " + GlobalUsage.UnitAddress;
                 GlobalUsage.PrinterType = "LASER";
                 rbbg_SalesMaster.Enabled = true;

@@ -31,7 +31,6 @@ namespace eMediShop
             else
                 btnEdit.Enabled = false;
 
-            ddlgender.SelectedIndex = 0;
             FillState();
         }
         private void FillState()
@@ -51,6 +50,7 @@ namespace eMediShop
                 ddlState.Items.AddRange(Config.FillTelrikCombo(ds.Tables[0]));
                 ddlState.SelectedIndex = 0;
                 ddlState.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(ddlState_SelectedIndexChanged);
+                ddlState.Text = GlobalUsage.State;
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -90,26 +90,12 @@ namespace eMediShop
             try
             {
                 string dob = string.Empty;
-                if (txtdob.Text.Trim().Length > 0)
-                {
-                    if (!IsValidDateTime(txtdob.Text))
-                    {
-                        MessageBox.Show("input date should be in dd/MM/yyyy format");
-                        return;
-                    }
-                    else
-                    {
-                        string[] t = txtdob.Text.Split('/');
-                        dob = t[2] + "/" + t[1] + "/" + t[0];
-                    }
-                }
+                
                 GridViewRowInfo gr = dgMembers.Rows.AddNew();
                 gr.Cells["member_id"].Value = "-";
                 gr.Cells["m_type"].Value = "M";
                 gr.Cells["member_name"].Value = txtname.Text;
-                gr.Cells["member_gender"].Value = ddlgender.Text;
                 gr.Cells["d_o_b"].Value = dob;
-                gr.Cells["mobile_no"].Value = txtmobile.Text;
             }
             catch (Exception ex) { }
         }
@@ -178,9 +164,9 @@ namespace eMediShop
                 utxtLocality.Text = ds.Tables[0].Rows[0]["Locality"].ToString();
                 
                 txtStateName.Text = ds.Tables[0].Rows[0]["State"].ToString();
-                ddlState.Text = ds.Tables[0].Rows[0]["State"].ToString();
+                ddlState.FindString(ds.Tables[0].Rows[0]["State"].ToString());
                 txtDistName.Text = ds.Tables[0].Rows[0]["District"].ToString();
-                ddldistrict.Text= ds.Tables[0].Rows[0]["District"].ToString();
+                ddldistrict.FindString(ds.Tables[0].Rows[0]["District"].ToString());
                 utxtEmail.Text = ds.Tables[0].Rows[0]["email"].ToString();
                 utxtPin.Text = ds.Tables[0].Rows[0]["PIN"].ToString();
                 txtMobileNo.Text= ds.Tables[0].Rows[0]["mobileno"].ToString();
@@ -192,9 +178,6 @@ namespace eMediShop
         {
             _member_id = e.Row.Cells["member_id"].Value.ToString();
             txtname.Text = e.Row.Cells["member_name"].Value.ToString();
-            txtmobile.Text = e.Row.Cells["mobile_no"].Value.ToString();
-            ddlgender.Text = e.Row.Cells["member_gender"].Value.ToString();
-            txtdob.Text = e.Row.Cells["d_o_b"].Value.ToString();
         }
 
         private void btnadd_Click(object sender, EventArgs e)
@@ -202,32 +185,16 @@ namespace eMediShop
             try
             {
                 string dob = string.Empty;
-                if (txtdob.Text.Trim().Length > 0)
-                {
-                    if (!IsValidDateTime(txtdob.Text))
-                    {
-                        MessageBox.Show("input date should be in dd/MM/yyyy format");
-                        return;
-                    }
-                    else
-                    {
-                        string[] t = txtdob.Text.Split('/');
-                        dob = t[2] + "/" + t[1] + "/" + t[0];
-                    }
-                }
+                
                 if (txtname.Text.Trim().Length < 3)
                 {
                     MessageBox.Show("Please input member name ");
                     return;
                 }
-                if (txtmobile.Text.Trim().Length != 10)
-                {
-                    MessageBox.Show("Please input 10 degit mobile number");
-                    return;
-                }
+
                 Cursor.Current = Cursors.WaitCursor;
                 DataSet ds = new DataSet();
-                string result = GlobalUsage.pharmacy_proxy.Insert_UpdateCustCardMemebers(GlobalUsage.Unit_id, _card_no, _member_id, "M", txtname.Text, ddlgender.Text, dob, txtmobile.Text, "", "", "", "", "", "", "MemberInsert", ds, GlobalUsage.Login_id);
+                string result = GlobalUsage.pharmacy_proxy.Insert_UpdateCustCardMemebers(GlobalUsage.Unit_id, _card_no, _member_id, "M", txtname.Text, "-", dob, "-", "", "", "", "", "", "", "MemberInsert", ds, GlobalUsage.Login_id);
                 MessageBox.Show(result);
             }
             catch (Exception ex) { }
@@ -239,32 +206,16 @@ namespace eMediShop
             try
             {
                 string dob = string.Empty;
-                if (txtdob.Text.Trim().Length > 0)
-                {
-                    if (!IsValidDateTime(txtdob.Text))
-                    {
-                        MessageBox.Show("input date should be in dd/MM/yyyy format");
-                        return;
-                    }
-                    else
-                    {
-                        string[] t = txtdob.Text.Split('/');
-                        dob = t[2] + "/" + t[1] + "/" + t[0];
-                    }
-                }
+               
                 if (txtname.Text.Trim().Length < 3)
                 {
                     MessageBox.Show("Please input member name ");
                     return;
                 }
-                if (txtmobile.Text.Trim().Length != 10)
-                {
-                    MessageBox.Show("Please input 10 degit mobile number");
-                    return;
-                }
+             
                 Cursor.Current = Cursors.WaitCursor;
                 DataSet ds = new DataSet();
-                string result = GlobalUsage.pharmacy_proxy.Insert_UpdateCustCardMemebers(GlobalUsage.Unit_id, _card_no, _member_id, "M", txtname.Text, ddlgender.Text, dob, txtmobile.Text, "", "", "", "", "", "", "MemberUpdate", ds, GlobalUsage.Login_id);
+                string result = GlobalUsage.pharmacy_proxy.Insert_UpdateCustCardMemebers(GlobalUsage.Unit_id, _card_no, _member_id, "M", txtname.Text, "-", dob, "-", "", "", "", "", "", "", "MemberUpdate", ds, GlobalUsage.Login_id);
                 MessageBox.Show(result);
             }
             catch (Exception ex) { }

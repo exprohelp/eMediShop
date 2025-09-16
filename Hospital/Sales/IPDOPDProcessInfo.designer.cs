@@ -304,7 +304,7 @@
             this.lvOrder.Location = new System.Drawing.Point(0, 6);
             this.lvOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvOrder.Name = "lvOrder";
-            this.lvOrder.Size = new System.Drawing.Size(406, 444);
+            this.lvOrder.Size = new System.Drawing.Size(406, 470);
             this.lvOrder.TabIndex = 246;
             this.toolTip1.SetToolTip(this.lvOrder, "Enter Key : To Replace The Item.\r\n");
             this.lvOrder.UseCompatibleStateImageBehavior = false;
@@ -388,7 +388,7 @@
             this.ItemSaleGrid.Location = new System.Drawing.Point(6, 166);
             this.ItemSaleGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ItemSaleGrid.Name = "ItemSaleGrid";
-            this.ItemSaleGrid.Size = new System.Drawing.Size(570, 215);
+            this.ItemSaleGrid.Size = new System.Drawing.Size(570, 241);
             this.ItemSaleGrid.TabIndex = 276;
             this.ItemSaleGrid.UseCompatibleStateImageBehavior = false;
             this.ItemSaleGrid.View = System.Windows.Forms.View.Details;
@@ -634,7 +634,7 @@
             this.panel1.Controls.Add(this.txtIPOPNo);
             this.panel1.Location = new System.Drawing.Point(1, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 587);
+            this.panel1.Size = new System.Drawing.Size(346, 613);
             this.panel1.TabIndex = 307;
             // 
             // txtCorpName
@@ -824,7 +824,7 @@
             this.dgIndentInfo.ReadOnly = true;
             this.dgIndentInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgIndentInfo.ShowGroupPanel = false;
-            this.dgIndentInfo.Size = new System.Drawing.Size(335, 477);
+            this.dgIndentInfo.Size = new System.Drawing.Size(335, 503);
             this.dgIndentInfo.TabIndex = 4;
             this.dgIndentInfo.Text = "radGridView1";
             this.dgIndentInfo.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.MasterTemplate_RowFormatting);
@@ -994,7 +994,7 @@
             this.radPanel2.Controls.Add(this.lv_batchno);
             this.radPanel2.Location = new System.Drawing.Point(765, 93);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(588, 499);
+            this.radPanel2.Size = new System.Drawing.Size(588, 525);
             this.radPanel2.TabIndex = 309;
             this.radPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.radPanel2_Paint);
             // 
@@ -1019,7 +1019,7 @@
             this.dgFailure.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.dgFailure.ForeColor = System.Drawing.Color.Black;
             this.dgFailure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgFailure.Location = new System.Drawing.Point(2, 454);
+            this.dgFailure.Location = new System.Drawing.Point(2, 480);
             this.dgFailure.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // 
@@ -1100,7 +1100,7 @@
             this.radPanel3.Controls.Add(this.label8);
             this.radPanel3.Controls.Add(this.cbxPtName);
             this.radPanel3.Controls.Add(this.label4);
-            this.radPanel3.Location = new System.Drawing.Point(772, 478);
+            this.radPanel3.Location = new System.Drawing.Point(772, 504);
             this.radPanel3.Name = "radPanel3";
             this.radPanel3.Size = new System.Drawing.Size(575, 103);
             this.radPanel3.TabIndex = 311;
@@ -1141,7 +1141,7 @@
             this.radPanel4.Controls.Add(this.dgFailure);
             this.radPanel4.Location = new System.Drawing.Point(353, 93);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(408, 497);
+            this.radPanel4.Size = new System.Drawing.Size(408, 523);
             this.radPanel4.TabIndex = 312;
             this.radPanel4.Text = "radPanel4";
             // 
@@ -1149,7 +1149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 593);
+            this.ClientSize = new System.Drawing.Size(1352, 619);
             this.Controls.Add(this.radPanel4);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.radPanel2);

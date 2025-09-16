@@ -29,6 +29,7 @@ namespace eMediShop
         public static string BillDrive = System.Configuration.ConfigurationManager.AppSettings["BillDrive"].ToString();
         public static string CloudStoragePath = System.Configuration.ConfigurationManager.AppSettings["CloudStoragePath"].ToString();
         public static string ViewStatus = "No";
+        public static string isWalletActive = "N";
         public static string MySystemIP = string.Empty;
         public static string ClosingDate = string.Empty;
         public static string UniqueMachineId = string.Empty;
@@ -83,11 +84,15 @@ namespace eMediShop
         public static string SmsAPI = "N/A";
         public static string SmsID = "N/A";
         public static string smsProvider = "N/A";
-        //public static CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet PharmacyCashMemo;
         public static CrystalReportsPharmacy.eMediShop.CashMemoGSTByWallet PharmacyCashMemo;
+        public static CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet HospitalCashMemo;
+
+        public static CrystalReportsPharmacy.eMediShop.CashMemoGST PharmacyCashMemoNoWallet;
+        public static CrystalReportsPharmacy.eMediShop.HP_CashMemo HospitalCashMemoNoWallet;
+
+
         public static CrystalReportsPharmacy.eMediShop.DeliveryNote_HAL HAL_DeliveryNote;
         public static CrystalReportsPharmacy.eMediShop.ManualDeliveryNote ManualBill;
-        public static CrystalReportsPharmacy.eMediShop.HP_CashMemoByWallet HospitalCashMemo;
         public static CrystalReportsPharmacy.eMediShop.HP_MedicineSearchSheet HospitalInternalSheet;
         public static CrystalReportsPharmacy.eMediShop.CashMemoGST_opthalmic opthCashMemo;
 

@@ -1604,5 +1604,39 @@ namespace eMediShop
             p1.Logic = "Pre-BookMedicine"; p1.prm_1 = "-"; p1.tran_id = txtEstimateNo.Text;
             datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p1);
         }
+
+        private void rbRedemtion_CheckedChanged(object sender, EventArgs e)
+        {
+            btnApproval.Enabled = true;
+        }
+
+        private void rbSalesReturn_CheckedChanged(object sender, EventArgs e)
+        {
+            btnApproval.Enabled = true;
+        }
+
+        private void btnApproval_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cm2 p = new cm2();
+
+                p.unit_id = GlobalUsage.Unit_id;
+                if (rbRedemtion.Checked)
+                    p.tranType = "Redemption";
+                if (rbSalesReturn.Checked)
+                    p.tranType = "SalesReturn";
+                p.Logic = "Insert"; p.tran_id = txtInvNo.Text; p.prm_2 = "-";
+                p.login_id = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/audit/InsertModifyLogApprovals", p);
+                _ds = dwr.result;
+                if (_ds.Tables[0].Rows.Count > 0)
+                {
+                    MessageBox.Show("Successfully Sent", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnApproval.Enabled = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
     }  // Second Last Brace
 }

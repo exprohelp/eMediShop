@@ -1763,7 +1763,7 @@
             this.rt_CustomerCare.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rt_CustomerCare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(24)))));
             this.rt_CustomerCare.Image = global::eMediShop.Properties.Resources.support_16;
-            this.rt_CustomerCare.IsSelected = true;
+            this.rt_CustomerCare.IsSelected = false;
             this.rt_CustomerCare.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.rrbg_HealthCard,
             this.rrbg_ManageOrders,
@@ -4091,7 +4091,7 @@
             // 
             this.ribbonTab6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonTab6.Image = global::eMediShop.Properties.Resources.Contract;
-            this.ribbonTab6.IsSelected = false;
+            this.ribbonTab6.IsSelected = true;
             this.ribbonTab6.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup39,
             this.rrbg_ner});
