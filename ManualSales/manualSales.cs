@@ -99,6 +99,7 @@ namespace eMediShop.ManualSales
                     }
                     else
                     {
+
                         HealthCardHelp = new ucHealthCardNew(txtCardNo.Text, ds, SearchOption);
                         HealthCardHelp.SearchUpdated += new HealthCardUpdatedEventHandler(FillCardDetail);
                         HealthCardHelp.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -120,7 +121,7 @@ namespace eMediShop.ManualSales
             _CardChangeFlag = "Y";
             txtPatientName.Text = e.NewCardName;
             txtPatientName.Enabled = false;
-            txtCardNo.Text = e.NewCardNo;
+            //txtCardNo.Text = e.NewCardNo;
 
 
             _discountPercntage = e.Discountpercentage;

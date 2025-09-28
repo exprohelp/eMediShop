@@ -492,7 +492,7 @@ namespace eMediShop.contract
                 p.Cur_sale_inv_no = txtInvNo.Text; p.DiscountLogic = "New"; p.order_no = _order_no; p.promo_flag = _promoTag;
                 p.login_id = GlobalUsage.Login_id;
                 p.stateName = GlobalUsage.State;
-                dwr = ConfigWebAPI.CallAPI("api/sales/InsertRetailSales", p);
+                dwr = ConfigWebAPI.CallAPI("api/sales/InsertHalSales", p);
                 ds = dwr.result; _result = dwr.message;
             }
             catch (Exception ex)

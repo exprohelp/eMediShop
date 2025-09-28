@@ -72,6 +72,7 @@
             this.lv_referralList = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.radGroupBox7 = new Telerik.WinControls.UI.RadGroupBox();
+            this.cbOldHIS = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIPOPNo = new Telerik.WinControls.UI.RadTextBox();
             this.rbWalkIn = new System.Windows.Forms.RadioButton();
@@ -155,7 +156,6 @@
             this.radGroupBox8 = new Telerik.WinControls.UI.RadGroupBox();
             this.rgvSoldItems = new Telerik.WinControls.UI.RadGridView();
             this.rgvRegister = new Telerik.WinControls.UI.RadGridView();
-            this.cbOldHIS = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.rpv_master)).BeginInit();
             this.rpv_master.SuspendLayout();
             this.rpvp_pos.SuspendLayout();
@@ -301,7 +301,7 @@
             this.lv_referralList.HideSelection = false;
             this.lv_referralList.Location = new System.Drawing.Point(568, 108);
             this.lv_referralList.Name = "lv_referralList";
-            this.lv_referralList.Size = new System.Drawing.Size(338, 318);
+            this.lv_referralList.Size = new System.Drawing.Size(338, 244);
             this.lv_referralList.TabIndex = 139;
             this.lv_referralList.UseCompatibleStateImageBehavior = false;
             this.lv_referralList.View = System.Windows.Forms.View.Details;
@@ -328,6 +328,17 @@
             this.radGroupBox7.Name = "radGroupBox7";
             this.radGroupBox7.Size = new System.Drawing.Size(238, 85);
             this.radGroupBox7.TabIndex = 123;
+            // 
+            // cbOldHIS
+            // 
+            this.cbOldHIS.AutoSize = true;
+            this.cbOldHIS.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbOldHIS.Location = new System.Drawing.Point(5, 59);
+            this.cbOldHIS.Name = "cbOldHIS";
+            this.cbOldHIS.Size = new System.Drawing.Size(43, 20);
+            this.cbOldHIS.TabIndex = 120;
+            this.cbOldHIS.Text = "Old";
+            this.cbOldHIS.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -946,6 +957,7 @@
             this.rb_byCard.TabIndex = 5;
             this.rb_byCard.Text = "By Card";
             this.rb_byCard.UseVisualStyleBackColor = true;
+            this.rb_byCard.Visible = false;
             // 
             // txtCardNo
             // 
@@ -1603,17 +1615,6 @@
             this.rgvRegister.Text = "radGridView1";
             this.rgvRegister.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.MasterTemplate_RowFormatting);
             this.rgvRegister.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.rgvRegister_CommandCellClick);
-            // 
-            // cbOldHIS
-            // 
-            this.cbOldHIS.AutoSize = true;
-            this.cbOldHIS.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOldHIS.Location = new System.Drawing.Point(5, 59);
-            this.cbOldHIS.Name = "cbOldHIS";
-            this.cbOldHIS.Size = new System.Drawing.Size(43, 20);
-            this.cbOldHIS.TabIndex = 120;
-            this.cbOldHIS.Text = "Old";
-            this.cbOldHIS.UseVisualStyleBackColor = true;
             // 
             // manualSales
             // 

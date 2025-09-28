@@ -113,7 +113,7 @@ namespace eMediShop.sales
             swipeMachines();
             txtWalletBalance.Text = "0";
             if (_amount < 0)
-                GetWalletUsedAmount(_oldInvNo);
+                GetWalletUsedAmount(_saleInvNo);
             else
                 GetWalletBalance(_mobileNo);
 
@@ -170,7 +170,7 @@ namespace eMediShop.sales
             try
             {
                 WalletMoney p = new WalletMoney();
-                p.unitID = GlobalUsage.Unit_id; p.walletID = "-"; p.prm_1 = OldSalesInvNo; p.Logic = "WB-Used"; p.loginId = GlobalUsage.Login_id;
+                p.unitID = GlobalUsage.Unit_id; p.walletID = _card_no; p.prm_1 = txtEstimateNo.Text; p.Logic = "WB-Used-Return"; p.loginId = GlobalUsage.Login_id;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WalletQueries", p);
                 if (dwr.result.Tables[0].Rows.Count > 0)
                 {

@@ -349,7 +349,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Disc.</Value>
+                              <Value>D/R</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1769,7 +1769,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Discount</Value>
+                  <Value>Dis./Red.</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                     <FontSize>9pt</FontSize>
