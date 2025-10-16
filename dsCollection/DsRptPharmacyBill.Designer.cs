@@ -352,6 +352,12 @@ namespace eMediShop.dsCollection {
             
             private global::System.Data.DataColumn columncounter_id;
             
+            private global::System.Data.DataColumn columnwalletbalance;
+            
+            private global::System.Data.DataColumn columncashback;
+            
+            private global::System.Data.DataColumn columnregOffice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -539,6 +545,30 @@ namespace eMediShop.dsCollection {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn walletbalanceColumn {
+                get {
+                    return this.columnwalletbalance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cashbackColumn {
+                get {
+                    return this.columncashback;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn regOfficeColumn {
+                get {
+                    return this.columnregOffice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -593,7 +623,10 @@ namespace eMediShop.dsCollection {
                         string net, 
                         string received, 
                         string card_no, 
-                        string counter_id) {
+                        string counter_id, 
+                        string walletbalance, 
+                        string cashback, 
+                        string regOffice) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         gstno,
@@ -614,7 +647,10 @@ namespace eMediShop.dsCollection {
                         net,
                         received,
                         card_no,
-                        counter_id};
+                        counter_id,
+                        walletbalance,
+                        cashback,
+                        regOffice};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -656,6 +692,9 @@ namespace eMediShop.dsCollection {
                 this.columnreceived = base.Columns["received"];
                 this.columncard_no = base.Columns["card_no"];
                 this.columncounter_id = base.Columns["counter_id"];
+                this.columnwalletbalance = base.Columns["walletbalance"];
+                this.columncashback = base.Columns["cashback"];
+                this.columnregOffice = base.Columns["regOffice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -699,6 +738,12 @@ namespace eMediShop.dsCollection {
                 base.Columns.Add(this.columncard_no);
                 this.columncounter_id = new global::System.Data.DataColumn("counter_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncounter_id);
+                this.columnwalletbalance = new global::System.Data.DataColumn("walletbalance", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwalletbalance);
+                this.columncashback = new global::System.Data.DataColumn("cashback", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncashback);
+                this.columnregOffice = new global::System.Data.DataColumn("regOffice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnregOffice);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1588,6 +1633,54 @@ namespace eMediShop.dsCollection {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string walletbalance {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.walletbalanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'walletbalance\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.walletbalanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string cashback {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.cashbackColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cashback\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.cashbackColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string regOffice {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.regOfficeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'regOffice\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.regOfficeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsgstnoNull() {
                 return this.IsNull(this.tableDataTable1.gstnoColumn);
             }
@@ -1812,6 +1905,42 @@ namespace eMediShop.dsCollection {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setcounter_idNull() {
                 this[this.tableDataTable1.counter_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IswalletbalanceNull() {
+                return this.IsNull(this.tableDataTable1.walletbalanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetwalletbalanceNull() {
+                this[this.tableDataTable1.walletbalanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscashbackNull() {
+                return this.IsNull(this.tableDataTable1.cashbackColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcashbackNull() {
+                this[this.tableDataTable1.cashbackColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsregOfficeNull() {
+                return this.IsNull(this.tableDataTable1.regOfficeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetregOfficeNull() {
+                this[this.tableDataTable1.regOfficeColumn] = global::System.Convert.DBNull;
             }
         }
         
