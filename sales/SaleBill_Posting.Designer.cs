@@ -665,7 +665,7 @@
             // txtRedeemAmount
             // 
             this.txtRedeemAmount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRedeemAmount.Location = new System.Drawing.Point(181, 6);
+            this.txtRedeemAmount.Location = new System.Drawing.Point(256, 6);
             this.txtRedeemAmount.Name = "txtRedeemAmount";
             this.txtRedeemAmount.NullText = "0";
             this.txtRedeemAmount.ReadOnly = true;
@@ -682,9 +682,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(15, 8);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(147, 20);
+            this.label19.Size = new System.Drawing.Size(179, 20);
             this.label19.TabIndex = 169;
-            this.label19.Text = "Redeem Wallet Point";
+            this.label19.Text = "Max Redeem Wallet Point";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkHomeDelivery

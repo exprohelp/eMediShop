@@ -1516,7 +1516,7 @@
             // 
             // 
             this.rrb_menu.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
-            this.rrb_menu.Size = new System.Drawing.Size(1272, 171);
+            this.rrb_menu.Size = new System.Drawing.Size(1272, 172);
             this.rrb_menu.StartButtonImage = global::eMediShop.Properties.Resources.pharmacy_icon_32;
             this.rrb_menu.TabIndex = 0;
             this.rrb_menu.TabStop = false;
@@ -2621,7 +2621,7 @@
             this.rt_Purchase.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
             this.rt_Purchase.ForeColor = System.Drawing.Color.DarkGreen;
             this.rt_Purchase.Image = global::eMediShop.Properties.Resources.purchase_16;
-            this.rt_Purchase.IsSelected = false;
+            this.rt_Purchase.IsSelected = true;
             this.rt_Purchase.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.rrbg_Bills,
             this.rrbg_poHelp,
@@ -3843,7 +3843,7 @@
             // 
             this.ribbonTab4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonTab4.Image = global::eMediShop.Properties.Resources.Hospital_16;
-            this.ribbonTab4.IsSelected = true;
+            this.ribbonTab4.IsSelected = false;
             this.ribbonTab4.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup21,
             this.radRibbonBarGroup24,

@@ -15,7 +15,7 @@ namespace eMediShop
     {
         public static string domain = ConfigurationManager.AppSettings["domainName"].ToString();
         public static string SingnalRServer = ConfigurationManager.AppSettings["SingnalRServer"].ToString();
-        public static Uri BaseURL = new Uri("http://" + domain + "/PharmacyWebAPI/");
+        public static Uri BaseURL = new Uri("http://" + domain ); //+ "/PharmacyWebAPI/"
   
         public static Uri LocalURL = new Uri("http://" + domain + "/");
 

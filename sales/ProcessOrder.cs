@@ -392,8 +392,11 @@ namespace eMediShop.sales
                 }
                 DisableButtons();
                 #endregion
-
+                btnApproval.Enabled = true;
             }
+            else
+                btnApproval.Enabled = false;
+
             if (_ds.Tables[0].Rows.Count > 0)
             {
                 #region Filling Summary of Bill
@@ -809,7 +812,8 @@ namespace eMediShop.sales
                                 lvorder.SubItems[2].Text = ds.Tables[1].Rows[0]["qty"].ToString();
                             }
                             ItemSaleGrid.Items[ItemSaleGrid.FocusedItem.Index].Remove();
-
+                            if (ItemSaleGrid.Items.Count == 0)
+                                btnApproval.Enabled = false;
                         }
                         else
                         {
@@ -1078,6 +1082,29 @@ namespace eMediShop.sales
             lv_batchno.Items.Clear();
             txtTotal.Text = "0"; txtDiscount.Text = "0"; txtRoundoff.Text = "0";txtPayable.Text = "0";
             btnCompleteSale.Enabled = false;
+        }
+
+        private void btnApproval_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cm2 p = new cm2();
+
+                p.unit_id = GlobalUsage.Unit_id;
+                if (rbRedemtion.Checked)
+                    p.tranType = "Redemption";
+               
+                p.Logic = "Insert"; p.tran_id = txtInvNo.Text; p.prm_2 = "-";
+                p.login_id = GlobalUsage.Login_id;
+                datasetWithResult dwr = ConfigWebAPI.CallAPI("api/audit/InsertModifyLogApprovals", p);
+                DataSet ds = dwr.result;
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    MessageBox.Show("Successfully Sent", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnApproval.Enabled = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
     }
 }

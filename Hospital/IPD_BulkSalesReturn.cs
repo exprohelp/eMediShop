@@ -114,7 +114,8 @@ namespace eMediShop.Hospital
                     pm_sales p = new pm_sales();
                     p.unit_id = GlobalUsage.Unit_id;
                     p.computerName = GlobalUsage.computerName; p.searchkey = _ipdNo; p.logic = "ByIPDNo";
-                    p.counter_id = GlobalUsage.CounterID; p.login_id = GlobalUsage.Login_id;p.Pay_Mode = cmbPayMode.Text;
+                    p.counter_id = GlobalUsage.CounterID; p.login_id = GlobalUsage.Login_id;
+                    p.Pay_Mode = cmbPayMode.Text;
                     p.ds = ds;
                     datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/RetailSalesReturn", p);
                     _result = dwr.message;

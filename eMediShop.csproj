@@ -126,7 +126,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalReportsPharmacy, Version=1.0.0.49, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CrystalReportsPharmacy, Version=1.0.0.80, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CrystalReportsPharmacy\bin\Debug\CrystalReportsPharmacy.dll</HintPath>
     </Reference>
@@ -657,6 +657,12 @@
     </Compile>
     <Compile Include="creditNote\ucCreditNoteRegister.Designer.cs">
       <DependentUpon>ucCreditNoteRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataObjects.cs" />
     <Compile Include="creditNote\CreditNote_Entries.cs">
@@ -2067,6 +2073,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="creditNote\ucCreditNoteRegister.resx">
       <DependentUpon>ucCreditNoteRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FOC\ucFOC.resx">
       <DependentUpon>ucFOC.cs</DependentUpon>

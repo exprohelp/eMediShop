@@ -117,6 +117,7 @@ namespace eMediShop.sales
             else
                 GetWalletBalance(_mobileNo);
 
+
             #region get Current Bill Information
             try
             {
@@ -201,7 +202,7 @@ namespace eMediShop.sales
             try
             {
                 WalletMoney p = new WalletMoney();
-                p.unitID = GlobalUsage.Unit_id; p.walletID = WalletID; p.Logic = "WB"; p.loginId = GlobalUsage.Login_id;
+                p.unitID = GlobalUsage.Unit_id; p.walletID = WalletID; p.Logic = "WB-Redeem"; p.loginId = GlobalUsage.Login_id;p.prm_1 = _saleInvNo;
                 datasetWithResult dwr = ConfigWebAPI.CallAPI("api/sales/WalletQueries", p);
                 if (dwr.result.Tables[0].Rows.Count > 0)
                 {

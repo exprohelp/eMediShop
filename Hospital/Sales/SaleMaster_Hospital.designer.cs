@@ -1061,6 +1061,7 @@ namespace eMediShop
             this.rbSalesReturn.TabIndex = 1;
             this.rbSalesReturn.Text = "Sales Return";
             this.rbSalesReturn.UseVisualStyleBackColor = true;
+            this.rbSalesReturn.Visible = false;
             this.rbSalesReturn.CheckedChanged += new System.EventHandler(this.rbSalesReturn_CheckedChanged);
             // 
             // rbRedemtion
