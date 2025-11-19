@@ -788,25 +788,7 @@ namespace eMediShop.Hospital
                     
                     dgIndentInfo.DataSource = ds.Tables[0];
                 }
-                else
-                {
-                    string response = GlobalUsage.his_proxy.getDcotorIndentByUHID(indentNo);
-                    if (response.Length > 10)
-                    {
-                        pm_PullHISIndent p = new pm_PullHISIndent();
-                        p.inputstring = response;p.unit_id = GlobalUsage.Unit_id;p.login_id = GlobalUsage.Login_id;
-                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/PullHISIndent", p);
-                        string[] r = dwr.message.Split('|');
-                        string indent = r[1]; 
-                        
-                        if (r[0].Contains("Success"))
-                        {
-                            GlobalUsage.his_proxy.closeOPDIndent(indent);
-                            LoadPendingIndent();
-                        }
-                    }
-                 
-                }
+            
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

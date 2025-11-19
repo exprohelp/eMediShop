@@ -72,7 +72,6 @@
             this.lv_referralList = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.radGroupBox7 = new Telerik.WinControls.UI.RadGroupBox();
-            this.cbOldHIS = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIPOPNo = new Telerik.WinControls.UI.RadTextBox();
             this.rbWalkIn = new System.Windows.Forms.RadioButton();
@@ -316,7 +315,6 @@
             // radGroupBox7
             // 
             this.radGroupBox7.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox7.Controls.Add(this.cbOldHIS);
             this.radGroupBox7.Controls.Add(this.label3);
             this.radGroupBox7.Controls.Add(this.txtIPOPNo);
             this.radGroupBox7.Controls.Add(this.rbWalkIn);
@@ -328,17 +326,6 @@
             this.radGroupBox7.Name = "radGroupBox7";
             this.radGroupBox7.Size = new System.Drawing.Size(238, 85);
             this.radGroupBox7.TabIndex = 123;
-            // 
-            // cbOldHIS
-            // 
-            this.cbOldHIS.AutoSize = true;
-            this.cbOldHIS.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOldHIS.Location = new System.Drawing.Point(5, 59);
-            this.cbOldHIS.Name = "cbOldHIS";
-            this.cbOldHIS.Size = new System.Drawing.Size(43, 20);
-            this.cbOldHIS.TabIndex = 120;
-            this.cbOldHIS.Text = "Old";
-            this.cbOldHIS.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -1791,6 +1778,5 @@
         private System.Windows.Forms.RadioButton rbchSwipeCard;
         private System.Windows.Forms.RadioButton rbchCredit;
         private System.Windows.Forms.RadioButton rbchCash;
-        private System.Windows.Forms.CheckBox cbOldHIS;
     }
 }

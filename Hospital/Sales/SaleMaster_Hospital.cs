@@ -1,5 +1,4 @@
 using ExPro.Client;
-using Newtonsoft.Json;
 using System;
 using System.Data;
 using System.Drawing;
@@ -1253,7 +1252,7 @@ namespace eMediShop
                 _opdMedicine = ds.Tables[0];
                 rpv_opdMedicine.DataSource = _opdMedicine;
             }
-            rpv_master.SelectedPage= rpv_master.Pages[1];
+            rpv_master.SelectedPage = rpv_master.Pages[1];
             txtMedName.Focus();
         }
         private string paymode(string panelID)
@@ -1489,14 +1488,8 @@ namespace eMediShop
                 txtVCustName.Text = dsVerify.Tables[0].Rows[0]["pt_name"].ToString();
                 txtVUhid.Text = dsVerify.Tables[0].Rows[0]["hosp_cr_no"].ToString();
                 btnGenerateCode.Enabled = true;
-                if (txtVUhid.Text.Length > 8)
-                {
-                    _result = GlobalUsage.his_proxy.getPatientDetails(txtVUhid.Text);
-                    var table = JsonConvert.DeserializeObject<DataTable>(_result);
-                    txtVMobile.Text = table.Rows[0]["mobile"].ToString();
-                }
-                else
-                    txtVMobile.Text = dsVerify.Tables[0].Rows[0]["ContactNo"].ToString();
+
+                txtVMobile.Text = dsVerify.Tables[0].Rows[0]["ContactNo"].ToString();
 
                 txtVold.Text = dsVerify.Tables[0].Rows[0]["old_sale_inv_no"].ToString();
 

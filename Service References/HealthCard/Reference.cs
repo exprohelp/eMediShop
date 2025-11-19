@@ -279,6 +279,10 @@ namespace eMediShop.HealthCard {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string InformToPatient(string unit_id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/LicenceAlerts", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string LicenceAlerts();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Gen_SystemCouponNo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string Gen_SystemCouponNo(out string processInfo, string card_no, string cust_name, string prm_1, string prm_2);
@@ -286,10 +290,14 @@ namespace eMediShop.HealthCard {
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_custOrderInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string Insert_Modify_custOrderInfo(string order_no, string item_id, string old_item_id, string new_med, int qty, string cancel_flag, string Logic, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/HIS_InsertInPatient", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet HIS_InsertInPatient(out string processInfo, System.Data.DataSet dSInPatient);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1179,12 +1187,20 @@ namespace eMediShop.HealthCard {
             return base.Channel.InformToPatient(unit_id);
         }
         
+        public string LicenceAlerts() {
+            return base.Channel.LicenceAlerts();
+        }
+        
         public string Gen_SystemCouponNo(out string processInfo, string card_no, string cust_name, string prm_1, string prm_2) {
             return base.Channel.Gen_SystemCouponNo(out processInfo, card_no, cust_name, prm_1, prm_2);
         }
         
         public string Insert_Modify_custOrderInfo(string order_no, string item_id, string old_item_id, string new_med, int qty, string cancel_flag, string Logic, string login_id) {
             return base.Channel.Insert_Modify_custOrderInfo(order_no, item_id, old_item_id, new_med, qty, cancel_flag, Logic, login_id);
+        }
+        
+        public System.Data.DataSet HIS_InsertInPatient(out string processInfo, System.Data.DataSet dSInPatient) {
+            return base.Channel.HIS_InsertInPatient(out processInfo, dSInPatient);
         }
     }
 }

@@ -16,234 +16,6 @@ namespace eMediShop.rmAccounts {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://exprohelp.com/", ConfigurationName="rmAccounts.Accounts_WebServiceSoap")]
     public interface Accounts_WebServiceSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetMonthlyBalForChecking", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetMonthlyBalForChecking(out string processInfo, string from, string to, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_bulk_card_ins_request", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Insert_Modify_bulk_card_ins_request(string r_cardType, string r_card_no, string r_cust_name, string r_Mobile_no, string r_phone_no, string r_area, string r_locality, string r_district, string r_state, string r_unit_code, string r_login_id, string Logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateIdOfNotCoded", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string UpdateIdOfNotCoded(out string processInfo, string d_code, string ArrayRecId, string separator, string status_flag, string remark, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReplaceReferral_Work", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ReplaceReferral_Work(out string processInfo, string d_code, string ReplBy, string login_id, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/VerifyPFInformation", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet VerifyPFInformation(out string processInfo, string ref_code, string Logic, string prm_1);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Retail_GetCardInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Retail_GetCardInfo(out string processInfo, string unit_id, string searchString);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/RemarkAndContactInsertion", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string RemarkAndContactInsertion(out string processInfo, string ref_code, string Logic, string prm_1, string prm_2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ApproveRebateInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ApproveRebateInfo(out string processInfo, string App_id, decimal app_amount, string app_by, string query, string remarks);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/AC_MergeLedger", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string AC_MergeLedger(out string processInfo, string logic, string repTo_Ledger_code, string repBy_Ledger_code, string voucher_no, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/VoucherModifyInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string VoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateVoucherModifyInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet UpdateVoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPatientRegister", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetPatientRegister(out string processInfo, string unit_id, string fromdate, string Logic, string SearchKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/AC_ModifyVoucher", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string AC_ModifyVoucher(string act_type, string voucher_no, string repTo_Ledger_code, string repBy_Ledger_code, string database);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Account_PurchaseQueries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Account_PurchaseQueries(out string processInfo, string unit_id, string purchase_id, string from, string to, string Logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CorrectInvoiceType", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CorrectInvoiceType(out string processInfo, string unit_id, string purch_id, string inv_type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TaxQueries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet TaxQueries(out string processInfo, string unit_id, string stateName, string logic, string from, string to);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Pharmacy_UnitMismatchInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Pharmacy_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Diagnostic_UnitMismatchInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Diagnostic_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_LedgerLocking", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Insert_Modify_LedgerLocking(out string processInfo, string ledgerof, string ledger_id, string Logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Form_Sales_UP", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Form_Sales_UP(out string processInfo, string from, string to);
-        
-        // CODEGEN: Parameter 'Form_SalesPDFResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Form_SalesPDF", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.rmAccounts.Form_SalesPDFResponse Form_SalesPDF(eMediShop.rmAccounts.Form_SalesPDFRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InserteTax_4Det", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string InserteTax_4Det(out string processInfo, int mth, string finyear, string state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetMonthlyTax", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetMonthlyTax(out string processInfo, int Month, string Fin_year, string Logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/AdjustSales", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string AdjustSales(out string processInfo, string from, string to, string state, string login_id, decimal Reduce, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Ac_GetReceivableSummary", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Ac_GetReceivableSummary(out string processInfo, string Comp_id, string unit_id, string from, string to);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DiagnosticReceivableSummary", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet DiagnosticReceivableSummary(out string processInfo, string comp_id, string unit_id, string From, string to, string ledger_id, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ShopInfo_Queries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ShopInfo_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string login_id);
-        
-        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_ComplaintWeb", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.rmAccounts.Insert_ComplaintWebResponse Insert_ComplaintWeb(eMediShop.rmAccounts.Insert_ComplaintWebRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GenNewEqCode", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GenNewEqCode(string eq_cat, string pur_date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Ins_equip_info", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Ins_equip_info(
-                    out string processInfo, 
-                    string unit_id, 
-                    string v_code, 
-                    string eq_code, 
-                    string eq_cat_code, 
-                    string eq_description, 
-                    string eq_serial_no, 
-                    string pur_date, 
-                    string pur_billno, 
-                    string w_date, 
-                    string w_detail, 
-                    string mainEuipNo, 
-                    string eq_no, 
-                    string crBy, 
-                    decimal eq_amount, 
-                    string asset_type, 
-                    string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Ins_equip_info_New", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Ins_equip_info_New(
-                    out string processInfo, 
-                    string unit_id, 
-                    string v_code, 
-                    string eq_code, 
-                    string eq_cat_code, 
-                    string eq_description, 
-                    string eq_serial_no, 
-                    string pur_date, 
-                    string pur_billno, 
-                    string w_date, 
-                    string w_detail, 
-                    string mainEuipNo, 
-                    string eq_no, 
-                    string crBy, 
-                    decimal eq_amount, 
-                    string asset_type, 
-                    string po_no, 
-                    string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Asset_Querries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Asset_Querries(out string processInfo, string eq_code, string prm_1, string prm_2, string Logic, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DeleteOrDisableAssets", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string DeleteOrDisableAssets(string EqNo, string login_id);
-        
-        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Asset_PurBillUpload", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.rmAccounts.Asset_PurBillUploadResponse Asset_PurBillUpload(eMediShop.rmAccounts.Asset_PurBillUploadRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferAsset", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string TransferAsset(out string processInfo, string trfFrom, string trfTo, string emp_code, string eq_no, string trfType, string trf_date, decimal dpr_value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Vendor_master", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Vendor_master(out string processInfo, string v_type, string v_code, string v_name, string Contact_Person, string address, string district, string state, string Country, string ContactNo, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/fillState", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet fillState();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/fillDistrict", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet fillDistrict(string state_code);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InformToeDiagnostic", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet InformToeDiagnostic(out string processInfo, string unit_id, decimal revision_no);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ins_investd", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ins_investd(
-                    out string processInfo, 
-                    string ratefor, 
-                    string i_code, 
-                    string investi, 
-                    int rate, 
-                    string lab_section, 
-                    decimal unit, 
-                    string instruction, 
-                    string forapp, 
-                    string workingtable, 
-                    string normalrange, 
-                    string dr_fee, 
-                    string rep_head, 
-                    string typeoftest, 
-                    string vial, 
-                    string sam_qty, 
-                    string ser_charges);
-        
-        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/tr_RadiologyRegistration", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.rmAccounts.tr_RadiologyRegistrationResponse tr_RadiologyRegistration(eMediShop.rmAccounts.tr_RadiologyRegistrationRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/BillPaymentChecking", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet BillPaymentChecking(out string processInfo, string unit_id, string ref_by, string dFrom, string dTo, string checkbill);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ShiftSchedule_Bulk", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ShiftSchedule_Bulk(string old_login, string new_login, string sch_date, string bulk_by);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/WorkBook", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet WorkBook(out string processInfo, string hosp_id, string from, string to, string logic, string prm_1, string prm_2);
@@ -359,7 +131,7 @@ namespace eMediShop.rmAccounts {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ICICI_SalaryTransfer_Formate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ICICI_SalaryTransfer_Formate(out string processInfo, string inp_date, string div, string prm_1, string prm_2, string prm_3, string Logic, string icic_acc);
+        System.Data.DataSet ICICI_SalaryTransfer_Formate(out string processInfo, string inp_date, string div, string prm_1, string prm_2, string prm_3, string prm_4, string prm_5, string Logic, string icic_acc);
         
         // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_ConversationByDesktopApp", ReplyAction="*")]
@@ -550,7 +322,7 @@ namespace eMediShop.rmAccounts {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CreateLedgers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CreateLedgers(out string processInfo, string ld_code, string unit_id, string unit_type, string ledger_name, string groupname, string party_name, string party_address, decimal openAmt, string openType, string PanNo, string TinNo, string InsertLogic);
+        string CreateLedgers(out string processInfo, string ld_code, string unit_id, string unit_type, string ledger_name, string groupname, string party_name, string party_address, decimal openAmt, string openType, string PanNo, string TinNo, int CreditDays, string InsertLogic);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/MergeOrDeleteLedger", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -696,218 +468,234 @@ namespace eMediShop.rmAccounts {
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReceivableByBusinessHead", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet ReceivableByBusinessHead(out string processInfo, string emp_code);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Form_SalesPDF", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Form_SalesPDFRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public System.Data.DataSet ds;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetMonthlyBalForChecking", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetMonthlyBalForChecking(out string processInfo, string from, string to, string login_id);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string FromTo;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_bulk_card_ins_request", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Insert_Modify_bulk_card_ins_request(string r_cardType, string r_card_no, string r_cust_name, string r_Mobile_no, string r_phone_no, string r_area, string r_locality, string r_district, string r_state, string r_unit_code, string r_login_id, string Logic);
         
-        public Form_SalesPDFRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateIdOfNotCoded", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string UpdateIdOfNotCoded(out string processInfo, string d_code, string ArrayRecId, string separator, string status_flag, string remark, string login_id);
         
-        public Form_SalesPDFRequest(System.Data.DataSet ds, string FromTo) {
-            this.ds = ds;
-            this.FromTo = FromTo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Form_SalesPDFResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Form_SalesPDFResponse {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReplaceReferral_Work", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ReplaceReferral_Work(out string processInfo, string d_code, string ReplBy, string login_id, string result);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] Form_SalesPDFResult;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/VerifyPFInformation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet VerifyPFInformation(out string processInfo, string ref_code, string Logic, string prm_1);
         
-        public Form_SalesPDFResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Retail_GetCardInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Retail_GetCardInfo(out string processInfo, string unit_id, string searchString);
         
-        public Form_SalesPDFResponse(byte[] Form_SalesPDFResult) {
-            this.Form_SalesPDFResult = Form_SalesPDFResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_ComplaintWeb", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Insert_ComplaintWebRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/RemarkAndContactInsertion", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string RemarkAndContactInsertion(out string processInfo, string ref_code, string Logic, string prm_1, string prm_2);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string complcode;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ApproveRebateInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ApproveRebateInfo(out string processInfo, string App_id, decimal app_amount, string app_by, string query, string remarks);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string remarksby;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/AC_MergeLedger", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string AC_MergeLedger(out string processInfo, string logic, string repTo_Ledger_code, string repBy_Ledger_code, string voucher_no, string login_id);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string remarks;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/VoucherModifyInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string VoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public decimal amount;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateVoucherModifyInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet UpdateVoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] data;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPatientRegister", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetPatientRegister(out string processInfo, string unit_id, string fromdate, string Logic, string SearchKey);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
-        public string extension;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/AC_ModifyVoucher", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string AC_ModifyVoucher(string act_type, string voucher_no, string repTo_Ledger_code, string repBy_Ledger_code, string database);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=6)]
-        public string logic;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Account_PurchaseQueries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Account_PurchaseQueries(out string processInfo, string unit_id, string purchase_id, string from, string to, string Logic);
         
-        public Insert_ComplaintWebRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CorrectInvoiceType", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CorrectInvoiceType(out string processInfo, string unit_id, string purch_id, string inv_type);
         
-        public Insert_ComplaintWebRequest(string complcode, string remarksby, string remarks, decimal amount, byte[] data, string extension, string logic) {
-            this.complcode = complcode;
-            this.remarksby = remarksby;
-            this.remarks = remarks;
-            this.amount = amount;
-            this.data = data;
-            this.extension = extension;
-            this.logic = logic;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_ComplaintWebResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Insert_ComplaintWebResponse {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TaxQueries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet TaxQueries(out string processInfo, string unit_id, string stateName, string logic, string from, string to);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string Insert_ComplaintWebResult;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Pharmacy_UnitMismatchInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Pharmacy_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string processInfo;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Diagnostic_UnitMismatchInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Diagnostic_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic);
         
-        public Insert_ComplaintWebResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_LedgerLocking", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Insert_Modify_LedgerLocking(out string processInfo, string ledgerof, string ledger_id, string SwipeMacId, string Logic);
         
-        public Insert_ComplaintWebResponse(string Insert_ComplaintWebResult, string processInfo) {
-            this.Insert_ComplaintWebResult = Insert_ComplaintWebResult;
-            this.processInfo = processInfo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Asset_PurBillUpload", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Asset_PurBillUploadRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Form_Sales_UP", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Form_Sales_UP(out string processInfo, string from, string to);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string eqNo;
+        // CODEGEN: Parameter 'Form_SalesPDFResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Form_SalesPDF", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.rmAccounts.Form_SalesPDFResponse Form_SalesPDF(eMediShop.rmAccounts.Form_SalesPDFRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string extension;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InserteTax_4Det", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string InserteTax_4Det(out string processInfo, int mth, string finyear, string state);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] data;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetMonthlyTax", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetMonthlyTax(out string processInfo, int Month, string Fin_year, string Logic);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public string login_id;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/AdjustSales", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string AdjustSales(out string processInfo, string from, string to, string state, string login_id, decimal Reduce, string result);
         
-        public Asset_PurBillUploadRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Ac_GetReceivableSummary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Ac_GetReceivableSummary(out string processInfo, string Comp_id, string unit_id, string from, string to);
         
-        public Asset_PurBillUploadRequest(string eqNo, string extension, byte[] data, string login_id) {
-            this.eqNo = eqNo;
-            this.extension = extension;
-            this.data = data;
-            this.login_id = login_id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Asset_PurBillUploadResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Asset_PurBillUploadResponse {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DiagnosticReceivableSummary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet DiagnosticReceivableSummary(out string processInfo, string comp_id, string unit_id, string From, string to, string ledger_id, string logic);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string Asset_PurBillUploadResult;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ShopInfo_Queries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ShopInfo_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string login_id);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string processInfo;
+        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_ComplaintWeb", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.rmAccounts.Insert_ComplaintWebResponse Insert_ComplaintWeb(eMediShop.rmAccounts.Insert_ComplaintWebRequest request);
         
-        public Asset_PurBillUploadResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GenNewEqCode", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GenNewEqCode(string eq_cat, string pur_date);
         
-        public Asset_PurBillUploadResponse(string Asset_PurBillUploadResult, string processInfo) {
-            this.Asset_PurBillUploadResult = Asset_PurBillUploadResult;
-            this.processInfo = processInfo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tr_RadiologyRegistration", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class tr_RadiologyRegistrationRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Ins_equip_info", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Ins_equip_info(
+                    out string processInfo, 
+                    string unit_id, 
+                    string v_code, 
+                    string eq_code, 
+                    string eq_cat_code, 
+                    string eq_description, 
+                    string eq_serial_no, 
+                    string pur_date, 
+                    string pur_billno, 
+                    string w_date, 
+                    string w_detail, 
+                    string mainEuipNo, 
+                    string eq_no, 
+                    string crBy, 
+                    decimal eq_amount, 
+                    string asset_type, 
+                    string result);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string patient_id;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Ins_equip_info_New", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Ins_equip_info_New(
+                    out string processInfo, 
+                    string unit_id, 
+                    string v_code, 
+                    string eq_code, 
+                    string eq_cat_code, 
+                    string eq_description, 
+                    string eq_serial_no, 
+                    string pur_date, 
+                    string pur_billno, 
+                    string w_date, 
+                    string w_detail, 
+                    string mainEuipNo, 
+                    string eq_no, 
+                    string crBy, 
+                    decimal eq_amount, 
+                    string asset_type, 
+                    string po_no, 
+                    string result);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string report_history;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Asset_Querries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Asset_Querries(out string processInfo, string eq_code, string prm_1, string prm_2, string Logic, string login_id);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string Investigation;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DeleteOrDisableAssets", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string DeleteOrDisableAssets(string EqNo, string login_id);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public string workTable;
+        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Asset_PurBillUpload", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.rmAccounts.Asset_PurBillUploadResponse Asset_PurBillUpload(eMediShop.rmAccounts.Asset_PurBillUploadRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        public decimal totalsize;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferAsset", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string TransferAsset(out string processInfo, string trfFrom, string trfTo, string emp_code, string eq_no, string trfType, string trf_date, decimal dpr_value);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
-        public string fileName;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Vendor_master", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Vendor_master(out string processInfo, string v_type, string v_code, string v_name, string Contact_Person, string address, string district, string state, string Country, string ContactNo, string result);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] data;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/fillState", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet fillState();
         
-        public tr_RadiologyRegistrationRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/fillDistrict", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet fillDistrict(string state_code);
         
-        public tr_RadiologyRegistrationRequest(string patient_id, string report_history, string Investigation, string workTable, decimal totalsize, string fileName, byte[] data) {
-            this.patient_id = patient_id;
-            this.report_history = report_history;
-            this.Investigation = Investigation;
-            this.workTable = workTable;
-            this.totalsize = totalsize;
-            this.fileName = fileName;
-            this.data = data;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="tr_RadiologyRegistrationResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class tr_RadiologyRegistrationResponse {
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InformToeDiagnostic", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet InformToeDiagnostic(out string processInfo, string unit_id, decimal revision_no);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string tr_RadiologyRegistrationResult;
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ins_investd", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ins_investd(
+                    out string processInfo, 
+                    string ratefor, 
+                    string i_code, 
+                    string investi, 
+                    int rate, 
+                    string lab_section, 
+                    decimal unit, 
+                    string instruction, 
+                    string forapp, 
+                    string workingtable, 
+                    string normalrange, 
+                    string dr_fee, 
+                    string rep_head, 
+                    string typeoftest, 
+                    string vial, 
+                    string sam_qty, 
+                    string ser_charges);
         
-        public tr_RadiologyRegistrationResponse() {
-        }
+        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/tr_RadiologyRegistration", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.rmAccounts.tr_RadiologyRegistrationResponse tr_RadiologyRegistration(eMediShop.rmAccounts.tr_RadiologyRegistrationRequest request);
         
-        public tr_RadiologyRegistrationResponse(string tr_RadiologyRegistrationResult) {
-            this.tr_RadiologyRegistrationResult = tr_RadiologyRegistrationResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/BillPaymentChecking", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BillPaymentChecking(out string processInfo, string unit_id, string ref_by, string dFrom, string dTo, string checkbill);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ShiftSchedule_Bulk", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ShiftSchedule_Bulk(string old_login, string new_login, string sch_date, string bulk_by);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1258,6 +1046,218 @@ namespace eMediShop.rmAccounts {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Form_SalesPDF", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Form_SalesPDFRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public System.Data.DataSet ds;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string FromTo;
+        
+        public Form_SalesPDFRequest() {
+        }
+        
+        public Form_SalesPDFRequest(System.Data.DataSet ds, string FromTo) {
+            this.ds = ds;
+            this.FromTo = FromTo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Form_SalesPDFResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Form_SalesPDFResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] Form_SalesPDFResult;
+        
+        public Form_SalesPDFResponse() {
+        }
+        
+        public Form_SalesPDFResponse(byte[] Form_SalesPDFResult) {
+            this.Form_SalesPDFResult = Form_SalesPDFResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_ComplaintWeb", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Insert_ComplaintWebRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string complcode;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string remarksby;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string remarks;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public decimal amount;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] data;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
+        public string extension;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=6)]
+        public string logic;
+        
+        public Insert_ComplaintWebRequest() {
+        }
+        
+        public Insert_ComplaintWebRequest(string complcode, string remarksby, string remarks, decimal amount, byte[] data, string extension, string logic) {
+            this.complcode = complcode;
+            this.remarksby = remarksby;
+            this.remarks = remarks;
+            this.amount = amount;
+            this.data = data;
+            this.extension = extension;
+            this.logic = logic;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_ComplaintWebResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Insert_ComplaintWebResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string Insert_ComplaintWebResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string processInfo;
+        
+        public Insert_ComplaintWebResponse() {
+        }
+        
+        public Insert_ComplaintWebResponse(string Insert_ComplaintWebResult, string processInfo) {
+            this.Insert_ComplaintWebResult = Insert_ComplaintWebResult;
+            this.processInfo = processInfo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Asset_PurBillUpload", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Asset_PurBillUploadRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string eqNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string extension;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] data;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public string login_id;
+        
+        public Asset_PurBillUploadRequest() {
+        }
+        
+        public Asset_PurBillUploadRequest(string eqNo, string extension, byte[] data, string login_id) {
+            this.eqNo = eqNo;
+            this.extension = extension;
+            this.data = data;
+            this.login_id = login_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Asset_PurBillUploadResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Asset_PurBillUploadResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string Asset_PurBillUploadResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string processInfo;
+        
+        public Asset_PurBillUploadResponse() {
+        }
+        
+        public Asset_PurBillUploadResponse(string Asset_PurBillUploadResult, string processInfo) {
+            this.Asset_PurBillUploadResult = Asset_PurBillUploadResult;
+            this.processInfo = processInfo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tr_RadiologyRegistration", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class tr_RadiologyRegistrationRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string patient_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string report_history;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string Investigation;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public string workTable;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        public decimal totalsize;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
+        public string fileName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] data;
+        
+        public tr_RadiologyRegistrationRequest() {
+        }
+        
+        public tr_RadiologyRegistrationRequest(string patient_id, string report_history, string Investigation, string workTable, decimal totalsize, string fileName, byte[] data) {
+            this.patient_id = patient_id;
+            this.report_history = report_history;
+            this.Investigation = Investigation;
+            this.workTable = workTable;
+            this.totalsize = totalsize;
+            this.fileName = fileName;
+            this.data = data;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="tr_RadiologyRegistrationResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class tr_RadiologyRegistrationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string tr_RadiologyRegistrationResult;
+        
+        public tr_RadiologyRegistrationResponse() {
+        }
+        
+        public tr_RadiologyRegistrationResponse(string tr_RadiologyRegistrationResult) {
+            this.tr_RadiologyRegistrationResult = tr_RadiologyRegistrationResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Accounts_WebServiceSoapChannel : eMediShop.rmAccounts.Accounts_WebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -1283,280 +1283,6 @@ namespace eMediShop.rmAccounts {
         
         public Accounts_WebServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public System.Data.DataSet GetMonthlyBalForChecking(out string processInfo, string from, string to, string login_id) {
-            return base.Channel.GetMonthlyBalForChecking(out processInfo, from, to, login_id);
-        }
-        
-        public string Insert_Modify_bulk_card_ins_request(string r_cardType, string r_card_no, string r_cust_name, string r_Mobile_no, string r_phone_no, string r_area, string r_locality, string r_district, string r_state, string r_unit_code, string r_login_id, string Logic) {
-            return base.Channel.Insert_Modify_bulk_card_ins_request(r_cardType, r_card_no, r_cust_name, r_Mobile_no, r_phone_no, r_area, r_locality, r_district, r_state, r_unit_code, r_login_id, Logic);
-        }
-        
-        public string UpdateIdOfNotCoded(out string processInfo, string d_code, string ArrayRecId, string separator, string status_flag, string remark, string login_id) {
-            return base.Channel.UpdateIdOfNotCoded(out processInfo, d_code, ArrayRecId, separator, status_flag, remark, login_id);
-        }
-        
-        public string ReplaceReferral_Work(out string processInfo, string d_code, string ReplBy, string login_id, string result) {
-            return base.Channel.ReplaceReferral_Work(out processInfo, d_code, ReplBy, login_id, result);
-        }
-        
-        public System.Data.DataSet VerifyPFInformation(out string processInfo, string ref_code, string Logic, string prm_1) {
-            return base.Channel.VerifyPFInformation(out processInfo, ref_code, Logic, prm_1);
-        }
-        
-        public System.Data.DataSet Retail_GetCardInfo(out string processInfo, string unit_id, string searchString) {
-            return base.Channel.Retail_GetCardInfo(out processInfo, unit_id, searchString);
-        }
-        
-        public string RemarkAndContactInsertion(out string processInfo, string ref_code, string Logic, string prm_1, string prm_2) {
-            return base.Channel.RemarkAndContactInsertion(out processInfo, ref_code, Logic, prm_1, prm_2);
-        }
-        
-        public string ApproveRebateInfo(out string processInfo, string App_id, decimal app_amount, string app_by, string query, string remarks) {
-            return base.Channel.ApproveRebateInfo(out processInfo, App_id, app_amount, app_by, query, remarks);
-        }
-        
-        public string AC_MergeLedger(out string processInfo, string logic, string repTo_Ledger_code, string repBy_Ledger_code, string voucher_no, string login_id) {
-            return base.Channel.AC_MergeLedger(out processInfo, logic, repTo_Ledger_code, repBy_Ledger_code, voucher_no, login_id);
-        }
-        
-        public string VoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic) {
-            return base.Channel.VoucherModifyInfo(out processInfo, unit_id, voucher_no, logic);
-        }
-        
-        public System.Data.DataSet UpdateVoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic) {
-            return base.Channel.UpdateVoucherModifyInfo(out processInfo, unit_id, voucher_no, logic);
-        }
-        
-        public System.Data.DataSet GetPatientRegister(out string processInfo, string unit_id, string fromdate, string Logic, string SearchKey) {
-            return base.Channel.GetPatientRegister(out processInfo, unit_id, fromdate, Logic, SearchKey);
-        }
-        
-        public string AC_ModifyVoucher(string act_type, string voucher_no, string repTo_Ledger_code, string repBy_Ledger_code, string database) {
-            return base.Channel.AC_ModifyVoucher(act_type, voucher_no, repTo_Ledger_code, repBy_Ledger_code, database);
-        }
-        
-        public System.Data.DataSet Account_PurchaseQueries(out string processInfo, string unit_id, string purchase_id, string from, string to, string Logic) {
-            return base.Channel.Account_PurchaseQueries(out processInfo, unit_id, purchase_id, from, to, Logic);
-        }
-        
-        public string CorrectInvoiceType(out string processInfo, string unit_id, string purch_id, string inv_type) {
-            return base.Channel.CorrectInvoiceType(out processInfo, unit_id, purch_id, inv_type);
-        }
-        
-        public System.Data.DataSet TaxQueries(out string processInfo, string unit_id, string stateName, string logic, string from, string to) {
-            return base.Channel.TaxQueries(out processInfo, unit_id, stateName, logic, from, to);
-        }
-        
-        public System.Data.DataSet Pharmacy_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic) {
-            return base.Channel.Pharmacy_UnitMismatchInfo(out processInfo, unit_id, from, to, logic);
-        }
-        
-        public System.Data.DataSet Diagnostic_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic) {
-            return base.Channel.Diagnostic_UnitMismatchInfo(out processInfo, unit_id, from, to, logic);
-        }
-        
-        public string Insert_Modify_LedgerLocking(out string processInfo, string ledgerof, string ledger_id, string Logic) {
-            return base.Channel.Insert_Modify_LedgerLocking(out processInfo, ledgerof, ledger_id, Logic);
-        }
-        
-        public System.Data.DataSet Form_Sales_UP(out string processInfo, string from, string to) {
-            return base.Channel.Form_Sales_UP(out processInfo, from, to);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.rmAccounts.Form_SalesPDFResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.Form_SalesPDF(eMediShop.rmAccounts.Form_SalesPDFRequest request) {
-            return base.Channel.Form_SalesPDF(request);
-        }
-        
-        public byte[] Form_SalesPDF(System.Data.DataSet ds, string FromTo) {
-            eMediShop.rmAccounts.Form_SalesPDFRequest inValue = new eMediShop.rmAccounts.Form_SalesPDFRequest();
-            inValue.ds = ds;
-            inValue.FromTo = FromTo;
-            eMediShop.rmAccounts.Form_SalesPDFResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).Form_SalesPDF(inValue);
-            return retVal.Form_SalesPDFResult;
-        }
-        
-        public string InserteTax_4Det(out string processInfo, int mth, string finyear, string state) {
-            return base.Channel.InserteTax_4Det(out processInfo, mth, finyear, state);
-        }
-        
-        public System.Data.DataSet GetMonthlyTax(out string processInfo, int Month, string Fin_year, string Logic) {
-            return base.Channel.GetMonthlyTax(out processInfo, Month, Fin_year, Logic);
-        }
-        
-        public string AdjustSales(out string processInfo, string from, string to, string state, string login_id, decimal Reduce, string result) {
-            return base.Channel.AdjustSales(out processInfo, from, to, state, login_id, Reduce, result);
-        }
-        
-        public System.Data.DataSet Ac_GetReceivableSummary(out string processInfo, string Comp_id, string unit_id, string from, string to) {
-            return base.Channel.Ac_GetReceivableSummary(out processInfo, Comp_id, unit_id, from, to);
-        }
-        
-        public System.Data.DataSet DiagnosticReceivableSummary(out string processInfo, string comp_id, string unit_id, string From, string to, string ledger_id, string logic) {
-            return base.Channel.DiagnosticReceivableSummary(out processInfo, comp_id, unit_id, From, to, ledger_id, logic);
-        }
-        
-        public System.Data.DataSet ShopInfo_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string login_id) {
-            return base.Channel.ShopInfo_Queries(out processInfo, unit_id, logic, prm_1, prm_2, login_id);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.rmAccounts.Insert_ComplaintWebResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.Insert_ComplaintWeb(eMediShop.rmAccounts.Insert_ComplaintWebRequest request) {
-            return base.Channel.Insert_ComplaintWeb(request);
-        }
-        
-        public string Insert_ComplaintWeb(string complcode, string remarksby, string remarks, decimal amount, byte[] data, string extension, string logic, out string processInfo) {
-            eMediShop.rmAccounts.Insert_ComplaintWebRequest inValue = new eMediShop.rmAccounts.Insert_ComplaintWebRequest();
-            inValue.complcode = complcode;
-            inValue.remarksby = remarksby;
-            inValue.remarks = remarks;
-            inValue.amount = amount;
-            inValue.data = data;
-            inValue.extension = extension;
-            inValue.logic = logic;
-            eMediShop.rmAccounts.Insert_ComplaintWebResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).Insert_ComplaintWeb(inValue);
-            processInfo = retVal.processInfo;
-            return retVal.Insert_ComplaintWebResult;
-        }
-        
-        public string GenNewEqCode(string eq_cat, string pur_date) {
-            return base.Channel.GenNewEqCode(eq_cat, pur_date);
-        }
-        
-        public string Ins_equip_info(
-                    out string processInfo, 
-                    string unit_id, 
-                    string v_code, 
-                    string eq_code, 
-                    string eq_cat_code, 
-                    string eq_description, 
-                    string eq_serial_no, 
-                    string pur_date, 
-                    string pur_billno, 
-                    string w_date, 
-                    string w_detail, 
-                    string mainEuipNo, 
-                    string eq_no, 
-                    string crBy, 
-                    decimal eq_amount, 
-                    string asset_type, 
-                    string result) {
-            return base.Channel.Ins_equip_info(out processInfo, unit_id, v_code, eq_code, eq_cat_code, eq_description, eq_serial_no, pur_date, pur_billno, w_date, w_detail, mainEuipNo, eq_no, crBy, eq_amount, asset_type, result);
-        }
-        
-        public string Ins_equip_info_New(
-                    out string processInfo, 
-                    string unit_id, 
-                    string v_code, 
-                    string eq_code, 
-                    string eq_cat_code, 
-                    string eq_description, 
-                    string eq_serial_no, 
-                    string pur_date, 
-                    string pur_billno, 
-                    string w_date, 
-                    string w_detail, 
-                    string mainEuipNo, 
-                    string eq_no, 
-                    string crBy, 
-                    decimal eq_amount, 
-                    string asset_type, 
-                    string po_no, 
-                    string result) {
-            return base.Channel.Ins_equip_info_New(out processInfo, unit_id, v_code, eq_code, eq_cat_code, eq_description, eq_serial_no, pur_date, pur_billno, w_date, w_detail, mainEuipNo, eq_no, crBy, eq_amount, asset_type, po_no, result);
-        }
-        
-        public System.Data.DataSet Asset_Querries(out string processInfo, string eq_code, string prm_1, string prm_2, string Logic, string login_id) {
-            return base.Channel.Asset_Querries(out processInfo, eq_code, prm_1, prm_2, Logic, login_id);
-        }
-        
-        public string DeleteOrDisableAssets(string EqNo, string login_id) {
-            return base.Channel.DeleteOrDisableAssets(EqNo, login_id);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.rmAccounts.Asset_PurBillUploadResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.Asset_PurBillUpload(eMediShop.rmAccounts.Asset_PurBillUploadRequest request) {
-            return base.Channel.Asset_PurBillUpload(request);
-        }
-        
-        public string Asset_PurBillUpload(string eqNo, string extension, byte[] data, string login_id, out string processInfo) {
-            eMediShop.rmAccounts.Asset_PurBillUploadRequest inValue = new eMediShop.rmAccounts.Asset_PurBillUploadRequest();
-            inValue.eqNo = eqNo;
-            inValue.extension = extension;
-            inValue.data = data;
-            inValue.login_id = login_id;
-            eMediShop.rmAccounts.Asset_PurBillUploadResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).Asset_PurBillUpload(inValue);
-            processInfo = retVal.processInfo;
-            return retVal.Asset_PurBillUploadResult;
-        }
-        
-        public string TransferAsset(out string processInfo, string trfFrom, string trfTo, string emp_code, string eq_no, string trfType, string trf_date, decimal dpr_value) {
-            return base.Channel.TransferAsset(out processInfo, trfFrom, trfTo, emp_code, eq_no, trfType, trf_date, dpr_value);
-        }
-        
-        public string Vendor_master(out string processInfo, string v_type, string v_code, string v_name, string Contact_Person, string address, string district, string state, string Country, string ContactNo, string result) {
-            return base.Channel.Vendor_master(out processInfo, v_type, v_code, v_name, Contact_Person, address, district, state, Country, ContactNo, result);
-        }
-        
-        public System.Data.DataSet fillState() {
-            return base.Channel.fillState();
-        }
-        
-        public System.Data.DataSet fillDistrict(string state_code) {
-            return base.Channel.fillDistrict(state_code);
-        }
-        
-        public System.Data.DataSet InformToeDiagnostic(out string processInfo, string unit_id, decimal revision_no) {
-            return base.Channel.InformToeDiagnostic(out processInfo, unit_id, revision_no);
-        }
-        
-        public string ins_investd(
-                    out string processInfo, 
-                    string ratefor, 
-                    string i_code, 
-                    string investi, 
-                    int rate, 
-                    string lab_section, 
-                    decimal unit, 
-                    string instruction, 
-                    string forapp, 
-                    string workingtable, 
-                    string normalrange, 
-                    string dr_fee, 
-                    string rep_head, 
-                    string typeoftest, 
-                    string vial, 
-                    string sam_qty, 
-                    string ser_charges) {
-            return base.Channel.ins_investd(out processInfo, ratefor, i_code, investi, rate, lab_section, unit, instruction, forapp, workingtable, normalrange, dr_fee, rep_head, typeoftest, vial, sam_qty, ser_charges);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.rmAccounts.tr_RadiologyRegistrationResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.tr_RadiologyRegistration(eMediShop.rmAccounts.tr_RadiologyRegistrationRequest request) {
-            return base.Channel.tr_RadiologyRegistration(request);
-        }
-        
-        public string tr_RadiologyRegistration(string patient_id, string report_history, string Investigation, string workTable, decimal totalsize, string fileName, byte[] data) {
-            eMediShop.rmAccounts.tr_RadiologyRegistrationRequest inValue = new eMediShop.rmAccounts.tr_RadiologyRegistrationRequest();
-            inValue.patient_id = patient_id;
-            inValue.report_history = report_history;
-            inValue.Investigation = Investigation;
-            inValue.workTable = workTable;
-            inValue.totalsize = totalsize;
-            inValue.fileName = fileName;
-            inValue.data = data;
-            eMediShop.rmAccounts.tr_RadiologyRegistrationResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).tr_RadiologyRegistration(inValue);
-            return retVal.tr_RadiologyRegistrationResult;
-        }
-        
-        public System.Data.DataSet BillPaymentChecking(out string processInfo, string unit_id, string ref_by, string dFrom, string dTo, string checkbill) {
-            return base.Channel.BillPaymentChecking(out processInfo, unit_id, ref_by, dFrom, dTo, checkbill);
-        }
-        
-        public string ShiftSchedule_Bulk(string old_login, string new_login, string sch_date, string bulk_by) {
-            return base.Channel.ShiftSchedule_Bulk(old_login, new_login, sch_date, bulk_by);
         }
         
         public System.Data.DataSet WorkBook(out string processInfo, string hosp_id, string from, string to, string logic, string prm_1, string prm_2) {
@@ -1685,8 +1411,8 @@ namespace eMediShop.rmAccounts {
             return base.Channel.GC_MISQueries(out processInfo, UID, from, to, prm_1, prm_2, Logic);
         }
         
-        public System.Data.DataSet ICICI_SalaryTransfer_Formate(out string processInfo, string inp_date, string div, string prm_1, string prm_2, string prm_3, string Logic, string icic_acc) {
-            return base.Channel.ICICI_SalaryTransfer_Formate(out processInfo, inp_date, div, prm_1, prm_2, prm_3, Logic, icic_acc);
+        public System.Data.DataSet ICICI_SalaryTransfer_Formate(out string processInfo, string inp_date, string div, string prm_1, string prm_2, string prm_3, string prm_4, string prm_5, string Logic, string icic_acc) {
+            return base.Channel.ICICI_SalaryTransfer_Formate(out processInfo, inp_date, div, prm_1, prm_2, prm_3, prm_4, prm_5, Logic, icic_acc);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1940,8 +1666,8 @@ namespace eMediShop.rmAccounts {
             return base.Channel.CreateGroups(out processInfo, code_value, group_name, under_CodeValue, Logic);
         }
         
-        public string CreateLedgers(out string processInfo, string ld_code, string unit_id, string unit_type, string ledger_name, string groupname, string party_name, string party_address, decimal openAmt, string openType, string PanNo, string TinNo, string InsertLogic) {
-            return base.Channel.CreateLedgers(out processInfo, ld_code, unit_id, unit_type, ledger_name, groupname, party_name, party_address, openAmt, openType, PanNo, TinNo, InsertLogic);
+        public string CreateLedgers(out string processInfo, string ld_code, string unit_id, string unit_type, string ledger_name, string groupname, string party_name, string party_address, decimal openAmt, string openType, string PanNo, string TinNo, int CreditDays, string InsertLogic) {
+            return base.Channel.CreateLedgers(out processInfo, ld_code, unit_id, unit_type, ledger_name, groupname, party_name, party_address, openAmt, openType, PanNo, TinNo, CreditDays, InsertLogic);
         }
         
         public string MergeOrDeleteLedger(out string processInfo, string login_id, string unit_id, string ld_code, string ld_codeRepBy, string Logic) {
@@ -2101,6 +1827,280 @@ namespace eMediShop.rmAccounts {
         
         public System.Data.DataSet ReceivableByBusinessHead(out string processInfo, string emp_code) {
             return base.Channel.ReceivableByBusinessHead(out processInfo, emp_code);
+        }
+        
+        public System.Data.DataSet GetMonthlyBalForChecking(out string processInfo, string from, string to, string login_id) {
+            return base.Channel.GetMonthlyBalForChecking(out processInfo, from, to, login_id);
+        }
+        
+        public string Insert_Modify_bulk_card_ins_request(string r_cardType, string r_card_no, string r_cust_name, string r_Mobile_no, string r_phone_no, string r_area, string r_locality, string r_district, string r_state, string r_unit_code, string r_login_id, string Logic) {
+            return base.Channel.Insert_Modify_bulk_card_ins_request(r_cardType, r_card_no, r_cust_name, r_Mobile_no, r_phone_no, r_area, r_locality, r_district, r_state, r_unit_code, r_login_id, Logic);
+        }
+        
+        public string UpdateIdOfNotCoded(out string processInfo, string d_code, string ArrayRecId, string separator, string status_flag, string remark, string login_id) {
+            return base.Channel.UpdateIdOfNotCoded(out processInfo, d_code, ArrayRecId, separator, status_flag, remark, login_id);
+        }
+        
+        public string ReplaceReferral_Work(out string processInfo, string d_code, string ReplBy, string login_id, string result) {
+            return base.Channel.ReplaceReferral_Work(out processInfo, d_code, ReplBy, login_id, result);
+        }
+        
+        public System.Data.DataSet VerifyPFInformation(out string processInfo, string ref_code, string Logic, string prm_1) {
+            return base.Channel.VerifyPFInformation(out processInfo, ref_code, Logic, prm_1);
+        }
+        
+        public System.Data.DataSet Retail_GetCardInfo(out string processInfo, string unit_id, string searchString) {
+            return base.Channel.Retail_GetCardInfo(out processInfo, unit_id, searchString);
+        }
+        
+        public string RemarkAndContactInsertion(out string processInfo, string ref_code, string Logic, string prm_1, string prm_2) {
+            return base.Channel.RemarkAndContactInsertion(out processInfo, ref_code, Logic, prm_1, prm_2);
+        }
+        
+        public string ApproveRebateInfo(out string processInfo, string App_id, decimal app_amount, string app_by, string query, string remarks) {
+            return base.Channel.ApproveRebateInfo(out processInfo, App_id, app_amount, app_by, query, remarks);
+        }
+        
+        public string AC_MergeLedger(out string processInfo, string logic, string repTo_Ledger_code, string repBy_Ledger_code, string voucher_no, string login_id) {
+            return base.Channel.AC_MergeLedger(out processInfo, logic, repTo_Ledger_code, repBy_Ledger_code, voucher_no, login_id);
+        }
+        
+        public string VoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic) {
+            return base.Channel.VoucherModifyInfo(out processInfo, unit_id, voucher_no, logic);
+        }
+        
+        public System.Data.DataSet UpdateVoucherModifyInfo(out string processInfo, string unit_id, string voucher_no, string logic) {
+            return base.Channel.UpdateVoucherModifyInfo(out processInfo, unit_id, voucher_no, logic);
+        }
+        
+        public System.Data.DataSet GetPatientRegister(out string processInfo, string unit_id, string fromdate, string Logic, string SearchKey) {
+            return base.Channel.GetPatientRegister(out processInfo, unit_id, fromdate, Logic, SearchKey);
+        }
+        
+        public string AC_ModifyVoucher(string act_type, string voucher_no, string repTo_Ledger_code, string repBy_Ledger_code, string database) {
+            return base.Channel.AC_ModifyVoucher(act_type, voucher_no, repTo_Ledger_code, repBy_Ledger_code, database);
+        }
+        
+        public System.Data.DataSet Account_PurchaseQueries(out string processInfo, string unit_id, string purchase_id, string from, string to, string Logic) {
+            return base.Channel.Account_PurchaseQueries(out processInfo, unit_id, purchase_id, from, to, Logic);
+        }
+        
+        public string CorrectInvoiceType(out string processInfo, string unit_id, string purch_id, string inv_type) {
+            return base.Channel.CorrectInvoiceType(out processInfo, unit_id, purch_id, inv_type);
+        }
+        
+        public System.Data.DataSet TaxQueries(out string processInfo, string unit_id, string stateName, string logic, string from, string to) {
+            return base.Channel.TaxQueries(out processInfo, unit_id, stateName, logic, from, to);
+        }
+        
+        public System.Data.DataSet Pharmacy_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic) {
+            return base.Channel.Pharmacy_UnitMismatchInfo(out processInfo, unit_id, from, to, logic);
+        }
+        
+        public System.Data.DataSet Diagnostic_UnitMismatchInfo(out string processInfo, string unit_id, string from, string to, string logic) {
+            return base.Channel.Diagnostic_UnitMismatchInfo(out processInfo, unit_id, from, to, logic);
+        }
+        
+        public string Insert_Modify_LedgerLocking(out string processInfo, string ledgerof, string ledger_id, string SwipeMacId, string Logic) {
+            return base.Channel.Insert_Modify_LedgerLocking(out processInfo, ledgerof, ledger_id, SwipeMacId, Logic);
+        }
+        
+        public System.Data.DataSet Form_Sales_UP(out string processInfo, string from, string to) {
+            return base.Channel.Form_Sales_UP(out processInfo, from, to);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.rmAccounts.Form_SalesPDFResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.Form_SalesPDF(eMediShop.rmAccounts.Form_SalesPDFRequest request) {
+            return base.Channel.Form_SalesPDF(request);
+        }
+        
+        public byte[] Form_SalesPDF(System.Data.DataSet ds, string FromTo) {
+            eMediShop.rmAccounts.Form_SalesPDFRequest inValue = new eMediShop.rmAccounts.Form_SalesPDFRequest();
+            inValue.ds = ds;
+            inValue.FromTo = FromTo;
+            eMediShop.rmAccounts.Form_SalesPDFResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).Form_SalesPDF(inValue);
+            return retVal.Form_SalesPDFResult;
+        }
+        
+        public string InserteTax_4Det(out string processInfo, int mth, string finyear, string state) {
+            return base.Channel.InserteTax_4Det(out processInfo, mth, finyear, state);
+        }
+        
+        public System.Data.DataSet GetMonthlyTax(out string processInfo, int Month, string Fin_year, string Logic) {
+            return base.Channel.GetMonthlyTax(out processInfo, Month, Fin_year, Logic);
+        }
+        
+        public string AdjustSales(out string processInfo, string from, string to, string state, string login_id, decimal Reduce, string result) {
+            return base.Channel.AdjustSales(out processInfo, from, to, state, login_id, Reduce, result);
+        }
+        
+        public System.Data.DataSet Ac_GetReceivableSummary(out string processInfo, string Comp_id, string unit_id, string from, string to) {
+            return base.Channel.Ac_GetReceivableSummary(out processInfo, Comp_id, unit_id, from, to);
+        }
+        
+        public System.Data.DataSet DiagnosticReceivableSummary(out string processInfo, string comp_id, string unit_id, string From, string to, string ledger_id, string logic) {
+            return base.Channel.DiagnosticReceivableSummary(out processInfo, comp_id, unit_id, From, to, ledger_id, logic);
+        }
+        
+        public System.Data.DataSet ShopInfo_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string login_id) {
+            return base.Channel.ShopInfo_Queries(out processInfo, unit_id, logic, prm_1, prm_2, login_id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.rmAccounts.Insert_ComplaintWebResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.Insert_ComplaintWeb(eMediShop.rmAccounts.Insert_ComplaintWebRequest request) {
+            return base.Channel.Insert_ComplaintWeb(request);
+        }
+        
+        public string Insert_ComplaintWeb(string complcode, string remarksby, string remarks, decimal amount, byte[] data, string extension, string logic, out string processInfo) {
+            eMediShop.rmAccounts.Insert_ComplaintWebRequest inValue = new eMediShop.rmAccounts.Insert_ComplaintWebRequest();
+            inValue.complcode = complcode;
+            inValue.remarksby = remarksby;
+            inValue.remarks = remarks;
+            inValue.amount = amount;
+            inValue.data = data;
+            inValue.extension = extension;
+            inValue.logic = logic;
+            eMediShop.rmAccounts.Insert_ComplaintWebResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).Insert_ComplaintWeb(inValue);
+            processInfo = retVal.processInfo;
+            return retVal.Insert_ComplaintWebResult;
+        }
+        
+        public string GenNewEqCode(string eq_cat, string pur_date) {
+            return base.Channel.GenNewEqCode(eq_cat, pur_date);
+        }
+        
+        public string Ins_equip_info(
+                    out string processInfo, 
+                    string unit_id, 
+                    string v_code, 
+                    string eq_code, 
+                    string eq_cat_code, 
+                    string eq_description, 
+                    string eq_serial_no, 
+                    string pur_date, 
+                    string pur_billno, 
+                    string w_date, 
+                    string w_detail, 
+                    string mainEuipNo, 
+                    string eq_no, 
+                    string crBy, 
+                    decimal eq_amount, 
+                    string asset_type, 
+                    string result) {
+            return base.Channel.Ins_equip_info(out processInfo, unit_id, v_code, eq_code, eq_cat_code, eq_description, eq_serial_no, pur_date, pur_billno, w_date, w_detail, mainEuipNo, eq_no, crBy, eq_amount, asset_type, result);
+        }
+        
+        public string Ins_equip_info_New(
+                    out string processInfo, 
+                    string unit_id, 
+                    string v_code, 
+                    string eq_code, 
+                    string eq_cat_code, 
+                    string eq_description, 
+                    string eq_serial_no, 
+                    string pur_date, 
+                    string pur_billno, 
+                    string w_date, 
+                    string w_detail, 
+                    string mainEuipNo, 
+                    string eq_no, 
+                    string crBy, 
+                    decimal eq_amount, 
+                    string asset_type, 
+                    string po_no, 
+                    string result) {
+            return base.Channel.Ins_equip_info_New(out processInfo, unit_id, v_code, eq_code, eq_cat_code, eq_description, eq_serial_no, pur_date, pur_billno, w_date, w_detail, mainEuipNo, eq_no, crBy, eq_amount, asset_type, po_no, result);
+        }
+        
+        public System.Data.DataSet Asset_Querries(out string processInfo, string eq_code, string prm_1, string prm_2, string Logic, string login_id) {
+            return base.Channel.Asset_Querries(out processInfo, eq_code, prm_1, prm_2, Logic, login_id);
+        }
+        
+        public string DeleteOrDisableAssets(string EqNo, string login_id) {
+            return base.Channel.DeleteOrDisableAssets(EqNo, login_id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.rmAccounts.Asset_PurBillUploadResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.Asset_PurBillUpload(eMediShop.rmAccounts.Asset_PurBillUploadRequest request) {
+            return base.Channel.Asset_PurBillUpload(request);
+        }
+        
+        public string Asset_PurBillUpload(string eqNo, string extension, byte[] data, string login_id, out string processInfo) {
+            eMediShop.rmAccounts.Asset_PurBillUploadRequest inValue = new eMediShop.rmAccounts.Asset_PurBillUploadRequest();
+            inValue.eqNo = eqNo;
+            inValue.extension = extension;
+            inValue.data = data;
+            inValue.login_id = login_id;
+            eMediShop.rmAccounts.Asset_PurBillUploadResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).Asset_PurBillUpload(inValue);
+            processInfo = retVal.processInfo;
+            return retVal.Asset_PurBillUploadResult;
+        }
+        
+        public string TransferAsset(out string processInfo, string trfFrom, string trfTo, string emp_code, string eq_no, string trfType, string trf_date, decimal dpr_value) {
+            return base.Channel.TransferAsset(out processInfo, trfFrom, trfTo, emp_code, eq_no, trfType, trf_date, dpr_value);
+        }
+        
+        public string Vendor_master(out string processInfo, string v_type, string v_code, string v_name, string Contact_Person, string address, string district, string state, string Country, string ContactNo, string result) {
+            return base.Channel.Vendor_master(out processInfo, v_type, v_code, v_name, Contact_Person, address, district, state, Country, ContactNo, result);
+        }
+        
+        public System.Data.DataSet fillState() {
+            return base.Channel.fillState();
+        }
+        
+        public System.Data.DataSet fillDistrict(string state_code) {
+            return base.Channel.fillDistrict(state_code);
+        }
+        
+        public System.Data.DataSet InformToeDiagnostic(out string processInfo, string unit_id, decimal revision_no) {
+            return base.Channel.InformToeDiagnostic(out processInfo, unit_id, revision_no);
+        }
+        
+        public string ins_investd(
+                    out string processInfo, 
+                    string ratefor, 
+                    string i_code, 
+                    string investi, 
+                    int rate, 
+                    string lab_section, 
+                    decimal unit, 
+                    string instruction, 
+                    string forapp, 
+                    string workingtable, 
+                    string normalrange, 
+                    string dr_fee, 
+                    string rep_head, 
+                    string typeoftest, 
+                    string vial, 
+                    string sam_qty, 
+                    string ser_charges) {
+            return base.Channel.ins_investd(out processInfo, ratefor, i_code, investi, rate, lab_section, unit, instruction, forapp, workingtable, normalrange, dr_fee, rep_head, typeoftest, vial, sam_qty, ser_charges);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.rmAccounts.tr_RadiologyRegistrationResponse eMediShop.rmAccounts.Accounts_WebServiceSoap.tr_RadiologyRegistration(eMediShop.rmAccounts.tr_RadiologyRegistrationRequest request) {
+            return base.Channel.tr_RadiologyRegistration(request);
+        }
+        
+        public string tr_RadiologyRegistration(string patient_id, string report_history, string Investigation, string workTable, decimal totalsize, string fileName, byte[] data) {
+            eMediShop.rmAccounts.tr_RadiologyRegistrationRequest inValue = new eMediShop.rmAccounts.tr_RadiologyRegistrationRequest();
+            inValue.patient_id = patient_id;
+            inValue.report_history = report_history;
+            inValue.Investigation = Investigation;
+            inValue.workTable = workTable;
+            inValue.totalsize = totalsize;
+            inValue.fileName = fileName;
+            inValue.data = data;
+            eMediShop.rmAccounts.tr_RadiologyRegistrationResponse retVal = ((eMediShop.rmAccounts.Accounts_WebServiceSoap)(this)).tr_RadiologyRegistration(inValue);
+            return retVal.tr_RadiologyRegistrationResult;
+        }
+        
+        public System.Data.DataSet BillPaymentChecking(out string processInfo, string unit_id, string ref_by, string dFrom, string dTo, string checkbill) {
+            return base.Channel.BillPaymentChecking(out processInfo, unit_id, ref_by, dFrom, dTo, checkbill);
+        }
+        
+        public string ShiftSchedule_Bulk(string old_login, string new_login, string sch_date, string bulk_by) {
+            return base.Channel.ShiftSchedule_Bulk(old_login, new_login, sch_date, bulk_by);
         }
     }
 }

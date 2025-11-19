@@ -1,12 +1,9 @@
+using ExPro.Client;
 using System;
 using System.Data;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using ExPro.Server;
-using ExPro.Client;
 using System.Drawing;
+using System.Windows.Forms;
 using Telerik.WinControls;
-using Newtonsoft.Json;
 
 namespace eMediShop.Hospital.Sales
 {
@@ -26,7 +23,7 @@ namespace eMediShop.Hospital.Sales
         string _PayMode = "Cash"; string _CardType = "Health"; string _healthCardNo = string.Empty; string _opdVisitNo = string.Empty;
         DataTable _tempTable = new DataTable(); DataTable _opdMedicine = new System.Data.DataTable();
         DataTable _healthcard = new DataTable();
-        string _refCode = string.Empty; string _orderNo = "N/A";string _selectedEstimateNo = string.Empty;
+        string _refCode = string.Empty; string _orderNo = "N/A"; string _selectedEstimateNo = string.Empty;
         string _CallFrom = string.Empty; string _estimateNo = string.Empty;
         decimal _Qty = 0; string _Lock_Flag = "N"; string _hospUhID = string.Empty;
         public SaleMaster_Hospital(string CallFrom, string uhid, string estimateNo)
@@ -80,7 +77,7 @@ namespace eMediShop.Hospital.Sales
                 rpv_master.SelectedPage = rpv_master.Pages[1];
 
             }
-         
+
 
         }
 
@@ -599,7 +596,7 @@ namespace eMediShop.Hospital.Sales
                 radioCredit.Checked = false; radioCash.Checked = true;
                 rgb_payoptions.Enabled = true;
             }
-          
+
             ManagePaymentMode();
             if (dr["card_no"].ToString() == "Credit-Allowed")
             { groupBox2.Enabled = false; txtMedName.Enabled = false; }
@@ -763,9 +760,9 @@ namespace eMediShop.Hospital.Sales
                 catch (Exception ex) { MessageBox.Show("Select Patient Name.", "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
         }
-      
-     
-      
+
+
+
         private void CalculateDiscount(string Sale_Inv_No)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -890,7 +887,7 @@ namespace eMediShop.Hospital.Sales
         }
         private void txtPrescribedBy_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down && txtPrescribedBy.Text.Length > 0 && txtPrescribedBy.Enabled==true)
+            if (e.KeyCode == Keys.Down && txtPrescribedBy.Text.Length > 0 && txtPrescribedBy.Enabled == true)
             {
                 try
                 {
@@ -1253,7 +1250,7 @@ namespace eMediShop.Hospital.Sales
 
         private void btnCompleteCashMemo_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
@@ -1346,8 +1343,7 @@ namespace eMediShop.Hospital.Sales
 
             _refCode = e.Row.Cells["doctor_id"].Value.ToString();
             txtPrescribedBy.Text = e.Row.Cells["doctor_name"].Value.ToString();
-            string response = GlobalUsage.his_proxy.getMedicineAgainstOpdNo(txtUHIDNO.Text, _opdVisitNo);
-            _opdMedicine = JsonConvert.DeserializeObject<DataTable>(response);
+
             rpv_master.SelectedPage = rpvp_pos;
             txtMedName.Focus();
         }
@@ -1363,12 +1359,7 @@ namespace eMediShop.Hospital.Sales
                     string logic = string.Empty;
                     txtUHIDNO.Text = rtb_uhidsearch.Text;
                     radGridView1.DataSource = new string[] { };
-                    if (rbOPD.Checked)
-                    {
-                        string response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtUHIDNO.Text);
-                        var table = JsonConvert.DeserializeObject<DataTable>(response);
-                        radGridView1.DataSource = table;
-                    }
+
 
 
 
@@ -1493,35 +1484,14 @@ namespace eMediShop.Hospital.Sales
                 rbOPD.Checked = false;
                 rtb_uhidsearch.Enabled = false;
                 radGridView1.DataSource = new string[] { };
- 
-                string response = GlobalUsage.his_proxy.getActiveIPDCases();
-                var table = JsonConvert.DeserializeObject<DataTable>(response);
-                if (table.Rows.Count > 0)
-                {
-                    var ipddata = table.AsEnumerable().Select(x => new
-                    {
-                        dateOfvisit = x.Field<string>("AdmitDate"),
-                        ipop_no = x.Field<string>("IPDNO"),
-                        pt_name = x.Field<string>("PName"),
-                        doctor_name = x.Field<string>("DName"),
-                        card_no = x.Field<string>("Mobile"),
-                        mobile = x.Field<string>("Mobile"),
-                        uhid = x.Field<string>("Patient_ID"),
-                        doctor_id = x.Field<string>("DoctorId"),
-                        panelName = x.Field<string>("Company_Name"),
-
-                    });
-                    radGridView1.DataSource = ipddata;
-                }
-
             }
 
         }
 
-      
-     
 
-   
+
+
+
 
         private void txtPrescribedBy_TextChanged(object sender, EventArgs e)
         {
@@ -1594,14 +1564,8 @@ namespace eMediShop.Hospital.Sales
                 txtVCustName.Text = dsVerify.Tables[0].Rows[0]["pt_name"].ToString();
                 txtVUhid.Text = dsVerify.Tables[0].Rows[0]["hosp_cr_no"].ToString();
                 btnGenerateCode.Enabled = true;
-                if (txtVUhid.Text.Length > 8)
-                {
-                    _result = GlobalUsage.his_proxy.getPatientDetails(txtVUhid.Text);
-                    var table = JsonConvert.DeserializeObject<DataTable>(_result);
-                    txtVMobile.Text = table.Rows[0]["mobile"].ToString();
-                }
-                else
-                    txtVMobile.Text = dsVerify.Tables[0].Rows[0]["ContactNo"].ToString();
+
+                txtVMobile.Text = dsVerify.Tables[0].Rows[0]["ContactNo"].ToString();
 
                 txtVold.Text = dsVerify.Tables[0].Rows[0]["old_sale_inv_no"].ToString();
 

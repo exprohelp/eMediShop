@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.0.11/exprologic/HealthCard_WebServices.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://chandan.online/exprologic/HealthCard_WebServices.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HealthCard_WebServices1.disco" MetadataType="Disco" ID="663a3054-79f2-4574-8a2d-a39652ff80b9" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/HealthCard_WebServices.asmx?disco" />
-    <MetadataFile FileName="HealthCard_WebServices1.wsdl" MetadataType="Wsdl" ID="b2eb8840-93a4-4114-b7d8-411282d0a2fc" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/HealthCard_WebServices.asmx?wsdl" />
+    <MetadataFile FileName="HealthCard_WebServices11.disco" MetadataType="Disco" ID="b7636954-861c-421c-9429-d194aa15c936" SourceId="1" SourceUrl="https://chandan.online/exprologic/HealthCard_WebServices.asmx?disco" />
+    <MetadataFile FileName="HealthCard_WebServices11.wsdl" MetadataType="Wsdl" ID="b8c8b7dc-b365-4fcd-ba6d-c97970a0a4cc" SourceId="1" SourceUrl="https://chandan.online/exprologic/HealthCard_WebServices.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

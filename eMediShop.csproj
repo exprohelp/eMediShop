@@ -503,48 +503,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="asset\ucAssetList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucAssetList.designer.cs">
-      <DependentUpon>ucAssetList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="asset\ucAttachSubAsset.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucAttachSubAsset.designer.cs">
-      <DependentUpon>ucAttachSubAsset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="asset\ucComplaintStatus.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucComplaintStatus.Designer.cs">
-      <DependentUpon>ucComplaintStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="asset\ucLodgeComplaint.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucLodgeComplaint.designer.cs">
-      <DependentUpon>ucLodgeComplaint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="asset\ucNotClosedComplaint.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucNotClosedComplaint.designer.cs">
-      <DependentUpon>ucNotClosedComplaint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="asset\ucPrintTransferForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucPrintTransferForm.designer.cs">
-      <DependentUpon>ucPrintTransferForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="asset\ucTransferAsset.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="asset\ucTransferAsset.designer.cs">
-      <DependentUpon>ucTransferAsset.cs</DependentUpon>
-    </Compile>
     <Compile Include="AsynchronousFtpUpLoader.cs" />
     <Compile Include="AzureStorage.cs" />
     <Compile Include="barcode\QRCodeGenerator.cs" />
@@ -1218,17 +1176,17 @@
     <Compile Include="Hospital\IndentComplete.Designer.cs">
       <DependentUpon>IndentComplete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hospital\Sales\PreBookCounter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hospital\Sales\PreBookCounter.Designer.cs">
-      <DependentUpon>PreBookCounter.cs</DependentUpon>
-    </Compile>
     <Compile Include="Hospital\Sales\IPDOPDProcessInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Hospital\Sales\IPDOPDProcessInfo.designer.cs">
       <DependentUpon>IPDOPDProcessInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital\Sales\PreBookCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital\Sales\PreBookCounter.Designer.cs">
+      <DependentUpon>PreBookCounter.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospital\Sales\SaleMaster_Hospital.cs">
       <SubType>Form</SubType>
@@ -1517,11 +1475,6 @@
     </Compile>
     <Compile Include="sales\ProcessOrder.Designer.cs">
       <DependentUpon>ProcessOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\his_proxy\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="SetUp\manager_signature.cs">
       <SubType>Form</SubType>
@@ -1991,27 +1944,6 @@
     <Compile Include="RawPrinterHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="asset\ucAssetList.resx">
-      <DependentUpon>ucAssetList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="asset\ucAttachSubAsset.resx">
-      <DependentUpon>ucAttachSubAsset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="asset\ucComplaintStatus.resx">
-      <DependentUpon>ucComplaintStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="asset\ucLodgeComplaint.resx">
-      <DependentUpon>ucLodgeComplaint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="asset\ucNotClosedComplaint.resx">
-      <DependentUpon>ucNotClosedComplaint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="asset\ucPrintTransferForm.resx">
-      <DependentUpon>ucPrintTransferForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="asset\ucTransferAsset.resx">
-      <DependentUpon>ucTransferAsset.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="barcode\ucBarcodePrinting.resx">
       <DependentUpon>ucBarcodePrinting.cs</DependentUpon>
     </EmbeddedResource>
@@ -2339,11 +2271,11 @@
     <EmbeddedResource Include="Hospital\IndentComplete.resx">
       <DependentUpon>IndentComplete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hospital\Sales\PreBookCounter.resx">
-      <DependentUpon>PreBookCounter.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Hospital\Sales\IPDOPDProcessInfo.resx">
       <DependentUpon>IPDOPDProcessInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital\Sales\PreBookCounter.resx">
+      <DependentUpon>PreBookCounter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hospital\Sales\SaleMaster_Hospital.resx">
       <DependentUpon>SaleMaster_Hospital.cs</DependentUpon>
@@ -2965,10 +2897,9 @@
       <DependentUpon>WholeSale_Window.cs</DependentUpon>
     </Compile>
     <Compile Include="WinApi.cs" />
-    <None Include="Service References\HealthCard\HealthCard_WebServices1.wsdl" />
-    <None Include="Service References\his_proxy\ChandanPharmacyServices1.wsdl" />
-    <None Include="Service References\Pharmacy\Pharmacy_webservices1.wsdl" />
-    <None Include="Service References\rmAccounts\Accounts_WebService1.wsdl" />
+    <None Include="Service References\HealthCard\HealthCard_WebServices11.wsdl" />
+    <None Include="Service References\Pharmacy\Pharmacy_webservices11.wsdl" />
+    <None Include="Service References\rmAccounts\Accounts_WebService.wsdl" />
     <None Include="VersionInfo\eMediShop Manual.docx" />
     <None Include="VersionInfo\eMediShopVersion Update.docx" />
   </ItemGroup>
@@ -2984,7 +2915,6 @@
     <None Include="Resources\expired-16.png" />
     <None Include="Resources\stocks-up-16.png" />
     <None Include="Resources\extra-16.png" />
-    <None Include="Service References\his_proxy\ChandanPharmacyServices1.disco" />
     <None Include="Resources\Audit-32.png" />
     <None Include="Resources\in-32.png" />
     <None Include="Resources\out-32.png" />
@@ -3037,6 +2967,9 @@
     <None Include="Resources\delivery.gif" />
     <None Include="Resources\delivery1.gif" />
     <None Include="Resources\barcode.png" />
+    <None Include="Service References\HealthCard\HealthCard_WebServices11.disco" />
+    <None Include="Service References\Pharmacy\Pharmacy_webservices11.disco" />
+    <None Include="Service References\rmAccounts\Accounts_WebService.disco" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -3050,15 +2983,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\HealthCard\HealthCard_WebServices1.disco" />
-    <None Include="Service References\Pharmacy\Pharmacy_webservices1.disco" />
     <None Include="Resources\vendor32.png" />
-    <None Include="Service References\his_proxy\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\his_proxy\configuration.svcinfo" />
-    <None Include="Service References\his_proxy\configuration91.svcinfo" />
     <None Include="Resources\update-data-161.png" />
     <None Include="Service References\HealthCard\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
@@ -3083,7 +3008,6 @@
     <None Include="Resources\upload-Doc-16.png" />
     <None Include="Resources\transfert_16.png" />
     <None Include="Resources\update-data-16.png" />
-    <None Include="Service References\rmAccounts\Accounts_WebService1.disco" />
     <None Include="Resources\user-16.png" />
     <None Include="Resources\tick_32.png" />
     <None Include="Resources\vendor-32.png" />
@@ -3337,7 +3261,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\HealthCard\" />
-    <WCFMetadataStorage Include="Service References\his_proxy\" />
     <WCFMetadataStorage Include="Service References\Pharmacy\" />
     <WCFMetadataStorage Include="Service References\rmAccounts\" />
   </ItemGroup>

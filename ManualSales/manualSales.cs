@@ -584,63 +584,7 @@ namespace eMediShop.ManualSales
             string response = string.Empty; DataTable table = new DataTable();
             if (e.KeyCode == Keys.Enter)
             {
-                if (cbOldHIS.Checked)
-                {
-                    #region Old HIS Search
-                    try
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
-                        if (rbOPD.Checked)
-                        {
-                            response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtIPOPNo.Text);
-                            table = JsonConvert.DeserializeObject<DataTable>(response);
-                            if (table.Rows.Count > 0)
-                            {
-                                txtPatientName.Text = table.Rows[0]["pt_name"].ToString();
-                                txtPrescribedBy.Text = table.Rows[0]["doctor_name"].ToString();
-                            }
-                            if (txtIPOPNo.Text.Length == 0)
-                                _UHID = "-";
-                            else
-                                _UHID = txtIPOPNo.Text;
-                        }
-                        else if (rbIPD.Checked)
-                        {
-                            response = GlobalUsage.his_proxy.getPatientInfoByIPDNo(txtIPOPNo.Text);
-                            table = JsonConvert.DeserializeObject<DataTable>(response);
-                            if (table.Rows.Count > 0)
-                            {
-                                txtPatientName.Text = table.Rows[0]["PName"].ToString();
-                                txtPrescribedBy.Text = table.Rows[0]["DName"].ToString();
-                                _panelName = table.Rows[0]["Company_name"].ToString();
-                                _UHID = table.Rows[0]["Patient_ID"].ToString();
-
-                                if (table.Rows[0]["IsCash"].ToString() == "1")
-                                {
-                                    _PayMode = "Cash";
-                                    radioCredit.Checked = false;
-                                    radioCash.Enabled = true;
-                                }
-                                else
-                                {
-                                    _PayMode = "Credit";
-                                    radioCredit.Checked = true;
-                                    radioCash.Enabled = false;
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        RadMessageBox.Show(ex.Message.ToString(), "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
-                    }
-                    finally
-                    {
-                        Cursor.Current = Cursors.Default;
-                    }
-                    #endregion
-                }
-                else
+               
                 {
                     #region New HIS Search
                     try

@@ -41,23 +41,23 @@ namespace eMediShop.token
         private void DisplayToken_Load(object sender, EventArgs e)
         {
          
-            try
-            {
-                var connection = new HubConnection(ConfigWebAPI.SingnalRServer);
-                _hub = connection.CreateHubProxy("MyHub");
-                connection.Start().Wait();
-                _hub.On<string, string>("addMessage", (name, message) =>
-                 this.Invoke((Action)(() => rtb_Ready.Text=message))
-                 );
+            //try
+            //{
+            //    var connection = new HubConnection(ConfigWebAPI.SingnalRServer);
+            //    _hub = connection.CreateHubProxy("MyHub");
+            //    connection.Start().Wait();
+            //    _hub.On<string, string>("addMessage", (name, message) =>
+            //     this.Invoke((Action)(() => rtb_Ready.Text=message))
+            //     );
 
-                string line = null;
-                while ((line = System.Console.ReadLine()) != null)
-                {
-                    _hub.Invoke("DetermineLength", line).Wait();
-                }
-            }
-            catch (Exception ex) { }
-            Console.Read();
+            //    string line = null;
+            //    while ((line = System.Console.ReadLine()) != null)
+            //    {
+            //        _hub.Invoke("DetermineLength", line).Wait();
+            //    }
+            //}
+            //catch (Exception ex) { }
+            //Console.Read();
         }
     }
 }

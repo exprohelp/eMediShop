@@ -21,8 +21,8 @@
     <MetadataSource Address="http://192.168.0.11/exprologic/Accounts_WebService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Accounts_WebService1.wsdl" MetadataType="Wsdl" ID="f882b3d8-4e32-4595-a577-a1f75d4c9a24" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Accounts_WebService.asmx?wsdl" />
-    <MetadataFile FileName="Accounts_WebService1.disco" MetadataType="Disco" ID="7fcd8dd6-0a40-496c-9fbc-bbd5d6ab0451" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Accounts_WebService.asmx?disco" />
+    <MetadataFile FileName="Accounts_WebService.wsdl" MetadataType="Wsdl" ID="f5397a60-d080-4ff1-ae13-ca0d290ed769" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Accounts_WebService.asmx?wsdl" />
+    <MetadataFile FileName="Accounts_WebService.disco" MetadataType="Disco" ID="f10c3264-1bba-4cd6-b694-81597a535014" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Accounts_WebService.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -45,7 +45,7 @@ namespace eMediShop
            
                 GlobalUsage.accounts_proxy = new rmAccounts.Accounts_WebServiceSoapClient();
                 GlobalUsage.healthcard_proxy = new HealthCard.HealthCard_WebServicesSoapClient();
-                GlobalUsage.his_proxy = new his_proxy.ChandanPharmacyServicesSoapClient();
+                //GlobalUsage.his_proxy = new his_proxy.ChandanPharmacyServicesSoapClient();
             }
             catch (Exception ex) { RadMessageBox.Show("Service Proxy Not Initialized.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info); }
             try
@@ -116,29 +116,11 @@ namespace eMediShop
 
             DateTime buildDate = new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime;
             GlobalUsage.mainFormCaption = Application.ProductName.ToString() + " Ver. " + Application.ProductVersion.ToString();
-            //SingnalR_Process();
+
 
 
         }
-        private void SingnalR_Process() {
-            try
-            {
-                var connection = new HubConnection(ConfigWebAPI.SingnalRServer);
-                _hub = connection.CreateHubProxy("MyHub");
-                connection.Start().Wait();
-                _hub.On<string, string>("addMessage", (name, message) =>
-                 this.Invoke((Action)(() => textBox1.Text = message))
-                 );
 
-                string line = null;
-                while ((line = System.Console.ReadLine()) != null)
-                {
-                    _hub.Invoke("DetermineLength", line).Wait();
-                }
-            }
-            catch (Exception ex) { }
-            Console.Read();
-        }
         private void buttonElement_Click(object sender, EventArgs e)
         {
             if (GlobalUsage.Unit_id == "MS-H0048")
@@ -848,42 +830,7 @@ namespace eMediShop
             openControl(new eMediShop.forms.CentralAccess.Purchase.ucZeroStockProduct(), "Zero Stock : By Sales In Given Date");
         }
         //============================================= Assets=================================================
-        #region Assets Management
-        private void asset_new_Click(object sender, EventArgs e)
-        {
-            openControl(new Asset.ucLodgeComplaint(), "Generate New Complaint");
-        }
-
-        private void asset_status_Click(object sender, EventArgs e)
-        {
-            openControl(new Asset.ucComplaintStatus(), "Complaint Status");
-        }
-
-        private void asset_pending_Click(object sender, EventArgs e)
-        {
-            openControl(new Asset.ucNotClosedComplaint(), "Not Closed Complaint Information");
-        }
-
-        private void assetTransfer_Click(object sender, EventArgs e)
-        {
-            openControl(new Asset.ucTransferAsset(), "Transfer Asset To Other Unit");
-        }
-
-        private void asset_TransferForm_Click(object sender, EventArgs e)
-        {
-            openControl(new Asset.ucPrintTransferForm(), "Printing of Asset Transfer Form");
-        }
-
-        private void assets_attach_Click(object sender, EventArgs e)
-        {
-            openControl(new Asset.ucAttachSubAsset(), "Attach Sub Asset In Parent Asset");
-        }
-
-        private void asset_register_Click(object sender, EventArgs e)
-        {
-            openControl(new ucAssetList(), "Asset Register");
-        }
-        #endregion 
+       
 
         private void rrbg_inv_rt_Register_Click(object sender, EventArgs e)
         {
@@ -1323,12 +1270,14 @@ namespace eMediShop
 
 
 
-                rrb_menu.Enabled = true;
-
-                EnableAccordingToRights();
                 if (Application.ProductVersion != dt.Rows[0]["cur_version"].ToString())
                 {
                     rbe_UpdateSoftware.PerformClick();
+                }
+                else
+                {
+                    rrb_menu.Enabled = true;
+                    EnableAccordingToRights();
                 }
                 #region Remove Default Unit
                 dsUnits.Tables[0].DefaultView.RowFilter = "1=1";

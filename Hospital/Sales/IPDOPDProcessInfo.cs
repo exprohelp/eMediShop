@@ -764,25 +764,7 @@ namespace eMediShop.Hospital.Sales
 
                     dgIndentInfo.DataSource = ds.Tables[0];
                 }
-                else
-                {
-                    string response = GlobalUsage.his_proxy.getDcotorIndentByUHID(indentNo);
-                    if (response.Length > 10)
-                    {
-                        pm_PullHISIndent p = new pm_PullHISIndent();
-                        p.inputstring = response; p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/PullHISIndent", p);
-                        string[] r = dwr.message.Split('|');
-                        string indent = r[1];
-
-                        if (r[0].Contains("Success"))
-                        {
-                            GlobalUsage.his_proxy.closeOPDIndent(indent);
-                            LoadPendingIndent();
-                        }
-                    }
-
-                }
+            
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -882,28 +864,7 @@ namespace eMediShop.Hospital.Sales
 
         private void dgFailure_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-
-            DataSet ds = IPOPQueries("1900/01/01", "1900/01/01", "-", "-", "IPDIndentToPush", dgFailure.CurrentRow.Cells["sale_inv_no"].Value.ToString());
-
-            string str = JsonConvert.SerializeObject(ds.Tables[0]);
-            _result = GlobalUsage.his_proxy.saveIPDIssueReturn(str);
-            Cursor.Current = Cursors.Default;
-            if (_result.Contains("Success"))
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                cm1 p = new cm1();
-                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-                p.Logic = "sale_master:his_push_flag"; p.prm_1 = "Y"; p.tran_id = dgFailure.CurrentRow.Cells["sale_inv_no"].Value.ToString();
-                datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-                dgFailure.CurrentRow.Delete();
-                Cursor.Current = Cursors.Default;
-                MessageBox.Show("Successfully Transferd");
-            }
-            else
-            {
-                MessageBox.Show(_result, "ExPro Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         private void MasterTemplate_RowFormatting(object sender, Telerik.WinControls.UI.RowFormattingEventArgs e)

@@ -16,54 +16,6 @@ namespace eMediShop.Pharmacy {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://exprohelp.com/", ConfigurationName="Pharmacy.Pharmacy_WebServicesSoap")]
     public interface Pharmacy_WebServicesSoap {
         
-        // CODEGEN: Parameter 'GC_AnualReturnResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GC_AnualReturn", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.GC_AnualReturnResponse GC_AnualReturn(eMediShop.Pharmacy.GC_AnualReturnRequest request);
-        
-        // CODEGEN: Parameter 'GC_AttendenceRegisterOfUnitResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GC_AttendenceRegisterOfUnit", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitResponse GC_AttendenceRegisterOfUnit(eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FormVat31_uttrakhand", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet FormVat31_uttrakhand(out string processInfo, string from, string to);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FormVat31_Delhi95", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet FormVat31_Delhi95(out string processInfo, string from, string to);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UploadHealthcardMiniInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string UploadHealthcardMiniInfo(string unit_id, System.Data.DataSet ds);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportcardMiniInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ImportcardMiniInfo(out string processinfo, string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_custOrderInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Insert_Modify_custOrderInfo(string order_no, string item_id, string old_item_id, string new_med, int qty, string cancel_flag, string Logic, string login_id);
-        
-        // CODEGEN: Parameter 'zipBytesData' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InterUnitStockTransferByZipData", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.InterUnitStockTransferByZipDataResponse InterUnitStockTransferByZipData(eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_card_tounit", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Insert_Modify_card_tounit(out string processInfo, string unit_id, string card_no, string login_id, string Logic);
-        
-        // CODEGEN: Parameter 'zipBytesData' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Transfer_HoldSalesItemByZip", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.Transfer_HoldSalesItemByZipResponse Transfer_HoldSalesItemByZip(eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/SendSMS_ByTemplates", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void SendSMS_ByTemplates(string Message, string MobileNo, int time);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/SaveErrorLog", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         void SaveErrorLog(string unitId, string DatabaseName, string errorLog);
@@ -467,6 +419,224 @@ namespace eMediShop.Pharmacy {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         eMediShop.Pharmacy.GC_DamageOrLossResponse GC_DamageOrLoss(eMediShop.Pharmacy.GC_DamageOrLossRequest request);
         
+        // CODEGEN: Parameter 'GC_AnualReturnResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GC_AnualReturn", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.GC_AnualReturnResponse GC_AnualReturn(eMediShop.Pharmacy.GC_AnualReturnRequest request);
+        
+        // CODEGEN: Parameter 'GC_AttendenceRegisterOfUnitResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GC_AttendenceRegisterOfUnit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitResponse GC_AttendenceRegisterOfUnit(eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FormVat31_uttrakhand", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet FormVat31_uttrakhand(out string processInfo, string from, string to);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FormVat31_Delhi95", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet FormVat31_Delhi95(out string processInfo, string from, string to);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UploadHealthcardMiniInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string UploadHealthcardMiniInfo(string unit_id, System.Data.DataSet ds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportcardMiniInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ImportcardMiniInfo(out string processinfo, string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_custOrderInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Insert_Modify_custOrderInfo(string order_no, string item_id, string old_item_id, string new_med, int qty, string cancel_flag, string Logic, string login_id);
+        
+        // CODEGEN: Parameter 'zipBytesData' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InterUnitStockTransferByZipData", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.InterUnitStockTransferByZipDataResponse InterUnitStockTransferByZipData(eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_card_tounit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Insert_Modify_card_tounit(out string processInfo, string unit_id, string card_no, string login_id, string Logic);
+        
+        // CODEGEN: Parameter 'zipBytesData' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Transfer_HoldSalesItemByZip", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.Transfer_HoldSalesItemByZipResponse Transfer_HoldSalesItemByZip(eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetProductInfoByMasterKey", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetProductInfoByMasterKey(out string processInfo, string unit_id, string Masterkey_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ProductQueries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ProductQueries(out string processInfo, string unit_id, string item_id, string logic, string prm_1, string prm_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReconcileMasterKeyId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ReconcileMasterKeyId(out string processInfo, string unit_id, string master_key_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReconcileQuerries_Central", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ReconcileQuerries_Central(out string processInfo, string unit_id, string prm_1, string prm_2, string Logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetTransactionIdsStock", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetTransactionIdsStock(string unit_id, string from, string to);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/fillTrfInformation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet fillTrfInformation(string unit_id, string item_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/pSwapShelfNumber", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string pSwapShelfNumber(string oldself_no, string newself_no);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ExtraStocksProcess_Queries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ExtraStocksProcess_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string prm_3, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetNotSalingProduct", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetNotSalingProduct(string unit_id, int mth, int packs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetExtraProductsInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetExtraProductsInfo(out string trf_id, string unit_id, string logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GoodsReturnByUnits", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GoodsReturnByUnits(string unit_id, string trf_to, string trf_id, string ledger_name, string ledger_name_GR, string login, string voucher_no);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GoodsReturnByUnit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GoodsReturnByUnit(string unit_id, string trf_id, string cr_ledg_code, string db_ledg_code, string voucher_no, string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_ShortageTransfer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CGHS_ShortageTransfer(System.Data.DataSet ds, string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FillStockReconcileReport", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="processInfo")]
+        string FillStockReconcileReport(string unit_id, System.Data.DataSet ds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/LocalPurchaseExpiryReturn", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet LocalPurchaseExpiryReturn(out string processInfo, out string trf_id, string unit_id, string logic, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferDBErrorInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void TransferDBErrorInfo(string unit_id, string location, string master_key_id, int qty, string remark);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Dispatch_Queries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet Dispatch_Queries(out string processInfo, string unit_id, string trf_from, string trf_to, string logic, string prm_1, string prm_2, decimal prm_3);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CheckStocksForDispatch5_1", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CheckStocksForDispatch5_1(string mfd_id, string unit_id, string Logic, decimal Order_for);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ProductTransferInPack", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ProductTransferInPack(string trf_from, string trf_to, string Item_Id, int dispacth_Pack, string trf_id, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CheckStocksForDispatch5_4", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CheckStocksForDispatch5_4(string Corp_id, string unit_id, string Logic, decimal Order_for);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReplaceTemporaryMedicine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ReplaceTemporaryMedicine(out string processInfo, string temp_id, string replace_by, string prm_1, string logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ProcessNewMedicine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ProcessNewMedicine(out string processInfo, string unit_id, string date, string logic, string login_id);
+        
+        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_Substitute_docs", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.Insert_Modify_Substitute_docsResponse Insert_Modify_Substitute_docs(eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Substitute_GetMultipleImages", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        byte[][] Substitute_GetMultipleImages(out string processInfo, string item_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetUnitPurchaseOrderForCorporate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetUnitPurchaseOrderForCorporate(string unit_id, decimal mth_days, string logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_UpdateMedicineInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_UpdateMedicineInfo(out string processInfo, string ind_date, string item_id, string batch_no, string expdate, decimal mrp, string logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_InsertIntoDeliveryInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_InsertIntoDeliveryInfo(out string processInfo, string indent_id, string item_id, int qty, string GenFrom, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_InsertIndentInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_InsertIndentInfo(out string processInfo, string ind_type, string indent_date, string despensary, int ind_seq_no, string patient_name, string token_no, string opd_no, string medicine, int req_qty, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_InsSraffCardNos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_InsSraffCardNos(out string processInfo, string Corp_Id, string TokenNos, string login_id, string Logic, string result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_RepBySubstitute", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_RepBySubstitute(out string processInfo, string ReplaceTo, string ReplaceBy, string login_id, string result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_SelectQueries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet CGHS_SelectQueries(out string processInfo, string Corp_id, string prm_1, string prm_2, string from, string to, string Logic, string Login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_UpdateCorpIndentQty", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_UpdateCorpIndentQty(out string processInfo, string Corp_id, string Unique_id, int t_qty, string Login_id, string result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_UpdateIndentSummary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_UpdateIndentSummary(out string processInfo, int auto_id, string atp_flag, int d_qty, string Logic, string Login_id, string result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_TransferForSale", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_TransferForSale(out string processInfo, string Ind_type, string IndId, string Corp_id, string login_id, string result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_MarkAsImportedBalanceItem", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CGHS_MarkAsImportedBalanceItem(out string processInfo, string Ind_date, string item_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DispatchForCorporate14", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string DispatchForCorporate14(out string processInfo, string warehouse_id, string order_date, string login_id, string trf_id);
+        
+        // CODEGEN: Parameter 'UpdateDatabaseByScriptResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateDatabaseByScript", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.UpdateDatabaseByScriptResponse UpdateDatabaseByScript(eMediShop.Pharmacy.UpdateDatabaseByScriptRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (Tax_x0020_Calculation) of message Tax_x0020_Calculation does not match the default value (Get_eTax_PurchaseInfo)
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Tax Calculation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.TaxCalculation1 Get_eTax_PurchaseInfo(eMediShop.Pharmacy.TaxCalculation request);
+        
+        // CODEGEN: Parameter 'DownLoadFileResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DownLoadFile", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.DownLoadFileResponse DownLoadFile(eMediShop.Pharmacy.DownLoadFileRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (FillUnitOpStock) of message FillUnitOpStock does not match the default value (pFillUnitOpStock)
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FillUnitOpStock", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.FillUnitOpStock1 pFillUnitOpStock(eMediShop.Pharmacy.FillUnitOpStock request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPharmecistRegNo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GetPharmecistRegNo(string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/BulkDispatchFromUnit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet BulkDispatchFromUnit(string unit_id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_Purch_Check_Log", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string Insert_Modify_Purch_Check_Log(out string processInfo, string purch_id, string master_key_id, string Remarks, string login_id, string Logic);
@@ -813,352 +983,9 @@ namespace eMediShop.Pharmacy {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         void SendSMS(string Message, string MobileNo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/PurchasePosting", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/SendSMS_ByTemplates", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string PurchasePosting(string prm);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetLastXPurchases", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetLastXPurchases(out string processInfo, string item_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InterUnitStockTransfer", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string InterUnitStockTransfer(string trf_id, string trf_from, string trf_to, string itemId, string master_key, int qty, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InterUnitStockTransfer_New", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string InterUnitStockTransfer_New(string trf_id, string trf_type, string trf_from, string trf_to, string itemId, string master_key, int qty, string GenFrom, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Del_RecordFromTransferId_warehouse", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Del_RecordFromTransferId_warehouse(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id, int quantity, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Del_RecordFromTransferId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Del_RecordFromTransferId(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Complete_TransferId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Complete_TransferId(string unit_id, string trf_id, string master_key_id, int qty);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CompInterUnit_TransferId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CompInterUnit_TransferId(string unit_id, string login_id, string trf_id, int no_of_item);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CompleteTransferId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CompleteTransferId(out string processInfo, string unit_id, string trf_id, string db_ledger, string cr_ledger, int no_of_item, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CompleteStockTransfer", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CompleteStockTransfer(out string processInfo, string unit_id, string trf_id, string Vendor_id, string db_ledger, string cr_ledger, int no_of_item, string Trf_Type, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetInstitutionList", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetInstitutionList(string unit_id, string SearchString);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetUnitNameForLedger", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetUnitNameForLedger(string unit_id);
-        
-        // CODEGEN: Parameter 'getTIFImagesResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/getTIFImages", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.getTIFImagesResponse getTIFImages(eMediShop.Pharmacy.getTIFImagesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetZeroStockList", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetZeroStockList(string unit_id, char LocalProduct);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetId_FromWarehouseToUnit", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetId_FromWarehouseToUnit(string unit_id, System.DateTime From, System.DateTime To);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetId_FromUnitToWarehouse", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetId_FromUnitToWarehouse(string unit_id, System.DateTime From, System.DateTime To);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetProductInfoForUpdation", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetProductInfoForUpdation(string unit_id, string item_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetVendorListForUnit", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetVendorListForUnit(string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPurchaseOrderInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetPurchaseOrderInfo(string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReconcileId_FromUnitToWarehouse", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ReconcileId_FromUnitToWarehouse(string unit_id, string Transfer_Id, int no_of_item);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferNewProduct", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string TransferNewProduct(string unit_id, System.Data.DataSet ds);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetQueryResult", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetQueryResult(string query);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetQueryResult2", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetQueryResult2(string query, string Database);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/QueryExecute", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string QueryExecute(string query, string Database);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetOrderInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetOrderInfo(string unit_id, string orderFor);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPurchaseInvoice", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetPurchaseInvoice(string unit_id, string dtFrom, string dtTo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/PurchaseQueries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet PurchaseQueries(out string processInfo, string unit_id, string Purchase_id, string logic, string prm_1, string prm_2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/OnlineOrder_Queries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet OnlineOrder_Queries(out string processInfo, string sh_code, string order_no, string prm_1, string prm_2, int prm_3, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetOnLineOrderInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetOnLineOrderInfo(string unit_id, string order_no, string what);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetTransferId_InfoByPurchaseId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetTransferId_InfoByPurchaseId(string purchaseId_No, string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetTransferId_Info", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetTransferId_Info(string unit_id, string transfer_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateTransferMasterFlag", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet UpdateTransferMasterFlag(string unit_id, System.Data.DataSet ds, string transfer_id, string Action, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetMyTransferId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetMyTransferId(string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportProductInStocks", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ImportProductInStocks(string trf_from, string trf_to, string Transfer_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportTransferID_Info", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ImportTransferID_Info(out string processInfo, string unit_id, string trf_id, string logic, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferExtraToUnits", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string TransferExtraToUnits(out string processInfo, string comp_id, string unit_id, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetExpiryProduct", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetExpiryProduct(string unit_id, string ProductType);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetExpiryProductInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetExpiryProductInfo(string unit_id, string ProductType, string Master_Gr_No, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferStocks", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string TransferStocks(string trf_id, string Trf_Type, string From_Unit, string To_Unit, string login_id, System.Data.DataSet ds);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportInGr_Stock", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ImportInGr_Stock(string unit_id, string Transfer_id, string groupby);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ExpiryIdSummary", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ExpiryIdSummary(string Transfer_id, string FromUnit_Id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GoodsReturn_Queries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GoodsReturn_Queries(out string processInfo, string unit_id, string from, string to, string logic, string prm_1, string prm_2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_CustHoldSalesInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Insert_CustHoldSalesInfo(string order_no, string sale_inv_no, string item_id, string master_key_id, int qty, string login_id, string Logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetProductInfoByMasterKey", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetProductInfoByMasterKey(out string processInfo, string unit_id, string Masterkey_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ProductQueries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ProductQueries(out string processInfo, string unit_id, string item_id, string logic, string prm_1, string prm_2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReconcileMasterKeyId", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ReconcileMasterKeyId(out string processInfo, string unit_id, string master_key_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReconcileQuerries_Central", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ReconcileQuerries_Central(out string processInfo, string unit_id, string prm_1, string prm_2, string Logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetTransactionIdsStock", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetTransactionIdsStock(string unit_id, string from, string to);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/fillTrfInformation", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet fillTrfInformation(string unit_id, string item_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/pSwapShelfNumber", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string pSwapShelfNumber(string oldself_no, string newself_no);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ExtraStocksProcess_Queries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ExtraStocksProcess_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string prm_3, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetNotSalingProduct", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetNotSalingProduct(string unit_id, int mth, int packs);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetExtraProductsInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetExtraProductsInfo(out string trf_id, string unit_id, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GoodsReturnByUnits", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GoodsReturnByUnits(string unit_id, string trf_to, string trf_id, string ledger_name, string ledger_name_GR, string login, string voucher_no);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GoodsReturnByUnit", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GoodsReturnByUnit(string unit_id, string trf_id, string cr_ledg_code, string db_ledg_code, string voucher_no, string login);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_ShortageTransfer", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet CGHS_ShortageTransfer(System.Data.DataSet ds, string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FillStockReconcileReport", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="processInfo")]
-        string FillStockReconcileReport(string unit_id, System.Data.DataSet ds);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/LocalPurchaseExpiryReturn", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet LocalPurchaseExpiryReturn(out string processInfo, out string trf_id, string unit_id, string logic, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferDBErrorInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void TransferDBErrorInfo(string unit_id, string location, string master_key_id, int qty, string remark);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Dispatch_Queries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet Dispatch_Queries(out string processInfo, string unit_id, string trf_from, string trf_to, string logic, string prm_1, string prm_2, decimal prm_3);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CheckStocksForDispatch5_1", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet CheckStocksForDispatch5_1(string mfd_id, string unit_id, string Logic, decimal Order_for);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ProductTransferInPack", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string ProductTransferInPack(string trf_from, string trf_to, string Item_Id, int dispacth_Pack, string trf_id, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CheckStocksForDispatch5_4", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet CheckStocksForDispatch5_4(string Corp_id, string unit_id, string Logic, decimal Order_for);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReplaceTemporaryMedicine", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ReplaceTemporaryMedicine(out string processInfo, string temp_id, string replace_by, string prm_1, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ProcessNewMedicine", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ProcessNewMedicine(out string processInfo, string unit_id, string date, string logic, string login_id);
-        
-        // CODEGEN: Parameter 'data' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_Modify_Substitute_docs", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.Insert_Modify_Substitute_docsResponse Insert_Modify_Substitute_docs(eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Substitute_GetMultipleImages", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        byte[][] Substitute_GetMultipleImages(out string processInfo, string item_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetUnitPurchaseOrderForCorporate", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetUnitPurchaseOrderForCorporate(string unit_id, decimal mth_days, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_UpdateMedicineInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_UpdateMedicineInfo(out string processInfo, string ind_date, string item_id, string batch_no, string expdate, decimal mrp, string logic);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_InsertIntoDeliveryInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_InsertIntoDeliveryInfo(out string processInfo, string indent_id, string item_id, int qty, string GenFrom, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_InsertIndentInfo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_InsertIndentInfo(out string processInfo, string ind_type, string indent_date, string despensary, int ind_seq_no, string patient_name, string token_no, string opd_no, string medicine, int req_qty, string login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_InsSraffCardNos", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_InsSraffCardNos(out string processInfo, string Corp_Id, string TokenNos, string login_id, string Logic, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_RepBySubstitute", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_RepBySubstitute(out string processInfo, string ReplaceTo, string ReplaceBy, string login_id, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_SelectQueries", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet CGHS_SelectQueries(out string processInfo, string Corp_id, string prm_1, string prm_2, string from, string to, string Logic, string Login_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_UpdateCorpIndentQty", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_UpdateCorpIndentQty(out string processInfo, string Corp_id, string Unique_id, int t_qty, string Login_id, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_UpdateIndentSummary", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_UpdateIndentSummary(out string processInfo, int auto_id, string atp_flag, int d_qty, string Logic, string Login_id, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_TransferForSale", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_TransferForSale(out string processInfo, string Ind_type, string IndId, string Corp_id, string login_id, string result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CGHS_MarkAsImportedBalanceItem", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string CGHS_MarkAsImportedBalanceItem(out string processInfo, string Ind_date, string item_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DispatchForCorporate14", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string DispatchForCorporate14(out string processInfo, string warehouse_id, string order_date, string login_id, string trf_id);
-        
-        // CODEGEN: Parameter 'UpdateDatabaseByScriptResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateDatabaseByScript", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.UpdateDatabaseByScriptResponse UpdateDatabaseByScript(eMediShop.Pharmacy.UpdateDatabaseByScriptRequest request);
-        
-        // CODEGEN: Generating message contract since the wrapper name (Tax_x0020_Calculation) of message Tax_x0020_Calculation does not match the default value (Get_eTax_PurchaseInfo)
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Tax Calculation", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.TaxCalculation1 Get_eTax_PurchaseInfo(eMediShop.Pharmacy.TaxCalculation request);
-        
-        // CODEGEN: Parameter 'DownLoadFileResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/DownLoadFile", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.DownLoadFileResponse DownLoadFile(eMediShop.Pharmacy.DownLoadFileRequest request);
-        
-        // CODEGEN: Generating message contract since the wrapper name (FillUnitOpStock) of message FillUnitOpStock does not match the default value (pFillUnitOpStock)
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/FillUnitOpStock", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        eMediShop.Pharmacy.FillUnitOpStock1 pFillUnitOpStock(eMediShop.Pharmacy.FillUnitOpStock request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPharmecistRegNo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string GetPharmecistRegNo(string unit_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/BulkDispatchFromUnit", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet BulkDispatchFromUnit(string unit_id);
+        void SendSMS_ByTemplates(string Message, string MobileNo, int time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/NewTrfId", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1505,10 +1332,367 @@ namespace eMediShop.Pharmacy {
         [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPurchaseId_Info", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet GetPurchaseId_Info(string purchase_id, string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/PurchasePosting", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string PurchasePosting(string prm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetLastXPurchases", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetLastXPurchases(out string processInfo, string item_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InterUnitStockTransfer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string InterUnitStockTransfer(string trf_id, string trf_from, string trf_to, string itemId, string master_key, int qty, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/InterUnitStockTransfer_New", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string InterUnitStockTransfer_New(string trf_id, string trf_type, string trf_from, string trf_to, string itemId, string master_key, int qty, string GenFrom, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Del_RecordFromTransferId_warehouse", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Del_RecordFromTransferId_warehouse(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id, int quantity, string logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Del_RecordFromTransferId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Del_RecordFromTransferId(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Complete_TransferId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Complete_TransferId(string unit_id, string trf_id, string master_key_id, int qty);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CompInterUnit_TransferId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CompInterUnit_TransferId(string unit_id, string login_id, string trf_id, int no_of_item);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CompleteTransferId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CompleteTransferId(out string processInfo, string unit_id, string trf_id, string db_ledger, string cr_ledger, int no_of_item, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/CompleteStockTransfer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CompleteStockTransfer(out string processInfo, string unit_id, string trf_id, string Vendor_id, string db_ledger, string cr_ledger, int no_of_item, string Trf_Type, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetInstitutionList", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetInstitutionList(string unit_id, string SearchString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetUnitNameForLedger", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GetUnitNameForLedger(string unit_id);
+        
+        // CODEGEN: Parameter 'getTIFImagesResult' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/getTIFImages", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        eMediShop.Pharmacy.getTIFImagesResponse getTIFImages(eMediShop.Pharmacy.getTIFImagesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetZeroStockList", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetZeroStockList(string unit_id, char LocalProduct);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetId_FromWarehouseToUnit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetId_FromWarehouseToUnit(string unit_id, System.DateTime From, System.DateTime To);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetId_FromUnitToWarehouse", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetId_FromUnitToWarehouse(string unit_id, System.DateTime From, System.DateTime To);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetProductInfoForUpdation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetProductInfoForUpdation(string unit_id, string item_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetVendorListForUnit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetVendorListForUnit(string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPurchaseOrderInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetPurchaseOrderInfo(string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ReconcileId_FromUnitToWarehouse", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ReconcileId_FromUnitToWarehouse(string unit_id, string Transfer_Id, int no_of_item);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferNewProduct", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string TransferNewProduct(string unit_id, System.Data.DataSet ds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetQueryResult", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetQueryResult(string query);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetQueryResult2", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetQueryResult2(string query, string Database);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/QueryExecute", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string QueryExecute(string query, string Database);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetOrderInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GetOrderInfo(string unit_id, string orderFor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetPurchaseInvoice", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GetPurchaseInvoice(string unit_id, string dtFrom, string dtTo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/PurchaseQueries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet PurchaseQueries(out string processInfo, string unit_id, string Purchase_id, string logic, string prm_1, string prm_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/OnlineOrder_Queries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet OnlineOrder_Queries(out string processInfo, string sh_code, string order_no, string prm_1, string prm_2, int prm_3, string logic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetOnLineOrderInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetOnLineOrderInfo(string unit_id, string order_no, string what);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetTransferId_InfoByPurchaseId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetTransferId_InfoByPurchaseId(string purchaseId_No, string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetTransferId_Info", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetTransferId_Info(string unit_id, string transfer_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/UpdateTransferMasterFlag", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet UpdateTransferMasterFlag(string unit_id, System.Data.DataSet ds, string transfer_id, string Action, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetMyTransferId", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetMyTransferId(string unit_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportProductInStocks", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ImportProductInStocks(string trf_from, string trf_to, string Transfer_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportTransferID_Info", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ImportTransferID_Info(out string processInfo, string unit_id, string trf_id, string logic, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferExtraToUnits", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string TransferExtraToUnits(out string processInfo, string comp_id, string unit_id, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetExpiryProduct", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetExpiryProduct(string unit_id, string ProductType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GetExpiryProductInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetExpiryProductInfo(string unit_id, string ProductType, string Master_Gr_No, string login_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/TransferStocks", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string TransferStocks(string trf_id, string Trf_Type, string From_Unit, string To_Unit, string login_id, System.Data.DataSet ds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ImportInGr_Stock", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ImportInGr_Stock(string unit_id, string Transfer_id, string groupby);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/ExpiryIdSummary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ExpiryIdSummary(string Transfer_id, string FromUnit_Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/GoodsReturn_Queries", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GoodsReturn_Queries(out string processInfo, string unit_id, string from, string to, string logic, string prm_1, string prm_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://exprohelp.com/Insert_CustHoldSalesInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Insert_CustHoldSalesInfo(string order_no, string sale_inv_no, string item_id, string master_key_id, int qty, string login_id, string Logic);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UploadPdfDocument", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class UploadPdfDocumentRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] data;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string fileName;
+        
+        public UploadPdfDocumentRequest() {
+        }
+        
+        public UploadPdfDocumentRequest(byte[] data, string fileName) {
+            this.data = data;
+            this.fileName = fileName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UploadPdfDocumentResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class UploadPdfDocumentResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string UploadPdfDocumentResult;
+        
+        public UploadPdfDocumentResponse() {
+        }
+        
+        public UploadPdfDocumentResponse(string UploadPdfDocumentResult) {
+            this.UploadPdfDocumentResult = UploadPdfDocumentResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReport", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GetAuditReportRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string unit_id;
+        
+        public GetAuditReportRequest() {
+        }
+        
+        public GetAuditReportRequest(string unit_id) {
+            this.unit_id = unit_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReportResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GetAuditReportResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] GetAuditReportResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string processInfo;
+        
+        public GetAuditReportResponse() {
+        }
+        
+        public GetAuditReportResponse(byte[] GetAuditReportResult, string processInfo) {
+            this.GetAuditReportResult = GetAuditReportResult;
+            this.processInfo = processInfo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReportByAuditId", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GetAuditReportByAuditIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string auditid;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string unitid;
+        
+        public GetAuditReportByAuditIdRequest() {
+        }
+        
+        public GetAuditReportByAuditIdRequest(string auditid, string unitid) {
+            this.auditid = auditid;
+            this.unitid = unitid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReportByAuditIdResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GetAuditReportByAuditIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] GetAuditReportByAuditIdResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string processInfo;
+        
+        public GetAuditReportByAuditIdResponse() {
+        }
+        
+        public GetAuditReportByAuditIdResponse(byte[] GetAuditReportByAuditIdResult, string processInfo) {
+            this.GetAuditReportByAuditIdResult = GetAuditReportByAuditIdResult;
+            this.processInfo = processInfo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpLoadPharmacy_UpPoliceDocument", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class UpLoadPharmacy_UpPoliceDocumentRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string DocType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string Unit_Id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string sale_inv_no;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] data;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        public string login_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
+        public string mobile_no;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=6)]
+        public string doc_path;
+        
+        public UpLoadPharmacy_UpPoliceDocumentRequest() {
+        }
+        
+        public UpLoadPharmacy_UpPoliceDocumentRequest(string DocType, string Unit_Id, string sale_inv_no, byte[] data, string login_id, string mobile_no, string doc_path) {
+            this.DocType = DocType;
+            this.Unit_Id = Unit_Id;
+            this.sale_inv_no = sale_inv_no;
+            this.data = data;
+            this.login_id = login_id;
+            this.mobile_no = mobile_no;
+            this.doc_path = doc_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpLoadPharmacy_UpPoliceDocumentResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class UpLoadPharmacy_UpPoliceDocumentResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string UpLoadPharmacy_UpPoliceDocumentResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string msg;
+        
+        public UpLoadPharmacy_UpPoliceDocumentResponse() {
+        }
+        
+        public UpLoadPharmacy_UpPoliceDocumentResponse(string UpLoadPharmacy_UpPoliceDocumentResult, string msg) {
+            this.UpLoadPharmacy_UpPoliceDocumentResult = UpLoadPharmacy_UpPoliceDocumentResult;
+            this.msg = msg;
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1956,402 +2140,6 @@ namespace eMediShop.Pharmacy {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AnualReturn", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GC_AnualReturnRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string division;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string CompCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string unit_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public object date;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        public string Logic;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
-        public string login_id;
-        
-        public GC_AnualReturnRequest() {
-        }
-        
-        public GC_AnualReturnRequest(string division, string CompCode, string unit_id, object date, string Logic, string login_id) {
-            this.division = division;
-            this.CompCode = CompCode;
-            this.unit_id = unit_id;
-            this.date = date;
-            this.Logic = Logic;
-            this.login_id = login_id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AnualReturnResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GC_AnualReturnResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] GC_AnualReturnResult;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string processInfo;
-        
-        public GC_AnualReturnResponse() {
-        }
-        
-        public GC_AnualReturnResponse(byte[] GC_AnualReturnResult, string processInfo) {
-            this.GC_AnualReturnResult = GC_AnualReturnResult;
-            this.processInfo = processInfo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AttendenceRegisterOfUnit", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GC_AttendenceRegisterOfUnitRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string CompCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string unit_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public System.DateTime att_date;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public string login_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        public string Logic;
-        
-        public GC_AttendenceRegisterOfUnitRequest() {
-        }
-        
-        public GC_AttendenceRegisterOfUnitRequest(string CompCode, string unit_id, System.DateTime att_date, string login_id, string Logic) {
-            this.CompCode = CompCode;
-            this.unit_id = unit_id;
-            this.att_date = att_date;
-            this.login_id = login_id;
-            this.Logic = Logic;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AttendenceRegisterOfUnitResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GC_AttendenceRegisterOfUnitResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] GC_AttendenceRegisterOfUnitResult;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string processInfo;
-        
-        public GC_AttendenceRegisterOfUnitResponse() {
-        }
-        
-        public GC_AttendenceRegisterOfUnitResponse(byte[] GC_AttendenceRegisterOfUnitResult, string processInfo) {
-            this.GC_AttendenceRegisterOfUnitResult = GC_AttendenceRegisterOfUnitResult;
-            this.processInfo = processInfo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="InterUnitStockTransferByZipData", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class InterUnitStockTransferByZipDataRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string transaction_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string unit_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] zipBytesData;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public string xml_file_name;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        public string login_id;
-        
-        public InterUnitStockTransferByZipDataRequest() {
-        }
-        
-        public InterUnitStockTransferByZipDataRequest(string transaction_id, string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
-            this.transaction_id = transaction_id;
-            this.unit_id = unit_id;
-            this.zipBytesData = zipBytesData;
-            this.xml_file_name = xml_file_name;
-            this.login_id = login_id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="InterUnitStockTransferByZipDataResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class InterUnitStockTransferByZipDataResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string InterUnitStockTransferByZipDataResult;
-        
-        public InterUnitStockTransferByZipDataResponse() {
-        }
-        
-        public InterUnitStockTransferByZipDataResponse(string InterUnitStockTransferByZipDataResult) {
-            this.InterUnitStockTransferByZipDataResult = InterUnitStockTransferByZipDataResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Transfer_HoldSalesItemByZip", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Transfer_HoldSalesItemByZipRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string unit_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] zipBytesData;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string xml_file_name;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        public string login_id;
-        
-        public Transfer_HoldSalesItemByZipRequest() {
-        }
-        
-        public Transfer_HoldSalesItemByZipRequest(string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
-            this.unit_id = unit_id;
-            this.zipBytesData = zipBytesData;
-            this.xml_file_name = xml_file_name;
-            this.login_id = login_id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Transfer_HoldSalesItemByZipResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Transfer_HoldSalesItemByZipResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string Transfer_HoldSalesItemByZipResult;
-        
-        public Transfer_HoldSalesItemByZipResponse() {
-        }
-        
-        public Transfer_HoldSalesItemByZipResponse(string Transfer_HoldSalesItemByZipResult) {
-            this.Transfer_HoldSalesItemByZipResult = Transfer_HoldSalesItemByZipResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UploadPdfDocument", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class UploadPdfDocumentRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] data;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string fileName;
-        
-        public UploadPdfDocumentRequest() {
-        }
-        
-        public UploadPdfDocumentRequest(byte[] data, string fileName) {
-            this.data = data;
-            this.fileName = fileName;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UploadPdfDocumentResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class UploadPdfDocumentResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string UploadPdfDocumentResult;
-        
-        public UploadPdfDocumentResponse() {
-        }
-        
-        public UploadPdfDocumentResponse(string UploadPdfDocumentResult) {
-            this.UploadPdfDocumentResult = UploadPdfDocumentResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReport", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GetAuditReportRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string unit_id;
-        
-        public GetAuditReportRequest() {
-        }
-        
-        public GetAuditReportRequest(string unit_id) {
-            this.unit_id = unit_id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReportResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GetAuditReportResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] GetAuditReportResult;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string processInfo;
-        
-        public GetAuditReportResponse() {
-        }
-        
-        public GetAuditReportResponse(byte[] GetAuditReportResult, string processInfo) {
-            this.GetAuditReportResult = GetAuditReportResult;
-            this.processInfo = processInfo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReportByAuditId", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GetAuditReportByAuditIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string auditid;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string unitid;
-        
-        public GetAuditReportByAuditIdRequest() {
-        }
-        
-        public GetAuditReportByAuditIdRequest(string auditid, string unitid) {
-            this.auditid = auditid;
-            this.unitid = unitid;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAuditReportByAuditIdResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class GetAuditReportByAuditIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] GetAuditReportByAuditIdResult;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string processInfo;
-        
-        public GetAuditReportByAuditIdResponse() {
-        }
-        
-        public GetAuditReportByAuditIdResponse(byte[] GetAuditReportByAuditIdResult, string processInfo) {
-            this.GetAuditReportByAuditIdResult = GetAuditReportByAuditIdResult;
-            this.processInfo = processInfo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpLoadPharmacy_UpPoliceDocument", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class UpLoadPharmacy_UpPoliceDocumentRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string DocType;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string Unit_Id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string sale_inv_no;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] data;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        public string login_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
-        public string mobile_no;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=6)]
-        public string doc_path;
-        
-        public UpLoadPharmacy_UpPoliceDocumentRequest() {
-        }
-        
-        public UpLoadPharmacy_UpPoliceDocumentRequest(string DocType, string Unit_Id, string sale_inv_no, byte[] data, string login_id, string mobile_no, string doc_path) {
-            this.DocType = DocType;
-            this.Unit_Id = Unit_Id;
-            this.sale_inv_no = sale_inv_no;
-            this.data = data;
-            this.login_id = login_id;
-            this.mobile_no = mobile_no;
-            this.doc_path = doc_path;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpLoadPharmacy_UpPoliceDocumentResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class UpLoadPharmacy_UpPoliceDocumentResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string UpLoadPharmacy_UpPoliceDocumentResult;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string msg;
-        
-        public UpLoadPharmacy_UpPoliceDocumentResponse() {
-        }
-        
-        public UpLoadPharmacy_UpPoliceDocumentResponse(string UpLoadPharmacy_UpPoliceDocumentResult, string msg) {
-            this.UpLoadPharmacy_UpPoliceDocumentResult = UpLoadPharmacy_UpPoliceDocumentResult;
-            this.msg = msg;
         }
     }
     
@@ -3065,6 +2853,413 @@ namespace eMediShop.Pharmacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AnualReturn", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GC_AnualReturnRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string division;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string CompCode;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string unit_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public object date;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        public string Logic;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=5)]
+        public string login_id;
+        
+        public GC_AnualReturnRequest() {
+        }
+        
+        public GC_AnualReturnRequest(string division, string CompCode, string unit_id, object date, string Logic, string login_id) {
+            this.division = division;
+            this.CompCode = CompCode;
+            this.unit_id = unit_id;
+            this.date = date;
+            this.Logic = Logic;
+            this.login_id = login_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AnualReturnResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GC_AnualReturnResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] GC_AnualReturnResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string processInfo;
+        
+        public GC_AnualReturnResponse() {
+        }
+        
+        public GC_AnualReturnResponse(byte[] GC_AnualReturnResult, string processInfo) {
+            this.GC_AnualReturnResult = GC_AnualReturnResult;
+            this.processInfo = processInfo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AttendenceRegisterOfUnit", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GC_AttendenceRegisterOfUnitRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string CompCode;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string unit_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public System.DateTime att_date;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public string login_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        public string Logic;
+        
+        public GC_AttendenceRegisterOfUnitRequest() {
+        }
+        
+        public GC_AttendenceRegisterOfUnitRequest(string CompCode, string unit_id, System.DateTime att_date, string login_id, string Logic) {
+            this.CompCode = CompCode;
+            this.unit_id = unit_id;
+            this.att_date = att_date;
+            this.login_id = login_id;
+            this.Logic = Logic;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GC_AttendenceRegisterOfUnitResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class GC_AttendenceRegisterOfUnitResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] GC_AttendenceRegisterOfUnitResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string processInfo;
+        
+        public GC_AttendenceRegisterOfUnitResponse() {
+        }
+        
+        public GC_AttendenceRegisterOfUnitResponse(byte[] GC_AttendenceRegisterOfUnitResult, string processInfo) {
+            this.GC_AttendenceRegisterOfUnitResult = GC_AttendenceRegisterOfUnitResult;
+            this.processInfo = processInfo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InterUnitStockTransferByZipData", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class InterUnitStockTransferByZipDataRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string transaction_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string unit_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] zipBytesData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public string xml_file_name;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        public string login_id;
+        
+        public InterUnitStockTransferByZipDataRequest() {
+        }
+        
+        public InterUnitStockTransferByZipDataRequest(string transaction_id, string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
+            this.transaction_id = transaction_id;
+            this.unit_id = unit_id;
+            this.zipBytesData = zipBytesData;
+            this.xml_file_name = xml_file_name;
+            this.login_id = login_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InterUnitStockTransferByZipDataResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class InterUnitStockTransferByZipDataResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string InterUnitStockTransferByZipDataResult;
+        
+        public InterUnitStockTransferByZipDataResponse() {
+        }
+        
+        public InterUnitStockTransferByZipDataResponse(string InterUnitStockTransferByZipDataResult) {
+            this.InterUnitStockTransferByZipDataResult = InterUnitStockTransferByZipDataResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Transfer_HoldSalesItemByZip", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Transfer_HoldSalesItemByZipRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string unit_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] zipBytesData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string xml_file_name;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        public string login_id;
+        
+        public Transfer_HoldSalesItemByZipRequest() {
+        }
+        
+        public Transfer_HoldSalesItemByZipRequest(string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
+            this.unit_id = unit_id;
+            this.zipBytesData = zipBytesData;
+            this.xml_file_name = xml_file_name;
+            this.login_id = login_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Transfer_HoldSalesItemByZipResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Transfer_HoldSalesItemByZipResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string Transfer_HoldSalesItemByZipResult;
+        
+        public Transfer_HoldSalesItemByZipResponse() {
+        }
+        
+        public Transfer_HoldSalesItemByZipResponse(string Transfer_HoldSalesItemByZipResult) {
+            this.Transfer_HoldSalesItemByZipResult = Transfer_HoldSalesItemByZipResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_Modify_Substitute_docs", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Insert_Modify_Substitute_docsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string unit_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string item_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string item_name;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] data;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
+        public string Logic;
+        
+        public Insert_Modify_Substitute_docsRequest() {
+        }
+        
+        public Insert_Modify_Substitute_docsRequest(string unit_id, string item_id, string item_name, byte[] data, string Logic) {
+            this.unit_id = unit_id;
+            this.item_id = item_id;
+            this.item_name = item_name;
+            this.data = data;
+            this.Logic = Logic;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_Modify_Substitute_docsResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class Insert_Modify_Substitute_docsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string Insert_Modify_Substitute_docsResult;
+        
+        public Insert_Modify_Substitute_docsResponse() {
+        }
+        
+        public Insert_Modify_Substitute_docsResponse(string Insert_Modify_Substitute_docsResult) {
+            this.Insert_Modify_Substitute_docsResult = Insert_Modify_Substitute_docsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateDatabaseByScript", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class UpdateDatabaseByScriptRequest {
+        
+        public UpdateDatabaseByScriptRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateDatabaseByScriptResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class UpdateDatabaseByScriptResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] UpdateDatabaseByScriptResult;
+        
+        public UpdateDatabaseByScriptResponse() {
+        }
+        
+        public UpdateDatabaseByScriptResponse(byte[] UpdateDatabaseByScriptResult) {
+            this.UpdateDatabaseByScriptResult = UpdateDatabaseByScriptResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Tax Calculation", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class TaxCalculation {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public int mth;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public string finyear;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
+        public string state;
+        
+        public TaxCalculation() {
+        }
+        
+        public TaxCalculation(int mth, string finyear, string state) {
+            this.mth = mth;
+            this.finyear = finyear;
+            this.state = state;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Tax CalculationResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class TaxCalculation1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Tax CalculationResult")]
+        public string TaxCalculationResult;
+        
+        public TaxCalculation1() {
+        }
+        
+        public TaxCalculation1(string TaxCalculationResult) {
+            this.TaxCalculationResult = TaxCalculationResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DownLoadFile", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class DownLoadFileRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string file_path;
+        
+        public DownLoadFileRequest() {
+        }
+        
+        public DownLoadFileRequest(string file_path) {
+            this.file_path = file_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DownLoadFileResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class DownLoadFileResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] DownLoadFileResult;
+        
+        public DownLoadFileResponse() {
+        }
+        
+        public DownLoadFileResponse(byte[] DownLoadFileResult) {
+            this.DownLoadFileResult = DownLoadFileResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FillUnitOpStock", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class FillUnitOpStock {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string unit_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
+        public System.Data.DataSet ds;
+        
+        public FillUnitOpStock() {
+        }
+        
+        public FillUnitOpStock(string unit_id, System.Data.DataSet ds) {
+            this.unit_id = unit_id;
+            this.ds = ds;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FillUnitOpStockResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class FillUnitOpStock1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string FillUnitOpStockResult;
+        
+        public FillUnitOpStock1() {
+        }
+        
+        public FillUnitOpStock1(string FillUnitOpStockResult) {
+            this.FillUnitOpStockResult = FillUnitOpStockResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="PurchaseChecking", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
     public partial class PurchaseCheckingRequest {
         
@@ -3287,236 +3482,6 @@ namespace eMediShop.Pharmacy {
         
         public UploadFileInfoResponse(string UploadFileInfoResult) {
             this.UploadFileInfoResult = UploadFileInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getTIFImages", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class getTIFImagesRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string purch_Id_imagefile;
-        
-        public getTIFImagesRequest() {
-        }
-        
-        public getTIFImagesRequest(string purch_Id_imagefile) {
-            this.purch_Id_imagefile = purch_Id_imagefile;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getTIFImagesResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class getTIFImagesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] getTIFImagesResult;
-        
-        public getTIFImagesResponse() {
-        }
-        
-        public getTIFImagesResponse(byte[] getTIFImagesResult) {
-            this.getTIFImagesResult = getTIFImagesResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_Modify_Substitute_docs", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Insert_Modify_Substitute_docsRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string unit_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string item_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string item_name;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] data;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=4)]
-        public string Logic;
-        
-        public Insert_Modify_Substitute_docsRequest() {
-        }
-        
-        public Insert_Modify_Substitute_docsRequest(string unit_id, string item_id, string item_name, byte[] data, string Logic) {
-            this.unit_id = unit_id;
-            this.item_id = item_id;
-            this.item_name = item_name;
-            this.data = data;
-            this.Logic = Logic;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Insert_Modify_Substitute_docsResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class Insert_Modify_Substitute_docsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string Insert_Modify_Substitute_docsResult;
-        
-        public Insert_Modify_Substitute_docsResponse() {
-        }
-        
-        public Insert_Modify_Substitute_docsResponse(string Insert_Modify_Substitute_docsResult) {
-            this.Insert_Modify_Substitute_docsResult = Insert_Modify_Substitute_docsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateDatabaseByScript", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class UpdateDatabaseByScriptRequest {
-        
-        public UpdateDatabaseByScriptRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateDatabaseByScriptResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class UpdateDatabaseByScriptResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] UpdateDatabaseByScriptResult;
-        
-        public UpdateDatabaseByScriptResponse() {
-        }
-        
-        public UpdateDatabaseByScriptResponse(byte[] UpdateDatabaseByScriptResult) {
-            this.UpdateDatabaseByScriptResult = UpdateDatabaseByScriptResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Tax Calculation", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class TaxCalculation {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public int mth;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public string finyear;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=2)]
-        public string state;
-        
-        public TaxCalculation() {
-        }
-        
-        public TaxCalculation(int mth, string finyear, string state) {
-            this.mth = mth;
-            this.finyear = finyear;
-            this.state = state;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Tax CalculationResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class TaxCalculation1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("Tax CalculationResult")]
-        public string TaxCalculationResult;
-        
-        public TaxCalculation1() {
-        }
-        
-        public TaxCalculation1(string TaxCalculationResult) {
-            this.TaxCalculationResult = TaxCalculationResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DownLoadFile", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class DownLoadFileRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string file_path;
-        
-        public DownLoadFileRequest() {
-        }
-        
-        public DownLoadFileRequest(string file_path) {
-            this.file_path = file_path;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DownLoadFileResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class DownLoadFileResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] DownLoadFileResult;
-        
-        public DownLoadFileResponse() {
-        }
-        
-        public DownLoadFileResponse(byte[] DownLoadFileResult) {
-            this.DownLoadFileResult = DownLoadFileResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="FillUnitOpStock", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class FillUnitOpStock {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string unit_id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=1)]
-        public System.Data.DataSet ds;
-        
-        public FillUnitOpStock() {
-        }
-        
-        public FillUnitOpStock(string unit_id, System.Data.DataSet ds) {
-            this.unit_id = unit_id;
-            this.ds = ds;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="FillUnitOpStockResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
-    public partial class FillUnitOpStock1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
-        public string FillUnitOpStockResult;
-        
-        public FillUnitOpStock1() {
-        }
-        
-        public FillUnitOpStock1(string FillUnitOpStockResult) {
-            this.FillUnitOpStockResult = FillUnitOpStockResult;
         }
     }
     
@@ -3880,6 +3845,41 @@ namespace eMediShop.Pharmacy {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getTIFImages", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class getTIFImagesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        public string purch_Id_imagefile;
+        
+        public getTIFImagesRequest() {
+        }
+        
+        public getTIFImagesRequest(string purch_Id_imagefile) {
+            this.purch_Id_imagefile = purch_Id_imagefile;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getTIFImagesResponse", WrapperNamespace="http://exprohelp.com/", IsWrapped=true)]
+    public partial class getTIFImagesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://exprohelp.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] getTIFImagesResult;
+        
+        public getTIFImagesResponse() {
+        }
+        
+        public getTIFImagesResponse(byte[] getTIFImagesResult) {
+            this.getTIFImagesResult = getTIFImagesResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Pharmacy_WebServicesSoapChannel : eMediShop.Pharmacy.Pharmacy_WebServicesSoap, System.ServiceModel.IClientChannel {
     }
@@ -3905,100 +3905,6 @@ namespace eMediShop.Pharmacy {
         
         public Pharmacy_WebServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.GC_AnualReturnResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.GC_AnualReturn(eMediShop.Pharmacy.GC_AnualReturnRequest request) {
-            return base.Channel.GC_AnualReturn(request);
-        }
-        
-        public byte[] GC_AnualReturn(string division, string CompCode, string unit_id, object date, string Logic, string login_id, out string processInfo) {
-            eMediShop.Pharmacy.GC_AnualReturnRequest inValue = new eMediShop.Pharmacy.GC_AnualReturnRequest();
-            inValue.division = division;
-            inValue.CompCode = CompCode;
-            inValue.unit_id = unit_id;
-            inValue.date = date;
-            inValue.Logic = Logic;
-            inValue.login_id = login_id;
-            eMediShop.Pharmacy.GC_AnualReturnResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).GC_AnualReturn(inValue);
-            processInfo = retVal.processInfo;
-            return retVal.GC_AnualReturnResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.GC_AttendenceRegisterOfUnit(eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest request) {
-            return base.Channel.GC_AttendenceRegisterOfUnit(request);
-        }
-        
-        public byte[] GC_AttendenceRegisterOfUnit(string CompCode, string unit_id, System.DateTime att_date, string login_id, string Logic, out string processInfo) {
-            eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest inValue = new eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest();
-            inValue.CompCode = CompCode;
-            inValue.unit_id = unit_id;
-            inValue.att_date = att_date;
-            inValue.login_id = login_id;
-            inValue.Logic = Logic;
-            eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).GC_AttendenceRegisterOfUnit(inValue);
-            processInfo = retVal.processInfo;
-            return retVal.GC_AttendenceRegisterOfUnitResult;
-        }
-        
-        public System.Data.DataSet FormVat31_uttrakhand(out string processInfo, string from, string to) {
-            return base.Channel.FormVat31_uttrakhand(out processInfo, from, to);
-        }
-        
-        public System.Data.DataSet FormVat31_Delhi95(out string processInfo, string from, string to) {
-            return base.Channel.FormVat31_Delhi95(out processInfo, from, to);
-        }
-        
-        public string UploadHealthcardMiniInfo(string unit_id, System.Data.DataSet ds) {
-            return base.Channel.UploadHealthcardMiniInfo(unit_id, ds);
-        }
-        
-        public System.Data.DataSet ImportcardMiniInfo(out string processinfo, string unit_id) {
-            return base.Channel.ImportcardMiniInfo(out processinfo, unit_id);
-        }
-        
-        public string Insert_Modify_custOrderInfo(string order_no, string item_id, string old_item_id, string new_med, int qty, string cancel_flag, string Logic, string login_id) {
-            return base.Channel.Insert_Modify_custOrderInfo(order_no, item_id, old_item_id, new_med, qty, cancel_flag, Logic, login_id);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.InterUnitStockTransferByZipDataResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.InterUnitStockTransferByZipData(eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest request) {
-            return base.Channel.InterUnitStockTransferByZipData(request);
-        }
-        
-        public string InterUnitStockTransferByZipData(string transaction_id, string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
-            eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest inValue = new eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest();
-            inValue.transaction_id = transaction_id;
-            inValue.unit_id = unit_id;
-            inValue.zipBytesData = zipBytesData;
-            inValue.xml_file_name = xml_file_name;
-            inValue.login_id = login_id;
-            eMediShop.Pharmacy.InterUnitStockTransferByZipDataResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).InterUnitStockTransferByZipData(inValue);
-            return retVal.InterUnitStockTransferByZipDataResult;
-        }
-        
-        public string Insert_Modify_card_tounit(out string processInfo, string unit_id, string card_no, string login_id, string Logic) {
-            return base.Channel.Insert_Modify_card_tounit(out processInfo, unit_id, card_no, login_id, Logic);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.Transfer_HoldSalesItemByZipResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.Transfer_HoldSalesItemByZip(eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest request) {
-            return base.Channel.Transfer_HoldSalesItemByZip(request);
-        }
-        
-        public string Transfer_HoldSalesItemByZip(string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
-            eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest inValue = new eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest();
-            inValue.unit_id = unit_id;
-            inValue.zipBytesData = zipBytesData;
-            inValue.xml_file_name = xml_file_name;
-            inValue.login_id = login_id;
-            eMediShop.Pharmacy.Transfer_HoldSalesItemByZipResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).Transfer_HoldSalesItemByZip(inValue);
-            return retVal.Transfer_HoldSalesItemByZipResult;
-        }
-        
-        public void SendSMS_ByTemplates(string Message, string MobileNo, int time) {
-            base.Channel.SendSMS_ByTemplates(Message, MobileNo, time);
         }
         
         public void SaveErrorLog(string unitId, string DatabaseName, string errorLog) {
@@ -4597,6 +4503,310 @@ namespace eMediShop.Pharmacy {
             return retVal.GC_DamageOrLossResult;
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.GC_AnualReturnResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.GC_AnualReturn(eMediShop.Pharmacy.GC_AnualReturnRequest request) {
+            return base.Channel.GC_AnualReturn(request);
+        }
+        
+        public byte[] GC_AnualReturn(string division, string CompCode, string unit_id, object date, string Logic, string login_id, out string processInfo) {
+            eMediShop.Pharmacy.GC_AnualReturnRequest inValue = new eMediShop.Pharmacy.GC_AnualReturnRequest();
+            inValue.division = division;
+            inValue.CompCode = CompCode;
+            inValue.unit_id = unit_id;
+            inValue.date = date;
+            inValue.Logic = Logic;
+            inValue.login_id = login_id;
+            eMediShop.Pharmacy.GC_AnualReturnResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).GC_AnualReturn(inValue);
+            processInfo = retVal.processInfo;
+            return retVal.GC_AnualReturnResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.GC_AttendenceRegisterOfUnit(eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest request) {
+            return base.Channel.GC_AttendenceRegisterOfUnit(request);
+        }
+        
+        public byte[] GC_AttendenceRegisterOfUnit(string CompCode, string unit_id, System.DateTime att_date, string login_id, string Logic, out string processInfo) {
+            eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest inValue = new eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitRequest();
+            inValue.CompCode = CompCode;
+            inValue.unit_id = unit_id;
+            inValue.att_date = att_date;
+            inValue.login_id = login_id;
+            inValue.Logic = Logic;
+            eMediShop.Pharmacy.GC_AttendenceRegisterOfUnitResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).GC_AttendenceRegisterOfUnit(inValue);
+            processInfo = retVal.processInfo;
+            return retVal.GC_AttendenceRegisterOfUnitResult;
+        }
+        
+        public System.Data.DataSet FormVat31_uttrakhand(out string processInfo, string from, string to) {
+            return base.Channel.FormVat31_uttrakhand(out processInfo, from, to);
+        }
+        
+        public System.Data.DataSet FormVat31_Delhi95(out string processInfo, string from, string to) {
+            return base.Channel.FormVat31_Delhi95(out processInfo, from, to);
+        }
+        
+        public string UploadHealthcardMiniInfo(string unit_id, System.Data.DataSet ds) {
+            return base.Channel.UploadHealthcardMiniInfo(unit_id, ds);
+        }
+        
+        public System.Data.DataSet ImportcardMiniInfo(out string processinfo, string unit_id) {
+            return base.Channel.ImportcardMiniInfo(out processinfo, unit_id);
+        }
+        
+        public string Insert_Modify_custOrderInfo(string order_no, string item_id, string old_item_id, string new_med, int qty, string cancel_flag, string Logic, string login_id) {
+            return base.Channel.Insert_Modify_custOrderInfo(order_no, item_id, old_item_id, new_med, qty, cancel_flag, Logic, login_id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.InterUnitStockTransferByZipDataResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.InterUnitStockTransferByZipData(eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest request) {
+            return base.Channel.InterUnitStockTransferByZipData(request);
+        }
+        
+        public string InterUnitStockTransferByZipData(string transaction_id, string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
+            eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest inValue = new eMediShop.Pharmacy.InterUnitStockTransferByZipDataRequest();
+            inValue.transaction_id = transaction_id;
+            inValue.unit_id = unit_id;
+            inValue.zipBytesData = zipBytesData;
+            inValue.xml_file_name = xml_file_name;
+            inValue.login_id = login_id;
+            eMediShop.Pharmacy.InterUnitStockTransferByZipDataResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).InterUnitStockTransferByZipData(inValue);
+            return retVal.InterUnitStockTransferByZipDataResult;
+        }
+        
+        public string Insert_Modify_card_tounit(out string processInfo, string unit_id, string card_no, string login_id, string Logic) {
+            return base.Channel.Insert_Modify_card_tounit(out processInfo, unit_id, card_no, login_id, Logic);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.Transfer_HoldSalesItemByZipResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.Transfer_HoldSalesItemByZip(eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest request) {
+            return base.Channel.Transfer_HoldSalesItemByZip(request);
+        }
+        
+        public string Transfer_HoldSalesItemByZip(string unit_id, byte[] zipBytesData, string xml_file_name, string login_id) {
+            eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest inValue = new eMediShop.Pharmacy.Transfer_HoldSalesItemByZipRequest();
+            inValue.unit_id = unit_id;
+            inValue.zipBytesData = zipBytesData;
+            inValue.xml_file_name = xml_file_name;
+            inValue.login_id = login_id;
+            eMediShop.Pharmacy.Transfer_HoldSalesItemByZipResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).Transfer_HoldSalesItemByZip(inValue);
+            return retVal.Transfer_HoldSalesItemByZipResult;
+        }
+        
+        public System.Data.DataSet GetProductInfoByMasterKey(out string processInfo, string unit_id, string Masterkey_id) {
+            return base.Channel.GetProductInfoByMasterKey(out processInfo, unit_id, Masterkey_id);
+        }
+        
+        public System.Data.DataSet ProductQueries(out string processInfo, string unit_id, string item_id, string logic, string prm_1, string prm_2) {
+            return base.Channel.ProductQueries(out processInfo, unit_id, item_id, logic, prm_1, prm_2);
+        }
+        
+        public System.Data.DataSet ReconcileMasterKeyId(out string processInfo, string unit_id, string master_key_id) {
+            return base.Channel.ReconcileMasterKeyId(out processInfo, unit_id, master_key_id);
+        }
+        
+        public System.Data.DataSet ReconcileQuerries_Central(out string processInfo, string unit_id, string prm_1, string prm_2, string Logic) {
+            return base.Channel.ReconcileQuerries_Central(out processInfo, unit_id, prm_1, prm_2, Logic);
+        }
+        
+        public System.Data.DataSet GetTransactionIdsStock(string unit_id, string from, string to) {
+            return base.Channel.GetTransactionIdsStock(unit_id, from, to);
+        }
+        
+        public System.Data.DataSet fillTrfInformation(string unit_id, string item_id) {
+            return base.Channel.fillTrfInformation(unit_id, item_id);
+        }
+        
+        public string pSwapShelfNumber(string oldself_no, string newself_no) {
+            return base.Channel.pSwapShelfNumber(oldself_no, newself_no);
+        }
+        
+        public System.Data.DataSet ExtraStocksProcess_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string prm_3, string login_id) {
+            return base.Channel.ExtraStocksProcess_Queries(out processInfo, unit_id, logic, prm_1, prm_2, prm_3, login_id);
+        }
+        
+        public System.Data.DataSet GetNotSalingProduct(string unit_id, int mth, int packs) {
+            return base.Channel.GetNotSalingProduct(unit_id, mth, packs);
+        }
+        
+        public System.Data.DataSet GetExtraProductsInfo(out string trf_id, string unit_id, string logic) {
+            return base.Channel.GetExtraProductsInfo(out trf_id, unit_id, logic);
+        }
+        
+        public string GoodsReturnByUnits(string unit_id, string trf_to, string trf_id, string ledger_name, string ledger_name_GR, string login, string voucher_no) {
+            return base.Channel.GoodsReturnByUnits(unit_id, trf_to, trf_id, ledger_name, ledger_name_GR, login, voucher_no);
+        }
+        
+        public string GoodsReturnByUnit(string unit_id, string trf_id, string cr_ledg_code, string db_ledg_code, string voucher_no, string login) {
+            return base.Channel.GoodsReturnByUnit(unit_id, trf_id, cr_ledg_code, db_ledg_code, voucher_no, login);
+        }
+        
+        public System.Data.DataSet CGHS_ShortageTransfer(System.Data.DataSet ds, string unit_id) {
+            return base.Channel.CGHS_ShortageTransfer(ds, unit_id);
+        }
+        
+        public string FillStockReconcileReport(string unit_id, System.Data.DataSet ds) {
+            return base.Channel.FillStockReconcileReport(unit_id, ds);
+        }
+        
+        public System.Data.DataSet LocalPurchaseExpiryReturn(out string processInfo, out string trf_id, string unit_id, string logic, string login_id) {
+            return base.Channel.LocalPurchaseExpiryReturn(out processInfo, out trf_id, unit_id, logic, login_id);
+        }
+        
+        public void TransferDBErrorInfo(string unit_id, string location, string master_key_id, int qty, string remark) {
+            base.Channel.TransferDBErrorInfo(unit_id, location, master_key_id, qty, remark);
+        }
+        
+        public System.Data.DataSet Dispatch_Queries(out string processInfo, string unit_id, string trf_from, string trf_to, string logic, string prm_1, string prm_2, decimal prm_3) {
+            return base.Channel.Dispatch_Queries(out processInfo, unit_id, trf_from, trf_to, logic, prm_1, prm_2, prm_3);
+        }
+        
+        public System.Data.DataSet CheckStocksForDispatch5_1(string mfd_id, string unit_id, string Logic, decimal Order_for) {
+            return base.Channel.CheckStocksForDispatch5_1(mfd_id, unit_id, Logic, Order_for);
+        }
+        
+        public string ProductTransferInPack(string trf_from, string trf_to, string Item_Id, int dispacth_Pack, string trf_id, string login_id) {
+            return base.Channel.ProductTransferInPack(trf_from, trf_to, Item_Id, dispacth_Pack, trf_id, login_id);
+        }
+        
+        public System.Data.DataSet CheckStocksForDispatch5_4(string Corp_id, string unit_id, string Logic, decimal Order_for) {
+            return base.Channel.CheckStocksForDispatch5_4(Corp_id, unit_id, Logic, Order_for);
+        }
+        
+        public System.Data.DataSet ReplaceTemporaryMedicine(out string processInfo, string temp_id, string replace_by, string prm_1, string logic) {
+            return base.Channel.ReplaceTemporaryMedicine(out processInfo, temp_id, replace_by, prm_1, logic);
+        }
+        
+        public System.Data.DataSet ProcessNewMedicine(out string processInfo, string unit_id, string date, string logic, string login_id) {
+            return base.Channel.ProcessNewMedicine(out processInfo, unit_id, date, logic, login_id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.Insert_Modify_Substitute_docsResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.Insert_Modify_Substitute_docs(eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest request) {
+            return base.Channel.Insert_Modify_Substitute_docs(request);
+        }
+        
+        public string Insert_Modify_Substitute_docs(string unit_id, string item_id, string item_name, byte[] data, string Logic) {
+            eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest inValue = new eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest();
+            inValue.unit_id = unit_id;
+            inValue.item_id = item_id;
+            inValue.item_name = item_name;
+            inValue.data = data;
+            inValue.Logic = Logic;
+            eMediShop.Pharmacy.Insert_Modify_Substitute_docsResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).Insert_Modify_Substitute_docs(inValue);
+            return retVal.Insert_Modify_Substitute_docsResult;
+        }
+        
+        public byte[][] Substitute_GetMultipleImages(out string processInfo, string item_id) {
+            return base.Channel.Substitute_GetMultipleImages(out processInfo, item_id);
+        }
+        
+        public System.Data.DataSet GetUnitPurchaseOrderForCorporate(string unit_id, decimal mth_days, string logic) {
+            return base.Channel.GetUnitPurchaseOrderForCorporate(unit_id, mth_days, logic);
+        }
+        
+        public string CGHS_UpdateMedicineInfo(out string processInfo, string ind_date, string item_id, string batch_no, string expdate, decimal mrp, string logic) {
+            return base.Channel.CGHS_UpdateMedicineInfo(out processInfo, ind_date, item_id, batch_no, expdate, mrp, logic);
+        }
+        
+        public string CGHS_InsertIntoDeliveryInfo(out string processInfo, string indent_id, string item_id, int qty, string GenFrom, string login_id) {
+            return base.Channel.CGHS_InsertIntoDeliveryInfo(out processInfo, indent_id, item_id, qty, GenFrom, login_id);
+        }
+        
+        public string CGHS_InsertIndentInfo(out string processInfo, string ind_type, string indent_date, string despensary, int ind_seq_no, string patient_name, string token_no, string opd_no, string medicine, int req_qty, string login_id) {
+            return base.Channel.CGHS_InsertIndentInfo(out processInfo, ind_type, indent_date, despensary, ind_seq_no, patient_name, token_no, opd_no, medicine, req_qty, login_id);
+        }
+        
+        public string CGHS_InsSraffCardNos(out string processInfo, string Corp_Id, string TokenNos, string login_id, string Logic, string result) {
+            return base.Channel.CGHS_InsSraffCardNos(out processInfo, Corp_Id, TokenNos, login_id, Logic, result);
+        }
+        
+        public string CGHS_RepBySubstitute(out string processInfo, string ReplaceTo, string ReplaceBy, string login_id, string result) {
+            return base.Channel.CGHS_RepBySubstitute(out processInfo, ReplaceTo, ReplaceBy, login_id, result);
+        }
+        
+        public System.Data.DataSet CGHS_SelectQueries(out string processInfo, string Corp_id, string prm_1, string prm_2, string from, string to, string Logic, string Login_id) {
+            return base.Channel.CGHS_SelectQueries(out processInfo, Corp_id, prm_1, prm_2, from, to, Logic, Login_id);
+        }
+        
+        public string CGHS_UpdateCorpIndentQty(out string processInfo, string Corp_id, string Unique_id, int t_qty, string Login_id, string result) {
+            return base.Channel.CGHS_UpdateCorpIndentQty(out processInfo, Corp_id, Unique_id, t_qty, Login_id, result);
+        }
+        
+        public string CGHS_UpdateIndentSummary(out string processInfo, int auto_id, string atp_flag, int d_qty, string Logic, string Login_id, string result) {
+            return base.Channel.CGHS_UpdateIndentSummary(out processInfo, auto_id, atp_flag, d_qty, Logic, Login_id, result);
+        }
+        
+        public string CGHS_TransferForSale(out string processInfo, string Ind_type, string IndId, string Corp_id, string login_id, string result) {
+            return base.Channel.CGHS_TransferForSale(out processInfo, Ind_type, IndId, Corp_id, login_id, result);
+        }
+        
+        public string CGHS_MarkAsImportedBalanceItem(out string processInfo, string Ind_date, string item_id) {
+            return base.Channel.CGHS_MarkAsImportedBalanceItem(out processInfo, Ind_date, item_id);
+        }
+        
+        public string DispatchForCorporate14(out string processInfo, string warehouse_id, string order_date, string login_id, string trf_id) {
+            return base.Channel.DispatchForCorporate14(out processInfo, warehouse_id, order_date, login_id, trf_id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.UpdateDatabaseByScriptResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.UpdateDatabaseByScript(eMediShop.Pharmacy.UpdateDatabaseByScriptRequest request) {
+            return base.Channel.UpdateDatabaseByScript(request);
+        }
+        
+        public byte[] UpdateDatabaseByScript() {
+            eMediShop.Pharmacy.UpdateDatabaseByScriptRequest inValue = new eMediShop.Pharmacy.UpdateDatabaseByScriptRequest();
+            eMediShop.Pharmacy.UpdateDatabaseByScriptResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).UpdateDatabaseByScript(inValue);
+            return retVal.UpdateDatabaseByScriptResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.TaxCalculation1 eMediShop.Pharmacy.Pharmacy_WebServicesSoap.Get_eTax_PurchaseInfo(eMediShop.Pharmacy.TaxCalculation request) {
+            return base.Channel.Get_eTax_PurchaseInfo(request);
+        }
+        
+        public string Get_eTax_PurchaseInfo(int mth, string finyear, string state) {
+            eMediShop.Pharmacy.TaxCalculation inValue = new eMediShop.Pharmacy.TaxCalculation();
+            inValue.mth = mth;
+            inValue.finyear = finyear;
+            inValue.state = state;
+            eMediShop.Pharmacy.TaxCalculation1 retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).Get_eTax_PurchaseInfo(inValue);
+            return retVal.TaxCalculationResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.DownLoadFileResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.DownLoadFile(eMediShop.Pharmacy.DownLoadFileRequest request) {
+            return base.Channel.DownLoadFile(request);
+        }
+        
+        public byte[] DownLoadFile(string file_path) {
+            eMediShop.Pharmacy.DownLoadFileRequest inValue = new eMediShop.Pharmacy.DownLoadFileRequest();
+            inValue.file_path = file_path;
+            eMediShop.Pharmacy.DownLoadFileResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).DownLoadFile(inValue);
+            return retVal.DownLoadFileResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.FillUnitOpStock1 eMediShop.Pharmacy.Pharmacy_WebServicesSoap.pFillUnitOpStock(eMediShop.Pharmacy.FillUnitOpStock request) {
+            return base.Channel.pFillUnitOpStock(request);
+        }
+        
+        public string pFillUnitOpStock(string unit_id, System.Data.DataSet ds) {
+            eMediShop.Pharmacy.FillUnitOpStock inValue = new eMediShop.Pharmacy.FillUnitOpStock();
+            inValue.unit_id = unit_id;
+            inValue.ds = ds;
+            eMediShop.Pharmacy.FillUnitOpStock1 retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).pFillUnitOpStock(inValue);
+            return retVal.FillUnitOpStockResult;
+        }
+        
+        public string GetPharmecistRegNo(string unit_id) {
+            return base.Channel.GetPharmecistRegNo(unit_id);
+        }
+        
+        public System.Data.DataSet BulkDispatchFromUnit(string unit_id) {
+            return base.Channel.BulkDispatchFromUnit(unit_id);
+        }
+        
         public string Insert_Modify_Purch_Check_Log(out string processInfo, string purch_id, string master_key_id, string Remarks, string login_id, string Logic) {
             return base.Channel.Insert_Modify_Purch_Check_Log(out processInfo, purch_id, master_key_id, Remarks, login_id, Logic);
         }
@@ -4991,398 +5201,8 @@ namespace eMediShop.Pharmacy {
             base.Channel.SendSMS(Message, MobileNo);
         }
         
-        public string PurchasePosting(string prm) {
-            return base.Channel.PurchasePosting(prm);
-        }
-        
-        public System.Data.DataSet GetLastXPurchases(out string processInfo, string item_id) {
-            return base.Channel.GetLastXPurchases(out processInfo, item_id);
-        }
-        
-        public string InterUnitStockTransfer(string trf_id, string trf_from, string trf_to, string itemId, string master_key, int qty, string login_id) {
-            return base.Channel.InterUnitStockTransfer(trf_id, trf_from, trf_to, itemId, master_key, qty, login_id);
-        }
-        
-        public string InterUnitStockTransfer_New(string trf_id, string trf_type, string trf_from, string trf_to, string itemId, string master_key, int qty, string GenFrom, string login_id) {
-            return base.Channel.InterUnitStockTransfer_New(trf_id, trf_type, trf_from, trf_to, itemId, master_key, qty, GenFrom, login_id);
-        }
-        
-        public string Del_RecordFromTransferId_warehouse(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id, int quantity, string logic) {
-            return base.Channel.Del_RecordFromTransferId_warehouse(trf_id, From_Unit_id, To_unit_id, master_key_id, quantity, logic);
-        }
-        
-        public string Del_RecordFromTransferId(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id) {
-            return base.Channel.Del_RecordFromTransferId(trf_id, From_Unit_id, To_unit_id, master_key_id);
-        }
-        
-        public string Complete_TransferId(string unit_id, string trf_id, string master_key_id, int qty) {
-            return base.Channel.Complete_TransferId(unit_id, trf_id, master_key_id, qty);
-        }
-        
-        public string CompInterUnit_TransferId(string unit_id, string login_id, string trf_id, int no_of_item) {
-            return base.Channel.CompInterUnit_TransferId(unit_id, login_id, trf_id, no_of_item);
-        }
-        
-        public string CompleteTransferId(out string processInfo, string unit_id, string trf_id, string db_ledger, string cr_ledger, int no_of_item, string login_id) {
-            return base.Channel.CompleteTransferId(out processInfo, unit_id, trf_id, db_ledger, cr_ledger, no_of_item, login_id);
-        }
-        
-        public string CompleteStockTransfer(out string processInfo, string unit_id, string trf_id, string Vendor_id, string db_ledger, string cr_ledger, int no_of_item, string Trf_Type, string login_id) {
-            return base.Channel.CompleteStockTransfer(out processInfo, unit_id, trf_id, Vendor_id, db_ledger, cr_ledger, no_of_item, Trf_Type, login_id);
-        }
-        
-        public System.Data.DataSet GetInstitutionList(string unit_id, string SearchString) {
-            return base.Channel.GetInstitutionList(unit_id, SearchString);
-        }
-        
-        public string GetUnitNameForLedger(string unit_id) {
-            return base.Channel.GetUnitNameForLedger(unit_id);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.getTIFImagesResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.getTIFImages(eMediShop.Pharmacy.getTIFImagesRequest request) {
-            return base.Channel.getTIFImages(request);
-        }
-        
-        public byte[] getTIFImages(string purch_Id_imagefile) {
-            eMediShop.Pharmacy.getTIFImagesRequest inValue = new eMediShop.Pharmacy.getTIFImagesRequest();
-            inValue.purch_Id_imagefile = purch_Id_imagefile;
-            eMediShop.Pharmacy.getTIFImagesResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).getTIFImages(inValue);
-            return retVal.getTIFImagesResult;
-        }
-        
-        public System.Data.DataSet GetZeroStockList(string unit_id, char LocalProduct) {
-            return base.Channel.GetZeroStockList(unit_id, LocalProduct);
-        }
-        
-        public System.Data.DataSet GetId_FromWarehouseToUnit(string unit_id, System.DateTime From, System.DateTime To) {
-            return base.Channel.GetId_FromWarehouseToUnit(unit_id, From, To);
-        }
-        
-        public System.Data.DataSet GetId_FromUnitToWarehouse(string unit_id, System.DateTime From, System.DateTime To) {
-            return base.Channel.GetId_FromUnitToWarehouse(unit_id, From, To);
-        }
-        
-        public System.Data.DataSet GetProductInfoForUpdation(string unit_id, string item_id) {
-            return base.Channel.GetProductInfoForUpdation(unit_id, item_id);
-        }
-        
-        public System.Data.DataSet GetVendorListForUnit(string unit_id) {
-            return base.Channel.GetVendorListForUnit(unit_id);
-        }
-        
-        public System.Data.DataSet GetPurchaseOrderInfo(string unit_id) {
-            return base.Channel.GetPurchaseOrderInfo(unit_id);
-        }
-        
-        public string ReconcileId_FromUnitToWarehouse(string unit_id, string Transfer_Id, int no_of_item) {
-            return base.Channel.ReconcileId_FromUnitToWarehouse(unit_id, Transfer_Id, no_of_item);
-        }
-        
-        public string TransferNewProduct(string unit_id, System.Data.DataSet ds) {
-            return base.Channel.TransferNewProduct(unit_id, ds);
-        }
-        
-        public System.Data.DataSet GetQueryResult(string query) {
-            return base.Channel.GetQueryResult(query);
-        }
-        
-        public System.Data.DataSet GetQueryResult2(string query, string Database) {
-            return base.Channel.GetQueryResult2(query, Database);
-        }
-        
-        public string QueryExecute(string query, string Database) {
-            return base.Channel.QueryExecute(query, Database);
-        }
-        
-        public string GetOrderInfo(string unit_id, string orderFor) {
-            return base.Channel.GetOrderInfo(unit_id, orderFor);
-        }
-        
-        public string GetPurchaseInvoice(string unit_id, string dtFrom, string dtTo) {
-            return base.Channel.GetPurchaseInvoice(unit_id, dtFrom, dtTo);
-        }
-        
-        public System.Data.DataSet PurchaseQueries(out string processInfo, string unit_id, string Purchase_id, string logic, string prm_1, string prm_2) {
-            return base.Channel.PurchaseQueries(out processInfo, unit_id, Purchase_id, logic, prm_1, prm_2);
-        }
-        
-        public System.Data.DataSet OnlineOrder_Queries(out string processInfo, string sh_code, string order_no, string prm_1, string prm_2, int prm_3, string logic) {
-            return base.Channel.OnlineOrder_Queries(out processInfo, sh_code, order_no, prm_1, prm_2, prm_3, logic);
-        }
-        
-        public System.Data.DataSet GetOnLineOrderInfo(string unit_id, string order_no, string what) {
-            return base.Channel.GetOnLineOrderInfo(unit_id, order_no, what);
-        }
-        
-        public System.Data.DataSet GetTransferId_InfoByPurchaseId(string purchaseId_No, string unit_id) {
-            return base.Channel.GetTransferId_InfoByPurchaseId(purchaseId_No, unit_id);
-        }
-        
-        public System.Data.DataSet GetTransferId_Info(string unit_id, string transfer_id) {
-            return base.Channel.GetTransferId_Info(unit_id, transfer_id);
-        }
-        
-        public System.Data.DataSet UpdateTransferMasterFlag(string unit_id, System.Data.DataSet ds, string transfer_id, string Action, string login_id) {
-            return base.Channel.UpdateTransferMasterFlag(unit_id, ds, transfer_id, Action, login_id);
-        }
-        
-        public System.Data.DataSet GetMyTransferId(string unit_id) {
-            return base.Channel.GetMyTransferId(unit_id);
-        }
-        
-        public System.Data.DataSet ImportProductInStocks(string trf_from, string trf_to, string Transfer_id) {
-            return base.Channel.ImportProductInStocks(trf_from, trf_to, Transfer_id);
-        }
-        
-        public System.Data.DataSet ImportTransferID_Info(out string processInfo, string unit_id, string trf_id, string logic, string login_id) {
-            return base.Channel.ImportTransferID_Info(out processInfo, unit_id, trf_id, logic, login_id);
-        }
-        
-        public string TransferExtraToUnits(out string processInfo, string comp_id, string unit_id, string login_id) {
-            return base.Channel.TransferExtraToUnits(out processInfo, comp_id, unit_id, login_id);
-        }
-        
-        public System.Data.DataSet GetExpiryProduct(string unit_id, string ProductType) {
-            return base.Channel.GetExpiryProduct(unit_id, ProductType);
-        }
-        
-        public System.Data.DataSet GetExpiryProductInfo(string unit_id, string ProductType, string Master_Gr_No, string login_id) {
-            return base.Channel.GetExpiryProductInfo(unit_id, ProductType, Master_Gr_No, login_id);
-        }
-        
-        public string TransferStocks(string trf_id, string Trf_Type, string From_Unit, string To_Unit, string login_id, System.Data.DataSet ds) {
-            return base.Channel.TransferStocks(trf_id, Trf_Type, From_Unit, To_Unit, login_id, ds);
-        }
-        
-        public System.Data.DataSet ImportInGr_Stock(string unit_id, string Transfer_id, string groupby) {
-            return base.Channel.ImportInGr_Stock(unit_id, Transfer_id, groupby);
-        }
-        
-        public string ExpiryIdSummary(string Transfer_id, string FromUnit_Id) {
-            return base.Channel.ExpiryIdSummary(Transfer_id, FromUnit_Id);
-        }
-        
-        public System.Data.DataSet GoodsReturn_Queries(out string processInfo, string unit_id, string from, string to, string logic, string prm_1, string prm_2) {
-            return base.Channel.GoodsReturn_Queries(out processInfo, unit_id, from, to, logic, prm_1, prm_2);
-        }
-        
-        public string Insert_CustHoldSalesInfo(string order_no, string sale_inv_no, string item_id, string master_key_id, int qty, string login_id, string Logic) {
-            return base.Channel.Insert_CustHoldSalesInfo(order_no, sale_inv_no, item_id, master_key_id, qty, login_id, Logic);
-        }
-        
-        public System.Data.DataSet GetProductInfoByMasterKey(out string processInfo, string unit_id, string Masterkey_id) {
-            return base.Channel.GetProductInfoByMasterKey(out processInfo, unit_id, Masterkey_id);
-        }
-        
-        public System.Data.DataSet ProductQueries(out string processInfo, string unit_id, string item_id, string logic, string prm_1, string prm_2) {
-            return base.Channel.ProductQueries(out processInfo, unit_id, item_id, logic, prm_1, prm_2);
-        }
-        
-        public System.Data.DataSet ReconcileMasterKeyId(out string processInfo, string unit_id, string master_key_id) {
-            return base.Channel.ReconcileMasterKeyId(out processInfo, unit_id, master_key_id);
-        }
-        
-        public System.Data.DataSet ReconcileQuerries_Central(out string processInfo, string unit_id, string prm_1, string prm_2, string Logic) {
-            return base.Channel.ReconcileQuerries_Central(out processInfo, unit_id, prm_1, prm_2, Logic);
-        }
-        
-        public System.Data.DataSet GetTransactionIdsStock(string unit_id, string from, string to) {
-            return base.Channel.GetTransactionIdsStock(unit_id, from, to);
-        }
-        
-        public System.Data.DataSet fillTrfInformation(string unit_id, string item_id) {
-            return base.Channel.fillTrfInformation(unit_id, item_id);
-        }
-        
-        public string pSwapShelfNumber(string oldself_no, string newself_no) {
-            return base.Channel.pSwapShelfNumber(oldself_no, newself_no);
-        }
-        
-        public System.Data.DataSet ExtraStocksProcess_Queries(out string processInfo, string unit_id, string logic, string prm_1, string prm_2, string prm_3, string login_id) {
-            return base.Channel.ExtraStocksProcess_Queries(out processInfo, unit_id, logic, prm_1, prm_2, prm_3, login_id);
-        }
-        
-        public System.Data.DataSet GetNotSalingProduct(string unit_id, int mth, int packs) {
-            return base.Channel.GetNotSalingProduct(unit_id, mth, packs);
-        }
-        
-        public System.Data.DataSet GetExtraProductsInfo(out string trf_id, string unit_id, string logic) {
-            return base.Channel.GetExtraProductsInfo(out trf_id, unit_id, logic);
-        }
-        
-        public string GoodsReturnByUnits(string unit_id, string trf_to, string trf_id, string ledger_name, string ledger_name_GR, string login, string voucher_no) {
-            return base.Channel.GoodsReturnByUnits(unit_id, trf_to, trf_id, ledger_name, ledger_name_GR, login, voucher_no);
-        }
-        
-        public string GoodsReturnByUnit(string unit_id, string trf_id, string cr_ledg_code, string db_ledg_code, string voucher_no, string login) {
-            return base.Channel.GoodsReturnByUnit(unit_id, trf_id, cr_ledg_code, db_ledg_code, voucher_no, login);
-        }
-        
-        public System.Data.DataSet CGHS_ShortageTransfer(System.Data.DataSet ds, string unit_id) {
-            return base.Channel.CGHS_ShortageTransfer(ds, unit_id);
-        }
-        
-        public string FillStockReconcileReport(string unit_id, System.Data.DataSet ds) {
-            return base.Channel.FillStockReconcileReport(unit_id, ds);
-        }
-        
-        public System.Data.DataSet LocalPurchaseExpiryReturn(out string processInfo, out string trf_id, string unit_id, string logic, string login_id) {
-            return base.Channel.LocalPurchaseExpiryReturn(out processInfo, out trf_id, unit_id, logic, login_id);
-        }
-        
-        public void TransferDBErrorInfo(string unit_id, string location, string master_key_id, int qty, string remark) {
-            base.Channel.TransferDBErrorInfo(unit_id, location, master_key_id, qty, remark);
-        }
-        
-        public System.Data.DataSet Dispatch_Queries(out string processInfo, string unit_id, string trf_from, string trf_to, string logic, string prm_1, string prm_2, decimal prm_3) {
-            return base.Channel.Dispatch_Queries(out processInfo, unit_id, trf_from, trf_to, logic, prm_1, prm_2, prm_3);
-        }
-        
-        public System.Data.DataSet CheckStocksForDispatch5_1(string mfd_id, string unit_id, string Logic, decimal Order_for) {
-            return base.Channel.CheckStocksForDispatch5_1(mfd_id, unit_id, Logic, Order_for);
-        }
-        
-        public string ProductTransferInPack(string trf_from, string trf_to, string Item_Id, int dispacth_Pack, string trf_id, string login_id) {
-            return base.Channel.ProductTransferInPack(trf_from, trf_to, Item_Id, dispacth_Pack, trf_id, login_id);
-        }
-        
-        public System.Data.DataSet CheckStocksForDispatch5_4(string Corp_id, string unit_id, string Logic, decimal Order_for) {
-            return base.Channel.CheckStocksForDispatch5_4(Corp_id, unit_id, Logic, Order_for);
-        }
-        
-        public System.Data.DataSet ReplaceTemporaryMedicine(out string processInfo, string temp_id, string replace_by, string prm_1, string logic) {
-            return base.Channel.ReplaceTemporaryMedicine(out processInfo, temp_id, replace_by, prm_1, logic);
-        }
-        
-        public System.Data.DataSet ProcessNewMedicine(out string processInfo, string unit_id, string date, string logic, string login_id) {
-            return base.Channel.ProcessNewMedicine(out processInfo, unit_id, date, logic, login_id);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.Insert_Modify_Substitute_docsResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.Insert_Modify_Substitute_docs(eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest request) {
-            return base.Channel.Insert_Modify_Substitute_docs(request);
-        }
-        
-        public string Insert_Modify_Substitute_docs(string unit_id, string item_id, string item_name, byte[] data, string Logic) {
-            eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest inValue = new eMediShop.Pharmacy.Insert_Modify_Substitute_docsRequest();
-            inValue.unit_id = unit_id;
-            inValue.item_id = item_id;
-            inValue.item_name = item_name;
-            inValue.data = data;
-            inValue.Logic = Logic;
-            eMediShop.Pharmacy.Insert_Modify_Substitute_docsResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).Insert_Modify_Substitute_docs(inValue);
-            return retVal.Insert_Modify_Substitute_docsResult;
-        }
-        
-        public byte[][] Substitute_GetMultipleImages(out string processInfo, string item_id) {
-            return base.Channel.Substitute_GetMultipleImages(out processInfo, item_id);
-        }
-        
-        public System.Data.DataSet GetUnitPurchaseOrderForCorporate(string unit_id, decimal mth_days, string logic) {
-            return base.Channel.GetUnitPurchaseOrderForCorporate(unit_id, mth_days, logic);
-        }
-        
-        public string CGHS_UpdateMedicineInfo(out string processInfo, string ind_date, string item_id, string batch_no, string expdate, decimal mrp, string logic) {
-            return base.Channel.CGHS_UpdateMedicineInfo(out processInfo, ind_date, item_id, batch_no, expdate, mrp, logic);
-        }
-        
-        public string CGHS_InsertIntoDeliveryInfo(out string processInfo, string indent_id, string item_id, int qty, string GenFrom, string login_id) {
-            return base.Channel.CGHS_InsertIntoDeliveryInfo(out processInfo, indent_id, item_id, qty, GenFrom, login_id);
-        }
-        
-        public string CGHS_InsertIndentInfo(out string processInfo, string ind_type, string indent_date, string despensary, int ind_seq_no, string patient_name, string token_no, string opd_no, string medicine, int req_qty, string login_id) {
-            return base.Channel.CGHS_InsertIndentInfo(out processInfo, ind_type, indent_date, despensary, ind_seq_no, patient_name, token_no, opd_no, medicine, req_qty, login_id);
-        }
-        
-        public string CGHS_InsSraffCardNos(out string processInfo, string Corp_Id, string TokenNos, string login_id, string Logic, string result) {
-            return base.Channel.CGHS_InsSraffCardNos(out processInfo, Corp_Id, TokenNos, login_id, Logic, result);
-        }
-        
-        public string CGHS_RepBySubstitute(out string processInfo, string ReplaceTo, string ReplaceBy, string login_id, string result) {
-            return base.Channel.CGHS_RepBySubstitute(out processInfo, ReplaceTo, ReplaceBy, login_id, result);
-        }
-        
-        public System.Data.DataSet CGHS_SelectQueries(out string processInfo, string Corp_id, string prm_1, string prm_2, string from, string to, string Logic, string Login_id) {
-            return base.Channel.CGHS_SelectQueries(out processInfo, Corp_id, prm_1, prm_2, from, to, Logic, Login_id);
-        }
-        
-        public string CGHS_UpdateCorpIndentQty(out string processInfo, string Corp_id, string Unique_id, int t_qty, string Login_id, string result) {
-            return base.Channel.CGHS_UpdateCorpIndentQty(out processInfo, Corp_id, Unique_id, t_qty, Login_id, result);
-        }
-        
-        public string CGHS_UpdateIndentSummary(out string processInfo, int auto_id, string atp_flag, int d_qty, string Logic, string Login_id, string result) {
-            return base.Channel.CGHS_UpdateIndentSummary(out processInfo, auto_id, atp_flag, d_qty, Logic, Login_id, result);
-        }
-        
-        public string CGHS_TransferForSale(out string processInfo, string Ind_type, string IndId, string Corp_id, string login_id, string result) {
-            return base.Channel.CGHS_TransferForSale(out processInfo, Ind_type, IndId, Corp_id, login_id, result);
-        }
-        
-        public string CGHS_MarkAsImportedBalanceItem(out string processInfo, string Ind_date, string item_id) {
-            return base.Channel.CGHS_MarkAsImportedBalanceItem(out processInfo, Ind_date, item_id);
-        }
-        
-        public string DispatchForCorporate14(out string processInfo, string warehouse_id, string order_date, string login_id, string trf_id) {
-            return base.Channel.DispatchForCorporate14(out processInfo, warehouse_id, order_date, login_id, trf_id);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.UpdateDatabaseByScriptResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.UpdateDatabaseByScript(eMediShop.Pharmacy.UpdateDatabaseByScriptRequest request) {
-            return base.Channel.UpdateDatabaseByScript(request);
-        }
-        
-        public byte[] UpdateDatabaseByScript() {
-            eMediShop.Pharmacy.UpdateDatabaseByScriptRequest inValue = new eMediShop.Pharmacy.UpdateDatabaseByScriptRequest();
-            eMediShop.Pharmacy.UpdateDatabaseByScriptResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).UpdateDatabaseByScript(inValue);
-            return retVal.UpdateDatabaseByScriptResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.TaxCalculation1 eMediShop.Pharmacy.Pharmacy_WebServicesSoap.Get_eTax_PurchaseInfo(eMediShop.Pharmacy.TaxCalculation request) {
-            return base.Channel.Get_eTax_PurchaseInfo(request);
-        }
-        
-        public string Get_eTax_PurchaseInfo(int mth, string finyear, string state) {
-            eMediShop.Pharmacy.TaxCalculation inValue = new eMediShop.Pharmacy.TaxCalculation();
-            inValue.mth = mth;
-            inValue.finyear = finyear;
-            inValue.state = state;
-            eMediShop.Pharmacy.TaxCalculation1 retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).Get_eTax_PurchaseInfo(inValue);
-            return retVal.TaxCalculationResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.DownLoadFileResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.DownLoadFile(eMediShop.Pharmacy.DownLoadFileRequest request) {
-            return base.Channel.DownLoadFile(request);
-        }
-        
-        public byte[] DownLoadFile(string file_path) {
-            eMediShop.Pharmacy.DownLoadFileRequest inValue = new eMediShop.Pharmacy.DownLoadFileRequest();
-            inValue.file_path = file_path;
-            eMediShop.Pharmacy.DownLoadFileResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).DownLoadFile(inValue);
-            return retVal.DownLoadFileResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        eMediShop.Pharmacy.FillUnitOpStock1 eMediShop.Pharmacy.Pharmacy_WebServicesSoap.pFillUnitOpStock(eMediShop.Pharmacy.FillUnitOpStock request) {
-            return base.Channel.pFillUnitOpStock(request);
-        }
-        
-        public string pFillUnitOpStock(string unit_id, System.Data.DataSet ds) {
-            eMediShop.Pharmacy.FillUnitOpStock inValue = new eMediShop.Pharmacy.FillUnitOpStock();
-            inValue.unit_id = unit_id;
-            inValue.ds = ds;
-            eMediShop.Pharmacy.FillUnitOpStock1 retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).pFillUnitOpStock(inValue);
-            return retVal.FillUnitOpStockResult;
-        }
-        
-        public string GetPharmecistRegNo(string unit_id) {
-            return base.Channel.GetPharmecistRegNo(unit_id);
-        }
-        
-        public System.Data.DataSet BulkDispatchFromUnit(string unit_id) {
-            return base.Channel.BulkDispatchFromUnit(unit_id);
+        public void SendSMS_ByTemplates(string Message, string MobileNo, int time) {
+            base.Channel.SendSMS_ByTemplates(Message, MobileNo, time);
         }
         
         public string NewTrfId(out string processInfo, string unit_id, string trf_to) {
@@ -5805,6 +5625,186 @@ namespace eMediShop.Pharmacy {
         
         public System.Data.DataSet GetPurchaseId_Info(string purchase_id, string unit_id) {
             return base.Channel.GetPurchaseId_Info(purchase_id, unit_id);
+        }
+        
+        public string PurchasePosting(string prm) {
+            return base.Channel.PurchasePosting(prm);
+        }
+        
+        public System.Data.DataSet GetLastXPurchases(out string processInfo, string item_id) {
+            return base.Channel.GetLastXPurchases(out processInfo, item_id);
+        }
+        
+        public string InterUnitStockTransfer(string trf_id, string trf_from, string trf_to, string itemId, string master_key, int qty, string login_id) {
+            return base.Channel.InterUnitStockTransfer(trf_id, trf_from, trf_to, itemId, master_key, qty, login_id);
+        }
+        
+        public string InterUnitStockTransfer_New(string trf_id, string trf_type, string trf_from, string trf_to, string itemId, string master_key, int qty, string GenFrom, string login_id) {
+            return base.Channel.InterUnitStockTransfer_New(trf_id, trf_type, trf_from, trf_to, itemId, master_key, qty, GenFrom, login_id);
+        }
+        
+        public string Del_RecordFromTransferId_warehouse(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id, int quantity, string logic) {
+            return base.Channel.Del_RecordFromTransferId_warehouse(trf_id, From_Unit_id, To_unit_id, master_key_id, quantity, logic);
+        }
+        
+        public string Del_RecordFromTransferId(string trf_id, string From_Unit_id, string To_unit_id, string master_key_id) {
+            return base.Channel.Del_RecordFromTransferId(trf_id, From_Unit_id, To_unit_id, master_key_id);
+        }
+        
+        public string Complete_TransferId(string unit_id, string trf_id, string master_key_id, int qty) {
+            return base.Channel.Complete_TransferId(unit_id, trf_id, master_key_id, qty);
+        }
+        
+        public string CompInterUnit_TransferId(string unit_id, string login_id, string trf_id, int no_of_item) {
+            return base.Channel.CompInterUnit_TransferId(unit_id, login_id, trf_id, no_of_item);
+        }
+        
+        public string CompleteTransferId(out string processInfo, string unit_id, string trf_id, string db_ledger, string cr_ledger, int no_of_item, string login_id) {
+            return base.Channel.CompleteTransferId(out processInfo, unit_id, trf_id, db_ledger, cr_ledger, no_of_item, login_id);
+        }
+        
+        public string CompleteStockTransfer(out string processInfo, string unit_id, string trf_id, string Vendor_id, string db_ledger, string cr_ledger, int no_of_item, string Trf_Type, string login_id) {
+            return base.Channel.CompleteStockTransfer(out processInfo, unit_id, trf_id, Vendor_id, db_ledger, cr_ledger, no_of_item, Trf_Type, login_id);
+        }
+        
+        public System.Data.DataSet GetInstitutionList(string unit_id, string SearchString) {
+            return base.Channel.GetInstitutionList(unit_id, SearchString);
+        }
+        
+        public string GetUnitNameForLedger(string unit_id) {
+            return base.Channel.GetUnitNameForLedger(unit_id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        eMediShop.Pharmacy.getTIFImagesResponse eMediShop.Pharmacy.Pharmacy_WebServicesSoap.getTIFImages(eMediShop.Pharmacy.getTIFImagesRequest request) {
+            return base.Channel.getTIFImages(request);
+        }
+        
+        public byte[] getTIFImages(string purch_Id_imagefile) {
+            eMediShop.Pharmacy.getTIFImagesRequest inValue = new eMediShop.Pharmacy.getTIFImagesRequest();
+            inValue.purch_Id_imagefile = purch_Id_imagefile;
+            eMediShop.Pharmacy.getTIFImagesResponse retVal = ((eMediShop.Pharmacy.Pharmacy_WebServicesSoap)(this)).getTIFImages(inValue);
+            return retVal.getTIFImagesResult;
+        }
+        
+        public System.Data.DataSet GetZeroStockList(string unit_id, char LocalProduct) {
+            return base.Channel.GetZeroStockList(unit_id, LocalProduct);
+        }
+        
+        public System.Data.DataSet GetId_FromWarehouseToUnit(string unit_id, System.DateTime From, System.DateTime To) {
+            return base.Channel.GetId_FromWarehouseToUnit(unit_id, From, To);
+        }
+        
+        public System.Data.DataSet GetId_FromUnitToWarehouse(string unit_id, System.DateTime From, System.DateTime To) {
+            return base.Channel.GetId_FromUnitToWarehouse(unit_id, From, To);
+        }
+        
+        public System.Data.DataSet GetProductInfoForUpdation(string unit_id, string item_id) {
+            return base.Channel.GetProductInfoForUpdation(unit_id, item_id);
+        }
+        
+        public System.Data.DataSet GetVendorListForUnit(string unit_id) {
+            return base.Channel.GetVendorListForUnit(unit_id);
+        }
+        
+        public System.Data.DataSet GetPurchaseOrderInfo(string unit_id) {
+            return base.Channel.GetPurchaseOrderInfo(unit_id);
+        }
+        
+        public string ReconcileId_FromUnitToWarehouse(string unit_id, string Transfer_Id, int no_of_item) {
+            return base.Channel.ReconcileId_FromUnitToWarehouse(unit_id, Transfer_Id, no_of_item);
+        }
+        
+        public string TransferNewProduct(string unit_id, System.Data.DataSet ds) {
+            return base.Channel.TransferNewProduct(unit_id, ds);
+        }
+        
+        public System.Data.DataSet GetQueryResult(string query) {
+            return base.Channel.GetQueryResult(query);
+        }
+        
+        public System.Data.DataSet GetQueryResult2(string query, string Database) {
+            return base.Channel.GetQueryResult2(query, Database);
+        }
+        
+        public string QueryExecute(string query, string Database) {
+            return base.Channel.QueryExecute(query, Database);
+        }
+        
+        public string GetOrderInfo(string unit_id, string orderFor) {
+            return base.Channel.GetOrderInfo(unit_id, orderFor);
+        }
+        
+        public string GetPurchaseInvoice(string unit_id, string dtFrom, string dtTo) {
+            return base.Channel.GetPurchaseInvoice(unit_id, dtFrom, dtTo);
+        }
+        
+        public System.Data.DataSet PurchaseQueries(out string processInfo, string unit_id, string Purchase_id, string logic, string prm_1, string prm_2) {
+            return base.Channel.PurchaseQueries(out processInfo, unit_id, Purchase_id, logic, prm_1, prm_2);
+        }
+        
+        public System.Data.DataSet OnlineOrder_Queries(out string processInfo, string sh_code, string order_no, string prm_1, string prm_2, int prm_3, string logic) {
+            return base.Channel.OnlineOrder_Queries(out processInfo, sh_code, order_no, prm_1, prm_2, prm_3, logic);
+        }
+        
+        public System.Data.DataSet GetOnLineOrderInfo(string unit_id, string order_no, string what) {
+            return base.Channel.GetOnLineOrderInfo(unit_id, order_no, what);
+        }
+        
+        public System.Data.DataSet GetTransferId_InfoByPurchaseId(string purchaseId_No, string unit_id) {
+            return base.Channel.GetTransferId_InfoByPurchaseId(purchaseId_No, unit_id);
+        }
+        
+        public System.Data.DataSet GetTransferId_Info(string unit_id, string transfer_id) {
+            return base.Channel.GetTransferId_Info(unit_id, transfer_id);
+        }
+        
+        public System.Data.DataSet UpdateTransferMasterFlag(string unit_id, System.Data.DataSet ds, string transfer_id, string Action, string login_id) {
+            return base.Channel.UpdateTransferMasterFlag(unit_id, ds, transfer_id, Action, login_id);
+        }
+        
+        public System.Data.DataSet GetMyTransferId(string unit_id) {
+            return base.Channel.GetMyTransferId(unit_id);
+        }
+        
+        public System.Data.DataSet ImportProductInStocks(string trf_from, string trf_to, string Transfer_id) {
+            return base.Channel.ImportProductInStocks(trf_from, trf_to, Transfer_id);
+        }
+        
+        public System.Data.DataSet ImportTransferID_Info(out string processInfo, string unit_id, string trf_id, string logic, string login_id) {
+            return base.Channel.ImportTransferID_Info(out processInfo, unit_id, trf_id, logic, login_id);
+        }
+        
+        public string TransferExtraToUnits(out string processInfo, string comp_id, string unit_id, string login_id) {
+            return base.Channel.TransferExtraToUnits(out processInfo, comp_id, unit_id, login_id);
+        }
+        
+        public System.Data.DataSet GetExpiryProduct(string unit_id, string ProductType) {
+            return base.Channel.GetExpiryProduct(unit_id, ProductType);
+        }
+        
+        public System.Data.DataSet GetExpiryProductInfo(string unit_id, string ProductType, string Master_Gr_No, string login_id) {
+            return base.Channel.GetExpiryProductInfo(unit_id, ProductType, Master_Gr_No, login_id);
+        }
+        
+        public string TransferStocks(string trf_id, string Trf_Type, string From_Unit, string To_Unit, string login_id, System.Data.DataSet ds) {
+            return base.Channel.TransferStocks(trf_id, Trf_Type, From_Unit, To_Unit, login_id, ds);
+        }
+        
+        public System.Data.DataSet ImportInGr_Stock(string unit_id, string Transfer_id, string groupby) {
+            return base.Channel.ImportInGr_Stock(unit_id, Transfer_id, groupby);
+        }
+        
+        public string ExpiryIdSummary(string Transfer_id, string FromUnit_Id) {
+            return base.Channel.ExpiryIdSummary(Transfer_id, FromUnit_Id);
+        }
+        
+        public System.Data.DataSet GoodsReturn_Queries(out string processInfo, string unit_id, string from, string to, string logic, string prm_1, string prm_2) {
+            return base.Channel.GoodsReturn_Queries(out processInfo, unit_id, from, to, logic, prm_1, prm_2);
+        }
+        
+        public string Insert_CustHoldSalesInfo(string order_no, string sale_inv_no, string item_id, string master_key_id, int qty, string login_id, string Logic) {
+            return base.Channel.Insert_CustHoldSalesInfo(order_no, sale_inv_no, item_id, master_key_id, qty, login_id, Logic);
         }
     }
 }

@@ -440,27 +440,7 @@ namespace eMediShop.forms.CentralAccess.RCM
                                         cm1 p1 = new cm1();
                                         p1.unit_id = GlobalUsage.Unit_id; p1.login_id = GlobalUsage.Login_id;
                                         datasetWithResult dwr1;
-                                        if (_HISPUSH_Flag == "Y") //Pushing to HIS
-                                        {
-                                           
-                                            pm_IPOPQueries pm = new pm_IPOPQueries();
-                                            pm.unit_id = GlobalUsage.Unit_id; pm.card_no = "-";pm.uhid = _UHID; pm.IPOPNo = "-"; pm.from = "1900/01/01"; pm.to = "1900/01/01";
-                                            pm.prm_1 = txtInvNo.Text; pm.logic = "IPDIndentToPush"; pm.login_id = GlobalUsage.Login_id;
-                                            datasetWithResult ds1 = ConfigWebAPI.CallAPI("api/hospital/ipopqueries", pm);
-                                            string str = JsonConvert.SerializeObject(ds1.result.Tables[0]);
-
-                                            _result = GlobalUsage.his_proxy.saveIPDIssueReturn(str);
-                                            if (_result.Contains("Success"))
-                                            {
-                                                p1.Logic = "sale_master:his_push_flag"; p1.tran_id = txtInvNo.Text;p1.prm_1 = "Y";
-                                                dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            p1.Logic = "sale_master:his_push_flag"; p1.tran_id = txtInvNo.Text; p1.prm_1 = "X";
-                                            dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-                                        }
+                            
                                         _neworder_no = "New";
                                         printCashMemo(txtInvNo.Text);
                                        
@@ -789,6 +769,14 @@ namespace eMediShop.forms.CentralAccess.RCM
             ImportOPD(txtInvNo.Text);
         }
 
+        
+        private void txtIPOPNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ImportOPD(txtInvNo.Text);
+            }
+        }
         private void ImportOPD(string indentNo)
         {
             try
@@ -808,39 +796,13 @@ namespace eMediShop.forms.CentralAccess.RCM
                         chkCorporate.Checked = true;
                         chkCorporate.Enabled = false;
                     }
-                    
+
                     dgIndentInfo.DataSource = ds.Tables[0];
                 }
-                else
-                {
-                    string response = GlobalUsage.his_proxy.getDcotorIndentByUHID(indentNo);
-                    if (response.Length > 10)
-                    {
-                        pm_PullHISIndent p = new pm_PullHISIndent();
-                        p.inputstring = response;p.unit_id = GlobalUsage.Unit_id;p.login_id = GlobalUsage.Login_id;
-                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/PullHISIndent", p);
-                        string[] r = dwr.message.Split('|');
-                        string indent = r[1]; 
-                        
-                        if (r[0].Contains("Success"))
-                        {
-                            GlobalUsage.his_proxy.closeOPDIndent(indent);
-                            LoadPendingIndent();
-                        }
-                    }
-                 
-                }
+            
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-        private void txtIPOPNo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                ImportOPD(txtInvNo.Text);
-            }
         }
         private void dgIndentInfo_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
@@ -890,37 +852,7 @@ namespace eMediShop.forms.CentralAccess.RCM
                 _old_sale_inv_no = "-";// dgIndentInfo.CurrentRow.Cells["old_sale_inv_no"].Value.ToString();
                 prescription_from = dgIndentInfo.CurrentRow.Cells["prescribed_from"].Value.ToString();
                 txtCorpName.Text = dgIndentInfo.CurrentRow.Cells["panel_name"].Value.ToString();
-                _result = GlobalUsage.his_proxy.getPatientStatusByIpdNo(_ipopno);
-                if (_result == "IN")
-                {
-                    Cursor.Current = Cursors.WaitCursor;
-                    radPanel2.Visible = true;
-                    radPanel3.Visible = true;
-                    if (chkCorporate.Checked)
-                    {
-                        _discountPercentage = 0;
-                        _cardNo = "CORP-PANEL";
-                    }
-                    else
-                        _discountPercentage = 10;
-
-                    FillOrderDetail(_UHID,_order_no);
-                }
-                else
-                {
-                    RadMessageBox.Show("Patient has been discharged. You can not process bill.", "ExPro Help", MessageBoxButtons.OK, RadMessageIcon.Info);
-                    if (chkCorporate.Checked)
-                    {
-                        _discountPercentage = 0;
-                        _cardNo = "CORP-PANEL";
-                    }
-                    else
-                        _discountPercentage = 10;
-
-                    FillOrderDetail(_UHID, _order_no);
-                    radPanel3.Visible = false;
-                    radPanel2.Visible = false;
-                }
+             
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex) { }
@@ -970,28 +902,6 @@ namespace eMediShop.forms.CentralAccess.RCM
         }
         private void dgFailure_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-
-            DataSet ds= IPOPQueries("1900/01/01", "1900/01/01", "-", "-", "IPDIndentToPush", dgFailure.CurrentRow.Cells["sale_inv_no"].Value.ToString());
-
-            string str = JsonConvert.SerializeObject(ds.Tables[0]);
-            _result = GlobalUsage.his_proxy.saveIPDIssueReturn(str);
-            Cursor.Current = Cursors.Default;
-            if (_result.Contains("Success"))
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                cm1 p = new cm1();
-                p.unit_id = GlobalUsage.Unit_id; p.login_id = GlobalUsage.Login_id;
-                p.Logic = "sale_master:his_push_flag";p.prm_1 = "Y"; p.tran_id = dgFailure.CurrentRow.Cells["sale_inv_no"].Value.ToString();
-                datasetWithResult dwr1 = ConfigWebAPI.CallAPI("api/common/UpdateTablesInfo", p);
-                dgFailure.CurrentRow.Delete();
-                Cursor.Current = Cursors.Default;
-                MessageBox.Show("Successfully Transferd");
-            }
-            else
-            {
-                MessageBox.Show(_result,"ExPro Help",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
         }
 
         private void MasterTemplate_RowFormatting(object sender, Telerik.WinControls.UI.RowFormattingEventArgs e)

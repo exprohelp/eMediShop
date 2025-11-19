@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.0.11/exprologic/Pharmacy_webservices.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://chandan.online/exprologic/Pharmacy_webservices.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Pharmacy_webservices1.disco" MetadataType="Disco" ID="2a792d96-af8f-4e27-bba4-6387ffe31377" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Pharmacy_webservices.asmx?disco" />
-    <MetadataFile FileName="Pharmacy_webservices1.wsdl" MetadataType="Wsdl" ID="b0d4be39-eecc-4144-9330-2c63b382e58c" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Pharmacy_webservices.asmx?wsdl" />
+    <MetadataFile FileName="Pharmacy_webservices11.disco" MetadataType="Disco" ID="6e034d0a-8202-4945-b9af-1b105ae3b0d7" SourceId="1" SourceUrl="https://chandan.online/exprologic/Pharmacy_webservices.asmx?disco" />
+    <MetadataFile FileName="Pharmacy_webservices11.wsdl" MetadataType="Wsdl" ID="0d00e0ea-64f7-4d50-864c-f7ee0ddc47f8" SourceId="1" SourceUrl="https://chandan.online/exprologic/Pharmacy_webservices.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

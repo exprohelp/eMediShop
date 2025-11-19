@@ -1323,14 +1323,7 @@ namespace eMediShop.sales
                 txtVCustName.Text = dsVerify.Tables[0].Rows[0]["pt_name"].ToString();
                 txtVUhid.Text = dsVerify.Tables[0].Rows[0]["hosp_cr_no"].ToString();
                 btnGenerateCode.Enabled = true;
-                if (txtVUhid.Text.Length > 8)
-                {
-                    _result = GlobalUsage.his_proxy.getPatientDetails(txtVUhid.Text);
-                    var table = JsonConvert.DeserializeObject<DataTable>(_result);
-                    txtVMobile.Text = table.Rows[0]["mobile"].ToString();
-                }
-                else
-                    txtVMobile.Text = dsVerify.Tables[0].Rows[0]["ContactNo"].ToString();
+                txtVMobile.Text = dsVerify.Tables[0].Rows[0]["ContactNo"].ToString();
 
                 txtVold.Text = dsVerify.Tables[0].Rows[0]["old_sale_inv_no"].ToString();
 

@@ -24,7 +24,7 @@ namespace eMediShop
         public static eMediShop.rmAccounts.Accounts_WebServiceSoapClient accounts_proxy = null; //ac
         public static eMediShop.HealthCard.HealthCard_WebServicesSoapClient healthcard_proxy = null; //ac
    
-        public static eMediShop.his_proxy.ChandanPharmacyServicesSoapClient his_proxy = null; //ac
+        //public static eMediShop.his_proxy.ChandanPharmacyServicesSoapClient his_proxy = null; //ac
 
         public static string BillDrive = System.Configuration.ConfigurationManager.AppSettings["BillDrive"].ToString();
         public static string CloudStoragePath = System.Configuration.ConfigurationManager.AppSettings["CloudStoragePath"].ToString();

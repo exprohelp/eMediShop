@@ -138,19 +138,12 @@ namespace eMediShop.Hospital
                 {
                     try
                     {
-                        if (rbItDose.Checked)
-                        {
-                            string response = GlobalUsage.his_proxy.getPatientInfoByIPDNo(txtEstIpd.Text);
-                            table = JsonConvert.DeserializeObject<DataTable>(response);
-                        }
-                        else
-                        {
-                            pm_HospitalQueries p = new pm_HospitalQueries();
-                            p.unit_id = GlobalUsage.Unit_id; p.logic = "BYIPDNO"; p.prm_1 = txtEstIpd.Text; p.prm_2 = "";
-                            p.login_id = GlobalUsage.Login_id;
-                            datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
-                            table = dwr.result.Tables[0];
-                        }
+                        pm_HospitalQueries p = new pm_HospitalQueries();
+                        p.unit_id = GlobalUsage.Unit_id; p.logic = "BYIPDNO"; p.prm_1 = txtEstIpd.Text; p.prm_2 = "";
+                        p.login_id = GlobalUsage.Login_id;
+                        datasetWithResult dwr = ConfigWebAPI.CallAPI("api/hospital/HospitalQueries", p);
+                        table = dwr.result.Tables[0];
+
 
 
 
@@ -223,17 +216,10 @@ namespace eMediShop.Hospital
                 try
                 {
                     DataTable table = new DataTable();
-                    if (rbItDose.Checked)
-                    {
-                        string response = GlobalUsage.his_proxy.getPatientLastAppointmentDetails(txtestUHID.Text);
-                        table = JsonConvert.DeserializeObject<DataTable>(response);
-
-                    }
-                    else
-                    {
+                   
                         FillOPDPatientList();
-                    }
-                 
+                   
+
 
                 }
                 catch (Exception ex) { }
@@ -284,14 +270,14 @@ namespace eMediShop.Hospital
 
         private void dgHISVisits_CommandCellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            if(dgHISVisits.Rows.Count > 0)
+            if (dgHISVisits.Rows.Count > 0)
             {
                 txtPanelName.Text = dgHISVisits.CurrentRow.Cells["PanelName"].Value.ToString();
-                txtEstIpd.Text = dgHISVisits.CurrentRow.Cells["ipop_no"].Value.ToString(); 
-               _ipdVerified = "Y";
-                if(dgHISVisits.CurrentRow.Cells["panelId"].Value.ToString() != "107")
-                btnDelivered.Enabled = true;
-                else if (dgHISVisits.CurrentRow.Cells["panelId"].Value.ToString()== "107" && Convert.ToDecimal(dgHISVisits.CurrentRow.Cells["FundBal"].Value) >= _billAmt)
+                txtEstIpd.Text = dgHISVisits.CurrentRow.Cells["ipop_no"].Value.ToString();
+                _ipdVerified = "Y";
+                if (dgHISVisits.CurrentRow.Cells["panelId"].Value.ToString() != "107")
+                    btnDelivered.Enabled = true;
+                else if (dgHISVisits.CurrentRow.Cells["panelId"].Value.ToString() == "107" && Convert.ToDecimal(dgHISVisits.CurrentRow.Cells["FundBal"].Value) >= _billAmt)
                 { btnDelivered.Enabled = true; txtFund.Text = Convert.ToDecimal(dgHISVisits.CurrentRow.Cells["FundBal"].Value).ToString("######"); }
                 else
                     btnDelivered.Enabled = false;

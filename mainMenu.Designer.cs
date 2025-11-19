@@ -191,7 +191,6 @@
             this.Acc_CEA_Import = new Telerik.WinControls.UI.RadButtonElement();
             this.Acc_CEA_Register = new Telerik.WinControls.UI.RadButtonElement();
             this.rt_Audit = new Telerik.WinControls.UI.RibbonTab();
-            this.rt_Assets = new Telerik.WinControls.UI.RibbonTab();
             this.asset_complaints = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.asset_new = new Telerik.WinControls.UI.RadButtonElement();
             this.asset_status = new Telerik.WinControls.UI.RadButtonElement();
@@ -1478,7 +1477,6 @@
             this.rrb_menu.CommandTabs.AddRange(new Telerik.WinControls.RadItem[] {
             this.rt_accounts,
             this.rt_Audit,
-            this.rt_Assets,
             this.rt_CustomerCare,
             this.rt_inventory,
             this.ribbonTab3,
@@ -1516,7 +1514,7 @@
             // 
             // 
             this.rrb_menu.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
-            this.rrb_menu.Size = new System.Drawing.Size(1272, 172);
+            this.rrb_menu.Size = new System.Drawing.Size(1272, 170);
             this.rrb_menu.StartButtonImage = global::eMediShop.Properties.Resources.pharmacy_icon_32;
             this.rrb_menu.TabIndex = 0;
             this.rrb_menu.TabStop = false;
@@ -1655,19 +1653,6 @@
             // 
             this.rt_Audit.Name = "rt_Audit";
             // 
-            // rt_Assets
-            // 
-            this.rt_Assets.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rt_Assets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(24)))));
-            this.rt_Assets.Image = global::eMediShop.Properties.Resources.asset_16;
-            this.rt_Assets.IsSelected = false;
-            this.rt_Assets.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.asset_complaints,
-            this.asset_transfer,
-            this.asset_information});
-            this.rt_Assets.Name = "rt_Assets";
-            this.rt_Assets.Text = "Assets";
-            // 
             // asset_complaints
             // 
             this.asset_complaints.AccessibleDescription = "Assets Management";
@@ -1681,30 +1666,15 @@
             // 
             // asset_new
             // 
-            this.asset_new.Image = global::eMediShop.Properties.Resources.new_32;
-            this.asset_new.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.asset_new.Name = "asset_new";
-            this.asset_new.Text = "New";
-            this.asset_new.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.asset_new.Click += new System.EventHandler(this.asset_new_Click);
             // 
             // asset_status
             // 
-            this.asset_status.Image = global::eMediShop.Properties.Resources.Status_32;
-            this.asset_status.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.asset_status.Name = "asset_status";
-            this.asset_status.Text = "Status";
-            this.asset_status.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.asset_status.Click += new System.EventHandler(this.asset_status_Click);
             // 
             // asset_pending
             // 
-            this.asset_pending.Image = global::eMediShop.Properties.Resources.pending_32;
-            this.asset_pending.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.asset_pending.Name = "asset_pending";
-            this.asset_pending.Text = "Pending";
-            this.asset_pending.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.asset_pending.Click += new System.EventHandler(this.asset_pending_Click);
             // 
             // asset_transfer
             // 
@@ -1716,21 +1686,11 @@
             // 
             // assetTransfer
             // 
-            this.assetTransfer.Image = global::eMediShop.Properties.Resources.transfer_H_32;
-            this.assetTransfer.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.assetTransfer.Name = "assetTransfer";
-            this.assetTransfer.Text = "Transfer";
-            this.assetTransfer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.assetTransfer.Click += new System.EventHandler(this.assetTransfer_Click);
             // 
             // asset_TransferForm
             // 
-            this.asset_TransferForm.Image = global::eMediShop.Properties.Resources.Register_32;
-            this.asset_TransferForm.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.asset_TransferForm.Name = "asset_TransferForm";
-            this.asset_TransferForm.Text = "Form";
-            this.asset_TransferForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.asset_TransferForm.Click += new System.EventHandler(this.asset_TransferForm_Click);
             // 
             // asset_information
             // 
@@ -1742,28 +1702,18 @@
             // 
             // assets_attach
             // 
-            this.assets_attach.Image = global::eMediShop.Properties.Resources.attachment_32;
-            this.assets_attach.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.assets_attach.Name = "assets_attach";
-            this.assets_attach.Text = "Attach";
-            this.assets_attach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.assets_attach.Click += new System.EventHandler(this.assets_attach_Click);
             // 
             // asset_register
             // 
-            this.asset_register.Image = global::eMediShop.Properties.Resources.Register_32;
-            this.asset_register.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.asset_register.Name = "asset_register";
-            this.asset_register.Text = "Register";
-            this.asset_register.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.asset_register.Click += new System.EventHandler(this.asset_register_Click);
             // 
             // rt_CustomerCare
             // 
             this.rt_CustomerCare.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rt_CustomerCare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(24)))));
             this.rt_CustomerCare.Image = global::eMediShop.Properties.Resources.support_16;
-            this.rt_CustomerCare.IsSelected = false;
+            this.rt_CustomerCare.IsSelected = true;
             this.rt_CustomerCare.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.rrbg_HealthCard,
             this.rrbg_ManageOrders,
@@ -2621,7 +2571,7 @@
             this.rt_Purchase.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
             this.rt_Purchase.ForeColor = System.Drawing.Color.DarkGreen;
             this.rt_Purchase.Image = global::eMediShop.Properties.Resources.purchase_16;
-            this.rt_Purchase.IsSelected = true;
+            this.rt_Purchase.IsSelected = false;
             this.rt_Purchase.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.rrbg_Bills,
             this.rrbg_poHelp,
@@ -4600,7 +4550,6 @@
         private Telerik.WinControls.UI.RadButtonElement rbe_ChangePassword;
         private Telerik.WinControls.UI.RadButtonElement rbe_db_project;
         private Telerik.WinControls.UI.RadButtonElement rbe_purch_Register;
-        private Telerik.WinControls.UI.RibbonTab rt_Assets;
         private Telerik.WinControls.UI.RadButtonElement asset_new;
         private Telerik.WinControls.UI.RadButtonElement asset_status;
         private Telerik.WinControls.UI.RadButtonElement asset_pending;

@@ -14,10 +14,11 @@ namespace eMediShop
     public static class ConfigWebAPI
     {
         public static string domain = ConfigurationManager.AppSettings["domainName"].ToString();
-        public static string SingnalRServer = ConfigurationManager.AppSettings["SingnalRServer"].ToString();
-        public static Uri BaseURL = new Uri("http://" + domain ); //+ "/PharmacyWebAPI/"
-  
-        public static Uri LocalURL = new Uri("http://" + domain + "/");
+        //public static string SingnalRServer = ConfigurationManager.AppSettings["SingnalRServer"].ToString();
+        //public static Uri BaseURL = new Uri("http://" + domain + "/PharmacyWebAPI/"); 
+        public static Uri BaseURL = new Uri(domain);
+
+        //public static Uri LocalURL = new Uri("http://" + domain + "/");
 
         public static datasetWithResult CallAPI(string RoutingNameofAPI, object obj)
         {
@@ -25,9 +26,9 @@ namespace eMediShop
             HttpClient client = new HttpClient();
             try
             {
-                if (domain.Contains("localhost"))
-                    client.BaseAddress = LocalURL;
-                else
+                //if (domain.Contains("localhost"))
+                //    client.BaseAddress = LocalURL;
+                //else
                     client.BaseAddress = BaseURL;
  
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -62,9 +63,9 @@ namespace eMediShop
             string response_data = string.Empty;
             try
             {
-                if (domain == "localhost")
-                    client.BaseAddress = LocalURL;
-                else
+                //if (domain == "localhost")
+                //    client.BaseAddress = LocalURL;
+                //else
                     client.BaseAddress = BaseURL;
 
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -87,37 +88,7 @@ namespace eMediShop
 
         }
     }
-    //public static class MISProxy
-    //{
-    //    public static string Baseurl = ConfigurationManager.AppSettings["APIHostPath"].ToString();
-    //    public static resultSetMIS CallMISWebApiMethod(string methodRoute, Object obj)
-    //    {
-    //        resultSetMIS dwr = new resultSetMIS();
-    //        using (var client = new HttpClient())
-    //        {
-    //            try
-    //            {
-    //                client.BaseAddress = new Uri(Baseurl);
-    //                HttpResponseMessage response = client.PostAsJsonAsync("api/" + methodRoute + "", obj).Result;
-    //                if (response.IsSuccessStatusCode)
-    //                {
-    //                    string response_data = response.Content.ReadAsStringAsync().Result;
-    //                    dwr = JsonConvert.DeserializeObject<resultSetMIS>(response_data, new JsonSerializerSettings
-    //                    {
-    //                        NullValueHandling = NullValueHandling.Ignore,
-    //                        MissingMemberHandling = MissingMemberHandling.Ignore,
-    //                        Formatting = Formatting.None,
-    //                        DateFormatHandling = DateFormatHandling.IsoDateFormat,
-    //                        FloatParseHandling = FloatParseHandling.Decimal
-    //                    });
-    //                }
-    //            }
-    //            catch (Exception ex) { dwr.ResultSet = null; dwr.Msg = ex.Message; }
-    //        }
-    //        return dwr;
-    //    }
-
-    //}
+   
     public static class HISProxy
     {
         public static string Baseurl = ConfigurationManager.AppSettings["APIHospitalHostPath"].ToString();
