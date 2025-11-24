@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.0.11/exprologic/Accounts_WebService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://chandan.online/exprologic/Accounts_WebService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Accounts_WebService.wsdl" MetadataType="Wsdl" ID="f5397a60-d080-4ff1-ae13-ca0d290ed769" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Accounts_WebService.asmx?wsdl" />
-    <MetadataFile FileName="Accounts_WebService.disco" MetadataType="Disco" ID="f10c3264-1bba-4cd6-b694-81597a535014" SourceId="1" SourceUrl="http://192.168.0.11/exprologic/Accounts_WebService.asmx?disco" />
+    <MetadataFile FileName="Accounts_WebService11.disco" MetadataType="Disco" ID="56e4d391-c33a-4d25-bcd7-93bb5bece652" SourceId="1" SourceUrl="http://chandan.online/exprologic/Accounts_WebService.asmx?disco" />
+    <MetadataFile FileName="Accounts_WebService11.wsdl" MetadataType="Wsdl" ID="76032b5d-1630-47a1-bea5-bd6ebdc4659b" SourceId="1" SourceUrl="http://chandan.online/exprologic/Accounts_WebService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -2899,7 +2899,7 @@
     <Compile Include="WinApi.cs" />
     <None Include="Service References\HealthCard\HealthCard_WebServices11.wsdl" />
     <None Include="Service References\Pharmacy\Pharmacy_webservices11.wsdl" />
-    <None Include="Service References\rmAccounts\Accounts_WebService.wsdl" />
+    <None Include="Service References\rmAccounts\Accounts_WebService11.wsdl" />
     <None Include="VersionInfo\eMediShop Manual.docx" />
     <None Include="VersionInfo\eMediShopVersion Update.docx" />
   </ItemGroup>
@@ -2969,7 +2969,7 @@
     <None Include="Resources\barcode.png" />
     <None Include="Service References\HealthCard\HealthCard_WebServices11.disco" />
     <None Include="Service References\Pharmacy\Pharmacy_webservices11.disco" />
-    <None Include="Service References\rmAccounts\Accounts_WebService.disco" />
+    <None Include="Service References\rmAccounts\Accounts_WebService11.disco" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
